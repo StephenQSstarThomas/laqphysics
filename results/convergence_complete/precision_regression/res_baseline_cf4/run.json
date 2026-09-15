@@ -1,0 +1,91 @@
+{
+  "signature": "7b886c5c1984307253205f615edbd73d5257cfc85c9e78b2da27f36e78a6fb01",
+  "config": {
+    "radial": {
+      "edges": [
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28
+      ],
+      "order": 4,
+      "tail": 24,
+      "ecs_angle": 0.5,
+      "alpha": 0.8
+    },
+    "lmax": 1,
+    "M": 0,
+    "cutoff_radii": [
+      12,
+      16
+    ],
+    "surface": 20,
+    "pulses": [
+      {
+        "pulse": {
+          "omega": 1.5,
+          "cycles": 180,
+          "field": 0.0534
+        },
+        "polarization": "z"
+      }
+    ],
+    "post_time": 60,
+    "dt": 0.12,
+    "surface_stride": 1,
+    "checkpoint_every": 200,
+    "krylov_dimension": 48,
+    "krylov_tolerance": 1e-10,
+    "ground_tolerance": 1e-09,
+    "max_surface_gib": 4,
+    "spectrum_energy": [
+      0.52,
+      0.68,
+      161
+    ],
+    "time_integrator": "cf4-pade",
+    "ionic_propagator": "cf4",
+    "linear_tolerance": 1e-10
+  },
+  "ground_energy": -2.8972353187832733,
+  "ground_residual": 8.026714991130883e-10,
+  "nrad": 88,
+  "channels": 6,
+  "dt": 0.11998558916001627,
+  "nsteps": 6784,
+  "completed_steps": 6784,
+  "complete": true,
+  "surface_bytes": 286598400,
+  "surface_indices": [
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "seconds_this_invocation": 1084.548326737946,
+  "backend": "torch",
+  "device": "cuda:0",
+  "precision": "complex128",
+  "ground_angular_basis": "coupled total L=0, expanded without angular approximation",
+  "time_integrator": "cf4-pade",
+  "coulomb_contraction": "sparse",
+  "precomputed_coulomb_bytes": 0,
+  "preconditioner_precision": "complex64",
+  "linear_solver": "FGMRES",
+  "maximum_linear_residual_this_invocation": 9.997781168007115e-11,
+  "linear_iterations_this_invocation": 106440
+}

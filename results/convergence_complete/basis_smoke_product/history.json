@@ -1,0 +1,35 @@
+[
+  {
+    "step": 200,
+    "time": 15.985689623131563,
+    "real_region_norm": 0.9999734015702089,
+    "ground_population": 0.9990721007261479,
+    "exchange_error": 8.531118499015596e-14,
+    "linear_iterations": 16,
+    "linear_residual": 9.536769707805643e-13,
+    "dimension": 0,
+    "residual_estimate": null
+  },
+  {
+    "step": 400,
+    "time": 31.971379246263126,
+    "real_region_norm": 0.9992337943308192,
+    "ground_population": 0.9990721007264847,
+    "exchange_error": 9.216609304865999e-14,
+    "linear_iterations": 16,
+    "linear_residual": 8.927225174284961e-13,
+    "dimension": 0,
+    "residual_estimate": null
+  },
+  {
+    "step": 470,
+    "time": 37.56637061435917,
+    "real_region_norm": 0.9991809272791093,
+    "ground_population": 0.9990721007260505,
+    "exchange_error": 7.236665472727804e-14,
+    "linear_iterations": 16,
+    "linear_residual": 9.790278232597264e-13,
+    "dimension": 0,
+    "residual_estimate": null
+  }
+]

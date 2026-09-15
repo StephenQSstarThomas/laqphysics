@@ -1,0 +1,47 @@
+{
+  "ground_energy": -2.9036276362067794,
+  "total_recorded_channel_peak_energies": [
+    0.5883260787995057,
+    0.6042998352013527
+  ],
+  "labels": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      -1
+    ],
+    [
+      2,
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      1
+    ]
+  ],
+  "window_yields": [
+    0.13391077020363315,
+    4.1271734259343456e-05,
+    1.7377269718930057e-06,
+    0.13850731309806952,
+    1.7377269718930057e-06
+  ],
+  "energy_window": [
+    0.54,
+    0.65
+  ],
+  "ionic_maximum_true_linear_residual": 9.998601167340884e-13,
+  "scope": "completed high-resolution reference; this alone is not full convergence"
+}

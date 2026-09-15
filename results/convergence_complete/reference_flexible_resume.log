@@ -1,0 +1,67 @@
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+3D 1800/13984, inner norm=0.99973384, Pg=0.99909830, wall=37.7s
+3D 2000/13984, inner norm=0.99948965, Pg=0.99852927, wall=84.0s
+3D 2200/13984, inner norm=0.99909801, Pg=0.99765118, wall=129.9s
+3D 2400/13984, inner norm=0.99850588, Pg=0.99643801, wall=176.1s
+3D 2600/13984, inner norm=0.99765261, Pg=0.99492013, wall=222.4s
+3D 2800/13984, inner norm=0.99647141, Pg=0.99290432, wall=270.4s
+3D 3000/13984, inner norm=0.99489121, Pg=0.99019784, wall=321.2s
+3D 3200/13984, inner norm=0.99283899, Pg=0.98697635, wall=371.9s
+3D 3400/13984, inner norm=0.99024258, Pg=0.98326723, wall=418.1s
+3D 3600/13984, inner norm=0.98703350, Pg=0.97862279, wall=464.6s
+3D 3800/13984, inner norm=0.98314987, Pg=0.97302264, wall=510.6s
+3D 4000/13984, inner norm=0.97853957, Pg=0.96697866, wall=557.0s
+3D 4200/13984, inner norm=0.97316325, Pg=0.96027004, wall=603.1s
+3D 4400/13984, inner norm=0.96699628, Pg=0.95228787, wall=649.9s
+3D 4600/13984, inner norm=0.96003049, Pg=0.94353494, wall=761.6s
+3D 4800/13984, inner norm=0.95227642, Pg=0.93465759, wall=865.6s
+3D 5000/13984, inner norm=0.94376378, Pg=0.92496755, wall=954.6s
+3D 5200/13984, inner norm=0.93453977, Pg=0.91409090, wall=1017.8s
+3D 5400/13984, inner norm=0.92466914, Pg=0.90311565, wall=1104.1s
+3D 5600/13984, inner norm=0.91423418, Pg=0.89234615, wall=1188.9s
+3D 5800/13984, inner norm=0.90333043, Pg=0.88076589, wall=1264.1s
+3D 6000/13984, inner norm=0.89206273, Pg=0.86862035, wall=1326.4s
+3D 6200/13984, inner norm=0.88054500, Pg=0.85715982, wall=1398.2s
+3D 6400/13984, inner norm=0.86889723, Pg=0.84604681, wall=1519.1s
+3D 6600/13984, inner norm=0.85723876, Pg=0.83440215, wall=1650.3s
+3D 6800/13984, inner norm=0.84568598, Pg=0.82305566, wall=1777.2s
+3D 7000/13984, inner norm=0.83435250, Pg=0.81284441, wall=1905.8s
+3D 7200/13984, inner norm=0.82334457, Pg=0.80296989, wall=2038.3s
+3D 7400/13984, inner norm=0.81275636, Pg=0.79306373, wall=2170.8s
+3D 7600/13984, inner norm=0.80267093, Pg=0.78409700, wall=2305.7s
+3D 7800/13984, inner norm=0.79316020, Pg=0.77625247, wall=2427.3s
+3D 8000/13984, inner norm=0.78428139, Pg=0.76873157, wall=2562.0s
+3D 8200/13984, inner norm=0.77607636, Pg=0.76165011, wall=2695.2s
+3D 8400/13984, inner norm=0.76857386, Pg=0.75566906, wall=2827.3s
+3D 8600/13984, inner norm=0.76178937, Pg=0.75052306, wall=2945.1s
+3D 8800/13984, inner norm=0.75572421, Pg=0.74573361, wall=3078.2s
+3D 9000/13984, inner norm=0.75036721, Pg=0.74158434, wall=3209.7s
+3D 9200/13984, inner norm=0.74569670, Pg=0.73829772, wall=3339.7s
+3D 9400/13984, inner norm=0.74168103, Pg=0.73552821, wall=3452.6s
+3D 9600/13984, inner norm=0.73827972, Pg=0.73311272, wall=3537.2s
+3D 9800/13984, inner norm=0.73544558, Pg=0.73122909, wall=3624.9s
+3D 10000/13984, inner norm=0.73312640, Pg=0.72983392, wall=3675.2s
+3D 10200/13984, inner norm=0.73126632, Pg=0.72871686, wall=3724.1s
+3D 10400/13984, inner norm=0.72980764, Pg=0.72785151, wall=3772.8s
+3D 10600/13984, inner norm=0.72869261, Pg=0.72726534, wall=3819.1s
+3D 10800/13984, inner norm=0.72786493, Pg=0.72687230, wall=3901.2s
+3D 11000/13984, inner norm=0.72727118, Pg=0.72659630, wall=3984.9s
+3D 11200/13984, inner norm=0.72686215, Pg=0.72642485, wall=4078.9s
+3D 11400/13984, inner norm=0.72659380, Pg=0.72633352, wall=4173.0s
+3D 11600/13984, inner norm=0.72642807, Pg=0.72628540, wall=4263.8s
+3D 11800/13984, inner norm=0.72633329, Pg=0.72626231, wall=4366.4s
+3D 12000/13984, inner norm=0.72628433, Pg=0.72625431, wall=4454.8s
+3D 12200/13984, inner norm=0.72626238, Pg=0.72625239, wall=4545.5s
+3D 12400/13984, inner norm=0.72625442, Pg=0.72625211, wall=4632.4s
+3D 12600/13984, inner norm=0.72625238, Pg=0.72625210, wall=4717.5s
+3D 12800/13984, inner norm=0.72625211, Pg=0.72625210, wall=4761.3s
+3D 13000/13984, inner norm=0.72625210, Pg=0.72625210, wall=4805.0s
+3D 13200/13984, inner norm=0.72625210, Pg=0.72625210, wall=4837.4s
+3D 13400/13984, inner norm=0.72625210, Pg=0.72625210, wall=4876.2s
+3D 13600/13984, inner norm=0.72625210, Pg=0.72625210, wall=4940.1s
+3D 13800/13984, inner norm=0.72625210, Pg=0.72625210, wall=5005.0s
+3D 13984/13984, inner norm=0.72625210, Pg=0.72625210, wall=5064.8s
+PROPAGATED reference

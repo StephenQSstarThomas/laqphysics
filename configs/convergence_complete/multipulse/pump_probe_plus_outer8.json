@@ -1,0 +1,135 @@
+{
+  "radial": {
+    "edges": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1,
+      1.25,
+      1.5,
+      2,
+      2.5,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      24,
+      26,
+      28
+    ],
+    "order": [
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "tail": 24,
+    "ecs_angle": 0.5,
+    "alpha": 0.8
+  },
+  "lmax": 4,
+  "M": null,
+  "cutoff_radii": [
+    12,
+    16
+  ],
+  "surface": 20,
+  "pulses": [
+    {
+      "pulse": {
+        "omega": 1.2,
+        "cycles": 12,
+        "field": 0.02
+      },
+      "polarization": "z"
+    },
+    {
+      "pulse": {
+        "omega": 1.5,
+        "cycles": 76,
+        "field": 0.0534,
+        "start": 144
+      },
+      "polarization": "sigma+"
+    }
+  ],
+  "post_time": 55,
+  "dt": 0.06,
+  "surface_stride": 1,
+  "checkpoint_every": 200,
+  "krylov_dimension": 48,
+  "krylov_tolerance": 1e-10,
+  "ground_tolerance": 1e-10,
+  "max_surface_gib": 160,
+  "spectrum_energy": [
+    0.1,
+    1.0,
+    451
+  ],
+  "time_integrator": "cf4-pade",
+  "ionic_propagator": "cf4",
+  "linear_tolerance": 1e-10,
+  "end_time": 552.0,
+  "ionic_transfer_times": [
+    144.0
+  ],
+  "ionic_channels": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      -1
+    ],
+    [
+      2,
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      1
+    ]
+  ],
+  "total_Lmax": 3,
+  "angular_representation": "bipolar",
+  "natural_parity": false,
+  "coulomb_contraction": "blocks"
+}

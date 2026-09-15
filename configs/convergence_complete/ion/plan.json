@@ -1,0 +1,17 @@
+{
+  "reference": "results/followup/ion_2p_counter",
+  "cases": [
+    "inner10",
+    "outer8",
+    "l6",
+    "dt0125",
+    "extent80",
+    "tail36",
+    "angle06"
+  ],
+  "criteria": {
+    "P3p_relative_change": 0.02,
+    "forbidden_final_P3d_absolute": 1e-10
+  },
+  "scope": "prepared He+ counter-helicity control; each case changes one discretization factor"
+}

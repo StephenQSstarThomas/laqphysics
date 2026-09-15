@@ -1,0 +1,43 @@
+{
+  "scope": "full local convergence campaign; one physical/numerical factor per comparison",
+  "all_cases_complete": false,
+  "all_defined_gates_passed": false,
+  "criteria": {
+    "peak_shift_au": 0.001,
+    "normalized_shape_L1": 0.02,
+    "relative_yield": 0.02,
+    "gate_channels": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ]
+  },
+  "completion_requires": "All propagation pairs, post-time and energy/angular extraction refinements, and an independent mixed/velocity gauge check must pass. Then validate multipulse regimes. No peak alignment. Failed axes require another refinement."
+}
+PASSED inner radial order
+PENDING outer radial order
+PENDING individual angular cutoff
+PENDING total angular cutoff
+PENDING time step
+PENDING real-domain extent
+PENDING surface radius only
+PENDING Coulomb cutoff only
+PENDING absorber polynomial order only
+PENDING ECS angle only
+PENDING Laguerre scale only
+PENDING independent mixed/velocity gauge representation
+PASSED flux integral tail 55 -> 70
+PASSED flux integral tail 70 -> 85
+PASSED energy sampling 221 -> 441
+PASSED energy sampling 441 -> 881
+PASSED polar quadrature Simpson 61 -> 121
+PASSED polar quadrature independent Gauss 64
+PENDING surface time quadrature 0.12 -> 0.06
+PENDING surface time quadrature 0.06 -> 0.03

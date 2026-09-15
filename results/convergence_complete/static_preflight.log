@@ -1,0 +1,5 @@
+{'case': 'reference', 'energy': -2.9036276362067794, 'error_vs_reference': 9.674082734001388e-05, 'residual': 7.078423064076715e-11, 'seconds': 0.31617919099517167}
+{'case': 'inner14', 'energy': -2.9036476960272366, 'error_vs_reference': 7.668100688285051e-05, 'residual': 7.018437198536508e-11, 'seconds': 2.870659459149465}
+{'case': 'outer8', 'energy': -2.903627665655546, 'error_vs_reference': 9.671137857347745e-05, 'residual': 7.080172669302437e-11, 'seconds': 4.462505033006892}
+{'case': 'l12', 'energy': -2.9036356143079725, 'error_vs_reference': 8.876272614699587e-05, 'residual': 7.237589538924562e-11, 'seconds': 3.5517972509842366}
+{'case': 'L4', 'energy': -2.9036276362067794, 'error_vs_reference': 9.674082734001388e-05, 'residual': 7.078423064076715e-11, 'seconds': 0.11787580396048725}

@@ -1,0 +1,30 @@
+ground E=-2.9036476960, residual=7.018e-11; (194, 194, 93), flux=26.319GiB
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+3D 200/13984, inner norm=1.00000000, Pg=0.99999998, wall=47.2s
+3D 400/13984, inner norm=1.00000000, Pg=0.99999950, wall=103.4s
+3D 600/13984, inner norm=0.99999998, Pg=0.99999620, wall=184.9s
+3D 800/13984, inner norm=0.99999948, Pg=0.99998290, wall=305.4s
+3D 1000/13984, inner norm=0.99999602, Pg=0.99994854, wall=422.0s
+3D 1200/13984, inner norm=0.99998327, Pg=0.99987809, wall=513.3s
+3D 1400/13984, inner norm=0.99994929, Pg=0.99973645, wall=570.3s
+3D 1600/13984, inner norm=0.99987515, Pg=0.99948187, wall=661.7s
+3D 1800/13984, inner norm=0.99973384, Pg=0.99909828, wall=778.2s
+3D 2000/13984, inner norm=0.99948964, Pg=0.99852922, wall=912.9s
+3D 2200/13984, inner norm=0.99909800, Pg=0.99765111, wall=1039.0s
+3D 2400/13984, inner norm=0.99850585, Pg=0.99643790, wall=1124.6s
+3D 2600/13984, inner norm=0.99765256, Pg=0.99491996, wall=1234.1s
+3D 2800/13984, inner norm=0.99647133, Pg=0.99290409, wall=1364.4s
+3D 3000/13984, inner norm=0.99489109, Pg=0.99019753, wall=1486.7s
+3D 3200/13984, inner norm=0.99283882, Pg=0.98697593, wall=1617.6s
+3D 3400/13984, inner norm=0.99024235, Pg=0.98326669, wall=1753.8s
+3D 3600/13984, inner norm=0.98703319, Pg=0.97862210, wall=1889.8s
+3D 3800/13984, inner norm=0.98314946, Pg=0.97302178, wall=2025.8s
+3D 4000/13984, inner norm=0.97853902, Pg=0.96697760, wall=2155.5s
+3D 4200/13984, inner norm=0.97316256, Pg=0.96026878, wall=2286.6s
+3D 4400/13984, inner norm=0.96699542, Pg=0.95228637, wall=2417.6s
+3D 4600/13984, inner norm=0.96002943, Pg=0.94353317, wall=2547.8s
+3D 4734/13984, inner norm=0.95491977, Pg=0.93758707, wall=2634.6s
+Checkpoint saved; resume this campaign to continue.

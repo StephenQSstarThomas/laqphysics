@@ -1,5 +1,6 @@
 """Checkpointed production driver. See configs and scripts/*.slurm for invocations."""
 import argparse,hashlib,json,time,os,signal
+from functools import wraps
 from pathlib import Path
 import numpy as np
 from fedvr import make_grid
@@ -8,10 +9,26 @@ from propagate import step
 from pulses import Pulse
 from output_lock import exclusive_output
 
+def _restore_signal_handlers(function):
+    """Restore process handlers even when setup or resume validation fails."""
+    @wraps(function)
+    def wrapped(*args,**kwargs):
+        previous={sig:signal.getsignal(sig) for sig in (signal.SIGUSR1,signal.SIGTERM)}
+        try:return function(*args,**kwargs)
+        finally:
+            for sig,handler in previous.items():signal.signal(sig,handler)
+    return wrapped
+
 def setup(config):
     gconfig=dict(config['radial']);angle=gconfig.pop('ecs_angle',0.)
     real=make_grid(**gconfig);complex_grid=make_grid(**gconfig,ecs_angle=angle)
     args={'lmax':config['lmax'],'M':config.get('M',0),'cutoff_radii':config['cutoff_radii']}
+    if config.get('angular_representation')=='bipolar':
+        from bipolar import BipolarHelium
+        natural=config.get('natural_parity',False)
+        if natural and (config.get('M',0)!=0 or any(p.get('polarization','z')!='z' for p in config.get('pulses',[]))):
+            raise ValueError('natural-parity restriction requires M=0 and z polarization')
+        return tuple(BipolarHelium(g,total_Lmax=config['total_Lmax'],natural_parity=natural,**args) for g in [real,complex_grid])
     pair=(Helium(real,**args),Helium(complex_grid,**args))
     if 'total_Lmax' in config:
         if config.get('M',0)!=0 or any(p.get('polarization','z')!='z' for p in config.get('pulses',[])):
@@ -37,8 +54,23 @@ def vector_function(config):
         return v
     return avec,pulses
 
+def electric_function(config):
+    from dataclasses import replace
+    pulses=[(Pulse(**p['pulse']),p.get('polarization','z')) for p in config['pulses']]
+    def electric(t):
+        field=np.zeros(3)
+        for p,pol in pulses:
+            if pol=='z':field[2]+=p.electric(t)
+            elif pol in ('sigma+','sigma-'):
+                field[0]+=p.electric(t)/np.sqrt(2)
+                field[1]+=replace(p,cep=p.cep-np.pi/2).electric(t)/np.sqrt(2)*(1 if pol=='sigma+' else -1)
+            else:raise ValueError('unsupported polarization')
+        return field
+    return electric
+
 @exclusive_output('.propagation.lock')
-def run(config,out,resume=False,max_steps=None,backend='fortran',device='cuda:0',ground_cache=None,coulomb_contraction=None):
+@_restore_signal_handlers
+def run(config,out,resume=False,max_steps=None,backend='fortran',device='cuda:0',ground_cache=None,coulomb_contraction=None,preconditioner_precision='complex128'):
     if backend not in ('fortran','torch'):raise ValueError('backend must be fortran or torch')
     out=Path(out);out.mkdir(parents=True,exist_ok=True)
     surface=out/'flux.npy'
@@ -50,10 +82,14 @@ def run(config,out,resume=False,max_steps=None,backend='fortran',device='cuda:0'
         storage.mkdir(parents=True,exist_ok=True);surface.symlink_to(storage/'flux.npy')
     signature=hashlib.sha256(json.dumps(config,sort_keys=True).encode()).hexdigest()
     interrupted=[False]
-    previous={}
     for sig in (signal.SIGUSR1,signal.SIGTERM):
-        previous[sig]=signal.signal(sig,lambda signum,frame:interrupted.__setitem__(0,True))
+        signal.signal(sig,lambda signum,frame:interrupted.__setitem__(0,True))
     hreal,h=setup(config);idx=h.prepare_surface(config['surface']);avec,pulses=vector_function(config)
+    gauge=config.get('gauge',{'type':'velocity'})
+    if gauge['type'] not in ('velocity','mixed'):raise ValueError('unknown gauge')
+    if gauge['type']=='mixed' and (backend!='torch' or gauge['outer']>=min(h.r[idx].real)):
+        raise ValueError('mixed gauge requires Torch and a switch completed before the surface stencil')
+    propagation_field=avec
     if config.get('M',0) is not None and any(pol!='z' for p,pol in pulses):
         raise ValueError('circular polarization requires M=null (all magnetic channels)')
     T=max(p.start+p.duration for p,pol in pulses)+config.get('post_time',60.)
@@ -92,10 +128,17 @@ def run(config,out,resume=False,max_steps=None,backend='fortran',device='cuda:0'
     engine=None
     if backend=='torch':
         from torch_backend import TorchHamiltonian,step as device_step
-        engine=TorchHamiltonian(h,device,coulomb_backend=coulomb_contraction or config.get('coulomb_contraction','sparse'));state=engine.state(psi)
+        contraction=coulomb_contraction or config.get('coulomb_contraction','sparse')
+        if gauge['type']=='mixed':
+            from mixed_gauge import MixedHamiltonian,parameters
+            electric=electric_function(config)
+            propagation_field=lambda t:parameters(avec,electric,t)
+            engine=MixedHamiltonian(h,device,gauge['inner'],gauge['outer'],coulomb_backend=contraction)
+        else:engine=TorchHamiltonian(h,device,coulomb_backend=contraction)
+        state=engine.state(psi)
         if config.get('time_integrator','arnoldi')=='cf4-pade':
             from implicit import SeparablePreconditioner,cf4_step
-            engine.separable=SeparablePreconditioner(engine)
+            engine.separable=SeparablePreconditioner(engine,precision=preconditioner_precision)
     if config.get('time_integrator','arnoldi')=='cf4-pade' and engine is None:
         raise ValueError('cf4-pade currently requires the torch backend (CPU or CUDA)')
     max_linear_residual=0.;linear_iterations=0
@@ -112,10 +155,10 @@ def run(config,out,resume=False,max_steps=None,backend='fortran',device='cuda:0'
                           tol=config.get('krylov_tolerance',1e-10),maxdim=config.get('krylov_dimension',48))
         else:
             if config.get('time_integrator','arnoldi')=='cf4-pade':
-                state,info=cf4_step(engine,state,avec,i*dt,dt,E,tol=config.get('linear_tolerance',1e-10))
+                state,info=cf4_step(engine,state,propagation_field,i*dt,dt,E,tol=config.get('linear_tolerance',1e-10))
                 max_linear_residual=max(max_linear_residual,info['linear_residual']);linear_iterations+=info['linear_iterations']
             else:
-                state,info=device_step(lambda t,y:engine.apply(y,avec(t),velocity=True),state,i*dt,dt,
+                state,info=device_step(lambda t,y:engine.apply(y,propagation_field(t),velocity=True),state,i*dt,dt,
                               tol=config.get('krylov_tolerance',1e-10),maxdim=config.get('krylov_dimension',48))
         if (i+1)%stride==0:
             flux[(i+1)//stride]=h.flux(psi,avec((i+1)*dt)) if engine is None else engine.flux(state,avec((i+1)*dt))
@@ -140,11 +183,21 @@ def run(config,out,resume=False,max_steps=None,backend='fortran',device='cuda:0'
           'backend':backend,'device':device if engine is not None else 'cpu','precision':'complex128',
           'ground_angular_basis':'coupled total L=0, expanded without angular approximation',
           'time_integrator':config.get('time_integrator','arnoldi'),
+          'gauge':gauge,'ground_projection_scope':'field-free basis in the propagated gauge; compare physical populations at A=0',
           'coulomb_contraction':engine.coulomb_backend if engine is not None else 'Fortran multipoles',
           'precomputed_coulomb_bytes':engine.coulomb_block_bytes if engine is not None else 0,
+          'preconditioner_precision':preconditioner_precision if config.get('time_integrator')=='cf4-pade' else None,
+          'linear_solver':('FGMRES' if preconditioner_precision=='complex64' else 'GMRES') if config.get('time_integrator')=='cf4-pade' else None,
+          'gmres_restart':(16 if preconditioner_precision=='complex64' else 32) if config.get('time_integrator')=='cf4-pade' else None,
           'maximum_linear_residual_this_invocation':max_linear_residual,'linear_iterations_this_invocation':linear_iterations}
+    snapshot=Path(__file__).resolve().parents[1]/'numerical_snapshot.json'
+    meta['numerical_snapshot']=json.loads(snapshot.read_text())['id'] if snapshot.exists() else None
+    meta['cuda_visible_devices']=os.environ.get('CUDA_VISIBLE_DEVICES')
+    if engine is not None and engine.device.type=='cuda':
+        import torch
+        meta['peak_cuda_allocated_GiB']=torch.cuda.max_memory_allocated(engine.device)/2**30
+        meta['peak_cuda_reserved_GiB']=torch.cuda.max_memory_reserved(engine.device)/2**30
     (out/'run.json').write_text(json.dumps(meta,indent=2)+'\n')
-    for sig,handler in previous.items():signal.signal(sig,handler)
     return meta
 
 @exclusive_output('.extraction.lock')
@@ -189,8 +242,24 @@ def extract_run(out,output='spectrum.npz',channels=None,stop_time=None):
     reference.prepare_surface(config['surface'])
     transform=h.transform if hasattr(h,'transform') else None
     diagnostics={'requested_times':[s for s in config.get('ionic_transfer_times',[]) if s<=t[-1]]}
-    b,pes=extract(reference,f,t,avec,labels,energy,(theta,phi),dt,substeps=config.get('surface_stride',1),angular_transform=transform,
-                  propagator=config.get('ionic_propagator','expm'),diagnostics=diagnostics)
+    gauge=config.get('gauge',{'type':'velocity'})
+    from scipy.sparse import issparse
+    if gauge['type']=='mixed' or (transform is not None and issparse(transform)):
+        from surface_projection import project,integrate
+        factory=None;ionic_field=None
+        if gauge['type']=='mixed':
+            from mixed_gauge import MixedIonic,parameters
+            electric=electric_function(config)
+            factory=lambda base,m:MixedIonic(base,m,gauge['inner'],gauge['outer'])
+            ionic_field=lambda t:parameters(avec,electric,t)
+        q,lm,_=project(reference,f,t,avec,labels,dt,substeps=config.get('surface_stride',1),angular_transform=transform,
+                       propagator=config.get('ionic_propagator','expm'),diagnostics=diagnostics,ion_factory=factory,
+                       ionic_field=ionic_field)
+        b,pes=integrate(q,lm,reference.r[reference.surface_indices].real,reference.grid.weights[reference.surface_indices].real,
+                        t,avec,energy,(theta,phi),dt)
+    else:
+        b,pes=extract(reference,f,t,avec,labels,energy,(theta,phi),dt,substeps=config.get('surface_stride',1),angular_transform=transform,
+                      propagator=config.get('ionic_propagator','expm'),diagnostics=diagnostics)
     if config.get('M',0)==0:
         from scipy.integrate import simpson
         total=2*np.pi*simpson(pes*np.sin(theta),x=theta,axis=2)
@@ -211,9 +280,10 @@ def main():
     parser.add_argument('--backend',choices=['fortran','torch'],default='fortran')
     parser.add_argument('--device',default='cuda:0');parser.add_argument('--ground-cache')
     parser.add_argument('--coulomb-contraction',choices=['sparse','blocks'],help='equivalent contraction implementation; recorded separately from physical configuration')
+    parser.add_argument('--preconditioner-precision',choices=['complex128','complex64'],default='complex128')
     parser.add_argument('--spectrum-name',default='spectrum.npz');parser.add_argument('--all-n2',action='store_true')
     parser.add_argument('--stop-time',type=float,help='extract only this prefix; requires --spectrum-name')
     a=parser.parse_args()
     if a.extract:extract_run(a.out,a.spectrum_name,[[1,0,0],[2,0,0],[2,1,-1],[2,1,0],[2,1,1]] if a.all_n2 else None,a.stop_time)
-    else:run(json.loads(Path(a.config).read_text()),a.out,a.resume,a.max_steps,a.backend,a.device,a.ground_cache,a.coulomb_contraction)
+    else:run(json.loads(Path(a.config).read_text()),a.out,a.resume,a.max_steps,a.backend,a.device,a.ground_cache,a.coulomb_contraction,a.preconditioner_precision)
 if __name__=='__main__':main()

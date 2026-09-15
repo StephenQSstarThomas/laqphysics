@@ -1,0 +1,61 @@
+{
+  "scope": "prepared He+ 2p+1 driven by counter-rotating 224-cycle pulse at omega=5/36; final bound populations",
+  "reference": "results/followup/ion_2p_counter",
+  "reference_P_3p": 0.00011956055437976555,
+  "criteria": {
+    "relative_P_3p_change": 0.02,
+    "final_P_3d_maximum": 1e-10
+  },
+  "all_defined_ion_axes_passed": false,
+  "comparisons": [
+    {
+      "case": "inner10",
+      "status": "passed",
+      "P_3p": 0.00011956055434799718,
+      "relative_P_3p_change": -2.657094544389338e-10,
+      "P_3d": 1.159500184663385e-15,
+      "P_3p_m_minus1": 0.00011956055434799718,
+      "inner_norm": 0.9999982013090759,
+      "bound_population_L1_difference": 7.262641937830086e-14,
+      "maximum_linear_residual": 4.353113818746866e-15
+    },
+    {
+      "case": "outer8",
+      "status": "passed",
+      "P_3p": 0.00011956053659156986,
+      "relative_P_3p_change": -1.4877980270000535e-07,
+      "P_3d": 1.1595000525162852e-15,
+      "P_3p_m_minus1": 0.00011956053659156986,
+      "inner_norm": 0.9999982013141068,
+      "bound_population_L1_difference": 4.907226452795976e-11,
+      "maximum_linear_residual": 2.2187048028238888e-15
+    },
+    {
+      "case": "l6",
+      "status": "passed",
+      "P_3p": 0.00011956055439603014,
+      "relative_P_3p_change": 1.3603651538574013e-10,
+      "P_3d": 1.1595002324016886e-15,
+      "P_3p_m_minus1": 0.00011956055439603014,
+      "inner_norm": 0.999998201306338,
+      "bound_population_L1_difference": 2.6684138467870404e-12,
+      "maximum_linear_residual": 2.142131951488549e-15
+    },
+    {
+      "case": "dt0125",
+      "status": "pending"
+    },
+    {
+      "case": "extent80",
+      "status": "pending"
+    },
+    {
+      "case": "tail36",
+      "status": "pending"
+    },
+    {
+      "case": "angle06",
+      "status": "pending"
+    }
+  ]
+}

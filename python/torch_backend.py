@@ -41,17 +41,23 @@ class TorchHamiltonian:
         if coulomb_backend=='blocks':
             # Coulomb is diagonal in total L (coupled basis), or conserves M and
             # parity (product basis). Sum multipoles ONCE per radial node pair.
-            keys=[L for l,j,L in h.basis] if hasattr(h,'basis') else [(m+mm,(l+ll)%2) for (l,m),(ll,mm) in h.ch]
-            groups=[np.array([i for i,k in enumerate(keys) if k==key]) for key in sorted(set(keys))]
+            keys=[(b[2],b[3] if len(b)>3 else 0,(b[0]+b[1])%2) for b in h.basis] if hasattr(h,'basis') else [(m+mm,(l+ll)%2) for (l,m),(ll,mm) in h.ch]
+            unique_keys=sorted(set(keys));groups=[np.array([i for i,k in enumerate(keys) if k==key]) for key in unique_keys]
             matrices=np.array(potential_matrices);radial=torch.stack(self.rad).reshape(len(self.rad),-1).T.contiguous()
-            for group in groups:
+            shared={}
+            for key,group in zip(unique_keys,groups):
                 outside=np.array([i for i in range(h.nc) if i not in group])
                 if len(outside) and np.max(abs(matrices[:,group[:,None],outside]))>1e-12:
                     raise ValueError('Coulomb violates requested symmetry blocks')
                 block=matrices[:,group[:,None],group]
-                W=(radial@tensor(block.reshape(len(self.rad),-1))).reshape(h.n*h.n,len(group),len(group))
+                storage_key=(key[0],key[2]) if hasattr(h,'basis') else key
+                if storage_key in shared:
+                    previous,W=shared[storage_key]
+                    if previous.shape!=block.shape or np.max(abs(previous-block))>1e-12:raise ValueError('inconsistent rotational Coulomb blocks')
+                else:
+                    W=(radial@tensor(block.reshape(len(self.rad),-1))).reshape(h.n*h.n,len(group),len(group))
+                    shared[storage_key]=(block,W);self.coulomb_block_bytes+=W.numel()*W.element_size()
                 self.coulomb_blocks.append((torch.as_tensor(group,device=self.device),W))
-                self.coulomb_block_bytes+=W.numel()*W.element_size()
         C=np.zeros((2,3,h.nc,h.nc),complex);L=np.zeros_like(C)
         for a in range(h.nc):
             for j in range(h.dptr[a],h.dptr[a+1]):

@@ -1,0 +1,15 @@
+{
+  "completed": [
+    "inner10",
+    "outer8",
+    "l6"
+  ],
+  "running": [],
+  "pending": [
+    "dt0125",
+    "extent80",
+    "tail36",
+    "angle06"
+  ],
+  "status": "Stopped for minimum handoff; four further refinements remain pending."
+}

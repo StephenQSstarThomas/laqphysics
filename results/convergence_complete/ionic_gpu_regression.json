@@ -1,0 +1,5 @@
+{
+  "relative_amplitude_L2": 3.1031089680859675e-11,
+  "max_relative_amplitude": 3.3359194870425087e-11,
+  "source": "full 180-cycle small-model spectrum; sparse-LU vs CUDA flexible-GMRES ionic adjoint"
+}

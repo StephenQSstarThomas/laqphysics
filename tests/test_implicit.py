@@ -53,3 +53,25 @@ def test_torch_cf4_scalar_phase_and_time_ordering(a2_coefficient):
         for i in range(round(.4/dt)):x,info=cf4_step(engine,x,field,i*dt,dt,-2.9,tol=1e-13)
         errors.append(np.linalg.norm(x.numpy()-exact))
     assert errors[1]<errors[0]/12
+
+def test_flexible_gmres_with_single_precision_preconditioning():
+    from implicit import gmres
+    rng=np.random.default_rng(31);A=np.diag(np.geomspace(1,1000,12)).astype(complex)
+    A+=.03*(rng.normal(size=A.shape)+1j*rng.normal(size=A.shape))
+    b=rng.normal(size=12)+1j*rng.normal(size=12)
+    matrix=torch.tensor(A);rhs=torch.tensor(b);pre=torch.tensor(1/np.diag(A),dtype=torch.complex64)
+    x,info=gmres(lambda y:matrix@y,rhs,lambda y:(pre*y.to(torch.complex64)).to(torch.complex128),tol=1e-12,restart=16,flexible=True)
+    assert x.dtype==torch.complex128 and info['relative_residual']<1e-12
+    np.testing.assert_allclose(x.numpy(),np.linalg.solve(A,b),rtol=1e-10,atol=1e-11)
+
+def test_single_precision_ionic_preconditioner_preserves_double_solution():
+    h=Helium(make_grid([0,.5,1,2,4],3,ecs_angle=.4,tail=6),1,M=None)
+    op=TorchHamiltonian(h,'cpu');rng=np.random.default_rng(810)
+    x=rng.normal(size=h.size)+1j*rng.normal(size=h.size);x/=np.linalg.norm(x);state=op.state(x)
+    A=lambda t:np.array([.02*np.cos(t),.01*np.sin(t),.03])
+    answers=[]
+    for precision in ['complex128','complex64']:
+        op.separable=SeparablePreconditioner(op,precision)
+        y,info=cf4_step(op,state,A,0,.02,-2.9,tol=1e-12);answers.append(op.host(y))
+        assert y.dtype==torch.complex128 and info['linear_residual']<=1e-12
+    np.testing.assert_allclose(answers[0],answers[1],rtol=1e-9,atol=1e-10)

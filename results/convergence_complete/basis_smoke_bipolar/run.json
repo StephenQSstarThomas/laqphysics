@@ -1,0 +1,114 @@
+{
+  "signature": "a41592225b2f9a8b0ccf80d86418dc9b9da6cbb4ceed46bf17942d8c1bc9c10b",
+  "config": {
+    "radial": {
+      "edges": [
+        0,
+        0.25,
+        0.5,
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        10,
+        12,
+        16
+      ],
+      "order": 4,
+      "tail": 16,
+      "ecs_angle": 0.5,
+      "alpha": 0.8
+    },
+    "lmax": 2,
+    "M": null,
+    "cutoff_radii": [
+      4,
+      6
+    ],
+    "surface": 10,
+    "pulses": [
+      {
+        "pulse": {
+          "omega": 1.5,
+          "cycles": 3,
+          "field": 0.02
+        },
+        "polarization": "sigma+"
+      }
+    ],
+    "post_time": 25,
+    "dt": 0.08,
+    "surface_stride": 1,
+    "checkpoint_every": 200,
+    "ground_tolerance": 1e-10,
+    "linear_tolerance": 1e-11,
+    "time_integrator": "cf4-pade",
+    "ionic_propagator": "cf4",
+    "coulomb_contraction": "blocks",
+    "max_surface_gib": 8,
+    "spectrum_energy": [
+      0.1,
+      1.2,
+      111
+    ],
+    "ionic_channels": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        -1
+      ],
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        2,
+        1,
+        1
+      ]
+    ],
+    "angular_representation": "bipolar",
+    "total_Lmax": 4,
+    "natural_parity": false
+  },
+  "ground_energy": -2.901299622660015,
+  "ground_residual": 3.920905008216257e-11,
+  "nrad": 60,
+  "channels": 81,
+  "dt": 0.07992844811565782,
+  "nsteps": 470,
+  "completed_steps": 470,
+  "complete": true,
+  "surface_bytes": 183124800,
+  "surface_indices": [
+    35,
+    36,
+    37,
+    38,
+    39
+  ],
+  "seconds_this_invocation": 420.3321065560449,
+  "backend": "torch",
+  "device": "cpu",
+  "precision": "complex128",
+  "ground_angular_basis": "coupled total L=0, expanded without angular approximation",
+  "time_integrator": "cf4-pade",
+  "gauge": {
+    "type": "velocity"
+  },
+  "ground_projection_scope": "field-free basis in the propagated gauge; compare physical populations at A=0",
+  "coulomb_contraction": "blocks",
+  "precomputed_coulomb_bytes": 3168000,
+  "preconditioner_precision": "complex64",
+  "linear_solver": "FGMRES",
+  "maximum_linear_residual_this_invocation": 8.926773845450349e-12,
+  "linear_iterations_this_invocation": 7494
+}

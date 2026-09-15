@@ -1,0 +1,17 @@
+{
+  "rows": [
+    {
+      "method": "sparse_lu",
+      "setup_seconds": 7.430091500282288e-06,
+      "20_step_seconds": 6.133565057069063
+    },
+    {
+      "method": "cpu_flexible",
+      "setup_seconds": 0.32858088379725814,
+      "20_step_seconds": 2.817378722829744
+    }
+  ],
+  "relative_state_difference": 1.375636740863931e-13,
+  "ionic_dof": 3780,
+  "rhs": 4
+}

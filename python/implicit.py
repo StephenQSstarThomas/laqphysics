@@ -15,32 +15,35 @@ class SeparablePreconditioner:
     Electron repulsion and A.p stay in the true GMRES operator, not in this
     preconditioner. No approximation is made to the converged linear solve.
     """
-    def __init__(self,engine):
+    def __init__(self,engine,precision='complex128'):
         h=engine.h;self.engine=engine
-        labels=[(l,j) for l,j,L in h.basis] if hasattr(h,'basis') else [(a[0],b[0]) for a,b in h.ch]
+        labels=[tuple(b[:2]) for b in h.basis] if hasattr(h,'basis') else [(a[0],b[0]) for a,b in h.ch]
         maxl=max(max(p) for p in labels);T=h.grid.kinetic.toarray();r=h.r
         values=[];vectors=[];inverses=[];conditions=[]
         for l in range(maxl+1):
             H=T+np.diag(-2*h.cut/r+l*(l+1)/(2*r*r));e,S=eig(H)
             conditions.append(float(np.linalg.cond(S)));values.append(e);vectors.append(S);inverses.append(inv(S))
         if max(conditions)>1e12:raise RuntimeError('ionic eigenbasis too ill-conditioned for separable preconditioner')
-        self.condition_numbers=conditions
-        self.S1=engine.tensor(np.array([vectors[a] for a,b in labels]));self.S2=engine.tensor(np.array([vectors[b] for a,b in labels]))
-        self.I1=engine.tensor(np.array([inverses[a] for a,b in labels]));self.I2=engine.tensor(np.array([inverses[b] for a,b in labels]))
-        self.energy=engine.tensor(np.array([values[b][:,None]+values[a][None,:] for a,b in labels]))
+        if precision not in ('complex128','complex64'):raise ValueError('invalid preconditioner precision')
+        self.condition_numbers=conditions;self.precision=precision;self.flexible=precision=='complex64'
+        self.dtype=torch.complex64 if self.flexible else torch.complex128
+        convert=lambda x:torch.as_tensor(np.array(x),dtype=self.dtype,device=engine.device)
+        self.S1=convert([vectors[a] for a,b in labels]);self.S2=convert([vectors[b] for a,b in labels])
+        self.I1=convert([inverses[a] for a,b in labels]);self.I2=convert([inverses[b] for a,b in labels])
+        self.energy=convert([values[b][:,None]+values[a][None,:] for a,b in labels])
 
     def apply(self,x,alpha,shift):
-        h=self.engine;u=x.reshape(h.nc,h.n,h.n)
+        h=self.engine;u=x.to(self.dtype).reshape(h.nc,h.n,h.n)
         z=self.I2@u@self.I1.transpose(-1,-2)
         z=z/(1+1j*alpha*(self.energy+shift))
-        return (self.S2@z@self.S1.transpose(-1,-2)).reshape(-1)
+        return (self.S2@z@self.S1.transpose(-1,-2)).reshape(-1).to(x.dtype)
 
 SQRT3=np.sqrt(3.)
 C1=.5-SQRT3/6;C2=.5+SQRT3/6
 A1=(3-2*SQRT3)/12;A2=(3+2*SQRT3)/12
 
 @torch.no_grad()
-def gmres(apply,b,preconditioner,x0=None,tol=1e-11,restart=32,max_restarts=10):
+def gmres(apply,b,preconditioner,x0=None,tol=1e-11,restart=32,max_restarts=10,flexible=False):
     M=preconditioner if callable(preconditioner) else lambda y:preconditioner*y
     x=b.clone() if x0 is None else x0.clone();bnorm=torch.linalg.vector_norm(b).item()
     if bnorm==0:return torch.zeros_like(b),{'iterations':0,'relative_residual':0.}
@@ -49,17 +52,21 @@ def gmres(apply,b,preconditioner,x0=None,tol=1e-11,restart=32,max_restarts=10):
         r=b-apply(x);beta=torch.linalg.vector_norm(r).item()
         if beta<=tol*bnorm:return x,{'iterations':iterations,'relative_residual':beta/bnorm}
         Q=torch.empty((restart+1,b.numel()),dtype=b.dtype,device=b.device).T
+        Z=torch.empty((restart,b.numel()),dtype=b.dtype,device=b.device).T if flexible else None
         H=torch.zeros((restart+1,restart),dtype=b.dtype,device=b.device);Q[:,0]=r/beta
         for j in range(restart):
-            v=apply(M(Q[:,j].contiguous()));iterations+=1
+            preconditioned=M(Q[:,j].contiguous())
+            if flexible:Z[:,j]=preconditioned
+            v=apply(preconditioned);iterations+=1
             for rep in range(2):
                 z=Q[:,:j+1].mH@v;H[:j+1,j]+=z;v-=Q[:,:j+1]@z
             norm=torch.linalg.vector_norm(v).item();H[j+1,j]=norm
-            if norm<1e-14 or (j+1)%4==0 or j+1==restart:
+            if norm<1e-14 or (j+1)%(2 if flexible else 4)==0 or j+1==restart:
                 m=j+1;small=H[:m+1,:m].cpu().numpy();rhs=np.zeros(m+1,complex);rhs[0]=beta
                 y=np.linalg.lstsq(small,rhs,rcond=None)[0];estimate=np.linalg.norm(rhs-small@y)
                 if estimate<tol*bnorm or norm<1e-14 or m==restart:
-                    candidate=x+M(Q[:,:m]@torch.as_tensor(y,dtype=b.dtype,device=b.device))
+                    coefficients=torch.as_tensor(y,dtype=b.dtype,device=b.device)
+                    candidate=x+(Z[:,:m]@coefficients if flexible else M(Q[:,:m]@coefficients))
                     true=torch.linalg.vector_norm(b-apply(candidate)).item()/bnorm
                     if true<=tol:return candidate,{'iterations':iterations,'relative_residual':true}
                     if norm<1e-14 or m==restart:x=candidate;break
@@ -76,7 +83,8 @@ def pade_step(engine,x,field,dt,reference_energy=0.,tol=1e-11):
         alpha=dt/root
         def A(y):return y+1j*alpha*K(y)
         preconditioner=(lambda y:engine.separable.apply(y,alpha,a2*sum(float(a)**2 for a in field)-reference_energy)) if hasattr(engine,'separable') else 1/(1+1j*alpha*diagonal)
-        s,info=gmres(A,x,preconditioner,tol=tol)
+        flexible=getattr(getattr(engine,'separable',None),'flexible',False)
+        s,info=gmres(A,x,preconditioner,tol=tol,flexible=flexible,restart=16 if flexible else 32)
         x=2*s-x;iterations+=info['iterations'];residual=max(residual,info['relative_residual'])
     return x,{'linear_iterations':iterations,'linear_residual':residual}
 

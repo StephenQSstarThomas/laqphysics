@@ -1,0 +1,44 @@
+[
+  {
+    "case": "pump_probe_plus",
+    "bytes": 2509626368,
+    "sha256": "0342414e58759e0d69d632b2ab4ac4b809c5442a74b6c5ed08b6ddec0c0de37a",
+    "new_path": "/playpen1/shiqiu/laqphysics-data/migrated_followup/pump_probe_plus/flux.npy"
+  },
+  {
+    "case": "pump_probe_minus",
+    "bytes": 2509626368,
+    "sha256": "c8baf96ce805ac09d5db1b7f9e38982ebcad2e9c54bb9c7cc660b8528a1dd794",
+    "new_path": "/playpen1/shiqiu/laqphysics-data/migrated_followup/pump_probe_minus/flux.npy"
+  },
+  {
+    "case": "res_l6_L2_p4",
+    "bytes": 2190126528,
+    "sha256": "1e60c0a7c95057f0ab6e3b5b1d57c03ff78dd8d9f6ed5d3b27cf1db9d832fa97",
+    "new_path": "/playpen1/shiqiu/laqphysics-data/migrated_followup/res_l6_L2_p4/flux.npy"
+  },
+  {
+    "case": "pump_only",
+    "bytes": 684858368,
+    "sha256": "bc70da703acc9fdfa1341f50bcb6d82d54ea8d82624167b68680efdd52286c4b",
+    "new_path": "/playpen1/shiqiu/laqphysics-data/migrated_followup/pump_only/flux.npy"
+  },
+  {
+    "case": "pump_probe_linear",
+    "bytes": 588677888,
+    "sha256": "c11b4955ce75c20701a77d53b9628c9b4cee207f37e5bc4731a6315a22638ca9",
+    "new_path": "/playpen1/shiqiu/laqphysics-data/migrated_followup/pump_probe_linear/flux.npy"
+  },
+  {
+    "case": "circular_plus",
+    "bytes": 316483328,
+    "sha256": "2d0c01f49e987ce54d61d3b196e8bb996b3fa78ffe127a288505c4ad814be67d",
+    "new_path": "/playpen1/shiqiu/laqphysics-data/migrated_followup/circular_plus/flux.npy"
+  },
+  {
+    "case": "circular_minus",
+    "bytes": 316483328,
+    "sha256": "ecc6287f687aaca91d4c4f262b33c3231c334115926593ef4701d606dd404455",
+    "new_path": "/playpen1/shiqiu/laqphysics-data/migrated_followup/circular_minus/flux.npy"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "comparison": "same physical times, inner radial order 12 vs 14",
+  "through_step": 13984,
+  "number_of_common_checkpoints": 70,
+  "max_inner_norm_absolute_difference": 7.4478647665854325e-06,
+  "max_ground_population_absolute_difference": 7.447864834086992e-06,
+  "scope": "complete propagation diagnostic; spectral convergence still requires extracted spectra"
+}

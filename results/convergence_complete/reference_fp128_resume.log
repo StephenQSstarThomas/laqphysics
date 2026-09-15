@@ -1,0 +1,13 @@
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+3D 400/13984, inner norm=1.00000000, Pg=0.99999950, wall=259.8s
+3D 600/13984, inner norm=0.99999998, Pg=0.99999620, wall=512.9s
+3D 800/13984, inner norm=0.99999948, Pg=0.99998290, wall=666.0s
+3D 1000/13984, inner norm=0.99999602, Pg=0.99994854, wall=775.7s
+3D 1200/13984, inner norm=0.99998327, Pg=0.99987810, wall=885.4s
+3D 1400/13984, inner norm=0.99994929, Pg=0.99973646, wall=995.2s
+3D 1600/13984, inner norm=0.99987515, Pg=0.99948189, wall=1105.0s
+3D 1656/13984, inner norm=0.99984373, Pg=0.99940473, wall=1136.1s
+Checkpoint saved; resume this campaign to continue.

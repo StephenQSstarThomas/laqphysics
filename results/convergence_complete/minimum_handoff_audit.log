@@ -1,0 +1,14 @@
+PASS tests_release.log
+PASS tests_debug.log
+PASS tests_cuda_final.log
+PASS bipolar_end_to_end.json
+PASS ionic_gpu_regression.json
+PASS precision_regression.json
+PASS projection_physical_regression.json
+PASS pure_gauge_wavefunctions.json
+PASS gauge_smoke_comparison.json
+PASS bipolar_cuda_check.json
+PASS reference full production path
+PASS inner14 full production path
+PASS near-nuclear radial 12 -> 14
+PASS original input integrity

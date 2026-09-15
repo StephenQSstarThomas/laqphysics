@@ -1,0 +1,33 @@
+{
+  "python": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:13:31) [GCC 14.3.0]",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.39",
+  "numpy": "2.4.4",
+  "scipy": "1.15.3",
+  "torch": "2.11.0+cu130",
+  "torch_cuda": "13.0",
+  "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "slurm_sbatch": null,
+  "slurm_sinfo": null,
+  "source_sha256": {
+    "python/implicit.py": "6c1f708aa7bc79918158f2e1284af48192c0c745aadb594e0c70783115661ecc",
+    "python/bipolar.py": "cc7e4053ebe5323a383844d7f649e9781729b8b45eb2e58ecceeb5ac8d6f2054",
+    "python/mixed_gauge.py": "2642cf5a7fac6f68f0473a7087f4e342c70ca191b9ad21e99224042c1ba6b599",
+    "python/surface_projection.py": "8cf37b40e5587dd9c98598fc18bbfac9d4aa7043102e4572430ef28a7dc5a018",
+    "python/ionic_adjoint.py": "0edd8f1f8841a98cc22cbd1ebc7bf30cf14dbd9faae3d05f9b8549125ee739f9",
+    "python/run3d.py": "63ab2d3a4ed436c2a3dc4fc87e60e0c9e032ecca30edd58d83759f28972dd789",
+    "python/torch_backend.py": "70531b5b77049126998d5886b1a82e6f6b47cc2a1eba34db9a6db6561fda8c70",
+    "src/kernels.f90": "848a17da5c8da2029cdb9a58084af0d603e56f98b2ca12ebca3a844ae1d9ebb8",
+    "python/tdse1d.py": "7479dc8a7ff889eb25c37b078f856f7cd144873742ed2e5f5b3137716a93e0f0",
+    "scripts/extract_projected.py": "31b8cef0ef291376e38591bcfd2e67d4729383e1d84030db6576a62a585d839c",
+    "scripts/minimum_handoff_audit.py": "07137aff8edc9da50eca297de6e62087cf933e277c96421d40bdb727cd132a99",
+    "python/convergence.py": "994b4c0252bf9853f8848cac48493cf461b1a9e85e2f7b7b3d2ee7cbd5809e38",
+    "scripts/convergence_complete.slurm": "00baeb28ad6c0d6f0297041d94d19d1ce30aa9b3670532120c8e4e163e1781f0"
+  },
+  "test_threads": {
+    "OMP_NUM_THREADS": 2,
+    "OPENBLAS_NUM_THREADS": 1
+  },
+  "gpu": "index, name, memory.total [MiB]\n0, NVIDIA RTX 6000 Ada Generation, 49140 MiB\n1, NVIDIA RTX 6000 Ada Generation, 49140 MiB\n2, NVIDIA RTX 6000 Ada Generation, 49140 MiB\n3, NVIDIA RTX 6000 Ada Generation, 49140 MiB\n4, NVIDIA RTX 6000 Ada Generation, 49140 MiB\n5, NVIDIA RTX 6000 Ada Generation, 49140 MiB\n6, NVIDIA RTX 6000 Ada Generation, 49140 MiB\n7, NVIDIA RTX 6000 Ada Generation, 49140 MiB\n",
+  "delivery_numerical_snapshot": "/playpen1/shiqiu/laqphysics-data/convergence_work/code/a28e831eca61b586",
+  "finalized_utc": "2026-09-15T23:21:35.662641+00:00"
+}

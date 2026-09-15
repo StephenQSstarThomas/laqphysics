@@ -1,0 +1,81 @@
+{
+  "config": {
+    "radial": {
+      "edges": [
+        0,
+        0.25,
+        0.5,
+        1,
+        2,
+        4,
+        6,
+        8,
+        12,
+        16,
+        24,
+        32,
+        40,
+        50,
+        60
+      ],
+      "order": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "tail": 28,
+      "ecs_angle": 0.5,
+      "alpha": 0.8
+    },
+    "lmax": 6,
+    "initial": [
+      2,
+      1,
+      1
+    ],
+    "dt": 0.25,
+    "linear_tolerance": 1e-11,
+    "pulses": [
+      {
+        "pulse": {
+          "omega": 0.1388888888888889,
+          "cycles": 224,
+          "field": 0.003
+        },
+        "polarization": "sigma-"
+      }
+    ]
+  },
+  "signature": "0f1442a980bf354f5e781339a32608abf92a40f18dfb3bc89e4d5f7f8f37c628",
+  "dt": 0.249994357059806,
+  "steps": 40535,
+  "completed_steps": 40535,
+  "complete": true,
+  "maximum_linear_residual": 2.142131951488549e-15,
+  "seconds_this_invocation": 4340.202419998823,
+  "P_3p": 0.00011956055439603014,
+  "P_3d": 1.1595002324016886e-15,
+  "inner_norm": 0.999998201306338,
+  "bound_n_le_6_probability": 0.9999982011061002,
+  "scope": "prepared He+ one-electron TDSE; continuum present, only n<=6 bound populations reported",
+  "eigenbasis_condition_numbers": [
+    20808.103345263127,
+    21050.321285158312,
+    22565.498697502288,
+    26077.997929323392,
+    24554.517471753443,
+    27251.17455285237,
+    43714.67705551759
+  ]
+}

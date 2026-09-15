@@ -1,0 +1,45 @@
+/playpen/shiqiu/task-jiukongdian/python/ionic_tdse.py:50: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.size,self.size),device=self.device,check_invariants=False)
+/playpen/shiqiu/task-jiukongdian/python/ionic_tdse.py:50: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.size,self.size),device=self.device,check_invariants=False)
+ION 1000/40535, P3p=5.784319e-17, P3d=1.04e-08, wall=83.4s
+ION 2000/40535, P3p=4.255996e-14, P3d=1.66e-07, wall=168.3s
+ION 3000/40535, P3p=2.21648e-12, P3d=8.23e-07, wall=253.1s
+ION 4000/40535, P3p=3.680164e-11, P3d=2.53e-06, wall=339.3s
+ION 5000/40535, P3p=3.210492e-10, P3d=5.96e-06, wall=424.5s
+ION 6000/40535, P3p=1.848573e-09, P3d=1.18e-05, wall=509.2s
+ION 7000/40535, P3p=7.940314e-09, P3d=2.08e-05, wall=594.3s
+ION 8000/40535, P3p=2.737352e-08, P3d=3.33e-05, wall=679.1s
+ION 9000/40535, P3p=7.938709e-08, P3d=4.97e-05, wall=762.8s
+ION 10000/40535, P3p=2.000444e-07, P3d=7e-05, wall=846.9s
+ION 11000/40535, P3p=4.484281e-07, P3d=9.39e-05, wall=932.6s
+ION 12000/40535, P3p=9.106726e-07, P3d=0.000121, wall=1016.4s
+ION 13000/40535, P3p=1.700345e-06, P3d=0.000149, wall=1099.5s
+ION 14000/40535, P3p=2.954554e-06, P3d=0.000179, wall=1185.4s
+ION 15000/40535, P3p=4.825116e-06, P3d=0.000207, wall=1271.9s
+ION 16000/40535, P3p=7.463317e-06, P3d=0.000234, wall=1357.7s
+ION 17000/40535, P3p=1.099819e-05, P3d=0.000257, wall=1444.9s
+ION 18000/40535, P3p=1.551334e-05, P3d=0.000274, wall=1531.0s
+ION 19000/40535, P3p=2.103125e-05, P3d=0.000286, wall=1617.0s
+ION 20000/40535, P3p=2.751012e-05, P3d=0.000292, wall=1701.9s
+ION 21000/40535, P3p=3.484779e-05, P3d=0.00029, wall=1788.2s
+ION 22000/40535, P3p=4.288479e-05, P3d=0.000282, wall=1874.3s
+ION 23000/40535, P3p=5.140789e-05, P3d=0.000267, wall=1959.8s
+ION 24000/40535, P3p=6.01644e-05, P3d=0.000246, wall=2045.5s
+ION 25000/40535, P3p=6.888955e-05, P3d=0.000222, wall=2132.4s
+ION 26000/40535, P3p=7.733568e-05, P3d=0.000194, wall=2218.6s
+ION 27000/40535, P3p=8.52882e-05, P3d=0.000165, wall=2304.4s
+ION 28000/40535, P3p=9.256782e-05, P3d=0.000136, wall=2390.6s
+ION 29000/40535, P3p=9.902927e-05, P3d=0.000108, wall=2476.1s
+ION 30000/40535, P3p=0.0001045663, P3d=8.24e-05, wall=2560.8s
+ION 31000/40535, P3p=0.0001091218, P3d=6.01e-05, wall=2645.7s
+ION 32000/40535, P3p=0.0001126966, P3d=4.16e-05, wall=2732.0s
+ION 33000/40535, P3p=0.0001153501, P3d=2.7e-05, wall=2819.6s
+ION 34000/40535, P3p=0.0001171923, P3d=1.62e-05, wall=2909.2s
+ION 35000/40535, P3p=0.0001183697, P3d=8.74e-06, wall=2994.8s
+ION 36000/40535, P3p=0.000119046, P3d=4.1e-06, wall=3081.1s
+ION 37000/40535, P3p=0.0001193822, P3d=1.56e-06, wall=3168.3s
+ION 38000/40535, P3p=0.0001195174, P3d=4.24e-07, wall=3252.1s
+ION 39000/40535, P3p=0.0001195555, P3d=5.78e-08, wall=3337.4s
+ION 40000/40535, P3p=0.0001195605, P3d=8.7e-10, wall=3422.8s
+ION 40535/40535, P3p=0.0001195606, P3d=1.16e-15, wall=3468.4s

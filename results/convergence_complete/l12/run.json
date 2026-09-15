@@ -1,0 +1,154 @@
+{
+  "signature": "0a915676a9149b57224df7090c5acb454d2c94d20997b355e527794878a0b9ee",
+  "config": {
+    "radial": {
+      "edges": [
+        0,
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.25,
+        1.5,
+        2,
+        2.5,
+        3,
+        4,
+        5,
+        6,
+        8,
+        10,
+        12,
+        16,
+        20,
+        24,
+        28
+      ],
+      "order": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "tail": 24,
+      "ecs_angle": 0.5,
+      "alpha": 0.8
+    },
+    "lmax": 12,
+    "M": 0,
+    "cutoff_radii": [
+      12,
+      16
+    ],
+    "surface": 20,
+    "pulses": [
+      {
+        "pulse": {
+          "omega": 1.5,
+          "cycles": 180,
+          "field": 0.0534
+        },
+        "polarization": "z"
+      }
+    ],
+    "post_time": 85,
+    "dt": 0.06,
+    "surface_stride": 1,
+    "checkpoint_every": 200,
+    "krylov_dimension": 48,
+    "krylov_tolerance": 1e-10,
+    "ground_tolerance": 1e-10,
+    "max_surface_gib": 64,
+    "spectrum_energy": [
+      0.54,
+      0.65,
+      221
+    ],
+    "total_Lmax": 3,
+    "time_integrator": "cf4-pade",
+    "ionic_propagator": "cf4",
+    "linear_tolerance": 1e-10,
+    "coulomb_contraction": "blocks",
+    "ionic_channels": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        -1
+      ],
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        2,
+        1,
+        1
+      ]
+    ]
+  },
+  "ground_energy": -2.9036356143079725,
+  "ground_residual": 7.237589538924562e-11,
+  "nrad": 180,
+  "channels": 113,
+  "dt": 0.05999586934078593,
+  "nsteps": 13984,
+  "completed_steps": 2205,
+  "complete": false,
+  "surface_bytes": 31858948800,
+  "surface_indices": [
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149
+  ],
+  "seconds_this_invocation": 727.008547782898,
+  "backend": "torch",
+  "device": "cuda:0",
+  "precision": "complex128",
+  "ground_angular_basis": "coupled total L=0, expanded without angular approximation",
+  "time_integrator": "cf4-pade",
+  "gauge": {
+    "type": "velocity"
+  },
+  "ground_projection_scope": "field-free basis in the propagated gauge; compare physical populations at A=0",
+  "coulomb_contraction": "blocks",
+  "precomputed_coulomb_bytes": 1899936000,
+  "preconditioner_precision": "complex64",
+  "linear_solver": "FGMRES",
+  "gmres_restart": 16,
+  "maximum_linear_residual_this_invocation": 9.997362713695818e-11,
+  "linear_iterations_this_invocation": 33680,
+  "numerical_snapshot": "2210b4a7fc4eb18e3b668e91001432a67b084386ad0ab4d4bdaf87e3ae71c9e3",
+  "cuda_visible_devices": "0",
+  "peak_cuda_allocated_GiB": 4.701552391052246,
+  "peak_cuda_reserved_GiB": 5.173828125
+}

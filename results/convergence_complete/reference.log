@@ -1,0 +1,31 @@
+ground E=-2.9036276362, residual=7.078e-11; (180, 180, 93), flux=24.419GiB
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+3D 200/13984, inner norm=1.00000000, Pg=0.99999998, wall=188.2s
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/playpen/shiqiu/task-jiukongdian/scripts/followup_campaign.py", line 45, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/playpen/shiqiu/task-jiukongdian/scripts/followup_campaign.py", line 34, in main
+    meta=run(config,out,resume=(out/'checkpoint.npz').exists(),backend=a.backend,device=a.device,ground_cache=root/'ground_cache',coulomb_contraction=a.coulomb_contraction)
+  File "/playpen/shiqiu/task-jiukongdian/python/output_lock.py", line 18, in wrapped
+    return function(*args,**kwargs)
+  File "/playpen/shiqiu/task-jiukongdian/python/run3d.py", line 134, in run
+    history.append(row);save(i+1)
+                        ~~~~^^^^^
+  File "/playpen/shiqiu/task-jiukongdian/python/run3d.py", line 105, in save
+    hist_temp.write_text(json.dumps(history,indent=2)+'\n');os.replace(hist_temp,out/'history.json')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shiqiu/miniconda3/lib/python3.13/pathlib/_local.py", line 555, in write_text
+    return PathBase.write_text(self, data, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shiqiu/miniconda3/lib/python3.13/pathlib/_abc.py", line 651, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 28] No space left on device

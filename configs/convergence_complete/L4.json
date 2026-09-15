@@ -1,0 +1,112 @@
+{
+  "radial": {
+    "edges": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1,
+      1.25,
+      1.5,
+      2,
+      2.5,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12,
+      16,
+      20,
+      24,
+      28
+    ],
+    "order": [
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "tail": 24,
+    "ecs_angle": 0.5,
+    "alpha": 0.8
+  },
+  "lmax": 10,
+  "M": 0,
+  "cutoff_radii": [
+    12,
+    16
+  ],
+  "surface": 20,
+  "pulses": [
+    {
+      "pulse": {
+        "omega": 1.5,
+        "cycles": 180,
+        "field": 0.0534
+      },
+      "polarization": "z"
+    }
+  ],
+  "post_time": 85,
+  "dt": 0.06,
+  "surface_stride": 1,
+  "checkpoint_every": 200,
+  "krylov_dimension": 48,
+  "krylov_tolerance": 1e-10,
+  "ground_tolerance": 1e-10,
+  "max_surface_gib": 64,
+  "spectrum_energy": [
+    0.54,
+    0.65,
+    221
+  ],
+  "total_Lmax": 4,
+  "time_integrator": "cf4-pade",
+  "ionic_propagator": "cf4",
+  "linear_tolerance": 1e-10,
+  "coulomb_contraction": "blocks",
+  "ionic_channels": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      -1
+    ],
+    [
+      2,
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      1
+    ]
+  ]
+}

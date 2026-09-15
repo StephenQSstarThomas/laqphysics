@@ -1,0 +1,721 @@
+{
+  "scope": "full local convergence campaign; one physical/numerical factor per comparison",
+  "all_cases_complete": false,
+  "all_defined_gates_passed": false,
+  "comparisons": [
+    {
+      "reference": "reference",
+      "refinement": "inner14",
+      "axis": "inner radial order",
+      "windows": [
+        {
+          "status": "passed",
+          "energy_window": [
+            0.54,
+            0.65
+          ],
+          "gate_channels": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ],
+          "reference_yields": [
+            0.13391077020363315,
+            0.13850731309806952
+          ],
+          "refined_yields": [
+            0.13391455466899516,
+            0.1385109304578107
+          ],
+          "normalized_shape_L1": [
+            0.003471104790176236,
+            0.0014657600463282314
+          ],
+          "relative_yield_change": [
+            2.8261097716475447e-05,
+            2.611674185493129e-05
+          ],
+          "reference_peaks": [
+            0.5883260787995057,
+            0.6042998352013527
+          ],
+          "refined_peaks": [
+            0.5883059218562795,
+            0.6042797682403401
+          ],
+          "maximum_peak_shift": 2.0156943226212753e-05,
+          "all_recorded_channel_yields": [
+            0.13391455466899516,
+            4.127376808807162e-05,
+            1.7376832041724033e-06,
+            0.1385109304578107,
+            1.7376832041724033e-06
+          ],
+          "labels": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              -1
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              2,
+              1,
+              1
+            ]
+          ]
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "reference": "reference",
+      "refinement": "outer8",
+      "axis": "outer radial order",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "l12",
+      "axis": "individual angular cutoff",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "L4",
+      "axis": "total angular cutoff",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "dt003",
+      "axis": "time step",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "extent32",
+      "axis": "real-domain extent",
+      "status": "pending"
+    },
+    {
+      "reference": "extent32",
+      "refinement": "surface24",
+      "axis": "surface radius only",
+      "status": "pending"
+    },
+    {
+      "reference": "surface24",
+      "refinement": "cutoff20",
+      "axis": "Coulomb cutoff only",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "tail32",
+      "axis": "absorber polynomial order only",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "angle06",
+      "axis": "ECS angle only",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "alpha10",
+      "axis": "Laguerre scale only",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "mixed_gauge",
+      "axis": "independent mixed/velocity gauge representation",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "reference",
+      "reference_file": "spectrum_post55.npz",
+      "refinement_file": "spectrum_post70.npz",
+      "axis": "flux integral tail 55 -> 70",
+      "windows": [
+        {
+          "status": "passed",
+          "energy_window": [
+            0.54,
+            0.65
+          ],
+          "gate_channels": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ],
+          "reference_yields": [
+            0.13391077018587583,
+            0.13850731309804007
+          ],
+          "refined_yields": [
+            0.13391077019081535,
+            0.13850731309799266
+          ],
+          "normalized_shape_L1": [
+            4.7847971166518194e-08,
+            2.8078784552028324e-09
+          ],
+          "relative_yield_change": [
+            3.6886715903960976e-11,
+            -3.4228175849193576e-13
+          ],
+          "reference_peaks": [
+            0.5883260785345791,
+            0.6042998351564958
+          ],
+          "refined_peaks": [
+            0.5883260786300715,
+            0.6042998353793951
+          ],
+          "maximum_peak_shift": 2.2289936563169022e-10,
+          "all_recorded_channel_yields": [
+            0.13391077019081535,
+            4.1271734259210886e-05,
+            1.7377269719037077e-06,
+            0.13850731309799266,
+            1.7377269719037077e-06
+          ],
+          "labels": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              -1
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              2,
+              1,
+              1
+            ]
+          ]
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "reference": "reference",
+      "refinement": "reference",
+      "reference_file": "spectrum_post70.npz",
+      "refinement_file": "spectrum.npz",
+      "axis": "flux integral tail 70 -> 85",
+      "windows": [
+        {
+          "status": "passed",
+          "energy_window": [
+            0.54,
+            0.65
+          ],
+          "gate_channels": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ],
+          "reference_yields": [
+            0.13391077019081535,
+            0.13850731309799266
+          ],
+          "refined_yields": [
+            0.13391077020363315,
+            0.13850731309806952
+          ],
+          "normalized_shape_L1": [
+            4.932892466918352e-08,
+            1.4684779244676886e-09
+          ],
+          "relative_yield_change": [
+            9.57189882910825e-11,
+            5.548894677076532e-13
+          ],
+          "reference_peaks": [
+            0.5883260786300715,
+            0.6042998353793951
+          ],
+          "refined_peaks": [
+            0.5883260787995057,
+            0.6042998352013527
+          ],
+          "maximum_peak_shift": 1.780424696562477e-10,
+          "all_recorded_channel_yields": [
+            0.13391077020363315,
+            4.1271734259343456e-05,
+            1.7377269718930057e-06,
+            0.13850731309806952,
+            1.7377269718930057e-06
+          ],
+          "labels": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              -1
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              2,
+              1,
+              1
+            ]
+          ]
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "reference": "reference",
+      "refinement": "reference",
+      "reference_file": "spectrum.npz",
+      "refinement_file": "spectrum_energy441.npz",
+      "axis": "energy sampling 221 -> 441",
+      "windows": [
+        {
+          "status": "passed",
+          "energy_window": [
+            0.54,
+            0.65
+          ],
+          "gate_channels": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ],
+          "reference_yields": [
+            0.1339107702707766,
+            0.13850731308730377
+          ],
+          "refined_yields": [
+            0.1339107702051624,
+            0.13850731309807918
+          ],
+          "normalized_shape_L1": [
+            0.0011031849206139016,
+            0.0002837842221985544
+          ],
+          "relative_yield_change": [
+            -4.89984497420437e-10,
+            7.77966580045586e-11
+          ],
+          "reference_peaks": [
+            0.5883260787995057,
+            0.6042998352013527
+          ],
+          "refined_peaks": [
+            0.5883255131401693,
+            0.6042997904704297
+          ],
+          "maximum_peak_shift": 5.656593363712048e-07,
+          "all_recorded_channel_yields": [
+            0.1339107702051624,
+            4.127173425934073e-05,
+            1.7377269718928875e-06,
+            0.13850731309807918,
+            1.7377269718928875e-06
+          ],
+          "labels": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              -1
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              2,
+              1,
+              1
+            ]
+          ]
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "reference": "reference",
+      "refinement": "reference",
+      "reference_file": "spectrum_energy441.npz",
+      "refinement_file": "spectrum_energy881.npz",
+      "axis": "energy sampling 441 -> 881",
+      "windows": [
+        {
+          "status": "passed",
+          "energy_window": [
+            0.54,
+            0.65
+          ],
+          "gate_channels": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ],
+          "reference_yields": [
+            0.13391077022156594,
+            0.13850731309538533
+          ],
+          "refined_yields": [
+            0.13391077020525652,
+            0.1385073130980798
+          ],
+          "normalized_shape_L1": [
+            0.00027567568748092713,
+            7.100492243541348e-05
+          ],
+          "relative_yield_change": [
+            -1.2179324215821907e-10,
+            1.9453549882086918e-11
+          ],
+          "reference_peaks": [
+            0.5883255131401693,
+            0.6042997904704297
+          ],
+          "refined_peaks": [
+            0.58832545628281,
+            0.6042999256847152
+          ],
+          "maximum_peak_shift": 1.3521428554597037e-07,
+          "all_recorded_channel_yields": [
+            0.13391077020525652,
+            4.127173425934055e-05,
+            1.7377269718928803e-06,
+            0.1385073130980798,
+            1.7377269718928803e-06
+          ],
+          "labels": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              -1
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              2,
+              1,
+              1
+            ]
+          ]
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "reference": "reference",
+      "refinement": "reference",
+      "reference_file": "spectrum.npz",
+      "refinement_file": "spectrum_theta121.npz",
+      "axis": "polar quadrature Simpson 61 -> 121",
+      "windows": [
+        {
+          "status": "passed",
+          "energy_window": [
+            0.54,
+            0.65
+          ],
+          "gate_channels": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ],
+          "reference_yields": [
+            0.13391077020363315,
+            0.13850731309806952
+          ],
+          "refined_yields": [
+            0.1339106599712047,
+            0.13850719887514676
+          ],
+          "normalized_shape_L1": [
+            5.776766847467831e-09,
+            4.300605706021717e-09
+          ],
+          "relative_yield_change": [
+            -8.231782125944775e-07,
+            -8.246706993952913e-07
+          ],
+          "reference_peaks": [
+            0.5883260787995057,
+            0.6042998352013527
+          ],
+          "refined_peaks": [
+            0.5883260787990952,
+            0.604299835200678
+          ],
+          "maximum_peak_shift": 6.746825320647076e-13,
+          "all_recorded_channel_yields": [
+            0.1339106599712047,
+            4.1271639076096145e-05,
+            1.7377291369510428e-06,
+            0.13850719887514676,
+            1.7377291369510428e-06
+          ],
+          "labels": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              -1
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              2,
+              1,
+              1
+            ]
+          ]
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "reference": "reference",
+      "refinement": "reference",
+      "reference_file": "spectrum_theta121.npz",
+      "refinement_file": "spectrum_gauss64.npz",
+      "axis": "polar quadrature independent Gauss 64",
+      "windows": [
+        {
+          "status": "passed",
+          "energy_window": [
+            0.54,
+            0.65
+          ],
+          "gate_channels": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ],
+          "reference_yields": [
+            0.1339106599712047,
+            0.13850719887514676
+          ],
+          "refined_yields": [
+            0.1339106526390555,
+            0.13850719127762035
+          ],
+          "normalized_shape_L1": [
+            3.8278134734896106e-10,
+            2.8496775718408e-10
+          ],
+          "relative_yield_change": [
+            -5.475403674903845e-08,
+            -5.4852935305049755e-08
+          ],
+          "reference_peaks": [
+            0.5883260787990952,
+            0.604299835200678
+          ],
+          "refined_peaks": [
+            0.5883260787990681,
+            0.6042998352006334
+          ],
+          "maximum_peak_shift": 4.463096558993129e-14,
+          "all_recorded_channel_yields": [
+            0.1339106526390555,
+            4.127163276293649e-05,
+            1.7377292797061471e-06,
+            0.13850719127762035,
+            1.7377292797061471e-06
+          ],
+          "labels": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              -1
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              2,
+              1,
+              1
+            ]
+          ]
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "reference": "dt003",
+      "refinement": "dt003",
+      "reference_file": "spectrum_stride4.npz",
+      "refinement_file": "spectrum_stride2.npz",
+      "axis": "surface time quadrature 0.12 -> 0.06",
+      "status": "pending"
+    },
+    {
+      "reference": "dt003",
+      "refinement": "dt003",
+      "reference_file": "spectrum_stride2.npz",
+      "refinement_file": "spectrum.npz",
+      "axis": "surface time quadrature 0.06 -> 0.03",
+      "status": "pending"
+    }
+  ],
+  "criteria": {
+    "peak_shift_au": 0.001,
+    "normalized_shape_L1": 0.02,
+    "relative_yield": 0.02,
+    "gate_channels": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ]
+  },
+  "completion_requires": "All propagation pairs, post-time and energy/angular extraction refinements, and an independent mixed/velocity gauge check must pass. Then validate multipulse regimes. No peak alignment. Failed axes require another refinement."
+}

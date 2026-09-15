@@ -1,0 +1,15 @@
+{
+  "snapshot": "/playpen1/shiqiu/laqphysics-data/convergence_work/code/e9a49ea5447628e9",
+  "gpu": "2",
+  "completed_propagations": [],
+  "completed_spectra": [],
+  "pending": [
+    "tail32",
+    "alpha10"
+  ],
+  "waiting_for": "reference",
+  "active": null,
+  "failed": null,
+  "status": "paused_for_minimum_handoff",
+  "reason": "User requested a minimum validation handoff to collaborators with Slurm; pending jobs were not launched."
+}

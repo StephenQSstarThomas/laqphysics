@@ -1,0 +1,246 @@
+{
+  "scope": "all-M bipolar multipulse convergence, full correlated two-electron TDSE; candidates awaiting actual gates",
+  "cases": [
+    "pump_only",
+    "pump_probe_plus",
+    "pump_probe_minus",
+    "pump_probe_linear",
+    "probe_only_plus",
+    "pump_probe_half_frequency",
+    "pump_probe_plus_delay192",
+    "pump_probe_plus_inner14",
+    "pump_probe_plus_outer8",
+    "pump_probe_plus_l6",
+    "pump_probe_plus_L4",
+    "pump_probe_plus_dt003",
+    "pump_probe_plus_tail32",
+    "pump_probe_plus_mixed",
+    "pump_probe_plus_extent32",
+    "pump_probe_plus_extent32_surface24",
+    "pump_probe_plus_extent32_surface24_cutoff20",
+    "pump_probe_half_frequency_l6",
+    "pump_probe_half_frequency_L5",
+    "pump_probe_half_frequency_outer8",
+    "pump_probe_half_frequency_dt003"
+  ],
+  "pairs": [
+    {
+      "reference": "pump_probe_plus",
+      "refinement": "pump_probe_plus_inner14",
+      "axis": "near-nuclear radial order 12 -> 14"
+    },
+    {
+      "reference": "pump_probe_plus",
+      "refinement": "pump_probe_plus_outer8",
+      "axis": "outer radial order 6 -> 8"
+    },
+    {
+      "reference": "pump_probe_plus",
+      "refinement": "pump_probe_plus_l6",
+      "axis": "individual l 4 -> 6"
+    },
+    {
+      "reference": "pump_probe_plus",
+      "refinement": "pump_probe_plus_L4",
+      "axis": "total L 3 -> 4"
+    },
+    {
+      "reference": "pump_probe_plus",
+      "refinement": "pump_probe_plus_dt003",
+      "axis": "time step 0.06 -> 0.03"
+    },
+    {
+      "reference": "pump_probe_plus",
+      "refinement": "pump_probe_plus_tail32",
+      "axis": "absorber order 24 -> 32"
+    },
+    {
+      "reference": "pump_probe_plus",
+      "refinement": "pump_probe_plus_mixed",
+      "axis": "independent mixed/velocity gauge"
+    },
+    {
+      "reference": "pump_probe_plus",
+      "refinement": "pump_probe_plus_extent32",
+      "axis": "real-domain extent 28 -> 32"
+    },
+    {
+      "reference": "pump_probe_plus_extent32",
+      "refinement": "pump_probe_plus_extent32_surface24",
+      "axis": "surface 20 -> 24 only"
+    },
+    {
+      "reference": "pump_probe_plus_extent32_surface24",
+      "refinement": "pump_probe_plus_extent32_surface24_cutoff20",
+      "axis": "Coulomb cutoff [12,16] -> [16,20] only"
+    },
+    {
+      "reference": "pump_probe_half_frequency",
+      "refinement": "pump_probe_half_frequency_l6",
+      "axis": "half-frequency individual l 4 -> 6",
+      "energy_windows": [
+        [
+          0.18,
+          0.42
+        ],
+        [
+          0.52,
+          0.68
+        ],
+        [
+          1.22,
+          1.42
+        ],
+        [
+          1.95,
+          2.2
+        ]
+      ],
+      "acceptance": {
+        "peak_shift_au": 0.001,
+        "normalized_shape_L1": 0.02,
+        "relative_yield": 0.02,
+        "gate_channels": [
+          [
+            1,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "reference": "pump_probe_half_frequency",
+      "refinement": "pump_probe_half_frequency_L5",
+      "axis": "half-frequency total L 4 -> 5",
+      "energy_windows": [
+        [
+          0.18,
+          0.42
+        ],
+        [
+          0.52,
+          0.68
+        ],
+        [
+          1.22,
+          1.42
+        ],
+        [
+          1.95,
+          2.2
+        ]
+      ],
+      "acceptance": {
+        "peak_shift_au": 0.001,
+        "normalized_shape_L1": 0.02,
+        "relative_yield": 0.02,
+        "gate_channels": [
+          [
+            1,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "reference": "pump_probe_half_frequency",
+      "refinement": "pump_probe_half_frequency_outer8",
+      "axis": "half-frequency outer order 6 -> 8",
+      "energy_windows": [
+        [
+          0.18,
+          0.42
+        ],
+        [
+          0.52,
+          0.68
+        ],
+        [
+          1.22,
+          1.42
+        ],
+        [
+          1.95,
+          2.2
+        ]
+      ],
+      "acceptance": {
+        "peak_shift_au": 0.001,
+        "normalized_shape_L1": 0.02,
+        "relative_yield": 0.02,
+        "gate_channels": [
+          [
+            1,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "reference": "pump_probe_half_frequency",
+      "refinement": "pump_probe_half_frequency_dt003",
+      "axis": "half-frequency time step 0.06 -> 0.03",
+      "energy_windows": [
+        [
+          0.18,
+          0.42
+        ],
+        [
+          0.52,
+          0.68
+        ],
+        [
+          1.22,
+          1.42
+        ],
+        [
+          1.95,
+          2.2
+        ]
+      ],
+      "acceptance": {
+        "peak_shift_au": 0.001,
+        "normalized_shape_L1": 0.02,
+        "relative_yield": 0.02,
+        "gate_channels": [
+          [
+            1,
+            0,
+            0
+          ]
+        ]
+      }
+    }
+  ],
+  "acceptance": {
+    "peak_shift_au": 0.001,
+    "normalized_shape_L1": 0.02,
+    "relative_yield": 0.02,
+    "gate_channels": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        1
+      ]
+    ],
+    "energy_windows": [
+      [
+        0.18,
+        0.42
+      ],
+      [
+        0.52,
+        0.68
+      ]
+    ]
+  },
+  "completion_requires": "All listed propagation comparisons must pass. Also check extraction quadrature, opposite helicity and the delayed old-electron ionic map. No peak alignment. A failed axis requires further refinement."
+}

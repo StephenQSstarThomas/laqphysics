@@ -1,0 +1,7 @@
+{'method': 'sparse_lu', 'setup_seconds': 7.430091500282288e-06, '20_step_seconds': 6.133565057069063}
+/playpen/shiqiu/task-jiukongdian/python/ionic_adjoint.py:49: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+/playpen/shiqiu/task-jiukongdian/python/ionic_adjoint.py:49: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+{'method': 'cpu_flexible', 'setup_seconds': 0.32858088379725814, '20_step_seconds': 2.817378722829744}
+{'rows': [{'method': 'sparse_lu', 'setup_seconds': 7.430091500282288e-06, '20_step_seconds': 6.133565057069063}, {'method': 'cpu_flexible', 'setup_seconds': 0.32858088379725814, '20_step_seconds': 2.817378722829744}], 'relative_state_difference': 1.375636740863931e-13, 'ionic_dof': 3780, 'rhs': 4}

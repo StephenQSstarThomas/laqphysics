@@ -1,0 +1,32 @@
+{
+  "threads": 8,
+  "shape": [
+    204,
+    204,
+    240
+  ],
+  "steps": [
+    {
+      "seconds": 56.22654456901364,
+      "linear_iterations": 16,
+      "linear_residual": 1.3459503853002432e-11,
+      "dimension": 0,
+      "residual_estimate": null
+    },
+    {
+      "seconds": 53.277612037956715,
+      "linear_iterations": 16,
+      "linear_residual": 1.3459503853002432e-11,
+      "dimension": 0,
+      "residual_estimate": null
+    },
+    {
+      "seconds": 54.38213272811845,
+      "linear_iterations": 16,
+      "linear_residual": 1.3459503853002432e-11,
+      "dimension": 0,
+      "residual_estimate": null
+    }
+  ],
+  "scope": "single full CF4 steps on a smooth correlated production-grid test state; not a completed propagation"
+}

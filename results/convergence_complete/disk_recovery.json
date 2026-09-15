@@ -1,0 +1,7 @@
+{
+  "cause": "shared /playpen exhausted during checkpoint writes",
+  "work_directory": "/playpen1/shiqiu/laqphysics-data/convergence_work",
+  "reference_recovery_step": 200,
+  "inner14_action": "no complete checkpoint; quarantined incomplete attempt and will restart",
+  "source_recovery": "implicit.py interrupted write restored byte-for-byte from HEAD before modifications"
+}

@@ -59,6 +59,8 @@ class Helium:
         self.surface_indices=np.flatnonzero(np.max(abs(comm),axis=1)>1e-14)
         if not len(self.surface_indices):raise ValueError('empty surface commutator')
         if np.any(abs(self.r[self.surface_indices].imag)>1e-12):raise ValueError('surface must be inside real grid')
+        if np.any(abs(self.grid.weights[self.surface_indices].imag)>1e-12):
+            raise ValueError('surface stencil touches the ECS bridge; extend the real domain')
         if np.any(self.cut[self.surface_indices]>1e-12):raise ValueError('Volkov surface stencil overlaps nonzero potential; increase R')
         self.surface_T=comm[self.surface_indices,:]
         self.surface_P=(1j*comm*(self.r[None,:]-self.r[:,None]))[self.surface_indices,:]

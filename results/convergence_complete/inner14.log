@@ -1,0 +1,61 @@
+ground E=-2.9036476960, residual=7.018e-11; (194, 194, 93), flux=26.319GiB
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+Traceback (most recent call last):
+  File "/home/shiqiu/miniconda3/lib/python3.13/site-packages/numpy/lib/_npyio_impl.py", line 786, in _savez
+    format.write_array(fid, val,
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+                       allow_pickle=allow_pickle,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+                       pickle_kwargs=pickle_kwargs)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shiqiu/miniconda3/lib/python3.13/site-packages/numpy/lib/_format_impl.py", line 777, in write_array
+    fp.write(chunk.tobytes('C'))
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/shiqiu/miniconda3/lib/python3.13/zipfile/__init__.py", line 1268, in write
+    self._fileobj.write(data)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shiqiu/miniconda3/lib/python3.13/zipfile/__init__.py", line 2019, in close
+    self._write_end_record()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/shiqiu/miniconda3/lib/python3.13/zipfile/__init__.py", line 2117, in _write_end_record
+    self.fp.flush()
+    ~~~~~~~~~~~~~^^
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/playpen/shiqiu/task-jiukongdian/scripts/followup_campaign.py", line 45, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/playpen/shiqiu/task-jiukongdian/scripts/followup_campaign.py", line 34, in main
+    meta=run(config,out,resume=(out/'checkpoint.npz').exists(),backend=a.backend,device=a.device,ground_cache=root/'ground_cache',coulomb_contraction=a.coulomb_contraction)
+  File "/playpen/shiqiu/task-jiukongdian/python/output_lock.py", line 18, in wrapped
+    return function(*args,**kwargs)
+  File "/playpen/shiqiu/task-jiukongdian/python/run3d.py", line 134, in run
+    history.append(row);save(i+1)
+                        ~~~~^^^^^
+  File "/playpen/shiqiu/task-jiukongdian/python/run3d.py", line 107, in save
+    np.savez(temp,psi=psi,step=i,signature=signature,ground_energy=E,ground=gs,ground_residual=gres)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shiqiu/miniconda3/lib/python3.13/site-packages/numpy/lib/_npyio_impl.py", line 673, in savez
+    _savez(file, args, kwds, False, allow_pickle=allow_pickle)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shiqiu/miniconda3/lib/python3.13/site-packages/numpy/lib/_npyio_impl.py", line 790, in _savez
+    zipf.close()
+    ~~~~~~~~~~^^
+  File "/home/shiqiu/miniconda3/lib/python3.13/zipfile/__init__.py", line 2023, in close
+    self._fpclose(fp)
+    ~~~~~~~~~~~~~^^^^
+  File "/home/shiqiu/miniconda3/lib/python3.13/zipfile/__init__.py", line 2123, in _fpclose
+    fp.close()
+    ~~~~~~~~^^
+OSError: [Errno 28] No space left on device

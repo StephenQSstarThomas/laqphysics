@@ -1,0 +1,111 @@
+{
+  "signature": "d9a59fb31b1c8bfb96c0d01b5b61a3730f5769649cfc435e89d1a71a5b120b7e",
+  "config": {
+    "radial": {
+      "edges": [
+        0,
+        0.25,
+        0.5,
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        10,
+        12,
+        16
+      ],
+      "order": 6,
+      "tail": 16,
+      "ecs_angle": 0.5,
+      "alpha": 0.8
+    },
+    "lmax": 3,
+    "M": 0,
+    "total_Lmax": 3,
+    "cutoff_radii": [
+      4,
+      6
+    ],
+    "surface": 10,
+    "pulses": [
+      {
+        "pulse": {
+          "omega": 1.5,
+          "cycles": 4,
+          "field": 0.03
+        },
+        "polarization": "z"
+      }
+    ],
+    "post_time": 35,
+    "dt": 0.04,
+    "surface_stride": 1,
+    "checkpoint_every": 200,
+    "ground_tolerance": 1e-10,
+    "linear_tolerance": 1e-11,
+    "time_integrator": "cf4-pade",
+    "ionic_propagator": "cf4",
+    "coulomb_contraction": "blocks",
+    "max_surface_gib": 8,
+    "spectrum_energy": [
+      0.1,
+      1.2,
+      111
+    ],
+    "ionic_channels": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "gauge": {
+      "type": "mixed",
+      "inner": 2.0,
+      "outer": 4.0
+    }
+  },
+  "ground_energy": -2.9026574117825668,
+  "ground_residual": 3.6225418208425887e-11,
+  "nrad": 82,
+  "channels": 23,
+  "dt": 0.03999626029300275,
+  "nsteps": 1294,
+  "completed_steps": 1294,
+  "complete": true,
+  "surface_bytes": 273545440,
+  "surface_indices": [
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59
+  ],
+  "seconds_this_invocation": 928.9034476920497,
+  "backend": "torch",
+  "device": "cpu",
+  "precision": "complex128",
+  "ground_angular_basis": "coupled total L=0, expanded without angular approximation",
+  "time_integrator": "cf4-pade",
+  "gauge": {
+    "type": "mixed",
+    "inner": 2.0,
+    "outer": 4.0
+  },
+  "ground_projection_scope": "field-free basis in the propagated gauge; compare physical populations at A=0",
+  "coulomb_contraction": "blocks",
+  "precomputed_coulomb_bytes": 14739008,
+  "preconditioner_precision": "complex64",
+  "linear_solver": "FGMRES",
+  "maximum_linear_residual_this_invocation": 8.901560591452171e-12,
+  "linear_iterations_this_invocation": 20648
+}

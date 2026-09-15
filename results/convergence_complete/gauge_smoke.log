@@ -1,0 +1,22 @@
+ground E=-2.9026574118, residual=3.623e-11; (82, 82, 23), flux=0.255GiB
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+3D 200/1294, inner norm=1.00000000, Pg=0.99885662, wall=139.8s
+3D 400/1294, inner norm=0.99997371, Pg=0.99743619, wall=270.2s
+3D 600/1294, inner norm=0.99871405, Pg=0.99743607, wall=377.0s
+3D 800/1294, inner norm=0.99766383, Pg=0.99743607, wall=478.0s
+3D 1000/1294, inner norm=0.99747803, Pg=0.99743607, wall=582.3s
+3D 1200/1294, inner norm=0.99745157, Pg=0.99743607, wall=683.3s
+3D 1294/1294, inner norm=0.99744940, Pg=0.99743607, wall=731.8s
+PROPAGATED gauge_smoke_velocity
+ground E=-2.9026574118, residual=3.623e-11; (82, 82, 23), flux=0.255GiB
+3D 200/1294, inner norm=1.00000000, Pg=0.99906570, wall=143.5s
+3D 400/1294, inner norm=0.99997369, Pg=0.99743358, wall=285.3s
+3D 600/1294, inner norm=0.99871320, Pg=0.99743448, wall=427.0s
+3D 800/1294, inner norm=0.99766236, Pg=0.99743448, wall=568.5s
+3D 1000/1294, inner norm=0.99747645, Pg=0.99743448, wall=709.9s
+3D 1200/1294, inner norm=0.99744998, Pg=0.99743448, wall=859.5s
+3D 1294/1294, inner norm=0.99744781, Pg=0.99743448, wall=928.9s
+PROPAGATED gauge_smoke_mixed

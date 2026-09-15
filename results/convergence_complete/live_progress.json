@@ -1,0 +1,83 @@
+{
+  "status": "finished minimum handoff; no active task workers",
+  "cases": [
+    {
+      "case": "reference",
+      "status": "complete_with_spectrum",
+      "completed_steps": 13984,
+      "nsteps": 13984
+    },
+    {
+      "case": "inner14",
+      "status": "complete_with_spectrum",
+      "completed_steps": 13984,
+      "nsteps": 13984
+    },
+    {
+      "case": "outer8",
+      "status": "checkpointed_for_handoff",
+      "completed_steps": 1348,
+      "nsteps": 13984
+    },
+    {
+      "case": "l12",
+      "status": "checkpointed_for_handoff",
+      "completed_steps": 2205,
+      "nsteps": 13984
+    },
+    {
+      "case": "L4",
+      "status": "not_started",
+      "completed_steps": 0,
+      "nsteps": null
+    },
+    {
+      "case": "dt003",
+      "status": "not_started",
+      "completed_steps": 0,
+      "nsteps": null
+    },
+    {
+      "case": "extent32",
+      "status": "not_started",
+      "completed_steps": 0,
+      "nsteps": null
+    },
+    {
+      "case": "surface24",
+      "status": "not_started",
+      "completed_steps": 0,
+      "nsteps": null
+    },
+    {
+      "case": "cutoff20",
+      "status": "not_started",
+      "completed_steps": 0,
+      "nsteps": null
+    },
+    {
+      "case": "tail32",
+      "status": "not_started",
+      "completed_steps": 0,
+      "nsteps": null
+    },
+    {
+      "case": "angle06",
+      "status": "not_started",
+      "completed_steps": 0,
+      "nsteps": null
+    },
+    {
+      "case": "alpha10",
+      "status": "not_started",
+      "completed_steps": 0,
+      "nsteps": null
+    },
+    {
+      "case": "mixed_gauge",
+      "status": "not_started",
+      "completed_steps": 0,
+      "nsteps": null
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "relative_yield_change": [
+    0.0006237869802223628,
+    0.00039723312088790763
+  ],
+  "normalized_shape_L1": [
+    3.905538127766386e-05,
+    0.0001184819024179497
+  ],
+  "scope": "independent velocity/mixed Hamiltonians and matching backward ionic gauges; 4-cycle small-model check"
+}

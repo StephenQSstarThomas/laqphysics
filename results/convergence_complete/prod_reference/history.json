@@ -1,0 +1,13 @@
+[
+  {
+    "step": 20,
+    "time": 1.199914323437482,
+    "real_region_norm": 1.000000000000007,
+    "ground_population": 0.9999999999999813,
+    "exchange_error": 1.0282638081266827e-14,
+    "linear_iterations": 16,
+    "linear_residual": 1.2498055213928035e-14,
+    "dimension": 0,
+    "residual_estimate": null
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "recipe": {
+    "configuration": "7b886c5c1984307253205f615edbd73d5257cfc85c9e78b2da27f36e78a6fb01",
+    "labels": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "gauge": {
+      "type": "velocity"
+    },
+    "dt": 0.11998558916001627,
+    "kernel_sha256": "fe9b339388b6cb32962f4fafca96cb8c21aaeb386f0a1395b8f0a2922f01b739",
+    "ionic_device": "cuda:0"
+  },
+  "nframes": 6785,
+  "outer_states": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "r": [
+    20.0,
+    20.345346329292024,
+    21.0,
+    21.654653670707976,
+    22.0
+  ],
+  "weights": [
+    0.2,
+    0.5444444444444448,
+    0.7111111111111111,
+    0.5444444444444446,
+    0.2
+  ],
+  "projection_final_time": 813.9822368615504,
+  "projection_seconds": 1472.0706326100044,
+  "folded_m_sectors": true,
+  "coupled_direct_contraction": false,
+  "ionic_device": "cuda:0",
+  "ionic_maximum_true_linear_residual": 9.988676443351707e-13,
+  "raw_frames_reverse_sha256": "93f8df432307904588d598318355a018d4afa9948f46cdb1ec4dd7133be7b00d",
+  "frame_hash_order": "reverse time, each frame in C byte order"
+}

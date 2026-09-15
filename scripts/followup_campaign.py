@@ -16,6 +16,8 @@ def main():
  p.add_argument('--config-dir',default='configs/followup');p.add_argument('--out-root',default='results/followup')
  p.add_argument('--backend',choices=['torch','fortran'],default='torch');p.add_argument('--device',default='cuda:0')
  p.add_argument('--coulomb-contraction',choices=['sparse','blocks'])
+ p.add_argument('--propagate-only',action='store_true',help='release the GPU after propagation; extract in a separate CPU job')
+ p.add_argument('--preconditioner-precision',choices=['complex128','complex64'],default='complex128')
  p.add_argument('--memory-fraction',type=float,default=.2);p.add_argument('--list',action='store_true');a=p.parse_args()
  names=a.case or GROUPS[a.group]
  if a.list:
@@ -30,11 +32,13 @@ def main():
   expected=hashlib.sha256(json.dumps(config,sort_keys=True).encode()).hexdigest()
   if meta and meta.get('signature')!=expected:raise ValueError(f'{name}: configuration changed; use a new output directory')
   if not meta.get('complete',False):
-   meta=run(config,out,resume=(out/'checkpoint.npz').exists(),backend=a.backend,device=a.device,ground_cache=root/'ground_cache',coulomb_contraction=a.coulomb_contraction)
+   meta=run(config,out,resume=(out/'checkpoint.npz').exists(),backend=a.backend,device=a.device,ground_cache=root/'ground_cache',coulomb_contraction=a.coulomb_contraction,preconditioner_precision=a.preconditioner_precision)
   if not meta.get('complete',False):
    print('Checkpoint saved; resume this campaign to continue.',flush=True);return
   gc.collect()
   if a.backend=='torch' and a.device.startswith('cuda'):torch.cuda.empty_cache()
+  if a.propagate_only:
+   print('PROPAGATED',name,flush=True);continue
   if not (out/'spectrum.npz').exists():extract_run(out)
   if 'pump_reference_time' in config and not (out/'spectrum_pump_prefix.npz').exists():
    extract_run(out,'spectrum_pump_prefix.npz',stop_time=config['pump_reference_time'])

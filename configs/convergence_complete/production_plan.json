@@ -1,0 +1,228 @@
+{
+  "scope": "full local convergence campaign; one physical/numerical factor per comparison",
+  "cases": [
+    "reference",
+    "inner14",
+    "outer8",
+    "l12",
+    "L4",
+    "dt003",
+    "extent32",
+    "surface24",
+    "cutoff20",
+    "tail32",
+    "angle06",
+    "alpha10",
+    "mixed_gauge"
+  ],
+  "pairs": [
+    {
+      "reference": "reference",
+      "refinement": "inner14",
+      "axis": "inner radial order"
+    },
+    {
+      "reference": "reference",
+      "refinement": "outer8",
+      "axis": "outer radial order"
+    },
+    {
+      "reference": "reference",
+      "refinement": "l12",
+      "axis": "individual angular cutoff"
+    },
+    {
+      "reference": "reference",
+      "refinement": "L4",
+      "axis": "total angular cutoff"
+    },
+    {
+      "reference": "reference",
+      "refinement": "dt003",
+      "axis": "time step"
+    },
+    {
+      "reference": "reference",
+      "refinement": "extent32",
+      "axis": "real-domain extent"
+    },
+    {
+      "reference": "extent32",
+      "refinement": "surface24",
+      "axis": "surface radius only"
+    },
+    {
+      "reference": "surface24",
+      "refinement": "cutoff20",
+      "axis": "Coulomb cutoff only"
+    },
+    {
+      "reference": "reference",
+      "refinement": "tail32",
+      "axis": "absorber polynomial order only"
+    },
+    {
+      "reference": "reference",
+      "refinement": "angle06",
+      "axis": "ECS angle only"
+    },
+    {
+      "reference": "reference",
+      "refinement": "alpha10",
+      "axis": "Laguerre scale only"
+    },
+    {
+      "reference": "reference",
+      "refinement": "mixed_gauge",
+      "axis": "independent mixed/velocity gauge representation"
+    }
+  ],
+  "acceptance": {
+    "peak_shift_au": 0.001,
+    "normalized_shape_L1": 0.02,
+    "relative_yield": 0.02,
+    "gate_channels": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ]
+  },
+  "completion_requires": "All propagation pairs, post-time and energy/angular extraction refinements, and an independent mixed/velocity gauge check must pass. Then validate multipulse regimes. No peak alignment. Failed axes require another refinement.",
+  "extraction_jobs": [
+    {
+      "case": "reference",
+      "file": "spectrum_post55.npz",
+      "args": [
+        "--post-time",
+        "55"
+      ]
+    },
+    {
+      "case": "reference",
+      "file": "spectrum_post70.npz",
+      "args": [
+        "--post-time",
+        "70"
+      ]
+    },
+    {
+      "case": "reference",
+      "file": "spectrum_energy441.npz",
+      "args": [
+        "--energy",
+        ".54",
+        ".65",
+        "441"
+      ]
+    },
+    {
+      "case": "reference",
+      "file": "spectrum_energy881.npz",
+      "args": [
+        "--energy",
+        ".54",
+        ".65",
+        "881"
+      ]
+    },
+    {
+      "case": "reference",
+      "file": "spectrum_theta121.npz",
+      "args": [
+        "--theta",
+        "121"
+      ]
+    },
+    {
+      "case": "reference",
+      "file": "spectrum_gauss64.npz",
+      "args": [
+        "--theta",
+        "64",
+        "--angular-rule",
+        "gauss"
+      ]
+    },
+    {
+      "case": "dt003",
+      "file": "spectrum_stride2.npz",
+      "args": [
+        "--time-stride",
+        "2"
+      ]
+    },
+    {
+      "case": "dt003",
+      "file": "spectrum_stride4.npz",
+      "args": [
+        "--time-stride",
+        "4"
+      ]
+    }
+  ],
+  "extraction_pairs": [
+    {
+      "reference": "reference",
+      "refinement": "reference",
+      "reference_file": "spectrum_post55.npz",
+      "refinement_file": "spectrum_post70.npz",
+      "axis": "flux integral tail 55 -> 70"
+    },
+    {
+      "reference": "reference",
+      "refinement": "reference",
+      "reference_file": "spectrum_post70.npz",
+      "refinement_file": "spectrum.npz",
+      "axis": "flux integral tail 70 -> 85"
+    },
+    {
+      "reference": "reference",
+      "refinement": "reference",
+      "reference_file": "spectrum.npz",
+      "refinement_file": "spectrum_energy441.npz",
+      "axis": "energy sampling 221 -> 441"
+    },
+    {
+      "reference": "reference",
+      "refinement": "reference",
+      "reference_file": "spectrum_energy441.npz",
+      "refinement_file": "spectrum_energy881.npz",
+      "axis": "energy sampling 441 -> 881"
+    },
+    {
+      "reference": "reference",
+      "refinement": "reference",
+      "reference_file": "spectrum.npz",
+      "refinement_file": "spectrum_theta121.npz",
+      "axis": "polar quadrature Simpson 61 -> 121"
+    },
+    {
+      "reference": "reference",
+      "refinement": "reference",
+      "reference_file": "spectrum_theta121.npz",
+      "refinement_file": "spectrum_gauss64.npz",
+      "axis": "polar quadrature independent Gauss 64"
+    },
+    {
+      "reference": "dt003",
+      "refinement": "dt003",
+      "reference_file": "spectrum_stride4.npz",
+      "refinement_file": "spectrum_stride2.npz",
+      "axis": "surface time quadrature 0.12 -> 0.06"
+    },
+    {
+      "reference": "dt003",
+      "refinement": "dt003",
+      "reference_file": "spectrum_stride2.npz",
+      "refinement_file": "spectrum.npz",
+      "axis": "surface time quadrature 0.06 -> 0.03"
+    }
+  ]
+}

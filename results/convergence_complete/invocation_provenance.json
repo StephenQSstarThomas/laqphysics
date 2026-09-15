@@ -1,0 +1,26 @@
+{
+  "reference": {
+    "immutable_snapshot_at_start": null,
+    "note": "This reference worker began before immutable source snapshots were introduced. Its actual metadata and earlier complex128 segment are preserved; no retrospective source hash is invented.",
+    "first_stage": "complex128 preconditioner, then complex64 flexible GMRES; both retain complex128 Hamiltonian/state/true residual",
+    "later_segment_restart": 32,
+    "evidence": [
+      "reference/run_segment_fp128.json",
+      "reference/run.json",
+      "precision_regression.json"
+    ]
+  },
+  "inner14": {
+    "note": "Checkpoint segments moved across available GPUs only after each writer exited. Immutable numerical snapshots are recorded in later run metadata.",
+    "evidence": [
+      "inner14/run_segment_gpu3.json",
+      "inner14/run_segment_gpu1.json",
+      "inner14/run.json"
+    ]
+  },
+  "postprocessing_snapshot": "2210b4a7fc4eb18e",
+  "full_convergence_certified": false,
+  "cache_signature_update": "The delivered extractor also hashes tdse1d.py, which supplies the physical cutoff. The cutoff itself was unchanged. Existing projections and quadrature use their recorded frozen extractor; the new extractor correctly requests re-projection rather than silently treating an old signature as identical.",
+  "delivery_numerical_snapshot": "/playpen1/shiqiu/laqphysics-data/convergence_work/code/a28e831eca61b586",
+  "delivery_driver_cleanup": "The delivered run3d restores temporary signal handlers in finally, including failed resume validation. This changes failure cleanup only; physical propagation was not changed."
+}

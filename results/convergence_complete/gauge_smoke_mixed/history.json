@@ -1,0 +1,79 @@
+[
+  {
+    "step": 200,
+    "time": 7.99925205860055,
+    "real_region_norm": 0.999999999540127,
+    "ground_population": 0.9990656967870866,
+    "exchange_error": 2.7075645870759035e-14,
+    "linear_iterations": 16,
+    "linear_residual": 1.0917008901831463e-12,
+    "dimension": 0,
+    "residual_estimate": null
+  },
+  {
+    "step": 400,
+    "time": 15.9985041172011,
+    "real_region_norm": 0.999973691094153,
+    "ground_population": 0.9974335849254184,
+    "exchange_error": 3.91602185873812e-14,
+    "linear_iterations": 16,
+    "linear_residual": 1.6938997694611143e-13,
+    "dimension": 0,
+    "residual_estimate": null
+  },
+  {
+    "step": 600,
+    "time": 23.99775617580165,
+    "real_region_norm": 0.9987132037807597,
+    "ground_population": 0.9974344790819941,
+    "exchange_error": 9.099823153974759e-14,
+    "linear_iterations": 16,
+    "linear_residual": 7.656386353624722e-14,
+    "dimension": 0,
+    "residual_estimate": null
+  },
+  {
+    "step": 800,
+    "time": 31.9970082344022,
+    "real_region_norm": 0.9976623602827336,
+    "ground_population": 0.9974344790820668,
+    "exchange_error": 5.645145143701121e-14,
+    "linear_iterations": 16,
+    "linear_residual": 2.7826626434672445e-14,
+    "dimension": 0,
+    "residual_estimate": null
+  },
+  {
+    "step": 1000,
+    "time": 39.996260293002756,
+    "real_region_norm": 0.9974764518461794,
+    "ground_population": 0.9974344790821489,
+    "exchange_error": 3.609591529198548e-14,
+    "linear_iterations": 16,
+    "linear_residual": 3.2037483620261066e-14,
+    "dimension": 0,
+    "residual_estimate": null
+  },
+  {
+    "step": 1200,
+    "time": 47.9955123516033,
+    "real_region_norm": 0.9974499808224633,
+    "ground_population": 0.9974344790821976,
+    "exchange_error": 3.0306083714101647e-14,
+    "linear_iterations": 16,
+    "linear_residual": 3.049383496810668e-14,
+    "dimension": 0,
+    "residual_estimate": null
+  },
+  {
+    "step": 1294,
+    "time": 51.75516081914556,
+    "real_region_norm": 0.9974478149999435,
+    "ground_population": 0.9974344790822012,
+    "exchange_error": 2.922643648477868e-14,
+    "linear_iterations": 16,
+    "linear_residual": 3.114608423318114e-14,
+    "dimension": 0,
+    "residual_estimate": null
+  }
+]

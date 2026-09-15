@@ -1,0 +1,322 @@
+{
+  "estimates": {
+    "linear": {
+      "cases": [
+        {
+          "case": "reference",
+          "radial_points": 180,
+          "angular_channels": 93,
+          "steps": 13984,
+          "state_MiB": 45.977783203125,
+          "FGMRES_Q_and_Z_GiB": 1.481705904006958,
+          "raw_flux_GiB": 24.41946119070053
+        },
+        {
+          "case": "inner14",
+          "radial_points": 194,
+          "angular_channels": 93,
+          "steps": 13984,
+          "state_MiB": 53.40802001953125,
+          "FGMRES_Q_and_Z_GiB": 1.721156895160675,
+          "raw_flux_GiB": 26.318752616643906
+        },
+        {
+          "case": "outer8",
+          "radial_points": 204,
+          "angular_channels": 93,
+          "steps": 13984,
+          "state_MiB": 59.055908203125,
+          "FGMRES_Q_and_Z_GiB": 1.9031689167022705,
+          "raw_flux_GiB": 35.58264344930649
+        },
+        {
+          "case": "l12",
+          "radial_points": 180,
+          "angular_channels": 113,
+          "steps": 13984,
+          "state_MiB": 55.865478515625,
+          "FGMRES_Q_and_Z_GiB": 1.8003523349761963,
+          "raw_flux_GiB": 29.67095822095871
+        },
+        {
+          "case": "L4",
+          "radial_points": 180,
+          "angular_channels": 132,
+          "steps": 13984,
+          "state_MiB": 65.2587890625,
+          "FGMRES_Q_and_Z_GiB": 2.1030664443969727,
+          "raw_flux_GiB": 34.65988039970398
+        },
+        {
+          "case": "dt003",
+          "radial_points": 180,
+          "angular_channels": 93,
+          "steps": 27967,
+          "state_MiB": 45.977783203125,
+          "FGMRES_Q_and_Z_GiB": 1.481705904006958,
+          "raw_flux_GiB": 48.83543014526367
+        },
+        {
+          "case": "extent32",
+          "radial_points": 186,
+          "angular_channels": 93,
+          "steps": 13984,
+          "state_MiB": 49.09405517578125,
+          "FGMRES_Q_and_Z_GiB": 1.582132637500763,
+          "raw_flux_GiB": 25.23344323039055
+        },
+        {
+          "case": "surface24",
+          "radial_points": 186,
+          "angular_channels": 93,
+          "steps": 13984,
+          "state_MiB": 49.09405517578125,
+          "FGMRES_Q_and_Z_GiB": 1.582132637500763,
+          "raw_flux_GiB": 25.23344323039055
+        },
+        {
+          "case": "cutoff20",
+          "radial_points": 186,
+          "angular_channels": 93,
+          "steps": 13984,
+          "state_MiB": 49.09405517578125,
+          "FGMRES_Q_and_Z_GiB": 1.582132637500763,
+          "raw_flux_GiB": 25.23344323039055
+        },
+        {
+          "case": "tail32",
+          "radial_points": 188,
+          "angular_channels": 93,
+          "steps": 13984,
+          "state_MiB": 50.155517578125,
+          "FGMRES_Q_and_Z_GiB": 1.616339921951294,
+          "raw_flux_GiB": 25.504770576953888
+        },
+        {
+          "case": "angle06",
+          "radial_points": 180,
+          "angular_channels": 93,
+          "steps": 13984,
+          "state_MiB": 45.977783203125,
+          "FGMRES_Q_and_Z_GiB": 1.481705904006958,
+          "raw_flux_GiB": 24.41946119070053
+        },
+        {
+          "case": "alpha10",
+          "radial_points": 180,
+          "angular_channels": 93,
+          "steps": 13984,
+          "state_MiB": 45.977783203125,
+          "FGMRES_Q_and_Z_GiB": 1.481705904006958,
+          "raw_flux_GiB": 24.41946119070053
+        },
+        {
+          "case": "mixed_gauge",
+          "radial_points": 180,
+          "angular_channels": 93,
+          "steps": 13984,
+          "state_MiB": 45.977783203125,
+          "FGMRES_Q_and_Z_GiB": 1.481705904006958,
+          "raw_flux_GiB": 24.41946119070053
+        }
+      ],
+      "raw_flux_total_GiB_if_all_retained": 373.9506098628044
+    },
+    "multipulse": {
+      "cases": [
+        {
+          "case": "pump_only",
+          "radial_points": 204,
+          "angular_channels": 240,
+          "steps": 2400,
+          "state_MiB": 152.40234375,
+          "FGMRES_Q_and_Z_GiB": 4.911403656005859,
+          "raw_flux_GiB": 12.26172924041748
+        },
+        {
+          "case": "pump_probe_plus",
+          "radial_points": 204,
+          "angular_channels": 240,
+          "steps": 9200,
+          "state_MiB": 152.40234375,
+          "FGMRES_Q_and_Z_GiB": 4.911403656005859,
+          "raw_flux_GiB": 46.98882579803467
+        },
+        {
+          "case": "pump_probe_minus",
+          "radial_points": 204,
+          "angular_channels": 240,
+          "steps": 9200,
+          "state_MiB": 152.40234375,
+          "FGMRES_Q_and_Z_GiB": 4.911403656005859,
+          "raw_flux_GiB": 46.98882579803467
+        },
+        {
+          "case": "pump_probe_linear",
+          "radial_points": 204,
+          "angular_channels": 240,
+          "steps": 9200,
+          "state_MiB": 152.40234375,
+          "FGMRES_Q_and_Z_GiB": 4.911403656005859,
+          "raw_flux_GiB": 46.98882579803467
+        },
+        {
+          "case": "probe_only_plus",
+          "radial_points": 204,
+          "angular_channels": 240,
+          "steps": 9200,
+          "state_MiB": 152.40234375,
+          "FGMRES_Q_and_Z_GiB": 4.911403656005859,
+          "raw_flux_GiB": 46.98882579803467
+        },
+        {
+          "case": "pump_probe_half_frequency",
+          "radial_points": 204,
+          "angular_channels": 375,
+          "steps": 9200,
+          "state_MiB": 238.128662109375,
+          "FGMRES_Q_and_Z_GiB": 7.674068212509155,
+          "raw_flux_GiB": 73.42004030942917
+        },
+        {
+          "case": "pump_probe_plus_delay192",
+          "radial_points": 204,
+          "angular_channels": 240,
+          "steps": 10000,
+          "state_MiB": 152.40234375,
+          "FGMRES_Q_and_Z_GiB": 4.911403656005859,
+          "raw_flux_GiB": 51.07436656951904
+        },
+        {
+          "case": "pump_probe_plus_inner14",
+          "radial_points": 218,
+          "angular_channels": 240,
+          "steps": 9200,
+          "state_MiB": 174.0380859375,
+          "FGMRES_Q_and_Z_GiB": 5.608649253845215,
+          "raw_flux_GiB": 50.21354913711548
+        },
+        {
+          "case": "pump_probe_plus_outer8",
+          "radial_points": 236,
+          "angular_channels": 240,
+          "steps": 9200,
+          "state_MiB": 203.96484375,
+          "FGMRES_Q_and_Z_GiB": 6.573085784912109,
+          "raw_flux_GiB": 69.89094257354736
+        },
+        {
+          "case": "pump_probe_plus_l6",
+          "radial_points": 204,
+          "angular_channels": 408,
+          "steps": 9200,
+          "state_MiB": 259.083984375,
+          "FGMRES_Q_and_Z_GiB": 8.349386215209961,
+          "raw_flux_GiB": 79.88100385665894
+        },
+        {
+          "case": "pump_probe_plus_L4",
+          "radial_points": 204,
+          "angular_channels": 375,
+          "steps": 9200,
+          "state_MiB": 238.128662109375,
+          "FGMRES_Q_and_Z_GiB": 7.674068212509155,
+          "raw_flux_GiB": 73.42004030942917
+        },
+        {
+          "case": "pump_probe_plus_dt003",
+          "radial_points": 204,
+          "angular_channels": 240,
+          "steps": 18400,
+          "state_MiB": 152.40234375,
+          "FGMRES_Q_and_Z_GiB": 4.911403656005859,
+          "raw_flux_GiB": 93.97254467010498
+        },
+        {
+          "case": "pump_probe_plus_tail32",
+          "radial_points": 212,
+          "angular_channels": 240,
+          "steps": 9200,
+          "state_MiB": 164.58984375,
+          "FGMRES_Q_and_Z_GiB": 5.304164886474609,
+          "raw_flux_GiB": 48.83152484893799
+        },
+        {
+          "case": "pump_probe_plus_mixed",
+          "radial_points": 204,
+          "angular_channels": 240,
+          "steps": 9200,
+          "state_MiB": 152.40234375,
+          "FGMRES_Q_and_Z_GiB": 4.911403656005859,
+          "raw_flux_GiB": 46.98882579803467
+        },
+        {
+          "case": "pump_probe_plus_extent32",
+          "radial_points": 216,
+          "angular_channels": 240,
+          "steps": 9200,
+          "state_MiB": 170.859375,
+          "FGMRES_Q_and_Z_GiB": 5.5062103271484375,
+          "raw_flux_GiB": 49.75287437438965
+        },
+        {
+          "case": "pump_probe_plus_extent32_surface24",
+          "radial_points": 216,
+          "angular_channels": 240,
+          "steps": 9200,
+          "state_MiB": 170.859375,
+          "FGMRES_Q_and_Z_GiB": 5.5062103271484375,
+          "raw_flux_GiB": 49.75287437438965
+        },
+        {
+          "case": "pump_probe_plus_extent32_surface24_cutoff20",
+          "radial_points": 216,
+          "angular_channels": 240,
+          "steps": 9200,
+          "state_MiB": 170.859375,
+          "FGMRES_Q_and_Z_GiB": 5.5062103271484375,
+          "raw_flux_GiB": 49.75287437438965
+        },
+        {
+          "case": "pump_probe_half_frequency_l6",
+          "radial_points": 204,
+          "angular_channels": 705,
+          "steps": 9200,
+          "state_MiB": 447.681884765625,
+          "FGMRES_Q_and_Z_GiB": 14.427248239517212,
+          "raw_flux_GiB": 138.02967578172684
+        },
+        {
+          "case": "pump_probe_half_frequency_L5",
+          "radial_points": 204,
+          "angular_channels": 485,
+          "steps": 9200,
+          "state_MiB": 307.979736328125,
+          "FGMRES_Q_and_Z_GiB": 9.92512822151184,
+          "raw_flux_GiB": 94.95658546686172
+        },
+        {
+          "case": "pump_probe_half_frequency_outer8",
+          "radial_points": 236,
+          "angular_channels": 375,
+          "steps": 9200,
+          "state_MiB": 318.695068359375,
+          "FGMRES_Q_and_Z_GiB": 10.270446538925171,
+          "raw_flux_GiB": 109.20459777116776
+        },
+        {
+          "case": "pump_probe_half_frequency_dt003",
+          "radial_points": 204,
+          "angular_channels": 375,
+          "steps": 18400,
+          "state_MiB": 238.128662109375,
+          "FGMRES_Q_and_Z_GiB": 7.674068212509155,
+          "raw_flux_GiB": 146.83210104703903
+        }
+      ],
+      "raw_flux_total_GiB_if_all_retained": 1426.1914536952972
+    }
+  },
+  "method": "nrad from actual FE-DVR grid; angular count from basis selection; flux stencil from the kinetic commutator; complex128 physical arrays. FGMRES restart=16 has 17 Q and 16 Z vectors.",
+  "limitation": "Krylov storage is only part of peak GPU/RSS; operators, preconditioners, work arrays and library buffers are additional. This is not a timing benchmark."
+}

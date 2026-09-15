@@ -1,0 +1,15 @@
+{
+  "initial_eigenvector_overlap_abs": 0.9999999999999996,
+  "initial_phase_real": 1.0,
+  "initial_phase_imag": 0.0,
+  "amplitude_L2_relative_after_initial_sign_convention": 1.627121207551682e-09,
+  "relative_yield_change": [
+    1.2681122818491986e-10,
+    2.343436555918288e-10
+  ],
+  "normalized_shape_L1": [
+    1.547486059955447e-09,
+    7.874018183163467e-11
+  ],
+  "scope": "complete 180-cycle small-model propagation; eigenvector phase fixed from INITIAL states, not fitted to spectra"
+}

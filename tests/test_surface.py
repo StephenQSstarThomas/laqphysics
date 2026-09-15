@@ -46,3 +46,9 @@ def test_residual_pulse_impulse_is_not_silently_projected_as_field_free():
     with pytest.raises(ValueError,match='zero final vector potential'):
         extract(h,np.zeros((2,h.n,len(idx),h.nc),complex),np.array([0,p.duration]),
                 lambda s:np.array([0.,0.,p.vector(s)]),[(1,0,0)],np.array([.6]),(np.array([1.]),np.array([0.])),p.duration)
+
+def test_surface_excludes_real_coordinate_with_complex_bridge_mass():
+    import pytest
+    h=Helium(make_grid([0,1,2,4,6,8],3,tail=8,ecs_angle=.5),1,M=0,cutoff_radii=[1,2])
+    with pytest.raises(ValueError,match='ECS bridge'):h.prepare_surface(6.)
+    h.prepare_surface(5.)

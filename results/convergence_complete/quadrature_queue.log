@@ -1,0 +1,6 @@
+COMPLETE {'case': 'reference', 'file': 'spectrum_post55.npz', 'args': ['--post-time', '55']}
+COMPLETE {'case': 'reference', 'file': 'spectrum_post70.npz', 'args': ['--post-time', '70']}
+COMPLETE {'case': 'reference', 'file': 'spectrum_energy441.npz', 'args': ['--energy', '.54', '.65', '441']}
+COMPLETE {'case': 'reference', 'file': 'spectrum_energy881.npz', 'args': ['--energy', '.54', '.65', '881']}
+COMPLETE {'case': 'reference', 'file': 'spectrum_theta121.npz', 'args': ['--theta', '121']}
+COMPLETE {'case': 'reference', 'file': 'spectrum_gauss64.npz', 'args': ['--theta', '64', '--angular-rule', 'gauss']}

@@ -1,0 +1,4 @@
+{
+  "bipolar_CUDA_vs_Fortran_relative_H_error": 2.3605083503432793e-16,
+  "mixed_CUDA_vs_CPU_relative_H_error": 4.3535143040721275e-17
+}
