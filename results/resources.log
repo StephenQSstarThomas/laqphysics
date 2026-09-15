@@ -1,0 +1,72 @@
+[
+  {
+    "config": "3d_absorber_refined.json",
+    "radial_points": 88,
+    "angular_channels": 6,
+    "steps": 1476,
+    "wavefunction_mib": 0.708984375,
+    "krylov_basis_gib": 0.03392601013183594,
+    "surface_history_gib": 0.029071569442749023,
+    "note": "BLAS conjugate-transpose uses one Q buffer. Estimate excludes work arrays/operators; time must be benchmarked."
+  },
+  {
+    "config": "3d_convergence.json",
+    "radial_points": 292,
+    "angular_channels": 44,
+    "steps": 21352,
+    "wavefunction_mib": 57.2451171875,
+    "krylov_basis_gib": 2.7392683029174805,
+    "surface_history_gib": 9.199369668960571,
+    "note": "BLAS conjugate-transpose uses one Q buffer. Estimate excludes work arrays/operators; time must be benchmarked."
+  },
+  {
+    "config": "3d_delayed_circular.json",
+    "radial_points": 92,
+    "angular_channels": 81,
+    "steps": 9566,
+    "wavefunction_mib": 10.461181640625,
+    "krylov_basis_gib": 0.5005838871002197,
+    "surface_history_gib": 2.6561594009399414,
+    "note": "BLAS conjugate-transpose uses one Q buffer. Estimate excludes work arrays/operators; time must be benchmarked."
+  },
+  {
+    "config": "3d_dt_refined.json",
+    "radial_points": 88,
+    "angular_channels": 6,
+    "steps": 2952,
+    "wavefunction_mib": 0.708984375,
+    "krylov_basis_gib": 0.03392601013183594,
+    "surface_history_gib": 0.029071569442749023,
+    "note": "BLAS conjugate-transpose uses one Q buffer. Estimate excludes work arrays/operators; time must be benchmarked."
+  },
+  {
+    "config": "3d_resonant.json",
+    "radial_points": 226,
+    "angular_channels": 19,
+    "steps": 21352,
+    "wavefunction_mib": 14.80780029296875,
+    "krylov_basis_gib": 0.7085763812065125,
+    "surface_history_gib": 2.3913333117961884,
+    "note": "BLAS conjugate-transpose uses one Q buffer. Estimate excludes work arrays/operators; time must be benchmarked."
+  },
+  {
+    "config": "3d_resonant_small.json",
+    "radial_points": 88,
+    "angular_channels": 6,
+    "steps": 10176,
+    "wavefunction_mib": 0.708984375,
+    "krylov_basis_gib": 0.03392601013183594,
+    "surface_history_gib": 0.2001965045928955,
+    "note": "BLAS conjugate-transpose uses one Q buffer. Estimate excludes work arrays/operators; time must be benchmarked."
+  },
+  {
+    "config": "3d_short.json",
+    "radial_points": 76,
+    "angular_channels": 6,
+    "steps": 1476,
+    "wavefunction_mib": 0.52880859375,
+    "krylov_basis_gib": 0.025304317474365234,
+    "surface_history_gib": 0.025107264518737793,
+    "note": "BLAS conjugate-transpose uses one Q buffer. Estimate excludes work arrays/operators; time must be benchmarked."
+  }
+]

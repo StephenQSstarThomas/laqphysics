@@ -1,0 +1,45 @@
+{
+  "source": "supplied Yu & Madsen PRA 98 033404 PDF, page 5 Fig.3(a)",
+  "method": "vector paths with visible tick calibration, no fitted energy offset",
+  "axis_calibration": {
+    "E0": 0.52,
+    "x0": 92.764152,
+    "E1": 0.54,
+    "x1": 114.360658,
+    "P1_y0": 177.551712,
+    "P1_y1": 126.408771
+  },
+  "computed_1d_thresholds": {
+    "model": "1d",
+    "n": 512,
+    "halfbox": 16.0,
+    "dx": 0.0625,
+    "energy": -2.903853660273238,
+    "ionic": [
+      -2.000136432201292,
+      -0.5000443367168681,
+      -0.25744459179155754
+    ],
+    "d12": 0.4822971970432379,
+    "residual": 2.497795553534888e-10,
+    "seconds": 19.385188699001446
+  },
+  "comparisons": {
+    "channel1": {
+      "paper_esss_peak": 0.595718912352738,
+      "paper_tdse_peak": 0.5962398246877347,
+      "our_esss_vs_paper_relative_L1": 0.005212545305665058,
+      "1d_dt0005_vs_paper_esss_relative_L1": 0.09455554024199134,
+      "1d_radius_refined_vs_paper_esss_relative_L1": 0.011504496103717354,
+      "1d_dvr_split_vs_paper_esss_relative_L1": 0.008239448858066687
+    },
+    "channel2": {
+      "paper_esss_peak": 0.5962398303979163,
+      "paper_tdse_peak": 0.5962398246877347,
+      "our_esss_vs_paper_relative_L1": 0.010221437953468993,
+      "1d_dt0005_vs_paper_esss_relative_L1": 0.11663451517961067,
+      "1d_radius_refined_vs_paper_esss_relative_L1": 0.043333630757416704,
+      "1d_dvr_split_vs_paper_esss_relative_L1": 0.039475431792244664
+    }
+  }
+}

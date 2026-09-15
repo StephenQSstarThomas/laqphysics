@@ -1,0 +1,365 @@
+PHYSICAL REVIEW A                                         VOLUME 48, NUMBER 1                                                          JULY 1993
+
+                           Observation       of coherence transfer by electron-electron correlation
+                                                           R. Grobe and J. H. Eberly
+                           Department   of Physics and Astronomy, University of Rochester, Rochester,    ¹w       York 14627
+                                                          (Received 14 December 1992)
+                      We present the results of exact wave-function calculations that are equivalent to numerical experi-
+                   ments on a two-electron quantum system. We show that Rabi oscillations of the core electron can modi-
+                   fy the photoelectron spectrum of the outer electron by efficient coherence transfer via e-e correlation,
+                   even in the absence of an autoionizing level or other continuum structure. We compare a simplified
+                   analytically soluble two-electron theory with our numerical results.
+
+                   PACS number(s): 32.80.Rm, 32.80.Fb, 32.80.Wr
+
+
+
+   In the present paper we introduce a two-electron                        coL  is the laser frequency. We have prepared the elec-
+coherence process that is similar to the one-electron                      trons initially in the ground state (which is automatically
+Autler-Townes efFect [1]. This process exhibits unexpect-                  symmetric under electron coordinate exchange). Solu-
+ed features that are not found in the one-electron effect.                 tions of the time-independent         and time-dependent
+In the photoelectron spectrum we find a new doublet in                     Schrodinger equations are accomplished numerically on a
+addition to the one predicted by Knight [2,3]. There is a                  spatial grid by methods that have been described before
+novel dressed-state reversal, i.e. , the higher-energy peak                 [7].
+in the new doublet comes from the lower-energy dressed                        For later reference we have sketched in Fig. 1 the low-
+bound state. In addition, the ground- (initial) state prob-                lying bare energy levels for our negative ion, showing
+ability decays without Rabi oscillations confirming that                   schematically what we believe to be a useful indication of
+there is no autoionizing state participating in this eQect                 the dynamics leading to our experimental data. On the
+   This coherence process was first observed in numerical                  left side we show the energy levels that we associate with
+experiments carried out on a two-electron "atom" that is                   the weakly bound outer electron (photodetachment         po-
+the one-dimensional analog of a negative ion in a laser                    tential of 0.06 a. u. ) and on the right side we show the
+field. Fully correlated two-electron wave functions were                   lowest several discrete levels of the core electron. In Fig.
+calculated for this atom and analyzed to obtain various                    2 we give an alternative view of the level scheme that is
+time-dependent      and   energy-dependent       probabilities,            based on two-electron         energies.      The ground state is the
+which we will present below. Our artificial two-electron
+atom has been discussed before [4,5], and its bare Hamil-
+tonian is given by
+                                                                                                        new
+    Ho= —,'p, + —,'p2+ V(x, )+ V(x2) —V(x, —xz) .                   (1)                                 doublet
+
+Here x, and x2 are the coordinates of electrons 1 and
+                                                                                                                   Knight
+2, and the soft-core Coulombic              potential    V(x)
+= —1/(x + I)'r governs both the attractive electron-                                                               doublet
+
+proton and the repulsive electron-electron interactions.                                                                       --0
+This one-proton —two-electron        system   shares    many                                                                   --E
+features with real negative ions. For example, it has only                                                                     --E3
+one bound state. The core-electron binding energy is ap-
+proximately equal to 11 times the outer electron's detach-                                                                     --E2
+ment energy, just as in all alkali-metal negative ions, Li
+Na,      K,  etc. The one-electron detachment thresholds
+are available [5] and the one-electron core system has
+been used repeatedly for studies of atomic systems in a
+strong laser field [6].
+   The interaction of this system with a laser field is deter-
+mined by the time-dependent Schrodinger equation (in di-                                                                       -- E)
+mensionless atomic units)                                                                                                      -- Eg
+                                                                                            outer      inner
+        B%'(x ), xq, t)                                                                         electron
+    i
+              Bt
+                          =[Ho+(x)+x2)E(t)]'P(x), xq, t), (2)
+                                                                             FICx. 1. An energy-level diagram for the negative-ion model
+where the laser field is E(t) = 6'(t)sincoLt, the pulse shape              based on an independent-electron  picture for the weakly bound
+is given by the smooth function C(t) =basin (~t/T), and                    "outer" and strongly bound "inner" electron.
+
+1050-2947/93/48(1)/623(5)/$06. 00                                          623                          1993 The American Physical Society
+624                                                        R. GROBE AND J. H. EBERLY
+
+
+
+
+                    --0
+                    --E4
+                    --E3                          )2, g&
+
+                    ~~ E
+                        2
+                                                                                      0         0. 1            0.2                 0.3          0.4
+                                                                                                       Electron energy        e (a. u. )
+
+                                                                           FIG. 3. Photoelectron spectral structure created by a sine-
+                                                                         squared incident laser pulse with 8o =0                  05,
+                                                                                                                   a.u coL =0.395 a u
+                                                                         and T=40 cycles. Details near to the higher split peak are
+                    --E 1                                                shown again in Fig. 4(b).
+                    -- Eg
+  FIG. 2. To tal-energy diagram, but only the ground state at            it is compelling to conclude that this is simply the normal
+E = —0. 73 a.u. and          the first two continua beginnin         t   photopeak associated with detachment of the outer elec-
+  &
+      =   —0. 67 a.u. and E2 = —0. 275 a.u. have been displayed.         tron. The exceptional case is the double peak in (b). The
+                                                                         question is how to understand both its location and its
+                                                                         splitting since the outer electron has no bound-bound res-
+                                                                         onances at all (and the system's autodetaching resonances
+only bound state. The continua above the first and
+                                                                         are not in the spectral region involved here).
+second thresholds are associated with the core-electron
+ground state at E, = —      0. 670 a.u. and first core excited               We interpret the peak splitting common to Figs. 3 and
+                                                                         4(b) as arising from two-electron coherence transfer from
+state at E2 = —   0. 275 a.u. In both Figs. 1 and 2 we have
+                                                                         the core electron to the outer electron when the core elec-
+drawn the same vertical energy scale.
+   Our procedure is to solve Schrodinger's equation for
+   x„xz, t) and then analyze it after a smooth laser turn-
+off at time t =T. We can obtain the photoelectron ener-                                                                                    (a)
+
+gy spectra I' (s ) and all of the low-lying bound-state prob-
+abilities by appropriate projections [5]. In almost all of
+the experiments described here we limited the laser field
+strength to 6'o=0. 05 a.u. (laser intensity slightly less than
+                                                          '
+10' W/cm, and scanned the frequency of the incide           en t
+ aser. The most interesting frequencies are in the neigh-
+                                          =
+borhood of the core electron's n 1 to n =2 resonance.
+   The resonant Rabi cycling indicated in Fig. 1 for the
+core electron suggests [2] that a doublet should be found
+in the core electron's photospectrum         with energy co NL
+above the n =2 state, i.e., with kinetic energy given b
+                               ~      ~       ~   ~
+
+
+
+
+                             95+( —0. 275) =0. 120
+s =col +E2 =(E2 Ei )+E2 =0. 3—
+a.u. , and this is indeed the case. The splitting of the
+peaks should be equal to the resonant Rabi frequency and
+                                                                                                                                           (c)
+t is is also the case [8]. Thus the familiar one-electron
+Autler-Townes effect (and so-called Knight h t 1
+  ou et) is present. However, a new and much stronger
+doublet is found centered at a different higher energy
+c = 0. 335 a.u. These two photoelectron doublets are
+s own in Fig. 3. The stronger and higher doublet has ap-
+parently not been predicted previously.
+   %'e have carried out a series of wave-function calcula-                                0.2           0.3                0.4
+                                                                                                         Electron energy   c (a, u, )
+tions to study the higher doublet. For a variety of values
+of the laser frequency coL we calculated the photoelectron                  FIG. 4. Three photoelectron spectra. The arrow indicates
+spectrum as well as the time dependence of various level                 the kinetic energy predicted for outer-electron photodetach-
+populations.    In Fig. 4, we show three photoelectron                   ment: c, = —   0. 06 a.u. +co The dashed curves are predictions
+spectra. The typical case (a) or (c) finds a single photo-               of Eqs. (6). The incident laser frequencies are (a) coL =0.30 a.u. ;
+peak, and its energy can be seen to be c=coL —     0. 06 a.u.            {b cu L =0. 39 a.u. =E», and (c) coL =0.45 a.u. Note that Fig.
+ Since 0.06 a.u. is the binding energy of the outer electron             4(b) is identical with the upper part of Fig. 3.
+48                                  OBSERVATiON OF COHERENCE TRANSFER BY ELECTRON-. . .                                                   625
+
+tron is resonantly excited. We can picture the transfer                       Hamiltonian. These are states that are strongly connect-
+mechanism as arising from the periodic change of the                          ed to the ground state, which serves as our two-electron
+outer electron's binding potential due to the Rabi oscilla-                   initial state. To simplify our notation we will use state la-
+tions of the core electron. Or we can say that the core                       bels based on the independent-particle         picture of Fig.
+electron's resonant transitions periodically change the                       1(a). We denote the ground state by 1, 1 &. In addition
+                                                                                                                                 I
+
+
+
+
+type of continuum which characterizes the photodetach-                        there are the two mutually orthogonal continuum states
+ment state. In any event it is remarkable that the coher-                     I 1, E & and 2, E &, which describe a free outer electron with
+                                                                                            I
+
+
+
+
+ence transfer is as strong as it is.                                          energy c. and a core electron in its ground state or first ex-
+   We have found that a relatively simple theoretical                         cited state. We neglect other states, which are dynami-
+model can be developed to support our interpretation of                       cally not so important, and write the time-dependent sys-
+two-electron coherence transfer.     Our model can be                         tem wave function as
+solved analytically and could be applied to any two-
+electron system. It accounts for the spectral phenomena
+of Fig. 4 as well as associated temporal phenomena. We
+                                                                                                               f
+                                                                                   'l(t) =G(t)I1, 1&+ d EB( Et)I l, E&
+                                                                                        &
+
+
+
+now describe this model.
+   First in Fig. 5 we repeat Fig. 2, with two one-photon
+                                                                                                +    f de C(E, t)I2,   s& .
+
+transitions shown. In this way we indicate in Fig. 5 the                      The time evolution of these states is governed            by an
+subspace of relevant eigenstates of the bare two-electron                     effective two-electron Hamiltonian
+                                                                          I
+
+
+
+
+     H, g(t)=E, ll, 1&&1, 1I+         f «(E)+s)ll,       E&& I,   f «(E, +.
+                                                                  EI+               )12, s&&2, EI
+
+
+                       f
+                  + «g(E, t)I Il, l&& l, el+ 11, s&&1,        11/+ f « f «'fl(s, t)I I, E',      I    E&&2, E'I+I2, E'&& I, EII,           (4)
+
+
+
+which couples the ground state 1, 1 & to the first continu-                                            o       exp(       ——exp( i p+ t)—
+                                                                                                                         yt )
+um I1, E & (an outer-electron transition) and which allows                    IB(E, t)I =c
+                                                                                                20 0+6                  p++lf
+for a core transition of the inner electron from state 1, E &
+to I2, E'&. The dipole moment coupling strengths are
+given by
+                                                                   I
+
+
+
+
+                                                                                                + 2Q(AQo—b, )
+                                                                                                                   exp( —               )—
+                                                                                                                         yt ) —exp( i p t
+                                                                                                                                p +i@
+g (s, t)=E(t)& 1, 1I(x, +xz)I l, s &:E(t)g (e), —
+Q(s, s',  t):
+            E(t) & 1, s I(x—+xz ) I2, e'
+                                &
+                                            &                          (5a)   Here b, =(Ez E, —              notes the detuning of the two
+                                                                                                     coL ) de—
+                                                                              discrete core levels, y =ng denotes the ground-state am-
+               =E(t)& 1Ix I2&5(s —e'):
+                                    —Qo(t)5(s —s') .                   (5b)   plitude decay rate, Q=(b, +00)'~ is the (generalized)
+The coupling Q(E, c', t) can be calculated by approximat-
+ing the states l, E& and I2, s'& by the product of the cor-
+                   I
+
+
+
+
+responding monoelectronic states. The effective Hamil-
+tonian (4) generates the following equations of motion for
+the state amplitudes:
+                                                                                                --0
+ . aG(t)
+i
+    at
+         =E~G(t)+          f   dog(E, t)B(c, t),     ,                 (6a)                     --E4
+ . BB(E,' t)                                                                                    --E3
+i
+     Bt
+               =(E, +c)B(s,t)+00(t)C(s, t)+g(e, t)G(t),
+                                                                                                ~~ E
+                                                                       (6b)                         2
+
+ . ac(s,' t)
+i            =(Ez+E)C(E, t)+Qo(t)B(e, t) .                             (6c)
+     at
+
+   By making the usual assumptions about the Aatness of
+the continuum [g(c, )=const] and the rotating-wave ap-
+proximation, we can find an analytical solution for Eqs.
+(6), for example by using Laplace transforms. If we addi-
+tionally assume a square laser pulse 6'(t) = 6'o we can ob-                      FIG. 5. Same energy-level diagram as in Fig. 2. The two
+tain a closed-form expression for the photoelectron ener-                     one-photon transitions and the corresponding dipole couplings
+gy spectrum in the first continuum:                                           as defined in the analytically soluble model are shown.
+626                                             R. GROBE AND J. H. EBERLY                                                           48
+
+Rabi frequency,    GO=ho( 1~x ~2) is the Rabi frequency,
+@+=5,+5/2+0/2              are the two (dressed) Floquet fre-
+quencies, 4c. = —      E~ + E + c. —
+                           &         col is the detuning from
+the ground state, and C is a normalization factor. A pos-
+sible laser-induced ground-state shift would correspond
+                                                                               0.5—
+to an imaginary part of y which is not necessary here.
+    The notation used in (7) makes it apparent that the
+solution has a dressed-state interpretation.       This dressed-
+state interpretation has some unusual features. For large
+positive detuning 6   ))    Qo the second term corresponds to
+                                                                                          100      200       300     400
+the upper (elastic) photoelectron          peak (with energy
+   =E . E—   , +coL +Qo/4b, ), which has to be associated
+                                                                                                  Time (a.u. )
+
+with the lower of the two dressed states. The lower-lying            FIG. 6. Time dependence of the ground-state probability
+ (inelastic) peak at E =Es E, +—coL —          b, — Qo/4b, thus    Ps(t) = (g~+(x, , x2, t) ) ~, and the probabilities P, (t) and P2(t)
+                                                                           ~
+
+
+
+
+corresponds to the upper dressed state with quasienergy            to find at least one electron in the lowest two hydrogenic states
+                                                                   4&(x) and +2(x) and none of the electrons is in the H ground
+p+ described by the first term. This correspondence be-            state. (const intensity laser pulse with a two-cycle linear turn-
+tween photopeaks and dressed states is exactly opposite
+to the case of one-photon-resonant two-photon ionization           on, @o=0.075 a.u. , coL =0.4 a.u. , the Rabi period 2m/0=80
+                                                                   a.u. corresponds to =5 optical cycles).
+ [2]. The special case of a forbidden core transition
+(Do=0) is also contained in formula (7). The inelastic
+amplitude vanishes in this limit and we find the well-             core state probabilities P, (t) and Pz(t) and it is easy to
+known Lorentzian shaped single photopeak in the long-              check that the observed period of these Rabi oscillations
+tirne limit.                                                       is consistent    with the numerical       Rabi frequency:
+    Formula (7) correctly predicts these features: the ex-         2m/0=80 a.u. for coL =0.4 a.u. and to=0. 075 a.u.
+istence of a singlet or doublet photopeak depending on 6,          However, in contrast to the one-electron case [2], we find
+the positions and relative heights and widths of the               no Rabi oscillations in the decay of the negative-ion
+peaks, peak splitting proportional to 60, etc. A real ex-          ground state Ps(t) under the condition of exact core reso-
+perimental      situation, however, would not involve a            nance. The only oscillations present in the ground-state
+square laser pulse so we have also solved Eqs. (6) for a           decay curve occur at twice the laser frequency and can be
+smooth time-dependent sine-squared pulse with the same             associated with counter-rotating terms.
+laser parameters that were used in the original computer              In summary, our time-dependent       two-electron wave
+experiments. The resulting predictions for photoelectron           functions predict the existence of a two-electron coher-
+spectra are shown as the dotted lines in Fig. 4. In view of        ence effect. This effect has a number of unexpected
+the extreme simplicity of our assumptions about the                features. There is peak splitting in the photodetachment
+analytical model, the evident agreement between dotted             spectrum of the outer electron, which has no correspond-
+and solid curves is striking.                                      ing bound-bound      resonance. A dressed-state analysis
+    On the right of the main peak in Fig. 4(c) there is a          shows that the higher-energy photopeak comes from the
+small secondary peak in the "experimental" data. This is           lower-energy dressed core state. There is ground-state de-
+not related to the peak splitting of Fig. 4(b) or to formula       cay without resonant Rabi oscillations.         The outer
+(7) but has a second interesting origin. It arises when            electron's novel properties arise from a core-electron res-
+two-photon absorption is accompanied by core rear-                 onance. In particular, the Rabi frequency of the core res-
+rangement      (excitation of the core electron into state         onance agrees with the outer electron's photopeak split-
+n =2), which shifts the normal photodetachment              peak   ting.
+from c=mL —       0. 06=0. 39 to c=2mL —0. 06 —E2& 0. 445,            These calculations show induced core-electron coher-
+in agreement with the figure. Rearrangement            into core   ence in the presence of an outer electron, i.e. , core coher-
+level 3 is also possible, in which case E2& must be re-            ence that imprints itself on outer-electron dynamics.
+placed by E», giving a photoelectron energy E. =0. 32,             There appear to be no existing experimental reports of
+and this peak is even smaller but still evident in Fig. 4(c).      the effect, but on the basis of elementary similarities be-
+The effects of core rearrangement on photodetachment               tween the structure of our artificial atom and that of
+spectra have been discussed before in Ref. [5].                    alkali-metal negative ions generally we suggest that a
+    In addition, we note that aO atomic parameters are             direct laboratory observation of this core-electron coher-
+determined once and for all by our negative ion potential-         ence might be carried out with Na . The principal
+ V(x). That is, the numerical values of         E, E„E2,           effects present in a real experiment but not included in
+( 1 ~x 2 ), and y are not adjustable in any way to improve
+      ~
+                                                                   our numerical experiments would be the longer laser
+the fit of the curves in Fig. 3.                                   pulse (by about 10 —100 times), the D-line hyperfine struc-
+    Using a somewhat stronger field, Do=0. 075 a. u. , we          ture, and spontaneous emission. Both of the latter two
+have also studied the time-dependent          effects associated   effects become insignificant at moderate laser power. The
+with the peak splitting shown in Figs. 3 and 4. These              increased pulse length would simply amplify greatly the
+temporal effects are shown in Fig. 6. Again in agreement           core ionization signal and bring the Knight doublet [2]
+with our simple analytical model, our exact wave func-             into clear view. The Na core resonance (sodium D i or
+tions show strong Rabi oscillations of the n = 1 and n = 2         D~ line) has an oscillator strength greater than unity, so
+48                           OBSERVATION OF COHERENCE TRANSFER BY ELECTRON-. . .                                                 627
+
+dye laser intensity in the 10' W/cm range should be                   This research was supported by the National Science
+more than sufficient to split the predicted strong doublet         Foundation through Grant No. PHY 92-00542 and PHY
+by 30 meV, which is comparable to resolution currently             89-20108. R. G. acknowledges partial support through
+reported for ATI photoelectron studies [9]. We mention             the Feodor Lynen Progam of the A. von Humboldt
+Na only for illustration. We believe that our model's              Foundation of Germany and through the National Sci-
+assumptions    and the predictions of formula (7) are              ence Foundation. We also acknowledge assistance with
+sufficiently general to be applicable to many real two-            computing resources from the Pittsburgh Supercomput-
+electron systems, atoms as well as negative ions.                  ing Center and the Allied-Signal Foundation.
+
+
+
+  [1] S. L. Autler and C. H. Townes, Phys. Rev. 100, 703 (1955).        Eberly, and J. Javanainen, Phys. Rev. Lett. 64, 862 (1990);
+      See also P. L. Knight and P. W. Milonni, Phys. Rep. 66,           V. C. Reed, P. L. Knight, and K. Burnett, ibid. 67, 1415
+      21 (1980); P. L. Knight, M. A. Lauder, and B. J. Dalton,          (1991). For previous two-electron applications see Refs.
+      ibid. 190, 1 (1990).                                              [4] and [5].
+  [2] P. L. Knight, Opt. Commun. 22, 172 (1977); J. Phys. B &1,      [7] The   space   coordinates   have   been   discretized   to a
+      L511 (1978) For a related experimental report, see Ref.
+                 ~                                                      1024X1024 lattice and the time-dependent          Schrodinger
+      [3].                                                               equation has been solved with a split-operator fast Fourier
+  [3] S. E. Moody and M. Lambropoulos, Phys. Rev. A 15, 1497             transform method that has been discussed in detail in M.
+      (1977).                                                            D. Feit, J. A. Fleck, Jr. and A. Steiger, J. Comput. Phys.
+  [4] M. S. Pindzola, D. C. Griffin, and C. Bottcher, Phys. Rev.         47, 412 (1982).
+      Lett. 66, 2305 (1991).                                         [8] The multipeak structure in the lower-energy "normal"
+  [5] R. Grobe and J. H. Eberly, Phys. Rev. Lett. 68, 2905               doublet arises because the interaction is pulsed rather than
+      (1992).                                                            steady. This effect was predicted for autoionization by K.
+  [6] Properties of the soft-core Coulombic potential V(x) are           Rzazewski, Phys. Rev. A 28, 2565 (1983) and for resonant
+      summarized in Q. Su and J. H. Eberly, Phys. Rev. A 44,             multiphoton ionization by D. Rogus and M. Lewenstein,
+      5997 (1991). Applications to one-electron systems have             J. Phys. B 19, 3051 (1986).
+      been described in, for example, J. Javanainen, J. H. Eber-     [9] P. H. Bucksbaum and T. J. McIlrath (private communica-
+      ly, and Q. Su, Phys. Rev. A 38, 3430 (1988); Q. Su, J. H.          tion).
+

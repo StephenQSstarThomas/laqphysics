@@ -1,0 +1,18 @@
+{
+  "channel1": {
+    "paper_esss_peak": 0.595718912352738,
+    "paper_tdse_peak": 0.5962398246877347,
+    "our_esss_vs_paper_relative_L1": 0.005212545305665058,
+    "1d_dt0005_vs_paper_esss_relative_L1": 0.09455554024199134,
+    "1d_radius_refined_vs_paper_esss_relative_L1": 0.011504496103717354,
+    "1d_dvr_split_vs_paper_esss_relative_L1": 0.008239448858066687
+  },
+  "channel2": {
+    "paper_esss_peak": 0.5962398303979163,
+    "paper_tdse_peak": 0.5962398246877347,
+    "our_esss_vs_paper_relative_L1": 0.010221437953468993,
+    "1d_dt0005_vs_paper_esss_relative_L1": 0.11663451517961067,
+    "1d_radius_refined_vs_paper_esss_relative_L1": 0.043333630757416704,
+    "1d_dvr_split_vs_paper_esss_relative_L1": 0.039475431792244664
+  }
+}

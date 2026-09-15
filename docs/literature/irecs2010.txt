@@ -1,0 +1,823 @@
+                                                  PHYSICAL REVIEW A 81, 053845 (2010)
+
+
+         Infinite-range exterior complex scaling as a perfect absorber in time-dependent problems
+
+                                                                Armin Scrinzi*
+                             Ludwig Maximilians University, Theresienstrasse 37, D-80333 Munich, Germany and
+                                             Wolfgang Pauli Institute, A-1090 Vienna, Austria
+                                          (Received 15 February 2010; published 24 May 2010)
+                   We introduce infinite range exterior complex scaling (irECS) which provides for complete absorption of
+                outgoing flux in numerical solutions of the time-dependent Schrödinger equation with strong infrared fields. This
+                is demonstrated by computing high harmonic spectra and wave-function overlaps with the exact solution for a
+                one-dimensional model system and by three-dimensional calculations for the H atom and an Ne atom model. We
+                lay out the key ingredients for correct implementation and identify criteria for efficient discretization.
+
+                DOI: 10.1103/PhysRevA.81.053845                                PACS number(s): 42.50.Hz, 02.60.Cb, 33.20.Xx
+
+
+                       I. INTRODUCTION                                     points is achieved. The method far outperforms conventional
+                                                                           ECS and the commonly used monomial CAP’s. In addition,
+    The absorption of outgoing parts of the wave function
+                                                                           irECS is not just an absorber: Ideally, it keeps a record of
+at the boundaries of a finite volume is a key problem
+                                                                           the dynamics in the outer region, which, in principle, can
+for any efficient numerical solution of the time-dependent
+                                                                           be recovered. We will provide numerical evidence for this
+Schrödinger equation (TDSE) and it has been amply dealt
+                                                                           behavior that was conjectured based on formal arguments in
+with also in recent literature (see, e.g., [1] and references
+                                                                           Ref. [6].
+therein). This interest has been renewed in the context of
+                                                                              After giving a brief review of general ECS theory, we will
+intense laser-matter interactions: speaking in terms of physics,
+                                                                           present with some care our discretization method, as it plays
+strong fields lead to large ionization and therefore large fluxes
+                                                                           an important role in irECS. The general characterization of
+out of a central region. For strong-field-induced electronic
+                                                                           irECS and a comparison with ECS and CAP’s is done using
+and nuclear dynamics in atoms and molecules and high
+                                                                           a one-dimensional model system, and finally we will present
+harmonic generation, electrons far from the system play no
+                                                                           results in three dimensions for the H atom and a single-electron
+role and can be disregarded. When solving the TDSE for
+                                                                           model of Ne.
+these processes, one can therefore identify an inner region (a
+finite volume) where an exact solution is of interest. Outside
+that region one must, by some means, truncate the solution                                 II. TDSE WITH A LASER FIELD
+without compromising the inner region. This is particularly                    We want to solve the TDSE of the general form
+important for higher-dimensional problems involving two or                                                                
+more electrons to control the size of the discretization. Out of               d               1
+the large number of approaches toward that goal the majority                  i (x ,t) = − x + i          x + V (
+                                                                                                       A(t) · ∇         x ) (
+                                                                                                                              x ,t),     (1)
+                                                                               dt              2
+of computations of strong laser-matter interactions employed
+one of the following methods: absorbing masks [2], complex                 where x will be either a single x or three x,y,z spatial
+absorbing potentials (CAP’s) [3], and exterior complex scaling             coordinates. x ,∇ x then denote ∂ 22 , ∂ and the Laplace and
+                                                                                                                ∂x ∂x
+(ECS) [4,5].                                                               Nabla operators, respectively. V (   x ) is a system-dependent
+    None of these methods appeared to be completely satisfac-              binding potential and A(t) is the vector potential of the laser
+tory: absorbing masks and the closely related CAP’s require                field. Here we have chosen the velocity gauge and removed
+careful adaptation to a given problem and a comparatively large            the term A(t)2 /2 by a time-dependent unitary transform.
+absorption range, but still do not allow perfect absorption.               Here and throughout the paper we use atomic units (a.u.)
+As to ECS, the two recent numerical studies have cast                      e2 = h̄ = me = 1 unless indicated otherwise. As the initial
+doubt on the efficiency [5] and maybe even the fundamental                 state we use the lowest-energy eigenfunction of the field-free
+correctness the method in numerical practice [4]: rather                   Hamiltonian operator − 12  + V . We use vector potentials
+poor accuracies, problems with numerical stability, apparent               with finite duration
+fundamental limitations of long-range absorption, and also                                                                 
+                                                                                                           πt          2π t
+poor efficiency were reported.                                                          A(t) = A0 cos   2
+                                                                                                                   sin          ,        (2)
+    Here we present infinite range ECS (irECS) which turns                                                  2nT           T
+ECS into a perfect absorber: Instead of applying ECS on a finite           in the time interval [−nT ,nT ] with n = 1,5,10. The peak
+discretization range, the absorbing part of the wave functions             vector potential is A0 = A0 and A0 = (A0 ,0,0) in one and
+is discretized by a finite number of basis functions with                  three dimensions, respectively. Such pulses with a single or a
+infinite extension. We will show that with this comparatively              few oscillations of the electric field, linear polarization, and
+simple modification absorption to full computational accuracy              peak field amplitude at t = 0 are frequently used as models in
+(14 digits) using only a small fraction of the total discretization        numerical studies.
+                                                                              The complete information of the system inside some inner
+                                                                           region |
+                                                                                   x | ⩽ R0 is contained in the wave-function amplitude.
+ *
+     armin.scrinzi@lmu.de                                                  For characterizing the accuracy of our results by a single
+
+1050-2947/2010/81(5)/053845(10)                                   053845-1                               ©2010 The American Physical Society
+ARMIN SCRINZI                                                                                 PHYSICAL REVIEW A 81, 053845 (2010)
+
+number, we use the overlap between an “exact” solution                that our solution remain square integrable. A more elaborate
+ex obtained from a calculation in a very large box and the           version of this reasoning can be found in the Appendix of
+approximate solution                                                 Ref. [14].
+                                                                         The mathematically rigorous theory of complex scaling
+                                     |ex |B |2
+                E 2 [B] = 1 −                         .        (3)    often uses the alternative point of view that not the wave
+                                   ||ex ||2B ||||2B                 functions, but rather the operator itself is scaled, while it
+The scalar product is restricted to the inner region or a             remains an operator acting on an ordinary Hilbert space of
+subregion of the inner region B ⊂ {|x | ⩽ R0 }                       square-integrable functions. We follow this line of reasoning
+                                                                     for pointing out a fact of immediate computational relevance.
+             ex |B =             ∗
+                             dx (d) ex (
+                                         x )(
+                                              x ),    (4)             We only give here plausibility arguments and refer the reader
+                               B                                      to Ref. [13] for a more extensive discussion and references to
+                                                                      mathematical literature.
+and || · ||B is the corresponding L2 norm.                               One starts from real scaling, that is, replacing iθ in Eq. (7)
+   A quantity of immediate physical interest is the intensity         with a real number λ and observes that the transformation
+spectrum of the harmonic response given by the Fourier                               
+transform of the “acceleration of the dipole”                                          (x)                       for x < R0
+                                                                       (UλR0 )(x) = λ/2                                            (9)
+                                                 2                                 e (eλ (x ∓R0 )∓R0 ) for ∓ x > R0 ,
+                                     ∂V
+           S (ω) = F (    x ,t)|    |(
+                                           x ,t)B     .  (5)
+                                     ∂x                               is unitary. The scaling factor eλ/2 is essential to ensure unitarity.
+For the comparison, integrals are restricted to the inner region      Formally, this transform can just as well be applied to the
+B. In general, S(ω) is a highly oscillatory quantity varying by       Hamiltonian by defining
+several orders of magnitude. The local error of the spectrum                                                ∗
+relative to an “exact” spectrum is                                                          HλR0 := UλR0 H UλR0
+                                                                                                                .                     (10)
+                          δω[S (ω) − Sex (ω)]                       It is important to note that if H is defined on differentiable
+               D(ω) =        ω+δω              .              (6)
+                                                                      functions , the transformed operator is defined on the
+                             ω−δω dωS (ω)
+                                                                      discontinuous functions λR0 = UλR0  and its action on these
+Local averaging in the denominator suppresses spurious spikes         functions is given by
+due to the near-zeros of the spectrum.
+                                                                                                     ∗
+                                                                                 HλR0 λR0 = UλR0 H UλR0
+                                                                                                         λR0 = UλR0 H .             (11)
+        III. OUTLINE OF GENERAL ECS THEORY
+                                                                      As a unitary transform UλR0 leaves the operator’s spectrum
+   There is a large volume of literature available on complex         unchanged and the scaled dynamics are in a one-to-one relation
+scaling in general (see, e.g., [7–9]) and on exterior complex         to the unscaled. Now the hard part of the mathematical theory
+scaling in particular (see, e.g., [10–12], and references therein).   sets in: For a certain class of “dilation analytic” potentials,
+We restrict our summary to communicating the basic idea               the operators HλR0 can be analytically continued to complex
+and to emphasizing the points that are essential for correct          values λ → iθ without changes in the bound-state spectrum
+numerical implementation. For this we closely follow the              [9]. The continuous spectrum is rotated around the continuum
+earlier work found in Ref. [13]. In one dimension, exterior           threshold into the lower complex energy plane by the angle 2θ .
+complex scaling consists in continuing the coordinate outside         This is trivial to see for the free particle and the case R0 = 0
+a “scaling radius” R0 into the complex plane                          where the spectrum σ (−) transforms as
+                   
+                     x                      for |x| < R0                     σ (−) = [0,∞) → σ (−e−2iθ ) = [0,e−2iθ ∞).             (12)
+   x → zθR0 (x) = iθ                                            (7)
+                     e (x ± R0 ) ∓ R0 for ∓ x > R0 .
+                                                                      This property of the continuous spectrum persists when
+The effect of the transformation on plane waves at values             dilation analytic potentials are added and for R0 > 0: the
+x > R0 is                                                             complex-scaled Hamiltonian retains a distinct “memory” of
+         e±ipx → e±ipR0 e±ip cos θ(x−R0 ) e∓p sin θ(x−R0 ) .   (8)    the unscaled Hamiltonian. Proof of dilation analyticity can be
+                                                                      difficult to find. Beyond some large R0 , where most physical
+For positive p—outgoing waves to the right side—the func-             potentials have simple decaying tails, the expected properties
+tions become exponentially damped with increasing x, while            of ECS can be confirmed by the numerical experiment.
+for negative p they grow exponentially. The corresponding                One can now write an exterior complex-scaled TDSE
+situation with reversed signs arises for x < −R0 . By complex
+scaling we can distinguish incoming from outgoing waves                     d
+                                                                        i      θR0 (x,t)
+simply by their normalizibility without the need to analyze the             dt
+asymptotic phase. In a typical discretization we implicitly or               = HθR0 (t)θR0 (x,t)
+                                                                                                                  
+explicitly use only square-integrable functions, by which we                        1
+exclude incoming waves from a complex-scaled calculation.                    = − θR0 + i           θR0 +VθR0 (x) θR0 (x,t).
+                                                                                             A(t) · ∇                                 (13)
+                                                                                    2
+This is the key to complex scaling as a perfect absorber:
+in a well-defined region we have a simple instrument to               Here it is assumed that the potential can be analytically
+systematically suppress incoming waves by just requiring              continued to complex values VθR0 (x) = V [zθR0 (x)]. One may
+
+                                                                053845-2
+INFINITE-RANGE EXTERIOR COMPLEX SCALING AS A . . .                                                     PHYSICAL REVIEW A 81, 053845 (2010)
+
+hope that the dynamics generated by (13) are related to the           element scheme. In practice we use real-valued polynomials
+original dynamics and that for |x| < R0 the solution is identical     which, for enhancing numerical stability, we transform to
+to the unscaled solution θR0 (x ) = (x ). We will demonstrate        xn
+in the following that this expectation can be confirmed by                   fi(n) (x)fj(n) (x)dx = m(n)
+                                                                                                     i δij ∀ij = 1pn ,pn 1,    (18)
+numerical experiment to the level of full machine precision.               xn −1
+    The main purpose of this brief discussion of ECS theory is        with normalization constants m(n) i . A brief technical discussion
+to stress the importance of the correct discontinuity in the wave     of the transformations needed to arrive at Eq. (18) is given in
+function for defining differential operators. The discontinuity       the Appendix.
+at R0 is intimately linked to the unitarity of the real-scaled            For the element functions (17), Dirichlet boundary condi-
+problem, which in turn secures the conservation of spectral           tions are implemented by omitting the first and last functions
+properties of the scaled operator. For given R0 and θ it has the
+                                                                      f1(1) and fp(N) on the first and last elements of the simulation
+explicit form                                                                      N
+                                                                      box, respectively. Alternatively, on the leftmost and rightmost
+             θR0 (R0 − 0) = eiθ/2 θR0 (R0 + 0),             (14)    intervals we use polynomials times an exponential e±αx with
+                                                                      + and − signs on the intervals (−∞,x1 ] and [xN−1 ,∞),
+             θR0 (R0 − 0) = e    i3θ/2
+                                          θR0 (R0 + 0).      (15)    respectively. The conditions on the end-element functions are
+The discontinuity condition (15) on the derivative arises from                        fi(1) (x1 ) = 0      except       fp(1)
+                                                                                                                           1
+                                                                                                                              (x1 ) = 1,
+transforming the continuous first derivatives of the original                                                                                (19)
+functions. On such functions, one can define the complex-                          fi(N) (xN−1 ) = 0       except       f1(N) (xN−1 ) = 1.
+scaled Laplacian in analogy to Eq. (11) by “back-scaling” the         The exponent α can be adjusted for best performance, but its
+scaled function θR0 (x) → θR0 (e−iθ (x ∓ R0 ) ± R0 ), apply-        exact value was found to be uncritical for irECS.
+ing the ordinary Laplacian, and forward-scaling the result               The finite-element ansatz for the total wave function is as
+                                                                     usual
+                      θR0 (x)        for |x| < R0
+   (θR0 θR0 )(x) = −2iθ                                  (16)                                           N   pn
+                      e    θR0 (x) for |x| > R0 .
+                                                                                         (x,t) =                   ci(n) (t)fi(n) (x).      (20)
+            −2iθ                                  2      2                                               n=1 i=1
+The factor e      appears, as the derivative ∂ /∂x is applied to
+the back-scaled function rather than to θR0 (x). On continuous       By construction of the fi(n) , Eq. (17), continuity across element
+functions the scaled Laplacian (and any derivative) is not            boundaries is assured by demanding
+defined as an operator in the Hilbert space, just as an ordinary
+Laplacian is not defined on discontinuous functions.                                      cp(n−1)
+                                                                                             n−1
+                                                                                                  = c1(n) , n = 2, . . . ,N.                 (21)
+   Finally, we want to point to the fact that the adjoint oper-
+                                                                      Elementwise overlap and Hamiltonian matrices are
+ator ([0,θ] )† = [0,−θ] requires functions with the complex                             xn
+conjugate condition of Eqs. (14) and (15). This means that for                                               ∗
+                                                                                Sij(n) =      J (x) fi(n) (x) fj(n) (x)dx,                   (22)
+our discretization by a basis set the discontinuities must not be                                 xn−1
+conjugated when going from ket to bra vectors. We will show                                     xn
+                                                                                                                        ∗
+in what follows how this can be easily implemented in a finite                      Hij(n) =           J (x) fi(n) (x) H (t)fj(n) (x)dx,     (23)
+element basis.                                                                                  xn−1
+
+                                                                      where J (x) denotes the Jacobian function for integration
+              IV. DISCRETIZATION OF IRECS                             over x. The elementwise matrices are added into the overall
+                                                                      discretized matrices Ĥ and Ŝ such that the last row and
+   For the discretization three points are crucial: (i) the correct   column of each elementwise matrix overlaps with the first
+implementation of the discontinuity, (ii) the use of infinite         row and column of the following element (see Fig. 1), which
+range functions, and (iii) good approximation of analyticity.         is equivalent to setting the corresponding coefficients equal,
+All can be most conveniently accommodated in a finite element         Eq. (21). As always in finite element methods, continuity of
+discretization of high rank.                                          the first derivative does not need to be imposed (see Ref. [13]
+   We follow the implementation strategy laid out in Ref. [13]:       for a more detailed discussion). Ĥ and Ŝ are M × M matrices
+each coordinate axis is divided into N elements [xn−1 ,xn ],          with
+n = 1, . . . ,N. On each element with number n, we choose                              N
+a set of pn linearly independent functions fi(n) ,i = 1, . . . ,pn                     n=1 pn − N − 1              for all |xn | < ∞
+                                                                        M=             N
+                                                                                                                                             (24)
+                                                                                       n=1 pn − N + 1              for |x0 | = |xN | = ∞.
+that can be transformed such that all functions are equal to
+zero at xn−1 and xn , except for the first and last functions,
+which have values equal to one at the lower and upper element             For irECS we choose the scaling radii to coincide with
+boundaries, respectively,                                             the element boundaries xn± = ±R0 . The scaled elementwise
+                                                                      Hamiltonian matrices are evaluated by substituting in (23)
+                      fi(n) (xn−1 ) = fi(n) (xn ) = 0,                the Jacobian J (x) and the operator H (t) with their ECS
+                                                              (17)
+              except f1(n) (xn−1 ) = fp(n) (xn ) = 1.                 equivalents
+                                        n
+                                                                                   xn       (n)  (n)
+                                                                         (n)       xn−1 dxJfi Hfj               |x| < R0
+We will call pn the “rank” of the finite element. In principle,       HθR0 ,ij =                                           (25)
+                                                                                   iθ xn           (n)    (n)
+any set of functions that obeys (17) can be used in a finite                      e xn−1 dxJθR0 fi HθR0 fj      |x| > R0 .
+
+                                                                053845-3
+ARMIN SCRINZI                                                                                    PHYSICAL REVIEW A 81, 053845 (2010)
+
+
+                                                                          parameters correspond to peak intensity 2 × 1014 W/cm2 and
+                                                                          wave length 760 nm. We will show results for the full width
+                                                                          at half maximum (FWHM) of the amplitude of n = 1, 5, and
+                                                                          10 optical cycles and total pulse durations of 2, 10, and 20
+                                                                          optical cycles, see Eq. (2). The classical quiver amplitude of
+                                                                          an electron in this field is A0 × T /2π = 21 atomic units. At
+                                                                          the end of a single cycle pulse with this intensity around 20%
+                                                                          and after a five cycle pulse more than 80% of the electron
+                                                                          probability have left the range [−40,40].
+                                                                             Within the framework of this model system we will answer
+                                                                          the following questions: Can irECS be considered a perfect
+                                                                          absorber? Can the scaling radius be put inside the range
+                                                                          of the quiver motion (i.e., R0 < 21)? Does irECS work for
+                                                                          long pulses? Which parameters determine the efficiency of
+                                                                          irECS? How does it compare to conventional ECS? How
+  FIG. 1. Placement of the elementwise block Hij(n) in the overall        many discretization coefficients are needed? How does irECS
+Hamiltonian matrix Ĥ .                                                   perform compared to monomial CAP’s? Does irECS work for
+                                                                          length gauge?
+As we use real functions fi(n) , we can omit the complex
+conjugation and the resulting matrices are complex symmetric                               A. irECS is a perfect absorber
+        (n)         (n)
+[i.e., HθR       = HθR        ]. The discontinuity (14) is brought into
+           0 ,ij       0 ,j i
+                                                                              We call an absorber perfect if the error E[−R0 ,R0 ] defined
+the system by the factor eiθ for the integrals |x| > R0 : it
+                                                                          in Eq. (3) is on the level of machine precision. For the
+amounts to multiplying all functions fi(n) outside the scaling            comparison we need an “exact” result ex , which is obtained
+radius by eiθ/2 and as the discontinuity does not get complex             from an unscaled calculation on a large box [x2 ,xN−1 ] =
+conjugated, the bra and ket discontinuity factors do not cancel           [−1180,1180] with a total of M = 4801 discretization co-
+but multiply to eiθ . As in the unscaled case, the continuity             efficients distributed over 120 elements with constant rank
+condition on the first derivative (15) does not need to be                pn ≡ 41. The elements are equidistant except for the infinite
+imposed for finite elements. The procedure for constructing               end elements x0 = −∞ and xN = ∞ with exponent α = 0.5,
+the overall matrix ĤθR0 is identical to the unscaled case.               Eq. (19).
+Replacing H (t) by 1 results in the correct (non-Hermitian)                   For irECS we use the parameters θ = 0.5 and R0 = 40 and
+overlap matrix ŜθR0 for the discretized problem. In practice, the        finite elements that up to R0 are the same as in the unscaled
+matrices ĤθR0 and ŜθR0 are rarely set up explicitly, as applying        calculation. In the scaled ranges on either end of the axis we use
+the elementwise matrices to the corresponding sections of the             infinite elements (∞, −R0 ] and [R0 ,∞) with p1 = pN = 41
+coefficient vectors is far more efficient.                                and exponent α = 0.5. At this point, no attempt was made to
+    There are no specific issues for time propagating the                 minimize the number of coefficients used for absorption by op-
+discretized system                                                        timizing the scaling parameters. Indeed, with the given param-
+                         d                                                eters we obtain for the L2 errors at the end of the pulses t = nT
+                      ŜθR0 c = ĤθR0 (t)
+                                          c,                 (26)                                    
+                         dt                                                                            2 × 10−15 for n = 1
+except maybe that very high accuracy was needed for our                              E[−R0 ,R0 ] =                                      (28)
+                                                                                                       3 × 10−14 for n = 5.
+comparisons. If anything, irECS mitigates the well-known
+stiffness problems for explicit time integrators, as high kinetic            The error of the wave-function amplitude is about the square
+energy are also associated with large imaginary parts and decay           root of these values and it remains constant after the initial
+rapidly. We use Runge-Kutta schemes with self-adaptive step               rise, see Fig. 2. The error level is constant through the whole
+size and self-adaptive order up to order 7. Robust error control          range [−R0 ,R0 ] and there is a sharp edge to the scaled region,
+is achieved by single-to-double-step comparisons. We obtain               where the wave function is not directly related to the unscaled
+significant speedups of the propagation by removing states                one. The errors indicate the accuracy limits of our numerical
+with very high eigenvalues of the field-free Hamiltonian from             integration scheme and are not determined by irECS. It is
+the simulation space by explicit projection.                              therefore fair to say that, at least for the present model, irECS
+                                                                          acts as a perfect absorber.
+     V. IRECS FOR A ONE-DIMENSIONAL PROBLEM
+   We first investigate irECS for the one-dimensional “hydro-                  B. Element rank and comparison to finite range ECS
+gen atom” with the model potential                                            The choice of conspicuously high element rank for these
+                                   1                                      very accurate calculations is not by coincidence. Complex
+                      V (x) = − √       ,                  (27)           scaling depends on analyticity properties of the Hamiltonian. It
+                                 2 + x2                                   is therefore not surprising that we observe a strong dependency
+which gives the ground-state energy −1/2. Here and in the                 of the accuracy on the degree to which our discretization
+following we use the peak vector potential |A0 | = 1.26 and the           can approximate analytic functions. Any localized basis, such
+optical period T = 104.8. If interpreted as atomic units, these           as finite elements or B-splines is not analytic by definition
+
+                                                                    053845-4
+INFINITE-RANGE EXTERIOR COMPLEX SCALING AS A . . .                                                                               PHYSICAL REVIEW A 81, 053845 (2010)
+
+                                                                                                            TABLE II. Error of ECS calculations with infinite and finite
+                                                                                              0         absorption ranges. In all calculations we use a single-cycle pulse, rank
+                                                                                            -2          pn = 21, and 160 discretization points in [−R0 ,R0 ] = [−40,40]. The
+                                                                                            -4          length of the absorption range is A = −R0 − x1 = xN − R0 and MA
+                                                                                            -6          is the number of coefficients for absorption at each side.
+                                                                                            -8
+                                                                                                        A                            MA                             E[−40,40]
+                0
+
+log10(Error)
+               -2                                                                                       ∞                             21                            2 × 10−15
+               -4
+               -6                                                                                       10                            20                            4 × 10−4
+               -8                                                                                 4     20                            40                            3 × 10−6
+                    -40                                                                                 30                            60                            2 × 10−11
+                                                                                        2
+                          -20                                                           l.)
+                                                                                                        40                            80                            1 × 10−15
+                                                                                        c
+                                                                             0 t.    cy
+                                                                                 p
+                                     0                                        (o
+                                x(                                        e
+                                                                  -2     m
+                                  a.u           20                     Ti
+                                        .)                                                              unscaled result. For reliable accuracy estimates one must vary
+                                                            -4
+                                                       40                                               the scaling radius R0 .
+                                                                                                            The use of infinite elements at the ends of the simulation box
+   FIG. 2. (Color online) Evolution of the relative error |(x) −
+                                                                                                        is the key to the high efficiency of irECS. Table II compares
+ex (x)|/|(x)| during a five-cycle pulse. The denominator is aver-
+                                                                                                        a few finite-box calculations with a calculation using infinite
+aged over five grid points to avoid spurious spikes. For the pulse
+parameters and discretization see text. The sharp rise of error marks
+                                                                                                        end elements with only 21 discretization points. Only at rather
+the boundaries of the inner region. A plane is drawn at error level                                     large finite boxes and a larger number of discretization points
+10−7 (blue); only a few error peaks in the inner region are above                                       does one reach the infinite element result.
+10−6 . Away from the center, relative errors are enhanced initially as                                      The explanation for this may be as follows: It was noticed
+the wave function is nearly zero.                                                                       in Ref. [5] that long wave lengths cannot be accommodated in
+                                                                                                        a finite ECS region and deteriorate absorption by reflections.
+because of the finite support of the basis functions. However,                                          Such long wave lengths have very little structure and should be
+with increasing polynomial degree, loosely speaking, one gets                                           easily parameterizable. It seems that the exponential tail of our
+closer to analytic functions. Table I lists the error of the wave                                       irECS functions is sufficient to accommodate slowly varying
+function in the range [−35,35] for increasing element rank.                                             long wave-length parts of the ECS wave function.
+As ±R0 must fall onto element boundaries, we had to choose
+slightly different values R0 for the different element ranks. The                                                        C. Choice of R0 and back-scaling
+irECS absorption range is discretized with between 36 and 45
+exponentially damped functions with α = 0.4 such that the                                                  We find that the quality of the wave function in the unscaled
+sum of coefficients in the scaled and unscaled regions was                                              region is not affected by the choice of the ECS radius R0 .
+M = 241 for all calculations. For the error estimates at each                                           Table III shows the errors E[−R0 ,R0 ] for R0 = 5, 10, 20, and
+pn a large box real calculation was performed with the same                                             40. The general error level in these calculations is slightly
+pn and the same number of points as for irECS in |x| < R0 .                                             higher as we used a lower element rank of pn = 11 to be
+From Table I we see that, depending on the desired accuracy,                                            able to make the two elements of the inner region small. The
+it is advisable to use polynomial degrees 8 or higher.                                                  density of discretization points was kept constant through all
+    For practical purposes, we want to mention that the variation                                       calculations. We see that the error level is independent of
+of an irECS calculation with θ and box size is not a safe                                               whether the ECS radius is chosen inside R0 = 5,10,20 or
+indicator of its accuracy. We found irECS calculations with                                             outside R0 = 40 the classical quiver amplitude of α0 = 21.
+fixed R0 , element rank, and element sizes to be far more                                               Errors only start to rise when the total size of the box indicated
+consistent among each other than their error relative to the                                            by the number of discretization points M becomes too small.
+                                                                                                        This may not be surprising, if we assume that the spatial range
+   TABLE I. Dependence of the final wave-function error on the                                          of the dynamics remains essentially unchanged by complex
+element rank pn . All ECS calculations are for a single-cycle pulse                                     scaling: if the box, be it scaled or unscaled, cannot let a
+and a total of M = 241 discrete coefficients.
+                                                                                                           TABLE III. Dependence of the final wave-function error on ECS
+pn ,n = 1,N                                  p1 = pN         R0                  E[−35,35]              radius R0 and on the total number of discretization points M.
+
+4                                              41            40                  4 × 10−8               M                             R0                           E[−R0 ,R0 ]
+5                                              41            40                  1 × 10−7
+6                                              41            40                  3 × 10−10              241                           40                           1.0 × 10−11
+7                                              43            39                  1 × 10−9               201                           20                           5.6 × 10−12
+9                                              41            40                  5 × 10−12              160                           10                           2.9 × 10−12
+11                                             41            40                  9 × 10−12              160                            5                           1.5 × 10−12
+13                                             37            42                  2 × 10−13              100                           10                           1.8 × 10−12
+15                                             46            38                  7 × 10−14              80                            10                           1.2 × 10−6
+21                                             41            40                  2 × 10−15              60                             5                           3.6 × 10−2
+
+
+                                                                                                  053845-5
+ARMIN SCRINZI                                                                                                                              PHYSICAL REVIEW A 81, 053845 (2010)
+
+                                                                                                     0.9
+                          1
+                                                                                                     0.8                1 cycle, MA=10                                                    5 cycles, MA=10
+
+                        0.95                                                                         0.7
+
+
+
+                                                                                   Scaling angle θ
+                                                                                                                                                             10-10
+                                                                                                     0.6                             10-11                                             10-2
+                         0.9
+
+
+
+
+Probability in [-5,5]
+                                                                                                     0.5                             -9                                    -8
+                                                                                                                                   10                                 10
+                                                                                                     0.4
+                        0.85                                                                                             10   -6
+                                                                                                     0.3                                                                           10-5
+                                                                                                                10-3
+                         0.8                                                                         0.2
+
+                                                                                                     0.8                1 cycle, MA=20                                                    5 cycles, MA=20
+                        0.75
+                                                                                                     0.7
+
+
+
+                                                                                   Scaling angle θ
+                                                                                                                                                                                                 10-6
+                         0.7                                                                         0.6
+
+                                                                                                     0.5                                10-14                              10-14
+                        0.65                                                                         0.4                                     10-12
+                                                                                                                                   10-9                                            10-12
+                                                                                                     0.3               10-6                                                                   10-9
+                         0.6
+                               -1         -0.5           0            0.5    1                       0.2
+                                                                                                        0.2    0.4      0.6    0.8       1           1.2   0.2       0.4       0.6      0.8          1      1.2
+                                                                                                                       Exponent α (a.u.)                                   Exponent α (a.u.)
+                                                 Time (opt. cycles)
+
+    FIG. 3. (Color online) Probability of finding the electron in the                  FIG. 4. (Color online) Error E[−40,40] as a function of scaling
+interval [−5,5] for the parameters used in Table III. At several times             angle θ and exponent α for n = 1 and n = 5-cycle pulses. For the
+a few percent probability returns into the region.                                 five-cycle pulse, longer wavelengths reach the boundaries; the optimal
+                                                                                   exponent and scaling angles are smaller and a longer (20 point)
+particle go the full distance and then return without reflections,                 absorption range significantly increases accuracy.
+distortions must occur.
+    One can draw an interesting conclusion from the fact that                      few absorption points. Figure 4 shows the error E[−40,40]
+the R0 can be chosen inside the classical quiver amplitude:                        for n = 1 and n = 5 cycle calculations with MA = 10 and 20
+There is nonnegligible probability for up to a few percent for                     absorption points on either end of the interval. The exact choice
+the electron to return from the scaled region (e.g., x > R0 = 5)                   of the parameters is not critical for the MA = 20 calculations,
+into the unscaled region (see Fig. 3). At the same time the wave                   where full accuracy is reached for rather large parameter
+function in the unscaled region never deviates from the exact                      ranges. As is to be expected, the five-cycle calculation with
+wave function beyond the level of E[−5,5] < 10−11 . This                           MA = 10 is most sensitive to θ and α, but still in a range
+means that flux moves into the scaled region and then back out                     of θ = θ0 ± 0.1 and α = α0 ± 0.1 around the optimal values
+without corrupting the unscaled part of the wave function and                      α0 ,θ0 ≈ 0.3,0.6 accuracy deteriorates only by two orders of
+that also in the scaled region the TDSE dynamics are encoded                       magnitude to the still-acceptable value of 10−8 . There is a
+correctly, although in a different way. Our numerical results are                  clear anticorrelation between θ and α, which may be explained
+a striking corroboration of this conjecture that was made early                    looking at the oscillatory behavior of the back-scaled exponen-
+on in ECS theory [6]. In principle, one may hope to recover                        tial Im exp[−αre−iθ ] = sin[α sin θ r]. We conjecture that the
+the unscaled wave function by analytic continuation. This                          effective back-scaled wave number γ = α sin θ is the relevant
+hope for back-scaling, in fact, was the original motivation for                    parameter for efficient absorption. The correlation between the
+introducing the analytic form of functions on the end elements,                    parameter γ and θ nearly vanishes and optimization can safely
+as an ordinary finite element function cannot be unambigu-                         be performed for each parameter independently.
+ously analytically continued. We have not further pursued
+this possibility for two reasons. First, with larger pN = p1                                                  E. Comparison to complex absorbing potentials
+and larger scaling angles θ we encountered severe numerical                            A popular and comparatively straightforward way of
+problems, as the back-scaled basis functions become highly                         absorbing outgoing flux are complex absorbing potentials
+oscillatory and cancellation errors destroy the reconstruction                     (CAP’s). The basic idea is to add at the end of the simulation
+of the unscaled wave function. The second reason is the striking                   box a potential with a negative imaginary part, which leads
+success of irECS with just a few points needed for absorption.                     to exponential damping of the wave function. In this simplest
+It is safer and simpler to just discard the small absorption range                 form, the method can be considered a differential form of
+and use the inner region directly for the evaluation of physical                   absorption by mask functions, where at preset intervals a
+quantities. Yet, if for one reason or another, one wishes to                       certain part of the wave function is removed. A fundamental
+back-scale a time-dependent irECS wave function, our results                       limitation of these methods is that they—even in principle—
+indicate that such a procedure can be successful. One may, in                      cannot be strictly reflectionless. The attempt to obtain minimal
+that case, use a representation of the scaled region that is less                  reflections has led to a range of models, partially including
+plagued by numerical problems than our exponential basis.                          real parts into the potential and adjusting to specific physical
+                                                                                   situations (see, e.g., [16]).
+                               D. Choice of scaling angle θ and exponent α             It is beyond the scope of the present work to perform a
+                                                                                   comprehensive study of CAP for the present type of problems.
+   Although with a sufficiently large absorption range one can
+                                                                                   Rather, we use the simple and well-investigated monomial
+always obtain perfect absorption independent of scaling angle
+                                                                                   CAP’s [3]
+θ and damping exponent α, optimizing these parameters in a
+given situation allows one to obtain good absorption with very                                                                            W (x) = −iσ x q ,                                              (29)
+
+                                                                             053845-6
+INFINITE-RANGE EXTERIOR COMPLEX SCALING AS A . . .                                                                                                        PHYSICAL REVIEW A 81, 053845 (2010)
+
+    TABLE IV. Accuracy of irECS, ECS, and CAP for different                                                                          10-4
+
+
+
+
+                                                                                                        Intensity (arb. units)
+absorption ranges A and a number of absorption coefficients MA .                                                                     10-6
+Scaling angle θ and absorption strength σ for ECS and CAP,                                                                           10-8
+respectively, were optimized. The errors are calculated at the end
+                                                                                                                                 10-10
+of a single-cycle pulse.
+                                                                                                                                 10-12
+
+Method                                   MA           A            θ or σ        q        E[−R0 ,R0 ]                                10-2
+                                                                                                                                                                   A
+                                                                                                                                                                   B
+                                                                                                                                                                   C
+
+irECS                                    21           ∞           0.6            –         2 × 10−15
+
+                                                                                                                    Relative error
+ECS                                      20           10          0.6            –         2 × 10−4                                  10-4
+
+ECS                                      40           20          0.5            –         1 × 10−7
+CAP                                      20           10         10−4            4         3 × 10−3                                  10-6
+CAP                                      20           10       2 × 10−6          6         4 × 10−3
+CAP                                      40           20       4 × 10−6          4         3 × 10−4                                  10-8
+CAP                                      60           30       6 × 10−7          4         1 × 10−5                                         0        10               20
+                                                                                                                                                                 Harmonic order
+                                                                                                                                                                                    30     40
+
+
+
+                                                                                                            FIG. 6. (Color online) High harmonic power spectrum from
+for polynomial degrees q = 4,6 with optimized σ in each                                                 the H atom for a one-cycle pulse (upper panel). Lower panel:
+calculation. The criterion for our comparison with irECS is                                             Error D(ω) with irECS parameters (R0 ,MA ,θ,α) = (40,20,0.5,0.5)
+the number of discretization points needed for a given level of                                         relative to a R0 = 80 calculation (curve A). The relative difference to
+absorption.                                                                                             a calculation with (40,40,0.4,0.4), curve B, underestimates the error.
+   Results are shown in Table IV. With a finite absorption                                              The calculation is converged with 20 angular momenta on the given
+range, conventional ECS outperforms CAP roughly by one or                                               level of accuracy. More angular momenta do not change the result.
+two orders of magnitude. With irECS using only 21 absorption                                            At 15 angular momenta (curve C) accuracy deteriorates.
+points, we can reach absorption to machine precision. We could
+not find a similar adjustment for CAP.                                                                  than this irrespective of discretization and scaling parameters.
+                                                                                                        Again this error is related to the numerical limits of our
+                                                   F. High harmonic spectra                             discretization and propagation schemes: the wave-function
+                                                                                                        error is ∼10−7 and the high frequency signal is suppressed
+   Although the error E is a meaningful measure for wave-
+                                                                                                        by 10−4 relative to the fundamental peak, making a relative
+function accuracy, it cannot be directly related to the error of
+                                                                                                        error of the suppressed signal of the order 10−3 quite plausible.
+a given observable. Figure 5 shows the accuracy of ECS high
+                                                                                                        Indeed we find similar errors when comparing different, but
+harmonic spectra of one-cycle and five-cycle pulses relative
+                                                                                                        equally accurate purely real calculations. More disquieting is
+to a real calculation. We find errors on the level between
+                                                                                                        the ∼1% error at the fundamental frequency, which does not
+10−4 and 10−3 and we could not get much better agreement
+                                                                                                        appear in large-box real calculations. We were not able to
+                                                                                                        locate the origin of this error: It persists through variations
+                             10 -4
+                                                                                                        of R0 , specific discretizations, different time discretizations,
+
+
+Intensity (arb. units)
+                             10 -6
+                             10 -8                                                                      and also for the three-dimensional H calculation in the
+                         10 -10                                                                         following (cf. Fig. 6). The error appears to be related to an
+                         10 -12
+                                                                                                        artificial overall modulation of the signal by the driving field,
+                         10 -14
+                                                                                                        possibly related to internal normalizations during propagation.
+                                                               A
+                                                               B
+                                                                                                        Note that by construction normalization errors do not appear
+                             10 -2                             C
+                                                                                                        in the wave-function accuracy measure E, Eq. (3). We
+                                                                                                        believe, however, that this error is acceptable for all practical
+
+            Relative error
+                             10 -4
+                                                                                                        purposes.
+
+                             10 -6
+                                                                                                                                                  G. irECS fails in length gauge
+                             10-8                                                                                                    For field interaction in length gauge
+                                     0        10           20               30       40           50
+
+                                                                                                                                                                           d A
+                                                             Harmonic order
+
+                                                                                                                                                          i    x → x
+                                                                                                                                                           A(t)∇                ,        (30)
+    FIG. 5. (Color online) High harmonic power spectrum for a                                                                                                              dt
+five-cycle pulse (upper panel). Lower panel: Accuracy D(ω) of the
+high harmonic spectrum with different irECS parameters and dis-                                         irECS completely fails in the time-dependent case. The reason
+cretizations. Curve A is the error for (R0 ,MA ,θ,α) = (40,20,0.7,0.7)                                  for this behavior was pointed out in Ref. [6]: When length-
+relative to a fully converged real calculation. The choice of R0 has the                                gauge Volkov solutions are complex scaled their asymptotic
+largest influence on accuracy: curve B, the difference between two                                      behavior becomes dependent on the sign of the field strength
+calculations with R0 = 40 and R0 = 50 closely follows the overall                                       and alternates between damping and growth. The convenient
+error curve A. At fixed R0 the influence of the other irECS parameters                                  distinction between incoming and outgoing waves by their
+and discretization is small: curve C compares calculations using                                        norms is lost. In the language of mathematical theory, x is not
+(R0 ,MA ,θ,α) = (40,20,0.7,0.7) and finite element rank pn = 21                                         a dilation analytic potential and severely so: complex scaling
+with (40,40,0.5,0.3) and rank 41.                                                                       transforms the spectrum of the Stark problem from purely
+
+                                                                                                  053845-7
+ARMIN SCRINZI                                                                                                          PHYSICAL REVIEW A 81, 053845 (2010)
+
+    TABLE V. Parameters for the Ne model potential Eq. (32).                                  10 -4
+
+
+
+
+                                                                     Intensity (arb.units)
+                                                                                                                                                               H
+                                                                                              10 -6                                                           Ne
+                                                                                              10 -8
+                                ai                             ci                            10 -10
+                                                                                             10 -12
+1                               −1                              0                            10 -14
+                                                                                             10 -16
+2                              −0.3                            0.5
+3                              −2.05                            2                                                                   H
+                                                                                                                                   Ne
+                                                                                                  100
+4                               1.23                            1
+
+
+                                                                                 Relative error
+                                                                                                  10-2
+
+continuous into purely discrete and all discrete eigenvalues of
+the scaled Stark Hamiltonian have imaginary parts [15]. This                                      10-4
+is in sharp contrast to dilation analytic potentials where the
+bound-state energies remain unchanged and the continuous                                          10-6
+                                                                                                         0   10                20               30       40         50
+spectrum is only rotated into the lower complex plane.                                                                           Harmonic order
+
+
+                                                                        FIG. 7. (Color online) High harmonic power spectra from the
+       VI. CALCULATIONS FOR H AND MODEL NE
+                                                                     H and an Ne model with a 10-cycle pulse (upper panel). Relative
+   To demonstrate the applicability of irECS to realistic            accuracies shown in the lower panel are somewhat poorer with the
+problems, we show calculations for the H atom with                   longer pulse, in particular for Ne where due to the higher ionization
+                                                                     potential the signal is very weak.
+                                        1
+                          x) = −
+                       V (                ,               (31)
+                                       |
+                                        x|                               A possible source of the observed difficulties may be the
+and a single electron model of the Ne atom with the potential        treatment of the overlap matrix. As discussed previously we
+                                                                     replace the ordinary overlap by the pseudo-overlap matrix
+                           4                                         ŜθR0 . With this choice, and as we use strictly real finite
+                                     exp[−ci |
+                                              x |]
+                   x) =
+                V (            ai                 .       (32)      element functions, we obtain complex symmetric matrices
+                                         |
+                                          x|
+                          i=1                                        (ĤθR0 )T = ĤθR0 for zero field A0 = 0 and (ŜθR0 )T = ŜθR0 .
+We use the parameters given in Table V, for which our model          There are no explicit statements about SθR0 in Refs. [4,5].
+reproduces the ground and first few excited state energies of        Usually, finite-difference methods imply (an approximation
+Ne. We use linearly polarized pulses with the same pulse             to) the identity operator for overlap. The B-spline method
+shape and peak intensity as in the preceding section and             used in [5] requires a choice for SθR0 and Eq. (20) of Ref. [5]
+pulse durations of 1 and 10 optical cycles. The calculations         seems to imply that indeed the identity was used as an overlap
+are done in polar coordinates with a spherical harmonics basis       matrix.
+on the angular coordinates and high-rank finite elements on              The comment on the nonorthogonality of the eigenvectors
+the r coordinate. Again, an infinite last element is used.           of the nonnormal scaled Hamiltonian in [5] also seems to
+   There are no surprises: Convergence patterns and accuracy         indicate that the ordinary, unscaled overlap matrix Ŝ was used.
+are very similar to the one-dimensional model. Figure 6 shows        Clearly, the eigenvectors b(α) of the eigenproblem
+the harmonic spectrum for H at one cycle together with errors
+                                                                                                                   ĤθR0 b(α) = Ŝ b(α) Eα ,                     (33)
+for different irECS and discretization parameters. The error
+estimate here is by comparison to an R0 = 80 calculation.            will not be orthogonal in general. However, we find that all
+   No new problems appear due to the more general Ne model           eigenvectors of the complex-scaled generalized eigenproblem
+potential (32). Figure 7 shows high harmonic spectra from
+an H and Ne for a 10-cycle pulse. Accuracy estimates were                                                         ĤθR0 c(i) = ŜθR0 c(i) Ei ,                   (34)
+obtained by varying the irECS radius R0 .                            are pseudo-orthogonal and can be normalized in the sense
+
+                      VII. DISCUSSION                                                                                  cl(i) (ŜθR0 )lm cm
+                                                                                                                                         (j )
+                                                                                                                                              = δij .              (35)
+                                                                                                                  lm
+   As we find high numerical stability and excellent perfor-
+mance of irECS as an absorber, the questions arise as to             Then the matrix ĤθR0 has a diagonal representation
+what are the reasons for the numerical problems reported
+in Refs. [4,5], where ECS was applied to essentially the                                                      ĤθR0 =              c(i) Ei (
+                                                                                                                                             c(i) )T ,             (36)
+                                                                                                                               i
+same systems. One obvious source of inaccuracies may lie
+in possible low-order discretizations. Unfortunately, in neither     and the spectral values Ei appear as discrete approximations
+publication is an investigation of the dependence of the             to the true irECS spectrum with strictly nonpositive imaginary
+observed effects on discretization shown.                            parts ImEα ⩽ 0. We do not have mathematical proof for this
+   We have documented the generally poorer performance of            property of the discrete complex-scaled system, but we find
+ECS compared to irECS, but according to Table II with the            it valid in all our calculations on the level of computational
+very large absorption ranges of 80 Bohr used in Ref. [5],            accuracy. If, on the other hand, we use the ordinary overlap
+excellent results should be achievable also in ECS. Note that        matrix Ŝ, we invariably obtain a few eigenvalues Eα with
+this absorption range is twice as large as the unscaled range.       ImEα > 0 which will cause long-term instability of the
+
+                                                               053845-8
+INFINITE-RANGE EXTERIOR COMPLEX SCALING AS A . . .                                           PHYSICAL REVIEW A 81, 053845 (2010)
+
+time propagation. Possibly this is the ultimate reason for the         The efficiency and excellent performance of irECS can
+numerical instabilities observed in Refs. [4,5].                    serve to dramatically reduce the effort for computing photo-
+                                                                    ionization processes and opens new possibilities for simula-
+                                                                    tion. Short absorption ranges become crucial for few-particle
+                       VIII. SUMMARY
+                                                                    systems, where overall absorbing volume grows exponentially
+    We have demonstrated that irECS can serve as a perfect          with the number of particles. Further, a perfect absorber is
+absorber of outgoing flux in the sense that in the unscaled         the prerequisite to be able to extract scattering information
+inner region it exactly matches a purely real calculation on a      from simulations in a small finite volume. Such a scheme was
+sufficiently large grid. With between only 20 to 40 absorption      formulated in Ref. [17] for laser-ionization using CAP’s. An
+points, we were able to push the agreement to relative L2           adaptation to irECS and its extension to few-body dynamics
+error of 10−15 . The corresponding errors in the wave-function      will be investigated in future work.
+amplitude are ∼10−7 . Both errors are at the limits of our
+numerical integration scheme. Furthermore, we have evidence
+that irECS does not just act as an absorber, but conserves                               ACKNOWLEDGMENTS
+dynamical information during excursions into the absorbing             This work was supported by the Viennese Science Founda-
+region: Even when the quiver motion takes flux deeply into          tion (WWTF) via the project “TDDFT” (MA-45). The author
+the “absorbing” region, the returning flux is identical to the      acknowledges support by the STSM program of COST action
+flux in a purely real calculation. We believe that irECS solves     CM0702.
+the absorption problem for the present class of system.
+    For this, we found the following points essential:
+    (i) implementation of the correct scaled derivatives, includ-           APPENDIX: CONSTRUCTION OF THE BASIS
+ing bra functions with unconjugated discontinuity;
+   (ii) the use of “infinite” absorption ranges, which we              Here we show explicitly how to construct the finite element
+discretized by polynomials times an exponential; and                basis sets used in this paper. On a given element [xn−1 ,xn ]
+  (iii) the use of high-rank discretization also in the inner       we choose a set of functions hn)
+                                                                                                   i (x),i = 1, . . . ,pn . We define
+region to reach the highest accuracies.                             the 2 × pn matrix of boundary values Bbi = h(n)  i (xn+b−2 ),b =
+    Point (i) leads to a complex symmetric, in particular, not      1,2. We require that B has at least two linearly independent
+a positive-definite discrete overlap matrix which must not be       columns, let us assume for notational simplicity that these are
+approximated by a positive-definite matrix.                         the first and last columns. Be C the 2 × 2 matrix of the first
+    Following these rules, we encountered no numerical diffi-       and last columns of B. It is easy to see that the new basis
+culties in the inner region or in the absorbing region, using a     set gi(n) ,i = 1, . . . ,pn
+standard explicit Runge-Kutta scheme for time integration. As
+a tendency, large scaling angles favor good absorption, in many
+cases we used θ = 0.7 ≈ 40◦ , which corresponds to an almost                  g1(n) (x) = (C −1 )11 h(n)       −1
+                                                                                                     1 (x) + (C )12 hpn (x),
+                                                                                                                     (n)
+                                                                                                                                      (A1)
+purely imaginary continuous energy spectrum [0,e−2iθ ∞). In                   gp(n)n (x) = (C −1 )21 h(n)       −1
+                                                                                                      1 (x) + (C )22 hpn (x),
+                                                                                                                      (n)
+                                                                                                                                      (A2)
+our basis we found the scaling angle ultimately to be limited by              gi(n) (x) = h(n)              (n)
+                                                                                            i (x) − B1i g1 (x) − B2i gpn (x),
+                                                                                                                        (n)
+numerical instabilities due to the complex symmetric overlap                                                                          (A3)
+matrix. As excellent absorption can be achieved with as few as                               i = 2, . . . ,pn − 1,
+20 discretization coefficients in the absorbing region, pushing
+the scaling angle to the numerical limits is not necessary, in      fulfills the conditions in Eq. (17). Note that the only require-
+general, and scaling angles of θ = 0.3 ∼ 0.5 served well for        ment on the original functions is that C is invertible (i.e., the
+our purposes. In general, we found the scheme numerically           boundary value matrix has at least two linearly independent
+robust and not very sensitive to the scaling parameters. The        columns).
+option of back-scaling the solution to θ = 0 was abandoned              We transform to the form of Eq. (18) by first obtaining
+due to severe cancellation errors in the related transformations.   an orthonormal set of inner functions fi(n) ,i = 2, . . . ,pn − 1
+    When judging the accuracy of an irECS calculation, it is        fi(n) |fi(n)  = δij from gi(n) ,i = 2, . . . ,pn − 1 (e.g., by Schmidt
+important to vary the irECS radius R0 . Our comparison with         orthonormalization). We then remove the content of all inner
+a real calculation indicates the variation of the result with       fi(n) from the boundary functions g1(n) and gp(n)n by the projection
+different R0 gives realistic error estimates. Other parameters
+such as rank of the finite elements, length of the absorption
+range, or scaling angle are of secondary importance.                               fb(n) = (1 − PI )gb(n) ,   b = 1,pn ,              (A4)
+    Both, ECS and irECS, outperform simple monomial CAP’s.
+ECS errors were one or two orders of magnitude smaller                                                p −1
+                                                                    with the projector PI = i=2    n
+                                                                                                       |fi(n) fi(n) |. As the inner
+than CAP errors with the same spatial discretization, but the       functions are equal to zero at the element boundaries, the
+advantage of irECS can reach 12 orders of magnitude! We are         boundary conditions in Eq. (17) remain unaffected by these
+aware of the fact CAP’s can be greatly improved by a variety of     transformations. All transformations can be performed quickly
+measures (see, e.g., [16]). However, in general, these require      and reliably during setup by computing the matrices Tij(n) that
+tuning of the CAP parameters to a given situation. Even with                                         pn
+that, we do not expect to reach comparable accuracies with          directly take the h(n)
+                                                                                       j to fi
+                                                                                              (n)
+                                                                                                  = j =1  Tij(n) h(n)
+                                                                                                                  j . Mathematically
+                                                                                                      (n)         (n)
+CAP’s as we could demonstrate for irECS.                            speaking, the spaces spanned by hi and fi are identical, but
+
+                                                              053845-9
+ARMIN SCRINZI                                                                                 PHYSICAL REVIEW A 81, 053845 (2010)
+
+the latter form is nearly orthogonal and therefore numerically        h(n) (x) = (x − xn−1 )i , the transformations will breakdown
+stable and in addition allows for convenient implementation           for numerical reasons already at ranks pn ∼ 10. Starting
+of the continuity conditions across boundaries.                       from orthogonal polynomials eliminates all ill-conditioning
+    The manipulations for the infinite end elements are almost        problems in the various transformations.
+identical, except that now the boundary matrix B is 1 × pn                With this, the basis sets are completely defined up to a
+and a single nonzero entry in B is sufficient.                        numerically irrelevant orthogonal transformation among the
+    As h(n)
+         i we choose scaled and shifted Legendre polynomials          inner functions, if the element boundaries xn , the rank pn ,
+  (n)
+hi = Pi [yn (x)], where yn maps [xn−1 ,xn ] onto [−1,1]               and, where applicable, the exponent α is given. In the one-
+                                                                      dimensional calculations we used constant size elements. For
+                            2x − xn−1 − xn
+                   yn (x) =                .              (A5)        the Coulomb problem, the element sizes started from x1 −
+                               xn − xn−1                              x0 = 0.3pn and then increased linearly up to the radius 15.
+On the end elements we start from Laguerre polynomials with           Beyond that the element size was kept constant. We obtain the
+arguments scaled by ±2α times the exponentials exp(±αx)               first few H bound states to machine accuracy. What mainly
+on the lower and upper ends, respectively. Mathematically             determines the good accuracy is the high pn used. The use of
+speaking, the choice of polynomials is irrelevant as long as          a variable size element is routine to our implementation, but
+all orders up to pn are included. However, for monomials              not relevant for the findings.
+
+
+
+
+ [1] X. Antoine, A. Arnold, C. Besse, M. Ehrhardt, and A. Schädle,    [9] M. Reed and B. Simon, Methods of Modern Mathematical
+     Comm. Comp. Phys. 4, 729 (2008).                                      Physics (Academic, New York, 1982), p. 183ff.
+ [2] J. L. Krause, K. J. Schafer, and K. C. Kulander, Phys. Rev. A    [10] C. Nicolaides and D. Beck, Phys. Lett. A 65, 11 (1978).
+     45, 4998 (1992).                                                 [11] B. Simon, Phys. Lett. A 71, 211 (1979).
+ [3] U. V. Riss and H.-D. Meyer, J. Chem. Phys. 105, 1409 (1996).     [12] C. McCurdy, M. Baertschy, and T. Rescigno, J. Phys. B 37,
+ [4] F. He, C. Ruiz, and A. Becker, Phys. Rev. A 75, 053407                R137 (2004).
+     (2007).                                                          [13] A. Scrinzi and N. Elander, J. Chem. Phys. 98, 3866
+ [5] L. Tao, W. Vanroose, B. Reps, T. N. Rescigno, and                     (1993).
+     C. W. McCurdy, Phys. Rev. A 80, 063419 (2009).                   [14] A. Scrinzi and B. Piraux, Phys. Rev. A 58, 1310 (1998).
+ [6] C. W. McCurdy, C. K. Stroud, and M. K. Wisinski, Phys. Rev.      [15] I. W. Herbst, Commun. Math. Phys. 75, 197 (1980).
+     A 43, 5980 (1991).                                               [16] J. Muga, J. Palao, B. Navarro, and I. Egusquiza, Phys. Rep. 395,
+ [7] E. Balselev and J. Combes, Commun. Math. Phys. 22, 280                357 (2004).
+     (1971).                                                          [17] J. Caillat, J. Zanghellini, M. Kitzler, O. Koch, W. Kreuzer, and
+ [8] J. Aguilar and J. Combes, Commun. Math. Phys. 22, 269 (1971).         A. Scrinzi, Phys. Rev. A 71, 012712 (2005).
+
+
+
+
+                                                                053845-10
+

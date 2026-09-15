@@ -1,0 +1,14 @@
+{
+  "original": "/home/shiqiu/task-jiukongdian",
+  "physical_location": "/playpen/shiqiu/task-jiukongdian",
+  "access": "original path is a symbolic link; data reside on existing /playpen mount",
+  "sha256": {
+    "程序纠错原则.md": "e0c40d157cc3ef16ae2fa4e62bf2ebdd1311a6d9db2d80597cf42936339b5f89",
+    "工作计划.md": "040fa220492825152e03e7ceefd6b3d2f30728fb267d19620f3cd81ea0320a5d",
+    "参考文献/Channel resolved e-e correlation.pdf": "3fe06e0c63e5b7a148c64f4721bdaad4a885c44e2be6974098eda79cdb261583",
+    "参考文献/irECS.pdf": "aadae7ab7ee6f31e1df0002002dcb736f9f25994180b2faf9c5c01d086af7587",
+    "参考文献/非偶极效应.pdf": "d575029b0f05f7c9d4557f5da411301f794005d89f841a60995366a2f866be5e",
+    "参考文献/e-e correlation.pdf": "eec2c5588e738d06762c80b0ac657e1d538f33fd4563f1ec170377417f3f7a79",
+    "参考文献/t-SUFF.pdf": "834924e5ab0f3b6713b9d848dc9e81d8f65ec65de6794cc3a0530eb9581da1ac"
+  }
+}

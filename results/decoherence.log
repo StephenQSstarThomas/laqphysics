@@ -1,0 +1,34 @@
+[
+  {
+    "trace_error": 1.5543122344752192e-15,
+    "hermiticity_error": 0.0,
+    "minimum_eigenvalue": -1.1750918229732256e-12,
+    "single_ionization_probability": 0.03756037453063174,
+    "conditional_negativity": 0.12880097158146353,
+    "gamma": 0.0
+  },
+  {
+    "trace_error": 1.1102230246251565e-16,
+    "hermiticity_error": 0.0,
+    "minimum_eigenvalue": -1.5516335251258988e-17,
+    "single_ionization_probability": 0.03751172609214655,
+    "conditional_negativity": 0.11509973344514557,
+    "gamma": 0.002
+  },
+  {
+    "trace_error": 1.4432899320127035e-15,
+    "hermiticity_error": 0.0,
+    "minimum_eigenvalue": -2.1774029393641513e-17,
+    "single_ionization_probability": 0.03731710984393327,
+    "conditional_negativity": 0.07077794012389438,
+    "gamma": 0.01
+  },
+  {
+    "trace_error": 3.552713678800501e-15,
+    "hermiticity_error": 0.0,
+    "minimum_eigenvalue": -1.4178454142909277e-17,
+    "single_ionization_probability": 0.036344452851862864,
+    "conditional_negativity": 0.002094981367974924,
+    "gamma": 0.05
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "radial": {
+    "edges": [
+      0,
+      0.5,
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      24,
+      26,
+      28,
+      30,
+      32,
+      34,
+      36,
+      38,
+      40,
+      42,
+      44,
+      46,
+      48,
+      50,
+      52,
+      54,
+      56,
+      58,
+      60
+    ],
+    "order": 8,
+    "tail": 28,
+    "ecs_angle": 0.5,
+    "alpha": 0.8
+  },
+  "lmax": 3,
+  "M": 0,
+  "cutoff_radii": [
+    35,
+    42
+  ],
+  "surface": 48,
+  "pulses": [
+    {
+      "pulse": {
+        "omega": 1.5,
+        "cycles": 180,
+        "field": 0.0534
+      },
+      "polarization": "z"
+    }
+  ],
+  "post_time": 100,
+  "dt": 0.04,
+  "surface_stride": 4,
+  "checkpoint_every": 100,
+  "krylov_dimension": 48,
+  "krylov_tolerance": 1e-10,
+  "ground_tolerance": 1e-09,
+  "max_surface_gib": 30,
+  "spectrum_energy": [
+    0.5,
+    0.7,
+    301
+  ]
+}

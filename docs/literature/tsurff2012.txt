@@ -1,0 +1,884 @@
+PAPER                                                                                            You may also like
+                                                                                                     - t-SURFF: fully differential two-electron
+Photo-electron momentum spectra from minimal                                                           photo-emission spectra
+                                                                                                       Armin Scrinzi
+volumes: the time-dependent surface flux method                                                      - iSURF: a family of infinite-time surface flux
+                                                                                                       methods
+                                                                                                       F Morales, T Bredtmann and S
+To cite this article: Liang Tao and Armin Scrinzi 2012 New J. Phys. 14 013021                          Patchkovskii
+
+                                                                                                     - Photoionization of few electron systems: a
+                                                                                                       hybrid coupled channels approach
+                                                                                                       Vinay Pramod Majety, Alejandro Zielinski
+                                                                                                       and Armin Scrinzi
+View the article online for updates and enhancements.
+
+
+
+
+                             This content was downloaded from IP address 106.120.124.72 on 02/09/2026 at 09:33
+    New Journal of Physics  The open–access journal for physics
+
+
+
+
+Photo-electron momentum spectra from minimal
+volumes: the time-dependent surface flux method
+                   Liang Tao1,2 and Armin Scrinzi1,3
+                   1
+                     Ludwig Maximilians Universität, Theresienstrasse 37, 80333 Munich,
+                   Germany
+                   2
+                     Wolfgang Pauli Institute c/o University of Vienna, Nordbergstrasse 15,
+                   1090 Vienna, Austria
+                   E-mail: armin.scrinzi@lmu.de
+
+                   New Journal of Physics 14 (2012) 013021 (16pp)
+                   Received 19 September 2011
+                   Published 13 January 2012
+                   Online at http://www.njp.org/
+                   doi:10.1088/1367-2630/14/1/013021
+
+                   Abstract.   The time-dependent surface flux (t-SURFF) method is introduced
+                   for computing strong-field infrared (IR) photo-ionization spectra of atoms
+                   by numerically solving the time-dependent Schrödinger equation on minimal
+                   simulation volumes. The volumes only need to accommodate the electron
+                   quiver motion and the relevant range of the atomic binding potential. Spectra
+                   are computed from the electron flux through a surface, beyond which the
+                   outgoing flux is absorbed by infinite range exterior complex scaling (irECS).
+                   Highly accurate IR photo-electron spectra are calculated in single active electron
+                   approximation and compared to the literature results. Detailed numerical
+                   evidence for performance and accuracy is given. Extensions to multi-electron
+                   systems and double ionization are discussed.
+
+
+
+
+3
+    Author to whom any correspondence should be addressed.
+
+New Journal of Physics 14 (2012) 013021
+1367-2630/12/013021+16$33.00                            © IOP Publishing Ltd and Deutsche Physikalische Gesellschaft
+2
+
+Contents
+
+1. Introduction                                                                                 2
+2. The time-dependent surface flux method                                                       3
+3. Finite-element discretization and infinite-range exterior complex scaling                    5
+4. Photo-electron momentum spectra for a short-range potential                                  7
+5. Photo-electron momentum spectra for the hydrogen atom                                        9
+6. Extensions of the method                                                                    12
+   6.1. Handling long-range potentials . . . . . . . . . . . . . . . . . . . . . . . . . .     12
+   6.2. Single ionization of multi-electron systems . . . . . . . . . . . . . . . . . . .      13
+   6.3. Double ionization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    14
+7. Conclusions and outlook                                                                     14
+Acknowledgments                                                                                15
+References                                                                                     15
+
+1. Introduction
+
+In a broad range of recent experiments, strong infrared (IR) laser pulses, often combined with
+high harmonic pulses, are used to study the electronic dynamics of atoms and molecules on
+the natural time scale of valence electron motion .1 fs. Basic mechanisms of the IR–electron
+interaction are well understood within the simple semi-classical recollision model [1], but
+for a more detailed understanding numerical simulations must be employed. This is due to
+the fundamentally non-perturbative interaction of near-IR fields with the valence electrons
+at intensities of &1014 W cm−2 . Even for the simplest single-electron models the simulation
+remains challenging, especially when accurate photo-electron momentum spectra are required,
+such as, e.g., for recollision imaging [2–4]. When two-electron processes are involved, one
+quickly reaches the limits of present-day computer resources [5, 6].
+     The surprising difficulty in simulating a seemingly simple process like ionization by a
+dipole field is due to the presence of vastly different length and time scales: first, even though
+the laser pulses can be as short as a single optical cycle, at the Ti:sapphire wave length of
+λ = 800 nm, this still corresponds to a full-width at half-maximum (FWHM) duration of &2.5 fs
+or about 110 atomic units (au, h̄ = e2 = m e = 1). During that time, a photo-electron with an
+energy of 13 eV ≈ 1/2 au moves a distance of ≈110 Bohr, which sets a lower limit for the
+required box size, if reflections from box boundaries are to be avoided. In practice, higher
+energies and longer pulse durations including the rise and fall of the pulses are of interest,
+leading to simulation volumes with diameters of thousands of atomic units. At the same time,
+photo-electron spectra are broad, extending to at least 2 Up for the ‘direct’ photo-electrons
+and further up to about 10Up for the ‘rescattered’ electrons. Rescattered electrons are those
+which after ionization are redirected to the nucleus by the laser field, where they absorb more
+photons in an inelastic scattering process. The ponderomotive potential at laser frequency ω
+Up = I /(4ω2 ) grows linearly with laser intensity I and quadratically with wavelength. At the
+moderate intensity I = 1014 W cm−2 and λ = 800 nm it is Up = 0.22 au ≈ 6 eV. The rescattering
+momentum energy cutoff of 10Up corresponds to a photo-electron momentum of 2.2 au. To
+represent such momenta on a spatial grid, we need grid spacings of at least 1x . 2π/2 au,
+
+New Journal of Physics 14 (2012) 013021 (http://www.njp.org/)
+3
+and for accurate results, usually significantly more than this. This leaves us with thousands of
+grid points in each spatial direction even for moderate laser parameters. The situation quickly
+worsens at higher intensities and longer wavelengths.
+      This general requirement on discretization cannot be overcome by any specific
+representation of the wave function: speaking in terms of classical mechanics, we must represent
+the phase space that is covered by the electrons, which involves a certain range of momenta
+and positions. If we have no additional knowledge of the structure of the solution, the number
+of discretization points we need is the phase space volume divided by the Planck constant
+h̄. In some cases such as, for example, single-photon ionization, we can exploit the fact that
+at long distances the solution covers only a very narrow range of momenta and only the
+spatially well-localized initial bound state requires a broader range of momenta: the phase-space
+volume remains small, and simple models such as perturbation theory allow the physics to be
+reproduced. We have no such simplifying physical insight for strong-field IR photo-ionization.
+      The lower limit for the number of discretization points for the complete wave function
+can be approached by different strategies: the choice of velocity gauge [7], working in the
+Kramers–Henneberger frame [8] or in momentum space [9], by variable grid spacings or by
+expanding into time-dependent basis functions [10]. A promising strategy is to follow the
+solution in time [11].
+      Alternatively, we can abandon the attempt at representing the complete wave-function
+and instead use absorbing boundaries and extract momenta at finite distances. The time-
+dependent surface flux method (t-SURFF) introduced here is such an approach. After its
+mathematical derivation, numerical implementation is briefly discussed. Angle-resolved photo-
+electron spectra are presented using between 75 and 200 radial discretization points for
+truncated and full Coulomb potentials. We discuss accuracies and demonstrate the efficiency of
+t-SURFF in comparison with the recent literature. Finally, possible extensions to few-electron
+systems and double photo-electron spectra are outlined.
+
+2. The time-dependent surface flux method
+
+Scattering measurements and theory are both based on the plausible idea that interactions are
+limited to finite ranges in space and time and that at large times >T and large distances > R the
+time evolution of the scattering particle is that of free motion:
+                            Z
+                 9(Er , t) ∼ dk (3) exp(−it kE2 /2)b(k)χ
+                                                     E kE (Er ) for t > T, |Er | > R,         (1)
+
+where χkE (Er ) = (2π )−3/2 exp(ikE · rE) are δ-normalized plane waves. The measured momentum
+spectrum is proportional to the square of the spectral amplitudes b(Ek)
+                 σ (k)
+                    E ∝ |b2 (k)|.
+                             E                                                             (2)
+For Hamiltonians that are time independent beyond a certain time T , we can readily obtain
+                          E by decomposing the wave function 9(Er , T ) into its spectral
+the spectral amplitudes b(k)
+components
+                E = hψkE |9(T )i exp(−iT kE2 /2),
+              b(k)                                                                     (3)
+where the scattering solutions
+                             kE2
+               H (T )|ψkE i = |ψkE i                                                          (4)
+                              2
+New Journal of Physics 14 (2012) 013021 (http://www.njp.org/)
+4
+have the asymptotic behavior
+                 ψkE (Er ) ∼ χkE (Er ) for |Er | → ∞.                                                        (5)
+For computing b(k),   E one needs to (i) propagate a solution 9(Er , t) until time T and (ii) obtain
+the scattering solutions ψkE . Unfortunately, both of these tasks are non-trivial in all except the
+simplest cases. As discussed above, solving the time-dependent Schrödinger equation (TDSE)
+with IR fields is numerically challenging because of the large box sizes needed. ‘Obtaining
+the scattering solution’ amounts to outright solving a time-independent scattering problem for
+H (T ), but analytic scattering wave functions are only known for simple model potentials and
+for the Coulomb potential.
+       Rather than letting the system evolve and analyzing it at the end of the evolution, we can
+record the particle flux leaving a finite volume as the systems evolves. Such a procedure requires
+neither stationary scattering solutions nor the complete wave function in an asymptotically large
+volume. It is practical either if we know the further time evolution of the system outside the
+finite volume in analytic form or if it can be obtained with little numerical effort. This type of
+method has been applied to reactive scattering with time-independent Hamiltonians [12, 13],
+where obtaining scattering solutions would be tantamount to solving the complete stationary
+scattering problem, a daunting task for few-body systems.
+       Photo-ionization cannot be computed by existing surface flux methods, as the dipole
+interaction is non-local and the external field modifies the particle energies everywhere, in
+particular also after the particle has left the finite simulation volume. To handle this, we have
+developed the time-dependent surface flux (t-SURFF) method, which will be derived in the
+following. A preliminary version of the method has been published in [14].
+       Let us choose a surface radius Rc large enough such that the particle motion can be
+considered as a free motion and that all occupied bound states of the system have negligible
+probability density at |Er | > Rc . Let us further pick a sufficiently large time T such that all
+particles that will ever reach our detector with energy kE2 /2 > 0 are outside the finite volume
+|Er | < Rc . At that time, the wave function has split into bound and asymptotic parts
+                 9(Er , T ) = 9b (Er , T ) + 9s (Er , T )                                                    (6)
+with
+                 9b (Er , T ) ≈ 0 for |Er | ⩾ Rc ,                                                           (7)
+                                Z
+                 9s (Er , T ) := dk (3) exp(−iT kE2 /2)b(k)ψ
+                                                         E kE (Er ) ≈ 0                  for |Er | ⩽ Rc .    (8)
+
+The approximate sign in (8) refers to the fact that very-low-energy particles kE2 /2 ∼ 0 may not
+have left the finite volume at time T . It follows that the lower the energy, the larger the T that
+will be required for the splitting to hold. Although each individual χkE extends over the complete
+space, the scattering wave packet is localized outside Rc up to a small error that quickly decays
+with growing T . The scattering amplitudes bkE can be obtained as
+                 eiT k /2 b(Ek) = hψk |9s (T )i ≈ hψk |θ(Rc )|9s (T )i = hχk |θ(Rc )|9s (T )i.
+                    E2
+                                                                                                             (9)
+Here we introduced the notation
+                                             Z
+                 hψk |θ (Rc )|9s (T )i :=                d(3)r ψkE∗ (Er )9s (Er , T ).                      (10)
+                                              |Er |>Rc
+
+
+New Journal of Physics 14 (2012) 013021 (http://www.njp.org/)
+5
+The substitution of the scattering solution with a plane wave ψkE → χkE in the last step uses the
+asymptotic behavior (5). It is exact when all interactions vanish beyond Rc .
+     To convert the above matrix element into a time integral over surface values, we must
+assume that we know the time evolution of the particle after it has passed through the surface.
+For that we assume that there is a ‘channel Hamiltonian’ Hc (t) such that
+                 Hc (t) = H (t)     for |Er | > Rc and ∀t.                                             (11)
+In the case of a short-range potential V (Er ) ≡ 0 for |Er | > Rc , this is exactly fulfilled by the
+Hamiltonian for the free motion in the laser field
+                Hc (t) = 12 [−i∇            E
+                                     E − A(t)]    2
+                                                    ,                                                   (12)
+                   Rt
+         E =−
+where A(t)           −∞
+                          EE(t 0 ) dt 0 for the dipole field EE(t). If not specified otherwise, atomic units
+(au) are used throughout this paper. The Volkov solutions
+                                                                             Z t
+                                    −3/2 −i8(Ek,t) iEk·Er                  1
+                χkE (Er ) = (2π )          e          e ,      8(Ek, t) =        dτ [kE − E
+                                                                                          A(t)]2        (13)
+                                                                           2 0
+solve the TDSE
+                 d
+                i |χkE (t)i = Hc (t)|χkE (t)i.                                                          (14)
+                 dt
+We can now write
+                               Z T
+                                           d
+hχk (T )|θ(Rc )|9s (T )i =             dt hχk (t)|θ(Rc )|9s (t)i
+                                  0       dt
+                                 Z T
+                           =i           dt hχk (t)|Hc (t)θ(Rc ) − θ(Rc )H (t)|9s (t)i
+                               0
+                              Z T                                    
+                                              1
+                       =i      dt hχk (t)| − 1 + i A(t) · ∇, θ(Rc ) |9s (t)i.
+                                                       E     E                                   (15)
+                            0                 2
+The commutator vanishes everywhere except on the surface |Er | = Rc . Assuming
+linear polarization in the z-direction A(t)E = (0, 0, A(t)), it can be written in polar coor-
+dinates (r, θ, φ) as
+                        
+    1                          1                         1
+  − 1 + iA(t)∂z , θ (Rc ) = − r −2 ∂r r 2 δ(r − Rc ) − δ(r − Rc )∂r − iA(t) cos θδ(r − Rc ). (16)
+    2                          2                         2
+With this, the volume integral over the space covered by the solution at time T has been
+converted into a time integral up to T and a surface integral over |Er | = Rc .
+      We would like to remark that without time dependence we can make one more step, as
+then the Volkov phase reduces to 8(k, E t) = t kE2 /2 and time integration turns into the time energy
+Fourier transform of the surface integral, which connects to the well-known results of, e.g., [13].
+
+3. Finite-element discretization and infinite-range exterior complex scaling
+
+For efficient use of t-SURFF, a reliable mechanism for truncating the solution outside the
+finite volume without generating reflections or other artefacts is needed. Complex absorbing
+potentials are commonly employed for that purpose (for a recent review, see [15]). We use the
+infinite-range exterior scaling (irECS) introduced and discussed in detail in [16]. Here we only
+briefly summarize the procedure.
+
+New Journal of Physics 14 (2012) 013021 (http://www.njp.org/)
+6
+     Exterior complex scaling (ECS) consists in making an analytic continuation of the
+Hamiltonian by rotating the coordinates into the upper complex plane beyond the ‘scaling
+radius’ R0 :
+                                                        for |Er | ⩽ R0 ,
+                           
+                            rE
+              rE → rEθ R0 = rE                                                     (17)
+                             |Er |
+                                   R0 + e (|Er | − R0 ) for |Er | > R0 .
+                                         iθ
+
+
+The resulting complex scaled Hamiltonian Hθ R0 can be used in a complex scaled TDSE
+                  d
+                 i   9θ R0 (t) = Hθ R0 (t)9θ R0 (t).                                               (18)
+                  dt
+It was observed in [16] that for the velocity form of the TDSE, in the unscaled region |Er | < R0 ,
+exact and complex scaled solutions agree: 9θ R0 (Er , t) ≡ 9v (Er , t). Mathematical proof is absent,
+but numerical agreement can be pushed to machine precision with relative errors ∼10−14 .
+      These high accuracies can be reached with little effort by infinite-range ECS (irECS),
+where very few (about 20) discretization coefficients are needed at radii > R0 . It consists in
+using an expansion into spherical harmonics and discretizing the radial parts by high-order
+finite elements. As the last element, irECS uses the infinite interval [R0 , ∞) and functions of
+the form L n (2αr ) exp(−αr ) for its discretization, where L n are the Laguerre polynomials. The
+idea is that low-momentum/long-de-Broglie wave length electrons need rather large absorption
+ranges to become absorbed, but that the solution at large distances is rather smooth, i.e. that the
+more oscillatory short-wave-length content of the wave function becomes absorbed within a few
+oscillations. The exponentially damped functions turned out be very efficient in emulating that
+behavior: in most cases, about 20 functions at |Er | > R0 are sufficient for complete absorption.
+      In [16], it was observed that the quality of absorption by irECS improves with finite-
+element order in both the scaled and the unscaled region. This numerical observation is
+most likely due to the inherently analytical character of irECS, as higher orders allow better
+approximation of analytical behavior. While good results can be obtained starting from order
+∼8, for the present calculations finite-element orders between 15 and 25 were used in the
+unscaled region. A maximally sparse, near orthogonal representation of the finite-element
+functions allows efficient inversion of the overlap matrix and ensures numerical stability to
+orders as high as 40. A detailed description of the construction of the finite elements is given
+in [16].
+      Although in irECS there is no strict box boundary, the number of discretization points and
+the phase-space volume that can be represented remain finite. There is a correlation between
+position discretization and momentum discretization in irECS: large electron momenta can only
+be represented in the unscaled region and at the beginning of the scaled region. At long distances
+into the scaled region, only gentle oscillations and therefore low momenta can be represented
+until the wave function dies out exponentially.
+      As the finite-element basis is local, the discretization coefficients are approximately
+associated with positions in space. In fact, we can establish a one-to-one relation between the
+M functions belonging to an element and the function values at M different points within that
+element. In that sense, we will refer to the discretization coefficients as ‘discretization points’,
+emphasizing the locality of the finite-element functions.
+      The exact choice of the scaling parameters θ, R0 and α is not critical. In [16], we found little
+variation of accuracy for values in the intervals θ ∼ [0.5, 0.9] and α ∼ [0.2, 0.6]. Variations of
+the results with R0 , as a rule, reflect the spatial discretization error of the calculation. We found
+
+
+New Journal of Physics 14 (2012) 013021 (http://www.njp.org/)
+7
+this behavior confirmed also for the calculation of the photo-electron spectra presented here.
+The plots shown below were all calculated with θ = α = 0.5.
+      The discretized complex scaled TDSE (18) was integrated using an explicit Runge–Kutta
+scheme with automatic step control and self-adaptive order up to 6. Stiffness problems could
+be strongly reduced by removing from the basis by explicit projection the eigenvectors of the
+field-free problem with eigenvalues &40 au. The extra cost of the projection is far outweighed
+by the increased time step. Implementation of an implicit scheme clearly would further improve
+the efficiency of propagation.
+
+4. Photo-electron momentum spectra for a short-range potential
+
+We solve the TDSE in velocity gauge
+                                                         
+               d                1
+              i 9v (Er , t) =             E
+                                  [−i∇E − A(t)]2
+                                                 + V (Er ) 9v (Er , t),                      (19)
+               dt               2
+where we first use the short-range ‘Coulomb’ potential
+                         c −1/r − r 2 /(2R 3 ) + 3/(2R) for r ⩽ R,
+                                                     
+               V (r ) =                                                                      (20)
+                         0                               for r > R.
+With R = 20 and an effective charge c = 1.1664 the ground state energy is −0.5. The laser
+pulse is linearly polarized in the z-direction with the vector potential
+                                    πt
+                                   
+                          E0
+                 A z (t) = cos  2
+                                         sin(tω).                                    (21)
+                          ω         2T
+We choose parameters ω = 0.057 and E0 = 0.0755 corresponding to a laser wave length of
+800 nm and a peak intensity of 2 × 1014 W cm−2 . T is the FWHM of the vector potential and the
+total pulse duration is 2T .
+       Figure 1 shows the total and partial wave photo-electron spectra for potential range R = 20
+and T = 5 optical cycles. At these parameters, more than 90% of the electrons get detached. For
+accuracy .1% up to energies of 10Up ≈ 120 eV, we need L max = 30 partial waves with only
+90 radial discretization points. We define the error relative to an accurate reference spectrum
+σ ref as
+             |σ (E) − σ ref (E)|
+                                                           Z E+δ E
+                                                        1
+D(E) =                             ,     hσ (E)iδ E :=             dE 0 σ (E 0 ).             (22)
+           max(σ (E), hσ (E)iδ E )                     2δ E E−δ E
+By including in the denominator the average over the interval [E − δ E, E + δ E] we suppress
+spurious spikes in the error due to near-zeros of the spectrum. We choose δ E = 0.05 au ≈
+1.5 eV, which at 800 nm corresponds to averaging over about two photo-electron peaks.
+     In the unscaled region we use 60 points; 30 points are located in |Er | > R0 . The accuracy
+estimate shown in figure 1 is obtained by comparing to a fully converged calculation. When
+we increase the number of points to 180, the error drops to .10−3 . The increase of relative
+errors with energy can be attributed to the decrease of the signal: note that from 0 to 10Up , the
+spectrum drops by more than 5 orders of magnitude.
+     As a consistency check, we find that spectra up to 10Up computed with largely different
+surface radii Rc = 21 and 29 coincide within relative accuracies of better than .10−3 . As beyond
+Rc we assume the exact Volkov propagation, this demonstrates that the solution of the TDSE
+
+
+New Journal of Physics 14 (2012) 013021 (http://www.njp.org/)
+8
+                         0                                              0                                        0
+                     10                                               10                                       10
+                                             Total                                     l=0                                      l=10
+                         -2                                             -2                                       -2
+                     10                                               10                                       10
+
+
+
+
+Yield (arb. units)
+                         -4                                             -4                                       -4
+                     10                                               10                                       10
+                         -6           2 Up                   10 Up      -6                                       -6
+                     10                                               10                                       10
+                                                                                2 Up                 10 Up               2 Up                  10 Up
+                         -8                                             -8                                       -8
+                     10                                               10                                       10
+                         -10                                            -10                                      -10
+                     10                                               10                                       10
+                         -12                                            -12                                      -12
+                     10                                                10                                       10
+                                  0     20    40     60   80 100 120 140  0       20    40   60   80 100 120 140   0       20    40    60   80 100 120 140
+                             -2                                            -2                                       -2
+                        10                                             10                                       10
+
+
+
+       Relative error
+                                             Total                                     l=0                                      l=10
+                             -3                                            -3                                       -3
+                        10                                             10                                       10
+
+                             -4                                            -4                                       -4
+                        10                                         10                                        10
+                                  0     20 40 60 80 100 120 140       0           20 40 60 80 100 120 140       0          20 40 60 80 100 120 140
+                                         Photoelectron energy (eV)                 Photoelectron energy (eV)                Photoelectron energy (eV)
+
+
+                                                   Figure 1. Upper panels: total and partial wave photo-electron spectra obtained
+                                                   for the smoothly truncated Coulomb potential equation (20). The lower panels
+                                                   show the relative errors for each spectrum according to equation (22) of a
+                                                   calculation with only 90 discretization points per angular momentum compared
+                                                   to a fully converged calculation. Pulse parameters: λ = 800 nm, T = 5 optical
+                                                   cycles and intensity = 2 × 1014 W cm−2 .
+
+
+and the integrals (15) are correct and that also reflections are suppressed on at least that level of
+accuracy.
+      The calculated spectra are independent of the complex scaling parameters: over the ranges
+R0 ∈ [20, 30] and θ = [0.4, 0.7] results vary by less than 10−3 . The lower limit for R0 is not
+dictated by complex scaling: rather, as we want to obtain exact results, we must pick up the
+wave-function outside the range of the potential Rc ⩾ R = 20, and therefore also R0 ⩾ Rc > R.
+Already with these parameters the quiver amplitude, i.e. the excursion of free electrons in the
+laser field, E0 /ω2 ≈ 23 reaches beyond R0 and into the complex scaled region. This confirms
+an earlier observation that the dynamics is correctly reproduced also in the complex scaled
+region [16].
+      For correct electron spectra, the effective box size of the combined unscaled and scaled
+regions must be large enough to accommodate the quiver motion. To study this further, we use
+a somewhat shorter effective range of R = 15 and choose R0 = Rc = R. From figure 2, we see
+that with only 45 discretization points in the unscaled region r < R0 , 1% accuracy is reached at
+the same laser parameters as before. With 30 points for absorptions we have a total of 75 points.
+Note that the quiver radius of ≈23 au now reaches rather deep into scaled region, but still fits
+into the total box.
+      Keeping the intensity constant, a longer wave length of 1000 nm leads to a larger quiver
+radius of ≈36 au. We expect to need a factor of (1000/800)2 ≈ 1.6 more discretization points.
+Indeed, we can reach .1% accuracy with a total of 120 points in this case (figure 2). All
+additional coefficients and at least half of the quiver motion now are located in the scaled
+region. Note that also Up and with it the peak momentum grows with wave length: for describing
+energies >120 eV, we would also need to increase the density of points by 25%. However, just
+
+
+New Journal of Physics 14 (2012) 013021 (http://www.njp.org/)
+9
+                                        0                                               0
+                                       10                                          10
+                                                 800 nm                                      1000 nm
+
+
+
+
+                  Yield (arb. units)
+                                        -2                                              -2
+                                       10                                          10
+
+                                        -4                                              -4
+                                       10                                          10
+
+                                        -6                                              -6
+                                       10                                          10
+
+                                        -8                                              -8
+                                       10                                          10
+                                             0   20    40    60    80    100    120     0    20    40    60    80    100    120
+                                        -1                                           -1
+                                       10                                          10
+                                                 800 nm                                      1000 nm
+
+
+                  Relative error
+                                        -2                                            -2
+                                       10                                          10
+                                        -3                                            -3
+                                       10                                          10
+                                        -4                                            -4
+                                       10                                          10
+                                             0   20   40     60     80    100   120   0      20   40     60     80    100   120
+                                                  Photoelectron energy (eV)                   Photoelectron energy (eV)
+
+
+                 Figure 2. Required box sizes depend on the quiver amplitude. Left panels:
+                 spectrum (top) for a 5-cycle FWHM pulse at 800 nm and E0 = 0.0755 (intensity
+                 2 × 1014 W cm−2 ). Accuracies (bottom) are calculated with 75 (black line) and
+                 100 (red line) discretization points. Errors .1% relative to an accurate reference
+                 calculation are reached with 75 points. At 100 points the error is .10−3 . Right
+                 panels: spectrum (top) and accuracies (bottom) for a 5-cycle FWHM pulse at
+                 1000 nm and the same intensity. Because of the larger quiver amplitude, a ∼60%
+                 larger box with 120 points is needed for <1% accurate results. When using a
+                 smaller box with 120 points at 30% higher density, errors increase to nearly 10%
+                 (red line).
+
+
+increasing the number of points without increasing the box size gives incorrect results: it appears
+that we need to accommodate the full quiver motion up to ∼36 au in the simulation box.
+
+5. Photo-electron momentum spectra for the hydrogen atom
+
+As always in scattering problems, the long-range nature of the Coulomb potential introduces
+extra mathematical and practical complications. Considering t-SURFF, there is no surface radius
+Rc such that the Volkov solutions become exact. In addition, the Rydberg bound states extend
+to arbitrarily large distances. We will discuss below how these problems can be eliminated with
+moderate extra computational effort. Here we present the pragmatic solution of using larger Rc
+such that the remaining error due to the presence of the Coulomb potential becomes acceptable.
+     Figure 3 shows a spectrum calculated for the hydrogen atom with an FWHM T = 20
+optical cycle pulses at 800 nm wave length and peak intensity 1014 W cm−2 . All discretization
+errors can be controlled in the same way as discussed for the short-range potential. The error
+is dominated by the dependence on the surface radius Rc : on an absolute (logarithmic) scale,
+two calculations with Rc = 110 and Rc = 140 are hardly discernable. The error level of the
+calculation with Rc = 110 and 180 discretization points is .10% and decreases slowly as
+Rc increases. In the linear plot of the spectra (lowest panels of figure 3), we see that the
+largest errors occur at lower energies due to the larger influence of the weak Coulomb tail on
+
+New Journal of Physics 14 (2012) 013021 (http://www.njp.org/)
+10
+
+                                             0
+                                        10                2 Up                       10 Up
+
+                                             -2
+                                        10
+
+
+
+                 Yield (arb. units)
+                                             -4
+                                        10
+
+                                             -6
+                                        10
+
+                                             -8
+                                        10
+                                                 0   10     20           30   40     50     60    70
+
+
+
+                  Relative error
+                                         -1
+                                        10
+                                         -2
+                                        10
+                                         -3
+                                        10
+                                                 0   10     20           30   40    50       60   70
+                                                                     -4                   -6
+                                                                  x 10                x 10
+                                        0.9                   3                     1
+
+
+
+
+                   Yield (arb. units)
+                                        0.6                   2
+                                                                                   0.5
+                                        0.3                   1
+
+
+                                             0                0                   0
+                                              1      4      7 31       34     37 64         67    70
+                                                            Photoelectron energy (eV)
+
+                 Figure 3. Photo-electron energy spectra for the hydrogen atom (upper panel)
+                 obtained with surface radius Rc = 110 (black) and Rc = 140 (red). Middle panel:
+                 error estimate by comparing the spectra according to equation (22). Lower
+                 panels: blow-up of the spectra from the upper panel on a linear scale. Pulse
+                 parameters: λ = 800 nm, T = 20 optical cycles and intensity = 1014 W cm−2 .
+
+
+low-energy scattering states. Agreement at intermediate energies is near perfect. The increase
+of relative errors at the highest energies is due to a displacement of peaks caused by slightly
+incorrect dispersion due to spatial discretization.
+     Figure 4 shows angle-resolved photo-electon sprectra for FWHM durations of T = 10, 20
+and 30 optical cycles. In the region up to 10Up ≈ 60 eV, circular structures with their centers
+offset along the polarization axis are clearly distinguishable, best visible at the shortest pulse
+T = 10. These structures were first explained in [17] and are due to rescattering. The intensity
+around each circle is related to the electron–ion scattering differential cross-section [18]. In
+the enlarged plots of the energy region up to energies of 2Up ≈ 12 eV, we reproduce rings and
+fan-like structures that are related to particular partial waves, as has been extensively discussed
+in [19]. Sub-structures between the photo-electron energy peaks are clearly resolved. These are
+related to the pulse envelope: the spacing decreases and the number of peaks increases as the
+
+
+New Journal of Physics 14 (2012) 013021 (http://www.njp.org/)
+11
+                       10 cycles                        20 cycles              30 cycles
+
+
+                                   75 eV                            75 eV               75 eV
+
+
+
+
+                                   12 eV                            12 eV               12 eV
+
+
+
+
+                 Figure 4. Angle-resolved photo-electron energy spectra for the hydrogen atom at
+                 λ = 800 nm, intensity 1014 W cm−2 and FWHM pulse durations T = 10, 20 and
+                 30 (upper panels). In the lower panels, the region up to 2Up ≈ 12 eV is enlarged.
+
+
+pulse duration increases. In different wording, one can say that they are caused by interference
+between the rising and trailing edges of the pulse [20].
+     For comparison with the results reported in [9], we also computed the spectrum at the
+lower intensity of 5 × 1013 W cm−2 and T = 10 cycles FWHM (corresponding to 20 cycles total
+pulse duration). Figure 5 shows our result for the total photo-ionization spectrum obtained with
+only 192 discretization points and 25 angular momenta. We have estimated the accuracy of
+our results to be .10% throughout the spectrum using the same procedures as for figure 3.
+Our result qualitatively differs from figure 2 in [9], where a surprising irregularity appears near
+10Up , while no such structure exists in our spectrum. Unfortunately no detailed discussion of
+accuracy or convergence is given in [9]. One possible source of the discrepancy is insufficient
+discretization. With a peak energy of 40Up ∼ 4 au included in the calculation the maximal
+
+New Journal of Physics 14 (2012) 013021 (http://www.njp.org/)
+12
+                                         -1
+                                        10
+
+                                         -3
+                                        10
+
+
+
+
+                  Yield (arb. units )
+                                         -5
+                                        10        2U                      10Up
+                                                    p
+
+                                         -7
+                                        10
+
+                                         -9
+                                        10
+                                              0     0.4        0.8        1.2    1.6
+                                                   Photoelectron energy (a.u.)
+
+                 Figure 5. Photo-electron energy spectrum for an FWHM T = 10 pulse at
+                 800 nm and peak intensity I = 5 × 1013 W cm−2 . Results obtained with 192
+                 radial discretization points are accurate to a few per cent and never exceed 10% in
+                 the whole range shown. The pulse parameters agree with those used for figure 2
+                 in [9]. Near 10Up there appears a striking qualitative difference between our
+                 result and [9]. (See the text for a discussion.)
+
+
+momenta are pmax ∼ 2.8 au. During 20 optical cycles (2200 au of time), these electrons move
+to distances ∼6000 au. With the 2000 discretization points used in [9], one obtains average
+momentum grid spacing of 1p = pmax /2000 and an effective spatial box size ∼2π/1p ≈ 4500,
+which appears somewhat below the necessary limit. However, the uneven distribution of grid
+points and additional spectral cuts in the energy domain used in [9] make it difficult to carry
+out this analysis further. Rather, a systematic convergence study would be required. The present
+number of discretization points also compares well to the 1000–2000 discretization coefficients
+used in [11] at photon energies of 0.3–0.7 au. The results of the benchmark calculations [21]
+obtained with a box size of 3000 atomic units and about 4000 discretization points at a somewhat
+shorter wave length of 620 nm could be reproduced using only 200 radial discretization points
+up to energies of 10Up , except at the lowest energies, where our method is limited by the use of
+Volkov solutions beyond the surface radius Rc . 150 au.
+
+6. Extensions of the method
+
+6.1. Handling long-range potentials
+In the section above, we were able to obtain good results for quite demanding laser parameters
+using only Rc ≈ 140. Still, the problem remains big, and in particular when considering
+extension of the approach to multi-electron systems, multi-dimensional simulation volumes
+would quickly exhaust computational resources. In turn, a reduction of Rc to the necessary
+minimum of 20–50 set by the quiver radius would constitute an essential gain, possibly deciding
+about the feasibility of the multi-electron calculation. Here we show how to correctly handle
+long-range potentials in t-SURFF.
+
+New Journal of Physics 14 (2012) 013021 (http://www.njp.org/)
+13
+     For computing exact spectra, we must know the exact solution of the TDSE beyond Rc . In
+the derivation of equation (15), we have only used H (t) ≡ Hc (t) for |Er | > Rc and that we can
+by some means obtain accurate solutions χkE (Er , t) for the TDSE with Hc (t). A suitable Hc is
+obtained by using in equation (19) the potential
+                          −1/Rc for r ⩽ Rc ,
+                         
+               Vc (r ) =                                                                    (23)
+                          −1/r for r > Rc .
+Partial wave solutions φk,l (r ) for the field-free case AE ≡ 0 with Vc are the spherical Bessel
+functions up to Rc , which are connected smoothly to values and derivatives of regular and
+irregular Coulomb functions in the region r > Rc , where one must pay attention to proper
+δ-normalization. With nonzero field EE(t), no exact solution is known. We found that a simple
+Coulomb–Volkov approximation [22] for the time dependence is insufficient: we could not
+observe any acceleration of convergence by replacing the plane waves of the Volkov solution
+with the field-free scattering solutions. Lacking a reliable approximation for the scattering
+solution, we must solve the TDSE for the χkE (Er , t) with the final condition
+                 χk,l (r, T ) = φk,l (r ).                                                    (24)
+As the potential is weak, little actual scattering occurs and accurate solutions can be obtained by
+expanding into φk 0 ,l 0 (r ) for small intervals around the asymptotic radial and angular momenta,
+k 0 ∈ [k − 1k, k + 1k] and l 0 ∈ [l − 1l, l + 1l]. Numerical results using this procedure will be
+presented elsewhere.
+      Finally, there remains the problem that Rydberg states may become occupied, which have
+non-neglible amplitude at r = Rc . Such a non-decaying amplitude at the surface leads to slow,
+oscillatory convergence of the integrals (15) as T → ∞. Again, there is an efficient and rather
+pragmatic solution to this problem: by averaging the value over several optical cycles, we find
+that convergence is speeded up and the reported accuracies are reached quickly.
+      If the Rydberg states are known exactly, we can remove them after the pulse is over. This
+removes all oscillations and the asymptotic value is reached rapidly. For the procedure we define
+the projector onto the (field-free) Rydberg states |ni and its complement as
+                          X
+                 P :=          |nihn| and Q := 1 − P.                                          (25)
+                            n
+
+A simple calculation shows that the spectral amplitude with the Rydberg states removed is
+                             Z T0
+hχkE (T )|θ(Rc )Q|9(T )i = i      dt hχkE (t)|[Hc (t), θ(Rc )]|9(t)i
+                                   −∞
+                      Z T
+                 +i         dt hχkE |[Hc (t), θ (Rc )]Q|9(t)i − hχkE (T0 )|θ(Rc )P|9(T0 )i,   (26)
+                       T0
+
+where T0 is any time after the end of the pulse. If high precision is wanted and if long time
+propagation is costly, the extra effort of implementing the explicit projection (26) may be
+justified.
+
+6.2. Single ionization of multi-electron systems
+The procedure can be extended to describe single ionization of multi-electron systems. The main
+new feature here is that we have several ionization channels, depending on the state in which
+
+New Journal of Physics 14 (2012) 013021 (http://www.njp.org/)
+14
+the ion is left behind. The spectral density in a specific channel c can be written, as before, as
+                 σc (k)
+                     E = |hχc,kE (T )|θ (Rc )|9s (T )i|2 .                                      (27)
+The asymptotic channel wave function χc,kE (t) fulfills the channel TDSE
+                  d
+                 i   χ E (t) = Hc (t)χc,kE (t),                                               (28)
+                 dt c,k
+with the channel Hamiltonian
+                           1
+                 Hc (t) = [−i∇  E−E  A(t)]2 ⊗ Hion (t)                                        (29)
+                           2
+where for simplicity we neglect the ionic Coulomb potential. Note that we do not need to
+explicitly anti-symmetrize χc , if 9s is anti-symmetric. A general solution of (28) has the form
+                                                   E
+                 χc,kE (t) = (2π )−3/2 e−i8(t) eikEr ⊗ φc (t),                                      (30)
+where φc (t) solves the ionic TDSE with the Hamiltonian Hion (t) and a final state condition that
+specifies the ionic state c of the channel:
+                 Hion (T )φc (T ) = E c φc (T ).                                                    (31)
+Assuming that double ionization is negligible, the further steps for computing the spectral
+amplitude as a time integral are the same as in the single-electron case. In addition to 9s (t),
+we must also compute φc (t). Values and derivatives of the c-channel scattering wave function
+ϕc (Er , t) := hφc (t)|9s (t)i at |Er | = Rc can be stored for a sufficiently dense time grid. Because of
+the stronger binding of electrons in the ion, computing the ionic wave function φc (t) usually
+requires much less effort than obtaining 9s (t).
+
+6.3. Double ionization
+For double-ionization spectra, we must know the two-electron solution in the asymptotic region.
+This may be less difficult than it appears to be at first glance. Neglecting the ionic potentials, we
+have a Volkov solution for the center-of-mass coordinate and Coulomb waves for the relative
+coordinate. What is left to do is to match that solution with an accurate solution on a five-
+dimensional (5D) surface, where all reflections from the simulation box boundaries are carefully
+suppressed. While this procedure has not been worked out in detail, it may be very feasible and
+bring IR two-electron spectra from the realm of herioc super-large-scale calculations [5] to
+manageable size, allowing systematic studies.
+
+7. Conclusions and outlook
+
+We have shown that the unfavorable scaling for the computation of photo-electron spectra with
+laser wave length can be largely overcome with t-SURFF, which picks up the exact solution at
+some finite surface and beyond that surface exploits knowledge about the long-range behavior
+of the solutions of the TDSE. The reduction of problem size is particularly striking for atomic
+binding potentials with a finite range, when the Volkov solutions become exact at distances
+where the potential is zero. In that case, the box sizes can be reduced to approximately the range
+of the potential plus the electron quiver amplitude. Electrons that move beyond that range will
+never scatter and will exactly follow the Volkov solution. For our parameters, the wave function
+
+New Journal of Physics 14 (2012) 013021 (http://www.njp.org/)
+15
+expands to several thousands of atomic units during the pulse and correspondingly large boxes
+would be needed if a spectral analysis of the wave function were performed after the end of the
+pulse. In contrast, we could present .1% accurate spectra up to energies of 120 eV using a box
+size of only about 30 atomic units and as few as 75 discretization points per partial wave. With
+only a few more points, much higher accuracy can be reached.
+      The traceless absorption of the wave function beyond the surface by irECSs [16] is essential
+for the method. The good performance of irECS for 1D wave functions and for high-harmonic
+signals from 3D calculations presented in [16] could be confirmed also for the much more
+delicate observable of angle-resolved photo-electron spectra.
+      For the long-range Coulomb potential, the Volkov solutions are not exact asymptotically,
+let alone at any finite distance. In physical language, the electron will scatter in the long-range
+tail of the Coulomb potential and pick up more energy from the laser field, and therefore we
+cannot predict its final energy before the pulse is over. An attempt to approximate the asymptotic
+behavior by the Coulomb–Volkov instead of the pure Volkov solutions was futile. In a pragmatic
+approach, we could show that with a surface at distances of Rc = 100–140 atomic units, still
+impressively accurate spectra can be obtained using Volkov solutions as approximation to the
+exact asymptotic solutions.
+      For single-electron systems and with moderate accuracy requirements, simulation volumes
+on the scale of ∼100 atomic units are quite acceptable. For experimentally interesting multi-
+electron systems, we have proposed to further reduce box sizes by solving the asymptotic
+laser-assisted scattering problem numerically. This may be done efficiently for an asymptotic
+Hamiltonian that only includes scattering at distances > Rc and dismisses the main part of
+scattering from near the Coulomb singularity. The need to solve this weak scattering problem
+enhances the complexity of coding and significantly increases computation times. However, for
+few-electron systems, this extra effort is far compensated by an expected reduction to box sizes
+as little as 20–50 atomic units. We have also formulated the extension of t-SURFF to single and
+double ionization of multi-electron systems. A numerical demonstration of these methods will
+be the subject of future work.
+      In summary, t-SURFF, while producing highly accurate results, can reduce the box size
+for computing IR photo-electron spectra for single-electron systems by one order of magnitude
+or more. This drastic reduction of box sizes is particularly important for very high laser wave
+lengths and for multi-electron systems. For systems with two and more electrons, we believe, it
+opens the route to computing accurate IR photo-electron momentum spectra.
+
+Acknowledgments
+
+This work was supported by the Austrian Science Fund in the framework of the Special
+Research Program F41 of the Vienna Computational Materials Laboratory (ViCoM).
+
+References
+
+ [1] Corkum P B 1993 Plasma perspective on strong-field multiphoton ionization Phys. Rev. Lett. 71 1994
+ [2] Spanner M, Smirnova O, Corkum P and Ivanov M 2004 Reading diffraction images in strong field ionization
+       of diatomic molecules J. Phys. B: At. Mol. Opt. Phys. 37 L243
+ [3] Yurchenko S N, Patchkovskii S, Litvinyuk I V, Corkum P B and Yudin G L 2004 Laser-induced interference,
+       focusing and diffraction of rescattering molecular photoelectrons Phys. Rev. Lett. 93 223003
+
+New Journal of Physics 14 (2012) 013021 (http://www.njp.org/)
+16
+
+ [4] Meckel M et al 2008 Laser-induced electron tunneling and diffraction Science 320 1478–82
+ [5] Taylor K T, Parker J S, Meharg K J and Dundas D 2003 Laser-driven helium at 780 nm Eur. Phys. J. D
+       26 67–71
+ [6] Martin F et al 2007 Single photon-induced symmetry breaking of H-2 dissociation Science 315 629–33
+ [7] Cormier E and Lambropoulos P 1996 Optimal gauge and gauge invariance in non-perturbative time-
+       dependent calculation of above-threshold ionization J. Phys. B: At. Mol. Opt. Phys. 29 1667–80
+ [8] Telnov D A and Chu S-I 2009 Above-threshold-ionization spectra from the core region of a time-dependent
+       wave packet: an ab initio time-dependent approach Phys. Rev. A 79 043421
+ [9] Zhou Z and Chu S-I 2011 Precision calculation of above-threshold multiphoton ionization in intense short-
+       wavelength laser fields: the momentum-space approach and time-dependent generalized pseudospectral
+       method Phys. Rev. A 83 013405
+[10] Scrinzi A, Brabec T and Walser M 2001 3D numerical calculations of laser–atom interactions Proc. Workshop
+       on Super-Intense Laser–Atom Physics ed B Piraux and K Rzaszewski (Dordrecht: Kluwer) p 313
+[11] Hamido A, Eiglsperger J, Madronero J, Mota-Furtado F, O’Mahony P, Laura Frapiccini A and Piraux B 2011
+       Time scaling with efficient time-propagation techniques for atoms and molecules in pulsed radiation fields
+       Phys. Rev. A 84 013422
+[12] Balint-Kurti G G, Dixon R N, Marston C C and Mulholland A J 1991 The calculation of product quantum
+       state distributions and partial cross-sections in time-dependent molecular collision and photodissociation
+       theory Comput. Phys. Commun. 63 126
+[13] Tannor D J and Weeks D E 1993 Wave packet correlation function formulation of scattering theory: the
+       quantum analog of classical s-matrix theory J. Chem. Phys. 98 3884
+[14] Caillat J, Zanghellini J, Kitzler M, Koch O, Kreuzer W and Scrinzi A 2005 Correlated multielectron systems
+       in strong laser fields—an MCTDHF approach Phys. Rev. A 71 012712
+[15] Muga J G, Palao J P, Navarro B and Egusquiza I L 2004 Complex absorbing potentials Phys. Rep.
+       395 357–426
+[16] Scrinzi A 2010 Infinite-range exterior complex scaling as a perfect absorber in time-dependent problems
+       Phys. Rev. A 81 053845
+[17] Morishita T, Le A-T, Chen Z and Lin C D 2008 Accurate retrieval of structural information from laser-induced
+       photoelectron and high-order harmonic spectra by few-cycle laser pulses Phys. Rev. Lett. 100 013903
+[18] Chen Z, Le A-T, Morishita T and Lin C D 2009 Quantitative rescattering theory for laser-induced high-energy
+       plateau photoelectron spectra Phys. Rev. A 79 033409
+[19] Morishita T, Chen Z, Watanabe S and Lin C D 2007 Two-dimensional electron momentum spectra of argon
+       ionized by short intense lasers: comparison of theory with experiment Phys. Rev. A 75 023407
+[20] Telnov D A and Chu S I 1995 Multiphoton above-threshold detachment by intense laser pulses: a new
+       adiabatic approach J. Phys. B: At. Mol. Opt. Phys. 28 2407
+[21] Cormier E and Lambropoulos P 1997 Above-threshold ionization spectrum of hydrogen using B-spline
+       functions J. Phys. B: At. Mol. Opt. Phys. 30 77–91
+[22] Duchateau G, Cormier E and Gayet R 2002 Coulomb–Volkov approach of ionization by extreme-ultraviolet
+       laser pulses in the subfemtosecond regime Phys. Rev. A 66 023412
+
+
+
+
+New Journal of Physics 14 (2012) 013021 (http://www.njp.org/)
+

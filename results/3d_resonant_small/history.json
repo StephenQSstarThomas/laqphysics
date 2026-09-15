@@ -1,0 +1,479 @@
+[
+  {
+    "step": 200,
+    "time": 15.998078554668837,
+    "real_region_norm": 0.999999999999958,
+    "ground_population": 0.9999999292694791,
+    "exchange_error": 5.878367662166036e-12,
+    "dimension": 36,
+    "residual_estimate": 2.948045002656952e-12
+  },
+  {
+    "step": 400,
+    "time": 31.996157109337673,
+    "real_region_norm": 0.9999999974699273,
+    "ground_population": 0.9999979710504479,
+    "exchange_error": 5.945050891695643e-12,
+    "dimension": 36,
+    "residual_estimate": 1.5897767711819792e-11
+  },
+  {
+    "step": 600,
+    "time": 47.99423566400651,
+    "real_region_norm": 0.9999994848384195,
+    "ground_population": 0.9999833011373613,
+    "exchange_error": 2.8041969040629984e-12,
+    "dimension": 36,
+    "residual_estimate": 5.016766154748727e-11
+  },
+  {
+    "step": 800,
+    "time": 63.99231421867535,
+    "real_region_norm": 0.9999933548555645,
+    "ground_population": 0.9999318020593191,
+    "exchange_error": 3.0147966713441114e-12,
+    "dimension": 36,
+    "residual_estimate": 2.647736952699351e-11
+  },
+  {
+    "step": 1000,
+    "time": 79.99039277334418,
+    "real_region_norm": 0.9999645602969668,
+    "ground_population": 0.999799231085924,
+    "exchange_error": 3.665524044797803e-12,
+    "dimension": 40,
+    "residual_estimate": 1.8717400748318985e-12
+  },
+  {
+    "step": 1200,
+    "time": 95.98847132801302,
+    "real_region_norm": 0.9998773211726267,
+    "ground_population": 0.9994935796634874,
+    "exchange_error": 3.779499081873917e-12,
+    "dimension": 40,
+    "residual_estimate": 2.600266133634347e-12
+  },
+  {
+    "step": 1400,
+    "time": 111.98654988268186,
+    "real_region_norm": 0.9996720028008268,
+    "ground_population": 0.998958852608815,
+    "exchange_error": 3.5987307381977935e-12,
+    "dimension": 36,
+    "residual_estimate": 6.970616829490365e-11
+  },
+  {
+    "step": 1600,
+    "time": 127.9846284373507,
+    "real_region_norm": 0.9992622726217743,
+    "ground_population": 0.9980285937468141,
+    "exchange_error": 4.154799248984672e-12,
+    "dimension": 40,
+    "residual_estimate": 5.121442665797257e-12
+  },
+  {
+    "step": 1726,
+    "time": 138.06341792679206,
+    "real_region_norm": 0.9988492538559063,
+    "ground_population": 0.9971446385163281,
+    "exchange_error": 3.7978030866264266e-12,
+    "dimension": 40,
+    "residual_estimate": 5.722447378645049e-12
+  },
+  {
+    "step": 1800,
+    "time": 143.98270699201953,
+    "real_region_norm": 0.9985348380917364,
+    "ground_population": 0.9965177466115238,
+    "exchange_error": 4.298979479206484e-12,
+    "dimension": 40,
+    "residual_estimate": 4.924196457177848e-12
+  },
+  {
+    "step": 2000,
+    "time": 159.98078554668837,
+    "real_region_norm": 0.9973520641999994,
+    "ground_population": 0.9944455092084851,
+    "exchange_error": 3.642019755413391e-12,
+    "dimension": 40,
+    "residual_estimate": 4.618829807742017e-12
+  },
+  {
+    "step": 2200,
+    "time": 175.9788641013572,
+    "real_region_norm": 0.9955574499822181,
+    "ground_population": 0.991367407116259,
+    "exchange_error": 2.514333483346174e-12,
+    "dimension": 40,
+    "residual_estimate": 9.630093757111164e-12
+  },
+  {
+    "step": 2400,
+    "time": 191.97694265602604,
+    "real_region_norm": 0.9929837423449862,
+    "ground_population": 0.9872659746479462,
+    "exchange_error": 7.027731170216196e-13,
+    "dimension": 40,
+    "residual_estimate": 6.515326285559427e-12
+  },
+  {
+    "step": 2600,
+    "time": 207.97502121069488,
+    "real_region_norm": 0.9894632874698858,
+    "ground_population": 0.9822436695557154,
+    "exchange_error": 7.604385062043867e-13,
+    "dimension": 40,
+    "residual_estimate": 9.443712905049911e-12
+  },
+  {
+    "step": 2800,
+    "time": 223.9730997653637,
+    "real_region_norm": 0.9848398584688559,
+    "ground_population": 0.9755102045538686,
+    "exchange_error": 8.482926520240301e-13,
+    "dimension": 40,
+    "residual_estimate": 1.2738035962255522e-11
+  },
+  {
+    "step": 3000,
+    "time": 239.97117832003255,
+    "real_region_norm": 0.9789809619640254,
+    "ground_population": 0.9677045984746404,
+    "exchange_error": 7.692664070635552e-13,
+    "dimension": 40,
+    "residual_estimate": 4.303354017039723e-12
+  },
+  {
+    "step": 3200,
+    "time": 255.9692568747014,
+    "real_region_norm": 0.9717898152954254,
+    "ground_population": 0.9586705499569275,
+    "exchange_error": 1.1163782896411333e-12,
+    "dimension": 40,
+    "residual_estimate": 1.5106101614496833e-11
+  },
+  {
+    "step": 3222,
+    "time": 257.729045515715,
+    "real_region_norm": 0.9709147942162729,
+    "ground_population": 0.9573894187344206,
+    "exchange_error": 1.119047218246578e-12,
+    "dimension": 40,
+    "residual_estimate": 1.638105911375392e-11
+  },
+  {
+    "step": 3400,
+    "time": 271.9673354293702,
+    "real_region_norm": 0.9632154518112115,
+    "ground_population": 0.9476302253035452,
+    "exchange_error": 1.0219210940751456e-12,
+    "dimension": 40,
+    "residual_estimate": 1.547246622485341e-11
+  },
+  {
+    "step": 3600,
+    "time": 287.96541398403906,
+    "real_region_norm": 0.9532600846465243,
+    "ground_population": 0.9360665272638259,
+    "exchange_error": 9.832715179173264e-13,
+    "dimension": 40,
+    "residual_estimate": 3.96216245882265e-12
+  },
+  {
+    "step": 3800,
+    "time": 303.9634925387079,
+    "real_region_norm": 0.9419833951191131,
+    "ground_population": 0.9231041483745525,
+    "exchange_error": 1.3860487272064126e-12,
+    "dimension": 40,
+    "residual_estimate": 1.9607849758692445e-11
+  },
+  {
+    "step": 4000,
+    "time": 319.96157109337673,
+    "real_region_norm": 0.9295019761832466,
+    "ground_population": 0.9086956211802182,
+    "exchange_error": 1.084753829429116e-12,
+    "dimension": 40,
+    "residual_estimate": 1.590288276644413e-11
+  },
+  {
+    "step": 4200,
+    "time": 335.95964964804557,
+    "real_region_norm": 0.9159852974132098,
+    "ground_population": 0.8946057745054722,
+    "exchange_error": 1.2079984615595734e-12,
+    "dimension": 40,
+    "residual_estimate": 1.1499286739893663e-11
+  },
+  {
+    "step": 4400,
+    "time": 351.9577282027144,
+    "real_region_norm": 0.901648171907097,
+    "ground_population": 0.8792551132213069,
+    "exchange_error": 1.4781195206547345e-12,
+    "dimension": 40,
+    "residual_estimate": 2.143083943165138e-11
+  },
+  {
+    "step": 4600,
+    "time": 367.95580675738324,
+    "real_region_norm": 0.88673899463938,
+    "ground_population": 0.8637485269439004,
+    "exchange_error": 1.065438233166488e-12,
+    "dimension": 40,
+    "residual_estimate": 1.4097360376751231e-11
+  },
+  {
+    "step": 4800,
+    "time": 383.9538853120521,
+    "real_region_norm": 0.8715276937421316,
+    "ground_population": 0.8491795541442819,
+    "exchange_error": 1.3734558906632105e-12,
+    "dimension": 40,
+    "residual_estimate": 1.6497704609638054e-11
+  },
+  {
+    "step": 5000,
+    "time": 399.9519638667209,
+    "real_region_norm": 0.8562919501123821,
+    "ground_population": 0.8339163908222349,
+    "exchange_error": 1.371882631114721e-12,
+    "dimension": 40,
+    "residual_estimate": 2.0315868441341444e-11
+  },
+  {
+    "step": 5200,
+    "time": 415.95004242138975,
+    "real_region_norm": 0.8413031863903002,
+    "ground_population": 0.8198316609922113,
+    "exchange_error": 1.0317810399736294e-12,
+    "dimension": 40,
+    "residual_estimate": 8.694466288378415e-12
+  },
+  {
+    "step": 5400,
+    "time": 431.9481209760586,
+    "real_region_norm": 0.8268155681358439,
+    "ground_population": 0.8068603910794859,
+    "exchange_error": 1.3505172209805664e-12,
+    "dimension": 40,
+    "residual_estimate": 1.7761911764632013e-11
+  },
+  {
+    "step": 5600,
+    "time": 447.9461995307274,
+    "real_region_norm": 0.8130551827798771,
+    "ground_population": 0.7940375805880387,
+    "exchange_error": 1.1220197271629714e-12,
+    "dimension": 40,
+    "residual_estimate": 1.6810649070908628e-11
+  },
+  {
+    "step": 5800,
+    "time": 463.94427808539626,
+    "real_region_norm": 0.8002122963446261,
+    "ground_population": 0.7831085251144555,
+    "exchange_error": 9.276701996439625e-13,
+    "dimension": 40,
+    "residual_estimate": 2.0300310343772593e-12
+  },
+  {
+    "step": 6000,
+    "time": 479.9423566400651,
+    "real_region_norm": 0.7884368322067273,
+    "ground_population": 0.7731875354699521,
+    "exchange_error": 1.1420867833263661e-12,
+    "dimension": 40,
+    "residual_estimate": 1.5849491298158912e-11
+  },
+  {
+    "step": 6200,
+    "time": 495.94043519473394,
+    "real_region_norm": 0.7778349282248184,
+    "ground_population": 0.7641373393459031,
+    "exchange_error": 8.208896261570225e-13,
+    "dimension": 40,
+    "residual_estimate": 1.2070418821923678e-11
+  },
+  {
+    "step": 6400,
+    "time": 511.9385137494028,
+    "real_region_norm": 0.7684688362313232,
+    "ground_population": 0.7569223480573891,
+    "exchange_error": 7.631132430765579e-13,
+    "dimension": 40,
+    "residual_estimate": 6.294566339040782e-12
+  },
+  {
+    "step": 6600,
+    "time": 527.9365923040716,
+    "real_region_norm": 0.7603585213247508,
+    "ground_population": 0.7505519806867589,
+    "exchange_error": 8.362946326826232e-13,
+    "dimension": 40,
+    "residual_estimate": 1.2036590496789039e-11
+  },
+  {
+    "step": 6800,
+    "time": 543.9346708587404,
+    "real_region_norm": 0.753484443351149,
+    "ground_population": 0.7453138970975169,
+    "exchange_error": 5.997492676796485e-13,
+    "dimension": 40,
+    "residual_estimate": 7.51390728441579e-12
+  },
+  {
+    "step": 7000,
+    "time": 559.9327494134093,
+    "real_region_norm": 0.7477922829317852,
+    "ground_population": 0.7413833646133479,
+    "exchange_error": 5.936694993002684e-13,
+    "dimension": 40,
+    "residual_estimate": 6.523259600818136e-12
+  },
+  {
+    "step": 7200,
+    "time": 575.9308279680781,
+    "real_region_norm": 0.7431983413091942,
+    "ground_population": 0.7381244106026192,
+    "exchange_error": 5.515864344593076e-13,
+    "dimension": 40,
+    "residual_estimate": 7.828052382729536e-12
+  },
+  {
+    "step": 7400,
+    "time": 591.928906522747,
+    "real_region_norm": 0.739595758968372,
+    "ground_population": 0.7357746263963929,
+    "exchange_error": 5.925276552067393e-13,
+    "dimension": 40,
+    "residual_estimate": 3.581728895867737e-12
+  },
+  {
+    "step": 7600,
+    "time": 607.9269850774158,
+    "real_region_norm": 0.7368614196286088,
+    "ground_population": 0.7341378158988038,
+    "exchange_error": 6.292317456902608e-13,
+    "dimension": 40,
+    "residual_estimate": 4.569907118471059e-12
+  },
+  {
+    "step": 7800,
+    "time": 623.9250636320846,
+    "real_region_norm": 0.7348629624369436,
+    "ground_population": 0.7329421657080383,
+    "exchange_error": 7.43779006763978e-13,
+    "dimension": 40,
+    "residual_estimate": 4.237036209888521e-12
+  },
+  {
+    "step": 8000,
+    "time": 639.9231421867535,
+    "real_region_norm": 0.7334658265778184,
+    "ground_population": 0.7322211830382803,
+    "exchange_error": 1.151300861977042e-12,
+    "dimension": 36,
+    "residual_estimate": 4.170722775560299e-11
+  },
+  {
+    "step": 8200,
+    "time": 655.9212207414223,
+    "real_region_norm": 0.7325398996128701,
+    "ground_population": 0.731783986914351,
+    "exchange_error": 1.5691456835863308e-12,
+    "dimension": 40,
+    "residual_estimate": 2.3998419576207527e-12
+  },
+  {
+    "step": 8400,
+    "time": 671.9192992960911,
+    "real_region_norm": 0.7319653981410504,
+    "ground_population": 0.731536158486383,
+    "exchange_error": 2.2531346818788578e-12,
+    "dimension": 36,
+    "residual_estimate": 9.82352679086328e-11
+  },
+  {
+    "step": 8600,
+    "time": 687.91737785076,
+    "real_region_norm": 0.7316376351680962,
+    "ground_population": 0.7314268617383214,
+    "exchange_error": 2.236921450299315e-12,
+    "dimension": 36,
+    "residual_estimate": 2.706517104175795e-11
+  },
+  {
+    "step": 8800,
+    "time": 703.9154564054288,
+    "real_region_norm": 0.7314703377244552,
+    "ground_population": 0.7313811259107608,
+    "exchange_error": 1.796234610969346e-12,
+    "dimension": 36,
+    "residual_estimate": 4.799130698357754e-11
+  },
+  {
+    "step": 9000,
+    "time": 719.9135349600976,
+    "real_region_norm": 0.7313972723024327,
+    "ground_population": 0.7313678257087384,
+    "exchange_error": 2.21236280911937e-12,
+    "dimension": 36,
+    "residual_estimate": 2.107164640431741e-11
+  },
+  {
+    "step": 9200,
+    "time": 735.9116135147665,
+    "real_region_norm": 0.7313720636233352,
+    "ground_population": 0.7313657382067779,
+    "exchange_error": 2.5472345345369926e-12,
+    "dimension": 36,
+    "residual_estimate": 7.146323381851729e-12
+  },
+  {
+    "step": 9400,
+    "time": 751.9096920694353,
+    "real_region_norm": 0.7313662323902448,
+    "ground_population": 0.7313656282296533,
+    "exchange_error": 5.996782635998622e-12,
+    "dimension": 32,
+    "residual_estimate": 8.072755641993063e-11
+  },
+  {
+    "step": 9600,
+    "time": 767.9077706241042,
+    "real_region_norm": 0.7313656350039349,
+    "ground_population": 0.7313656282292609,
+    "exchange_error": 7.258816549385442e-12,
+    "dimension": 32,
+    "residual_estimate": 1.6490058158152623e-11
+  },
+  {
+    "step": 9800,
+    "time": 783.905849178773,
+    "real_region_norm": 0.7313656282652103,
+    "ground_population": 0.7313656282293063,
+    "exchange_error": 3.065874625929961e-11,
+    "dimension": 32,
+    "residual_estimate": 1.4840961033660325e-11
+  },
+  {
+    "step": 10000,
+    "time": 799.9039277334418,
+    "real_region_norm": 0.7313656282338794,
+    "ground_population": 0.7313656282294255,
+    "exchange_error": 3.884893367517952e-11,
+    "dimension": 32,
+    "residual_estimate": 1.536084086384799e-11
+  },
+  {
+    "step": 10176,
+    "time": 813.9822368615504,
+    "real_region_norm": 0.7313656282321366,
+    "ground_population": 0.7313656282295242,
+    "exchange_error": 2.964393923516028e-11,
+    "dimension": 32,
+    "residual_estimate": 1.6273142602181874e-11
+  }
+]

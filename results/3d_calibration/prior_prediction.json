@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-09-15T04:14:29.479614+00:00",
+  "made_before_strong_tdse_spectrum_extraction": true,
+  "peaks_channel1_channel2_total": [
+    [
+      0.5940000000000001,
+      0.6115
+    ],
+    [
+      0.5985
+    ],
+    [
+      0.595,
+      0.611
+    ]
+  ],
+  "channel_probabilities": [
+    0.1357245382756711,
+    0.13974824706101524
+  ]
+}

@@ -1,0 +1,146 @@
+[
+  {
+    "step": 20,
+    "time": 1.1993268514673592,
+    "real_region_norm": 1.000000000000022,
+    "ground_population": 0.9999999999863876,
+    "exchange_error": 2.104915299474163e-12,
+    "dimension": 24,
+    "residual_estimate": 4.8845600544456655e-11
+  },
+  {
+    "step": 100,
+    "time": 5.996634257336797,
+    "real_region_norm": 0.9999999999999691,
+    "ground_population": 0.9999990825475481,
+    "exchange_error": 3.641077930630064e-12,
+    "dimension": 28,
+    "residual_estimate": 5.2618737010989634e-11
+  },
+  {
+    "step": 200,
+    "time": 11.993268514673593,
+    "real_region_norm": 0.999999999999903,
+    "ground_population": 0.999978369239733,
+    "exchange_error": 6.25790375367407e-12,
+    "dimension": 32,
+    "residual_estimate": 1.8027662258328768e-12
+  },
+  {
+    "step": 300,
+    "time": 17.98990277201039,
+    "real_region_norm": 0.9999999998528438,
+    "ground_population": 0.9999264316743205,
+    "exchange_error": 7.052812399022912e-12,
+    "dimension": 28,
+    "residual_estimate": 5.807060966026283e-11
+  },
+  {
+    "step": 400,
+    "time": 23.986537029347186,
+    "real_region_norm": 0.9999999679127968,
+    "ground_population": 0.9998847972692915,
+    "exchange_error": 7.805295669838116e-12,
+    "dimension": 28,
+    "residual_estimate": 3.167364177871378e-11
+  },
+  {
+    "step": 500,
+    "time": 29.98317128668398,
+    "real_region_norm": 0.9999985589612136,
+    "ground_population": 0.9998746452199397,
+    "exchange_error": 8.918456629707272e-12,
+    "dimension": 28,
+    "residual_estimate": 1.5919931437284007e-11
+  },
+  {
+    "step": 600,
+    "time": 35.97980554402078,
+    "real_region_norm": 0.9999828259822555,
+    "ground_population": 0.9998745104104491,
+    "exchange_error": 9.563152879217394e-12,
+    "dimension": 28,
+    "residual_estimate": 4.047797993977578e-12
+  },
+  {
+    "step": 700,
+    "time": 41.97643980135757,
+    "real_region_norm": 0.9999329733334525,
+    "ground_population": 0.9998745104105137,
+    "exchange_error": 8.371982535279137e-12,
+    "dimension": 28,
+    "residual_estimate": 3.115362972976624e-12
+  },
+  {
+    "step": 800,
+    "time": 47.97307405869437,
+    "real_region_norm": 0.9998875503445166,
+    "ground_population": 0.9998745104105106,
+    "exchange_error": 8.429998828655405e-12,
+    "dimension": 28,
+    "residual_estimate": 2.915135392982554e-12
+  },
+  {
+    "step": 900,
+    "time": 53.969708316031166,
+    "real_region_norm": 0.9998761610223127,
+    "ground_population": 0.999874510410517,
+    "exchange_error": 8.23564834118048e-12,
+    "dimension": 28,
+    "residual_estimate": 2.6572156351915887e-12
+  },
+  {
+    "step": 1000,
+    "time": 59.96634257336796,
+    "real_region_norm": 0.9998748229896759,
+    "ground_population": 0.9998745104105512,
+    "exchange_error": 7.145273890606281e-12,
+    "dimension": 28,
+    "residual_estimate": 2.0476467229466863e-12
+  },
+  {
+    "step": 1100,
+    "time": 65.96297683070476,
+    "real_region_norm": 0.9998745962613528,
+    "ground_population": 0.9998745104105441,
+    "exchange_error": 1.8031721869930947e-12,
+    "dimension": 24,
+    "residual_estimate": 8.572347577928022e-11
+  },
+  {
+    "step": 1200,
+    "time": 71.95961108804156,
+    "real_region_norm": 0.9998745395939447,
+    "ground_population": 0.9998745104105714,
+    "exchange_error": 1.4925438792468124e-11,
+    "dimension": 24,
+    "residual_estimate": 8.234499260935306e-11
+  },
+  {
+    "step": 1300,
+    "time": 77.95624534537835,
+    "real_region_norm": 0.9998745332334357,
+    "ground_population": 0.9998745104105883,
+    "exchange_error": 1.815045017474949e-11,
+    "dimension": 24,
+    "residual_estimate": 8.77654033412899e-11
+  },
+  {
+    "step": 1400,
+    "time": 83.95287960271514,
+    "real_region_norm": 0.9998745305892504,
+    "ground_population": 0.9998745104106342,
+    "exchange_error": 2.0274415870126655e-11,
+    "dimension": 24,
+    "residual_estimate": 9.659873781407251e-11
+  },
+  {
+    "step": 1476,
+    "time": 88.51032163829112,
+    "real_region_norm": 0.9998745288510243,
+    "ground_population": 0.9998745104105954,
+    "exchange_error": 2.143661906963092e-11,
+    "dimension": 24,
+    "residual_estimate": 9.961353472351446e-11
+  }
+]

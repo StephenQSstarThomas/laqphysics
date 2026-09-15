@@ -1,0 +1,11 @@
+build/*.so
+build/*.mod
+build/*.lock
+__pycache__/
+.pytest_cache/
+*.pyc
+results/**/flux.npy
+results/**/surface.npy
+results/**/checkpoint*.npz
+results/**/initial.npz
+results/**/final.npz

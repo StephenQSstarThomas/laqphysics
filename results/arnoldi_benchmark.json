@@ -1,0 +1,26 @@
+{
+  "rows": [
+    {
+      "cache_conjugates": false,
+      "blas_orthogonalization": false,
+      "seconds_per_step": 0.48669393063755706,
+      "dimension": 40,
+      "residual_estimate": 5.2159080766979625e-11
+    },
+    {
+      "cache_conjugates": true,
+      "blas_orthogonalization": false,
+      "seconds_per_step": 0.31321943950024433,
+      "dimension": 40,
+      "residual_estimate": 5.2159080766979625e-11
+    },
+    {
+      "cache_conjugates": false,
+      "blas_orthogonalization": true,
+      "seconds_per_step": 0.2581229089992121,
+      "dimension": 40,
+      "residual_estimate": 5.2159080774625876e-11
+    }
+  ],
+  "max_output_difference": 1.5133948793938596e-16
+}

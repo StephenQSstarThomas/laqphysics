@@ -1,0 +1,168 @@
+{
+  "scope": "qualitative bound-state control model, not continuum-converged rates",
+  "runs": [
+    {
+      "name": "resonant_z",
+      "initial": [
+        1,
+        0,
+        0
+      ],
+      "polarization": "z",
+      "pulse": {
+        "omega": 1.5,
+        "cycles": 201,
+        "field": 0.02,
+        "start": 0.0,
+        "cep": 0.0
+      },
+      "basis_nmax": 4,
+      "continuum_included": false,
+      "norm_error": 1.8679631175189115e-08,
+      "seconds": 2.847700275015086,
+      "populations": {
+        "(1, 0, 0)": 7.032169521979645e-05,
+        "(2, 1, 0)": 0.9999296596210868,
+        "(3, 1, 0)": 3.820916577779779e-12
+      },
+      "P_2p": 0.9999296596210868,
+      "P_3p": 3.820916577779779e-12,
+      "P_3d": 1.593044500043025e-14
+    },
+    {
+      "name": "resonant_1",
+      "initial": [
+        1,
+        0,
+        0
+      ],
+      "polarization": 1,
+      "pulse": {
+        "omega": 1.5,
+        "cycles": 201,
+        "field": 0.02,
+        "start": 0.0,
+        "cep": 0.0
+      },
+      "basis_nmax": 4,
+      "continuum_included": false,
+      "norm_error": 1.8790905609300523e-08,
+      "seconds": 2.8144392070826143,
+      "populations": {
+        "(1, 0, 0)": 3.7589642019655486e-05,
+        "(2, 1, 1)": 0.9999623915629795,
+        "(3, 1, 1)": 3.797348030376203e-12
+      },
+      "P_2p": 0.9999623915629795,
+      "P_3p": 3.7973494343116326e-12,
+      "P_3d": 5.336219179026404e-14
+    },
+    {
+      "name": "resonant_-1",
+      "initial": [
+        1,
+        0,
+        0
+      ],
+      "polarization": -1,
+      "pulse": {
+        "omega": 1.5,
+        "cycles": 201,
+        "field": 0.02,
+        "start": 0.0,
+        "cep": 0.0
+      },
+      "basis_nmax": 4,
+      "continuum_included": false,
+      "norm_error": 1.8790907496679665e-08,
+      "seconds": 3.0160430721007288,
+      "populations": {
+        "(1, 0, 0)": 3.758964201961156e-05,
+        "(2, 1, -1)": 0.9999623915629777,
+        "(3, 1, -1)": 3.797348030136164e-12
+      },
+      "P_2p": 0.9999623915629777,
+      "P_3p": 3.7973494340680755e-12,
+      "P_3d": 5.3362205869454305e-14
+    },
+    {
+      "name": "half_frequency_circular",
+      "initial": [
+        1,
+        0,
+        0
+      ],
+      "polarization": 1,
+      "pulse": {
+        "omega": 0.75,
+        "cycles": 100,
+        "field": 0.04,
+        "start": 0.0,
+        "cep": 0.0
+      },
+      "basis_nmax": 4,
+      "continuum_included": false,
+      "norm_error": 4.703681888429401e-12,
+      "seconds": 1.9719845808576792,
+      "populations": {
+        "(1, 0, 0)": 0.9999999999952693
+      },
+      "P_2p": 2.3707085086927513e-14,
+      "P_3p": 4.3880186332880304e-17,
+      "P_3d": 1.766267543157617e-21
+    },
+    {
+      "name": "two_photon_1",
+      "initial": [
+        2,
+        1,
+        1
+      ],
+      "polarization": 1,
+      "pulse": {
+        "omega": 0.1388888888888889,
+        "cycles": 224,
+        "field": 0.003,
+        "start": 0.0,
+        "cep": 0.0
+      },
+      "basis_nmax": 4,
+      "continuum_included": false,
+      "norm_error": 2.919886554764162e-14,
+      "seconds": 8.378768102964386,
+      "populations": {
+        "(2, 1, 1)": 0.9999999999998952
+      },
+      "P_2p": 0.9999999999998952,
+      "P_3p": 2.290054247328167e-26,
+      "P_3d": 7.380331519176348e-14
+    },
+    {
+      "name": "two_photon_-1",
+      "initial": [
+        2,
+        1,
+        1
+      ],
+      "polarization": -1,
+      "pulse": {
+        "omega": 0.1388888888888889,
+        "cycles": 224,
+        "field": 0.003,
+        "start": 0.0,
+        "cep": 0.0
+      },
+      "basis_nmax": 4,
+      "continuum_included": false,
+      "norm_error": 3.944733428795644e-11,
+      "seconds": 6.442030387930572,
+      "populations": {
+        "(2, 1, 1)": 0.9996851643980018,
+        "(3, 1, -1)": 0.0003148355625187361
+      },
+      "P_2p": 0.9996851643980018,
+      "P_3p": 0.0003148355625187361,
+      "P_3d": 2.633898347033607e-15
+    }
+  ]
+}

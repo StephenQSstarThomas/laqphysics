@@ -1,0 +1,30 @@
+[
+  {
+    "dt": 0.005,
+    "seconds": 0.06193236098624766,
+    "seconds_per_au": 12.386472197249532,
+    "dimension": 12,
+    "residual_estimate": 3.2076051471502025e-11
+  },
+  {
+    "dt": 0.01,
+    "seconds": 0.1122224919963628,
+    "seconds_per_au": 11.22224919963628,
+    "dimension": 20,
+    "residual_estimate": 4.665194389518751e-11
+  },
+  {
+    "dt": 0.02,
+    "seconds": 0.259089982137084,
+    "seconds_per_au": 12.9544991068542,
+    "dimension": 36,
+    "residual_estimate": 7.979360729171525e-12
+  },
+  {
+    "dt": 0.04,
+    "seconds": 0.6168130848091096,
+    "seconds_per_au": 15.42032712022774,
+    "dimension": 60,
+    "residual_estimate": 2.0439192807706792e-11
+  }
+]

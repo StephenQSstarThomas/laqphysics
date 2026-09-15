@@ -1,0 +1,77 @@
+{
+  "signature": "58a8e2398ec19219cacddf34fc6f8b9aac47efeb1205805f65b46488fb6b4e76",
+  "config": {
+    "radial": {
+      "edges": [
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28
+      ],
+      "order": 4,
+      "tail": 24,
+      "ecs_angle": 0.5,
+      "alpha": 0.8
+    },
+    "lmax": 1,
+    "M": 0,
+    "cutoff_radii": [
+      12,
+      16
+    ],
+    "surface": 20,
+    "pulses": [
+      {
+        "pulse": {
+          "omega": 1.5,
+          "cycles": 180,
+          "field": 0.0534
+        },
+        "polarization": "z"
+      }
+    ],
+    "post_time": 60,
+    "dt": 0.08,
+    "surface_stride": 2,
+    "checkpoint_every": 200,
+    "krylov_dimension": 48,
+    "krylov_tolerance": 1e-10,
+    "ground_tolerance": 1e-09,
+    "max_surface_gib": 4,
+    "spectrum_energy": [
+      0.52,
+      0.68,
+      161
+    ]
+  },
+  "ground_energy": -2.8972353187832827,
+  "ground_residual": 8.84757298131171e-10,
+  "nrad": 88,
+  "channels": 6,
+  "dt": 0.07999039277334419,
+  "nsteps": 10176,
+  "completed_steps": 10176,
+  "complete": true,
+  "surface_bytes": 214959360,
+  "surface_indices": [
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "seconds_this_invocation": 1657.2567761030514
+}

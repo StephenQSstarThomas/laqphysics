@@ -1,0 +1,2 @@
+{'model': '3d', 'order': 10, 'lmax': 3, 'nrad': 59, 'channels': 44, 'energy': -2.902799142529177, 'residual': 2.890036532288692e-10, 'exchange': 6.464084673188969e-15, 'seconds': 110.7540275559295}
+{'model': '3d', 'order': 10, 'lmax': 4, 'nrad': 59, 'channels': 85, 'energy': -2.903007200560762, 'residual': 2.7314409978411647e-10, 'exchange': 4.501737063610032e-15, 'seconds': 487.5443588651251}

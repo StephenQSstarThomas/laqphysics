@@ -1,0 +1,73 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+______________ test_free_packet_surface_amplitude_both_directions ______________
+
+    def test_free_packet_surface_amplitude_both_directions():
+        # Analytic free TDSE wave packet, independently fixes normal, phase and k Jacobian.
+        sigma=3.;R=25.;t=np.linspace(0,180,18001);k=np.linspace(.6,1.6,61)
+        for sign in (1,-1):
+            k0=sign*1.1;kk=sign*k;b=np.zeros(len(k),complex)
+            for x,normal in [(-R,-1),(R,1)]:
+                z=1+1j*t/sigma**2
+                psi=(np.pi*sigma**2)**(-.25)/np.sqrt(z)*np.exp(-(x-k0*t)**2/(2*sigma**2*z)+1j*k0*x-.5j*k0*k0*t)
+                dp=(-(x-k0*t)/(sigma**2*z)+1j*k0)*psi
+                chi=np.exp(-1j*kk[:,None]*x+.5j*kk[:,None]**2*t)/np.sqrt(2*np.pi)
+                b+=normal*simpson(chi*(kk[:,None]*psi/2-.5j*dp),x=t,axis=1)
+            expected=np.sqrt(sigma)/np.pi**.25*np.exp(-sigma**2*(kk-k0)**2/2)
+>           np.testing.assert_allclose(b,expected,rtol=2e-7,atol=2e-7)
+E           AssertionError: 
+E           Not equal to tolerance rtol=2e-07, atol=2e-07
+E           
+E           Mismatched elements: 61 / 61 (100%)
+E           First 5 mismatches are at indices:
+E            [0]: (0.421452028875126-0.0009455042114222479j) (ACTUAL), 0.42236883625031313 (DESIRED)
+E            [1]: (0.45542293067643586-0.0009971181636045218j) (ACTUAL), 0.45469594910614664 (DESIRED)
+E            [2]: (0.4893177336105872+0.000555364872935388j) (ACTUAL), 0.4882750879534164 (DESIRED)
+E            [3]: (0.5225688078479336+0.0010720571281716738j) (ACTUAL), 0.5230248367033198 (DESIRED)
+E            [4]: (0.5577682592602934-0.0004424359223380791j) (ACTUAL), 0.5588487990450585 (DESIRED)
+E           Max absolute difference among violations: 0.00131701
+E           Max relative difference among violations: 0.00311815
+E            ACTUAL: array([0.421452-9.455042e-04j, 0.455423-9.971182e-04j,
+E                  0.489318+5.553649e-04j, 0.522569+1.072057e-03j,
+E                  0.557768-4.424359e-04j, 0.596142-1.046408e-03j,...
+E            DESIRED: array([0.422369, 0.454696, 0.488275, 0.523025, 0.558849, 0.595636,
+E                  0.633259, 0.671577, 0.710436, 0.749667, 0.789089, 0.82851 ,
+E                  0.867729, 0.906534, 0.944711, 0.982037, 1.018289, 1.053243,...
+
+tests/test_surface.py:18: AssertionError
+__________________________ test_3d_surface_commutator __________________________
+
+    def test_3d_surface_commutator():
+        h=Helium(make_grid([0,1,2,4,6,8],3),1,M=None,cutoff_radii=[1,2])
+        idx=h.prepare_surface(5.)
+        rng=np.random.default_rng(557);p=rng.normal(size=h.size)+1j*rng.normal(size=h.size)
+        A=np.array([.12,.23,.34]);theta=(h.r.real>5.).astype(float)[None,:,None]
+        u=p.reshape(h.shape,order='F')
+>       actual=h.flux(p,A)
+               ^^^^^^^^^^^
+
+tests/test_surface.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <helium3d.Helium object at 0x7bd1cf72e510>
+psi = array([ 0.8228743 +0.47683833j, -0.20844011-0.48952312j,
+       -0.93333749+2.20178317j, ..., -0.38232745+0.8036626j ,
+       -0.6656322 +0.29820256j, -0.60226713+0.61140861j], shape=(3136,))
+field = array([0.12, 0.23, 0.34])
+
+    def flux(self,psi,field):
+        u=np.asarray(psi).reshape(self.shape,order='F')
+        out=np.einsum('ij,caj->cia',self.surface_T,u.transpose(2,0,1)).transpose(1,2,0)
+        for a in range(self.nc):
+            for k in range(self.dptr[a],self.dptr[a+1]):
+                if self.de[k]!=2:continue
+                coef=np.dot(field,self.dcoef[:,k])
+>               if abs(coef)>1e-15:out[:,:,a]+=coef*(u[:,:,self.dc[k]]@self.surface_P.T)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               ValueError: operands could not be broadcast together with shapes (4,14) (14,4) (4,14)
+
+python/helium3d.py:74: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_surface.py::test_free_packet_surface_amplitude_both_directions
+FAILED tests/test_surface.py::test_3d_surface_commutator - ValueError: operan...
+2 failed in 1.03s

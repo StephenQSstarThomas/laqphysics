@@ -1,0 +1,19 @@
+{
+  "grid": {
+    "n": 512,
+    "halfbox": 48.0,
+    "cutoff_inner": 24.0,
+    "cutoff_outer": 30.0,
+    "cap_start": 38.0,
+    "cap_strength": 1.0
+  },
+  "pulse": {
+    "omega": 1.5,
+    "cycles": 60,
+    "field": 0.0534
+  },
+  "surface": 34.0,
+  "dt": 0.01,
+  "post_time": 70.0,
+  "surface_stride": 2
+}

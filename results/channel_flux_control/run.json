@@ -1,0 +1,22 @@
+{
+  "config": {
+    "grid": {
+      "n": 128,
+      "halfbox": 40.0
+    },
+    "pulse": {
+      "omega": 1.7034348673019255,
+      "cycles": 12,
+      "field": 0.0534,
+      "start": 0.0,
+      "cep": 0.0
+    },
+    "surface_stride": 2
+  },
+  "surface_dt": 0.02,
+  "positions": [
+    -25.0,
+    25.0
+  ],
+  "synthetic": true
+}

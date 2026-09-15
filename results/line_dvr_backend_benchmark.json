@@ -1,0 +1,13 @@
+{
+  "rows": [
+    {
+      "backend": "fortran",
+      "seconds_per_apply": 0.0035616589632506174
+    },
+    {
+      "backend": "sparse",
+      "seconds_per_apply": 0.0016039796328792969
+    }
+  ],
+  "relative_difference": 2.4070557643042563e-16
+}

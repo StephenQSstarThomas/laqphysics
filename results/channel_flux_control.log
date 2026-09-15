@@ -1,0 +1,13 @@
+{
+  "purpose": "synthetic separable core+free electron control, not a helium spectrum",
+  "core_final_populations": [
+    0.9397942864114409,
+    0.060201868588384125
+  ],
+  "spectrum_L1_relative_error": [
+    1.5732265055997422e-05,
+    1.3510450061091791e-05
+  ],
+  "dt_surface": 0.02,
+  "dt_ionic": 0.005
+}

@@ -1,0 +1,121 @@
+{
+  "reference_n": 725,
+  "reference_seconds": 0.2801548440475017,
+  "times": [
+    0.0,
+    8.0,
+    16.0,
+    24.0,
+    40.0,
+    60.0
+  ],
+  "runs": [
+    {
+      "method": "irECS",
+      "tail": 12,
+      "angle": 0.3,
+      "n": 138,
+      "max_inner_L2_error": 0.018260627746429725,
+      "inner_L2_errors": [
+        2.586846561421463e-15,
+        0.009973142862750679,
+        0.018260627746429725,
+        0.017911592013796933,
+        0.0077607055422454965,
+        0.0022520721443082207
+      ],
+      "max_eigenvalue_imag": 5.197611004786884e-15,
+      "seconds": 0.020514888921752572
+    },
+    {
+      "method": "irECS",
+      "tail": 20,
+      "angle": 0.3,
+      "n": 146,
+      "max_inner_L2_error": 0.0027788267408778472,
+      "inner_L2_errors": [
+        3.0891057880534453e-15,
+        0.001539537665146081,
+        0.0027788267408778472,
+        0.002566819282137784,
+        0.0007856286671946424,
+        0.00038441248616915674
+      ],
+      "max_eigenvalue_imag": 9.664469745318538e-15,
+      "seconds": 0.020605087047442794
+    },
+    {
+      "method": "irECS",
+      "tail": 28,
+      "angle": 0.3,
+      "n": 154,
+      "max_inner_L2_error": 0.000499428335188617,
+      "inner_L2_errors": [
+        3.687558344803694e-15,
+        0.000279822217040254,
+        0.000499428335188617,
+        0.000434728456502481,
+        9.772932056029097e-05,
+        0.00034745575010230355
+      ],
+      "max_eigenvalue_imag": 5.400124791776608e-12,
+      "seconds": 0.01684062392450869
+    },
+    {
+      "method": "irECS",
+      "tail": 20,
+      "angle": 0.5,
+      "n": 146,
+      "max_inner_L2_error": 0.0003475536947825057,
+      "inner_L2_errors": [
+        3.747649843226935e-15,
+        0.00013821774584173678,
+        0.00017456762915124812,
+        0.00012659018531683056,
+        1.3451450698350443e-05,
+        0.0003475536947825057
+      ],
+      "max_eigenvalue_imag": 5.905154105131349e-15,
+      "seconds": 0.02464178088121116
+    },
+    {
+      "method": "CAP",
+      "width": 10,
+      "n": 185,
+      "max_inner_L2_error": 0.1779136122246137,
+      "inner_L2_errors": [
+        2.6249744541835567e-15,
+        2.1183811813148755e-05,
+        0.06789252333808646,
+        0.169232954809691,
+        0.1779136122246137,
+        0.10202500288089415
+      ],
+      "seconds": 0.032657216070219874
+    },
+    {
+      "method": "CAP",
+      "width": 20,
+      "n": 245,
+      "max_inner_L2_error": 0.05145123610980751,
+      "inner_L2_errors": [
+        2.488477772139714e-15,
+        7.882879014571112e-08,
+        0.0005128662343310805,
+        0.01977695810801234,
+        0.05145123610980751,
+        0.03054197822786478
+      ],
+      "seconds": 0.06440057116560638
+    }
+  ],
+  "limitation": "free-packet inner-region accuracy; Coulomb cutoff and driven spectra require separate convergence"
+}
+Traceback (most recent call last):
+  File "/playpen/shiqiu/task-jiukongdian/scripts/benchmark_boundary.py", line 44, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/playpen/shiqiu/task-jiukongdian/scripts/benchmark_boundary.py", line 43, in main
+    assert min(r['max_inner_L2_error'] for r in rows if r['method']=='irECS')<1e-4
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,0 +1,569 @@
+[
+  {
+    "run": "1d_dt0005",
+    "dimension": "1d",
+    "energy_maxima": [
+      0.5920000000000001,
+      0.5920000000000001
+    ],
+    "peaks_10percent_prominence": [
+      [
+        0.5920000000000001
+      ],
+      [
+        0.5920000000000001
+      ]
+    ],
+    "energy_centroids": [
+      0.5949247978385707,
+      0.5944056475763824
+    ],
+    "channel_probabilities": [
+      0.05072473228229915,
+      0.0571682880097755
+    ],
+    "energy_window": [
+      0.45,
+      0.75
+    ],
+    "dt": 0.004999492971856849,
+    "conditional_mode_entanglement": {
+      "sector_probability": 0.10789302029207468,
+      "purity": 0.7642827840230972,
+      "entropy_bits": 0.574965249438163,
+      "negativity_pure": 0.3433054150293168,
+      "rho_real": [
+        [
+          0.47013914472857865,
+          -0.34867753591762324
+        ],
+        [
+          -0.3486775359176232,
+          0.5298608552714213
+        ]
+      ],
+      "rho_imag": [
+        [
+          -2.17842574842361e-18,
+          0.09835495554583139
+        ],
+        [
+          -0.09835495554583136,
+          4.618342874497032e-19
+        ]
+      ],
+      "scope": "pure projection onto recorded ionic states and energy window; excludes spin dynamics and omitted channels"
+    },
+    "ground_population": 0.8919385700500344,
+    "esss_absolute_spectrum_L1_relative_error": [
+      0.09230500008903575,
+      0.10268272296661682
+    ],
+    "esss_normalized_shape_L1_error": [
+      0.09249172768917663,
+      0.10270680231470469
+    ],
+    "esss_dg": "published 1D fitted value 0.5213; not re-fitted here"
+  },
+  {
+    "run": "1d_dvr_split",
+    "dimension": "1d",
+    "energy_maxima": [
+      0.596,
+      0.595
+    ],
+    "peaks_10percent_prominence": [
+      [
+        0.596
+      ],
+      [
+        0.595
+      ]
+    ],
+    "energy_centroids": [
+      0.5962218483927528,
+      0.5955829967951007
+    ],
+    "channel_probabilities": [
+      0.05120624956764794,
+      0.05704822256141398
+    ],
+    "energy_window": [
+      0.45,
+      0.75
+    ],
+    "dt": 0.009999608274325743,
+    "conditional_mode_entanglement": {
+      "sector_probability": 0.1082544721290619,
+      "purity": 0.7614079054957711,
+      "entropy_bits": 0.5802177684308967,
+      "negativity_pure": 0.3453925987222587,
+      "rho_real": [
+        [
+          0.4730174057529874,
+          0.3507500948609641
+        ],
+        [
+          0.35075009486096403,
+          0.5269825942470127
+        ]
+      ],
+      "rho_imag": [
+        [
+          -7.944160107854306e-19,
+          -0.08336823921980785
+        ],
+        [
+          0.08336823921980786,
+          -2.440490394159428e-19
+        ]
+      ],
+      "scope": "pure projection onto recorded ionic states and energy window; excludes spin dynamics and omitted channels"
+    },
+    "ground_population": 0.8915893391858448,
+    "esss_absolute_spectrum_L1_relative_error": [
+      0.004267724241548452,
+      0.029396431988735355
+    ],
+    "esss_normalized_shape_L1_error": [
+      0.0042484697853642575,
+      0.029360351051465228
+    ],
+    "esss_dg": "published 1D fitted value 0.5213; not re-fitted here"
+  },
+  {
+    "run": "1d_local",
+    "dimension": "1d",
+    "energy_maxima": [
+      0.593,
+      0.593
+    ],
+    "peaks_10percent_prominence": [
+      [
+        0.593
+      ],
+      [
+        0.593
+      ]
+    ],
+    "energy_centroids": [
+      0.5960190290955795,
+      0.5955201331473386
+    ],
+    "channel_probabilities": [
+      0.05059076649990924,
+      0.05695227229229062
+    ],
+    "energy_window": [
+      0.45,
+      0.75
+    ],
+    "dt": 0.03999594377485479,
+    "conditional_mode_entanglement": {
+      "sector_probability": 0.10754303879219992,
+      "purity": 0.7628270996552471,
+      "entropy_bits": 0.5776272301127594,
+      "negativity_pure": 0.34436383400754533,
+      "rho_real": [
+        [
+          0.4704234422616911,
+          -0.34642272640848326
+        ],
+        [
+          -0.34642272640848326,
+          0.5295765577383088
+        ]
+      ],
+      "rho_imag": [
+        [
+          -1.545141588719971e-18,
+          0.1026161375597874
+        ],
+        [
+          -0.1026161375597874,
+          -4.940495675803101e-19
+        ]
+      ],
+      "scope": "pure projection onto recorded ionic states and energy window; excludes spin dynamics and omitted channels"
+    },
+    "ground_population": 0.8897388162668978,
+    "esss_absolute_spectrum_L1_relative_error": [
+      0.06501306637262266,
+      0.06551655034725744
+    ],
+    "esss_normalized_shape_L1_error": [
+      0.06498153709208587,
+      0.06574336167514258
+    ],
+    "esss_dg": "published 1D fitted value 0.5213; not re-fitted here"
+  },
+  {
+    "run": "1d_radius_refined",
+    "dimension": "1d",
+    "energy_maxima": [
+      0.596,
+      0.595
+    ],
+    "peaks_10percent_prominence": [
+      [
+        0.596
+      ],
+      [
+        0.595
+      ]
+    ],
+    "energy_centroids": [
+      0.5962139492490113,
+      0.5955154905230612
+    ],
+    "channel_probabilities": [
+      0.05122603746299777,
+      0.05704217992046485
+    ],
+    "energy_window": [
+      0.45,
+      0.75
+    ],
+    "dt": 0.009998985943713698,
+    "conditional_mode_entanglement": {
+      "sector_probability": 0.10826821738346265,
+      "purity": 0.7615417964400993,
+      "entropy_bits": 0.5799735673683585,
+      "negativity_pure": 0.345295672981795,
+      "rho_real": [
+        [
+          0.47314012090516117,
+          -0.35169512541731296
+        ],
+        [
+          -0.35169512541731296,
+          0.5268598790948388
+        ]
+      ],
+      "rho_imag": [
+        [
+          3.6001045617448477e-19,
+          0.07974950703772841
+        ],
+        [
+          -0.07974950703772839,
+          6.124704728307352e-19
+        ]
+      ],
+      "scope": "pure projection onto recorded ionic states and energy window; excludes spin dynamics and omitted channels"
+    },
+    "ground_population": 0.8916040789603111,
+    "esss_absolute_spectrum_L1_relative_error": [
+      0.008388434863709736,
+      0.029477750665000503
+    ],
+    "esss_normalized_shape_L1_error": [
+      0.008386012801390886,
+      0.029921359957215638
+    ],
+    "esss_dg": "published 1D fitted value 0.5213; not re-fitted here"
+  },
+  {
+    "run": "1d_time_refined",
+    "dimension": "1d",
+    "energy_maxima": [
+      0.5920000000000001,
+      0.5920000000000001
+    ],
+    "peaks_10percent_prominence": [
+      [
+        0.5920000000000001
+      ],
+      [
+        0.5920000000000001
+      ]
+    ],
+    "energy_centroids": [
+      0.5949309353005658,
+      0.5944418870268346
+    ],
+    "channel_probabilities": [
+      0.05072318809055697,
+      0.057162640216971705
+    ],
+    "energy_window": [
+      0.45,
+      0.75
+    ],
+    "dt": 0.009999608274325743,
+    "conditional_mode_entanglement": {
+      "sector_probability": 0.10788582830752869,
+      "purity": 0.7642645592608402,
+      "entropy_bits": 0.5749986070985895,
+      "negativity_pure": 0.34331868630993434,
+      "rho_real": [
+        [
+          0.47015617237484114,
+          -0.3481299951889053
+        ],
+        [
+          -0.3481299951889053,
+          0.5298438276251588
+        ]
+      ],
+      "rho_imag": [
+        [
+          5.4486998478138e-19,
+          0.10023538313825585
+        ],
+        [
+          -0.10023538313825585,
+          2.605733232954568e-18
+        ]
+      ],
+      "scope": "pure projection onto recorded ionic states and energy window; excludes spin dynamics and omitted channels"
+    },
+    "ground_population": 0.891942888042444,
+    "esss_absolute_spectrum_L1_relative_error": [
+      0.09245095614694979,
+      0.10116491983686499
+    ],
+    "esss_normalized_shape_L1_error": [
+      0.0926329356200064,
+      0.10119588298826258
+    ],
+    "esss_dg": "published 1D fitted value 0.5213; not re-fitted here"
+  },
+  {
+    "run": "3d_absorber_refined",
+    "dimension": "3d",
+    "energy_maxima": [
+      0.5800000000000001,
+      0.5549999999999999
+    ],
+    "peaks_10percent_prominence": [
+      [
+        0.5800000000000001
+      ],
+      [
+        0.5549999999999999
+      ]
+    ],
+    "energy_centroids": [
+      0.5800914232340489,
+      0.5587460261221853
+    ],
+    "channel_probabilities": [
+      0.00012541878200400154,
+      9.578988776833244e-09
+    ],
+    "energy_window": [
+      0.25,
+      1.0
+    ],
+    "dt": 0.05996634257336796,
+    "conditional_mode_entanglement": {
+      "sector_probability": 0.00012542836099277833,
+      "purity": 0.9999710507443267,
+      "entropy_bits": 0.00025358146132820595,
+      "negativity_pure": 0.0038045535660199414,
+      "rho_real": [
+        [
+          0.9999236298018964,
+          -0.004576662838096045
+        ],
+        [
+          -0.004576662838096045,
+          7.63701981036391e-05
+        ]
+      ],
+      "rho_imag": [
+        [
+          4.661264395170565e-19,
+          0.006398741683030863
+        ],
+        [
+          -0.006398741683030864,
+          -3.4076399647835406e-23
+        ]
+      ],
+      "scope": "pure projection onto recorded ionic states and energy window; excludes spin dynamics and omitted channels"
+    },
+    "ground_population": 0.9998745104123177,
+    "physical_inner_probability": 0.9998745233445435,
+    "channel_yield_vs_depletion_relative_difference": -0.0004879025477596617
+  },
+  {
+    "run": "3d_dt_refined",
+    "dimension": "3d",
+    "energy_maxima": [
+      0.5800000000000001,
+      0.5549999999999999
+    ],
+    "peaks_10percent_prominence": [
+      [
+        0.5800000000000001
+      ],
+      [
+        0.5549999999999999
+      ]
+    ],
+    "energy_centroids": [
+      0.5800991999536398,
+      0.5587574733888654
+    ],
+    "channel_probabilities": [
+      0.00012548064084506232,
+      9.588432173336152e-09
+    ],
+    "energy_window": [
+      0.25,
+      1.0
+    ],
+    "dt": 0.02998317128668398,
+    "conditional_mode_entanglement": {
+      "sector_probability": 0.00012549022927723573,
+      "purity": 0.9999710366211505,
+      "entropy_bits": 0.00025369498473032945,
+      "negativity_pure": 0.0038054814970861495,
+      "rho_real": [
+        [
+          0.9999235922013326,
+          -0.00457800391004325
+        ],
+        [
+          -0.00457800391004325,
+          7.640779866736225e-05
+        ]
+      ],
+      "rho_imag": [
+        [
+          -3.6059742426872293e-19,
+          0.006400168067373505
+        ],
+        [
+          -0.006400168067373506,
+          3.380413643256219e-23
+        ]
+      ],
+      "scope": "pure projection onto recorded ionic states and energy window; excludes spin dynamics and omitted channels"
+    },
+    "ground_population": 0.9998744485320925,
+    "physical_inner_probability": 0.9998744614665364,
+    "channel_yield_vs_depletion_relative_difference": -0.0004877571825885002
+  },
+  {
+    "run": "3d_resonant_small",
+    "dimension": "3d",
+    "energy_maxima": [
+      0.611,
+      0.5980000000000001
+    ],
+    "peaks_10percent_prominence": [
+      [
+        0.5940000000000001,
+        0.611
+      ],
+      [
+        0.5980000000000001
+      ]
+    ],
+    "energy_centroids": [
+      0.6028234995269395,
+      0.6026234961644079
+    ],
+    "channel_probabilities": [
+      0.13194254609479109,
+      0.13632728375233244
+    ],
+    "energy_window": [
+      0.52,
+      0.68
+    ],
+    "dt": 0.07999039277334419,
+    "conditional_mode_entanglement": {
+      "sector_probability": 0.26826982984712344,
+      "purity": 0.5023215879882548,
+      "entropy_bits": 0.9966480597645677,
+      "negativity_pure": 0.4988378554258609,
+      "rho_real": [
+        [
+          0.49182774734669166,
+          0.029869616641963522
+        ],
+        [
+          0.029869616641963515,
+          0.5081722526533082
+        ]
+      ],
+      "rho_imag": [
+        [
+          5.607390232685374e-19,
+          0.014206135377370683
+        ],
+        [
+          -0.014206135377370683,
+          3.508644894744914e-19
+        ]
+      ],
+      "scope": "pure projection onto recorded ionic states and energy window; excludes spin dynamics and omitted channels"
+    },
+    "ground_population": 0.7313656282295242,
+    "physical_inner_probability": 0.7313656282321279,
+    "channel_yield_vs_depletion_relative_difference": -0.0013570189136619224
+  },
+  {
+    "run": "3d_short",
+    "dimension": "3d",
+    "energy_maxima": [
+      0.585,
+      0.54
+    ],
+    "peaks_10percent_prominence": [
+      [
+        0.585
+      ],
+      [
+        0.54
+      ]
+    ],
+    "energy_centroids": [
+      0.5800965167396259,
+      0.5587495676568154
+    ],
+    "channel_probabilities": [
+      0.0001254262910034353,
+      9.57923728608858e-09
+    ],
+    "energy_window": [
+      0.25,
+      1.0
+    ],
+    "dt": 0.05996634257336796,
+    "conditional_mode_entanglement": {
+      "sector_probability": 0.00012543587024072138,
+      "purity": 0.999971049228904,
+      "entropy_bits": 0.00025359364267201406,
+      "negativity_pure": 0.003804653144227621,
+      "rho_real": [
+        [
+          0.9999236323926504,
+          -0.004576529658979717
+        ],
+        [
+          -0.004576529658979717,
+          7.636760734951863e-05
+        ]
+      ],
+      "rho_imag": [
+        [
+          -3.949194634293725e-19,
+          0.006398575315698339
+        ],
+        [
+          -0.006398575315698339,
+          -4.621234865042012e-23
+        ]
+      ],
+      "scope": "pure projection onto recorded ionic states and energy window; excludes spin dynamics and omitted channels"
+    },
+    "ground_population": 0.9998745104105954,
+    "physical_inner_probability": 0.9998745287637053,
+    "channel_yield_vs_depletion_relative_difference": -0.0004280766567833506
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "run": "3d_dt_refined",
+    "amplitude_max_absolute_difference": 8.103133198703447e-16,
+    "spectrum_max_relative_difference": 1.6049810654134255e-13
+  },
+  {
+    "run": "3d_resonant_small",
+    "amplitude_max_absolute_difference": 1.1161914270499278e-13,
+    "spectrum_max_relative_difference": 1.586733698958466e-13
+  }
+]

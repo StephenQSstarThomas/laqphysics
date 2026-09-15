@@ -1,0 +1,725 @@
+                                       PHYSICAL REVIEW A 98, 033404 (2018)
+
+
+
+          Core-resonant ionization of helium by intense XUV pulses: Analytical and numerical
+                             studies on channel-resolved spectral features
+                                                     Chuan Yu and Lars Bojer Madsen
+                         Department of Physics and Astronomy, Aarhus University, DK-8000 Aarhus C, Denmark
+
+                                               (Received 5 July 2018; published 6 September 2018)
+
+                 Channel-resolved ionization of helium by laser pulses with a photon energy equal to the energy difference
+              between the ionic ground- and first-excited states, i.e., in the core-resonant scenario, is investigated theoretically
+              for a considered peak intensity of ∼1014 W/cm2 . By using the essential-states formalism, we derive analytical
+              expressions for the channel-resolved photoelectron spectra, with the pulse-envelope effects taken into account.
+              To examine the validity of the essential-states approach, we numerically solve the time-dependent Schrödinger
+              equation of a model helium and use the corresponding results as references. The justified analytical estimation
+              of the channel-resolved photoelectron spectra serves as a convenient approach to explore the effects of pulse
+              durations and envelopes. It requires a longer pulse duration to observe the spectral peak splitting in the ionic
+              first-excited-state channel than in the ionic ground-state channel. Ionization by two sequent pulses produces
+              more complicated multipeak structures in the channel-resolved photoelectron spectra than ionization by a single
+              pulse. Studies for the nonzero-detuning cases are also presented, where we propose a general procedure for
+              understanding how the photoelectron spectra are built up.
+
+              DOI: 10.1103/PhysRevA.98.033404
+
+                      I. INTRODUCTION                                          Basically, there are two types of theoretical methods used
+                                                                           in the previous studies on core-resonant ionization: (1) nu-
+    Photoelectron spectroscopy of atoms, molecules, and
+                                                                           merical simulations of the time-dependent Schrödinger equa-
+solids has long been an important subject in the research of               tion (TDSE) on spatial grids, and (2) calculations performed
+light-matter interactions [1]. It is a conventional tool to inves-         within the essential-states formalism [22], where the time-
+tigate the electronic structure of the targets. Also, photoelec-           dependent wave function is expanded in a limited basis of
+tron spectra (PES) can be used to explore the laser-induced                field-free eigenstates expected to capture the essential physics.
+dynamics, which could be ultrafast processes happening on                  In terms of the computational cost, the essential-states calcu-
+femto- and attosecond timescales [2,3]. For a target with                  lations are less demanding than the TDSE simulations. Also,
+more than one electron, the PES may contain information of                 the essential-states theory may allow one to obtain analytical
+multielectron effects. In a two-electron system, for example,              results with some further approximations, providing useful
+when two ionic states are resonantly coupled by one-photon                 insights into the dominant mechanisms in a given process.
+transitions, a doublet would be observed in the spectra [4].               However, analytical calculations of the spectra based on the
+This effect, sometimes termed as core resonance [5–8], was                 essential-states theory have been presented only for square
+first theoretically predicted by model calculations [4], and               pulses with a constant envelope (see, e.g., Refs. [4,6,7]). To
+later experimentally observed for ionization of calcium by                 consider nonconstant envelopes, researchers have so far re-
+400-nm lasers [9].                                                         sorted to numerical simulations (see, e.g., Refs. [7,15,20]). In
+    With the recent development of high-frequency light                    contrast to the essential-states formalism, the TDSE approach
+sources such as high-order harmonics and free electron lasers,             is an ab initio method in which fewer simplifications are
+one can produce intense laser pulses in the XUV and x-ray                  assumed. The TDSE calculations are therefore, in principle,
+regimes [10–14]. This means that experimental research on                  more reliable and can be used as references to verify the
+the core-resonant ionization of fundamental two-electron sys-              validity of the approximations made in the essential-states
+tems, e.g., helium, is possible. For such a simple two-electron            theory [4,6]. Note that for the comparisons between the TDSE
+atom, one can focus on and isolate the basic mechanism of the              and the essential-states results in Refs. [4,6], the laser turn-on
+core-resonance effect, since the system has much less com-                 and turn-off effects have not been considered. Pulse-envelope
+plexity than a many-electron atom. As predicted in Ref. [15],              effects related also to turn-on and turn-off are, however, quite
+the PES in the two resonantly coupled channels, i.e., the                  important for the description of dynamic interference in the
+channel-resolved PES, may reveal different peak structures                 spectra. It is therefore desirable to develop analytical descrip-
+for specific laser-pulse parameters. Also, several theoretical             tions or simple estimations of the channel-resolved PES for
+studies have recently predicted that dynamic interference                  core-resonant ionization with the pulse-envelope effects taken
+structures might be observed in the PES [16–21] when the                   into account.
+ionization is induced by finite XUV pulses. Therefore it is                    In this paper, we consider core-resonant ionization of he-
+meaningful to investigate how the channel-resolved PES of                  lium (illustrated in Fig. 1) by finite XUV pulses and study how
+core-resonant ionization can be affected by pulse durations                the channel-resolved PES are affected by pulse durations and
+and envelopes.                                                             envelopes. Our studies make use of both the essential-states
+
+2469-9926/2018/98(3)/033404(9)                                     033404-1                                    ©2018 American Physical Society
+CHUAN YU AND LARS BOJER MADSEN                                                                     PHYSICAL REVIEW A 98, 033404 (2018)
+
+                                                                            where Eg , Ej (j = 1, 2) and ε are energies of the ground
+                                     |2 ε〉
+                                                                            state, the two ionic states and the free electron, respectively.
+                                                      +
+                                                    He ( E2 = −0.50)           We consider a finite pulse over time t ∈ [0, tp ], and assume
+                                                                            that it is linearly polarized along the x axis. Within the dipole
+                     |1ε〉
+                                                                            approximation, the pulse is described by the electric field
+                                         ω = 1.50
+                                                                                               F (t ) = F0 f (t ) cos(ωt ),              (2)
+                                                                            where F0 is the field strength and f (t ) is the envelope. In
+                                                      +                     this work we restrict our discussion to many-cycle pulses
+                                                    He ( E1 = −2.00)
+                                                                            and neglect the carrier-envelope-phase effects, since the core-
+                                                                            resonance effect relies on the Rabi oscillations between the
+   | g〉                                                                     ionic states, the period of which is typically a few cycles.
+                                                    He (Eg = −2.90)         Within the rotating wave approximation (RWA), the effective
+                                                                            Hamiltonian corresponding to the state in Eq. (1) reads
+   FIG. 1. Illustration for core-resonant ionization of He. As indi-                                  
+cated by arrows, there are two dominant processes: (1) one-photon             Heff (t ) = |g Eg g| + dε |1ε (E1 + ε) 1ε|
+ionization from the ground-state He to the singly ionized continuum
+corresponding to the ground-state He+ , and (2) resonant transitions                         
+between the two coupled continua.                                                         + dε |2ε (E2 + ε) 2ε|
+and the TDSE approaches: first, we work in the essential-                                             
+                                                                                          F0
+states framework to derive an analytical description of the                            + f (t ) e−iωt dε |1ε 1ε| (x1 + x2 ) |g g|
+                                                                                          2
+channel-resolved PES for arbitrary pulse envelopes; then we                                    
+examine the validity of the essential-states theory by com-                            + e−iωt     dεdε |2ε  2ε | (x1 + x2 ) |1ε 1ε|
+paring the analytical results with the TDSE results for a
+one-dimensional (1D) model of helium. Our comparisons                                         
+demonstrate quantitative agreement. The validation of the                               + H.c. ,                                         (3)
+analytical approach allows us to easily address the question
+of how channel-resolved PES are affected by pulse durations                 where H.c. refers to the Hermitian conjugate.
+and envelopes. Although the analytical expressions are only                    For simplicity, we assume that the dipole couplings are real
+available for the exact core resonance, we also investigate the             valued and positive, and introduce the notations
+nonzero-detuning cases with numerical calculations on the                                     1ε| (x1 + x2 ) |g = Dg (ε),              (4)
+basis of the essential-states theory. Interestingly, the method
+used in treating the essential-states equations can provide a                            1ε| (x1 + x2 ) |2ε  ≈ D12 δ(ε − ε ).        (5)
+time-resolved perspective on how the channel-resolved PES
+are formed.                                                                 Here the continuum-continuum coupling is approximated by a
+   The paper is organized as follows. In Sec. II, we describe               Dirac δ function, with the factor D12 being the dipole moment
+the considered processes and the theoretical methods used                   between the two ionic states. This description will be validated
+in this work. The results of the calculations are presented                 by comparisons with ab initio TDSE results.
+and discussed in Sec. III. Finally, we conclude with a brief                   The time evolution of the system is governed by the differ-
+summary. Atomic units (a.u.) are used throughout unless                     ential equations for the coefficients. Inserting Eq. (1) into the
+stated otherwise.                                                           TDSE with the Hamiltonian [Eq. (3)] and projecting on the
+                                                                            individual states, we obtain
+                                                                                                    
+                            II. THEORY                                                    ∂                      F0
+                                                                                        i cg (t ) = dεDg (ε) f (t )c1 (ε, t ),            (6)
+                    A. Essential-states theory                                           ∂t                       2
+                                                                               ∂                                             F0
+    To formulate the essential-states theory for the considered              i c1 (ε, t ) = (ε+E1 −Eg −ω)c1 (ε, t )+D12 f (t )c2 (ε, t )
+core-resonant ionization, we keep in mind the dominant pro-                   ∂t                                             2
+cesses shown in Fig. 1. The ground-state He can be ionized                                           F0
+                                                                                            + Dg (ε) f (t )cg (t ),                       (7)
+into the ground-state ion He+ by absorbing one photon of en-                                          2
+ergy ω = 1.50, which resonantly couples two singly ionized                              ∂
+continua corresponding to the ionic ground- and first-excited                         i c2 (ε, t ) = (ε + E2 − Eg − 2ω)c2 (ε, t )
+                                                                                       ∂t
+states. Following Ref. [4], we expand the time-dependent two-                                               F0
+electron state as a linear combination of the essential states,                                      + D21 f (t )c1 (ε, t ),              (8)
+i.e., the ground state |g and two singly-ionized continua                                                   2
+|1ε , |2ε:                                                                with the initial condition cg (0) = 1 and cj (ε, 0) = 0 (j =
+                                                                           1, 2).
+                          −iEg t
+   |(t ) = |g cg (t )e        + dε |1ε c1 (ε, t )e−i(E1 +ε−ω)t             In the very special case of a constant envelope, one can
+                                                                           easily solve Eqs. (6)–(8) by using Laplace transforms [4]. In
+                                                                            general, however, the time dependence of f (t ) makes it much
+             + dε |2ε c2 (ε, t )e−i(E2 +ε−2ω)t ,                (1)        more complicated to seek for analytical solutions. Here our
+
+                                                                      033404-2
+CORE-RESONANT IONIZATION OF HELIUM BY INTENSE …                                                     PHYSICAL REVIEW A 98, 033404 (2018)
+
+approach to solve Eqs. (6)–(8) is inspired by Ref. [23]. We first                           Dg F0
+make the “flat-continuum” assumption that Dg has a weak                    κ2 (s, t ) = − i       [θ (s) − θ (s − t )]f (t − s)cg (t − s)
+                                                                                              2
+dependence on ε and approximate it by its value on resonance,                                       t                              
+                                                                                            1                              0       
+                 Dg ≈ Dg (ε = ω + Eg − E1 ),                       (9)                  ×     exp −i          ds −ε0 +         f (s )
+                                                                                            2             t−s               2
+                                                                                                  t                               
+for the continuum-state energy range in which we are in-                                  1                              0
+terested. By performing Fourier analysis with respect to the                            − exp −i           ds  −ε0 −       f (s  )    , (18)
+                                                                                          2            t−s                2
+continuum-state energy
+                                                                          where ε0 = Eg − E1 + ω = Eg − E2 + 2ω, and Heaviside θ
+                 
+                                                                          functions are introduced to restrict the variable range.
+    cj (ε, t ) = ds exp(−iεs)κj (s, t ), (j = 1, 2),     (10)                                          D F
+                                                                             With κ1 (s = 0, t ) = −i g4 0 f (t )cg (t ) substituted into
+                                                                         Eq. (12), one obtains the solution to Eq. (6):
+                1
+  κj (s, t ) =       dε exp(+iεs)cj (ε, t ), (j = 1, 2), (11)                                                   
+               2π                                                                                     π Dg2 F02 t  2 
+                                                                                     cg (t ) = exp −               dt f (t ) .       (19)
+we obtain the following equations:                                                                       4       0
+
+             ∂            Dg F0                                           The solutions to Eqs. (7) and (8) are determined by Fourier
+            i   cg (t ) =        f (t )2πκ1 (s = 0, t ),           (12)
+             ∂t             2                                             transforms [Eq. (10)]:
+ ∂                    ∂                                                                            
+i κ1 (s, t ) = − i κ1 (s, t ) + (E1 − Eg − ω)κ1 (s, t )                                       Dg F0 t
+ ∂t                 ∂s                                                       c1 (ε, t ) = − i          dsf (t − s)cg (t − s)
+                                                                                                2    0
+                +
+                   D12 F0
+                           f (t )κ2 (s, t ) +
+                                              Dg F0                                                 t                                
+                                                    f (t )cg (t )δ(s),                        1                              0
+                       2                       2                                          ×     exp −i        ds  ε − ε0 +     f (s  )
+                                                                   (13)                       2           t−s                2
+                                                                                                    t                            
+                                                                                            1                            0     
+     ∂                  ∂                                                                 + exp −i         ds ε − ε0 −       f (s )       ,
+   i    κ2 (s, t ) = − i κ2 (s, t ) + (E2 − Eg − 2ω)κ2 (s, t )                              2          t−s                 2
+    ∂t                  ∂s
+                       D21 F0                                                                                                            (20)
+                     +        f (t )κ1 (s, t ).             (14)                                       t
+                         2                                                                    Dg F0
+                                                                               c2 (ε, t ) = − i        dsf (t − s)cg (t − s)
+These equations can be solved by using the method of char-                                      2    0
+acteristics [23]. Let us introduce new variables η = s and                                           t                              
+                                                                                              1                              0
+ζ = t − s, and rewrite Eqs. (13) and (14) as                                              ×     exp −i           
+                                                                                                              ds ε − ε0 +       f (s )
+                                                                                              2           t−s                2
+       d                                                                                            t                              
+       i κ1 (η, ζ ) = (E1 − Eg − ω)κ1 (η, ζ )                                               1                             0
+      dη                                                                                  − exp −i         ds  ε − ε0 −     f (s  )     .
+                                                                                            2          t−s                 2
+                        D12 F0
+                      +        f (η + ζ )κ2 (η, ζ )                                                                                      (21)
+                           2
+                        Dg F0                                             The channel-resolved PES after the pulse (t ⩾ tp ) are
+                      +       f (η + ζ )cg (η + ζ )δ(η),  (15)
+                          2                                                              dPj
+                                                                                             = |cj (ε, tp )|2 , (j = 1, 2).     (22)
+            d                                                                             dε
+          i κ2 (η, ζ ) = (E2 − Eg − 2ω)κ2 (η, ζ )
+           dη                                                             We will compare the channel-resolved PES calculated by
+                             D21 F0                                       Eq. (22) with the ab initio TDSE results in Sec. III.
+                          +         f (η + ζ )κ1 (η, ζ ). (16)
+                                2
+                                                                                             B. TDSE and numerical methods
+    In case of the exact resonance (E2 − E1 = ω), one can
+     √decouple Eqs. (15) and (16) by introducing κ± = (κ1 ±
+easily                                                                      The TDSE simulations are performed for the widely used
+κ2 )/ 2 and then find the analytical solutions by integrating             1D two-electron model [24–26] with the Hamiltonian
+with respect to η. The Dirac δ function in Eq. (15), which is                         2                 2
+                                                                                         1      ∂
+due to the “flat-continuum” assumption, greatly simplifies the             H (t ) =         −i     +A(t ) +Ven (xj ) +Vee (x1 , x2 ).
+results. With the Rabi frequency denoted by 0 = D12 F0 , the                       j =1
+                                                                                         2     ∂xj
+solutions to Eqs. (13) and (14) are
+                                                                                                                                         (23)
+                  Dg F0                                                   Here
+ κ1 (s, t ) = − i       [θ (s) − θ (s − t )]f (t − s)cg (t − s)
+                    2
+                          t                                                                       −Zen
+                  1                              0                                      Ven (xj ) =         ,       (j = 1, 2),      (24)
+              ×     exp −i          ds −ε0 +         f (s )
+                  2             t−s               2                                                     xj2 + a
+                        t                               
+                1                              0                                                                     Zee
+              + exp −i           ds  −ε0 −       f (s  )     , (17)                        Vee (x1 , x2 ) =                      ,    (25)
+                2            t−s                2                                                                 (x1 − x2 )2 + a
+
+                                                                    033404-3
+CHUAN YU AND LARS BOJER MADSEN                                                                                     PHYSICAL REVIEW A 98, 033404 (2018)
+
+are the electron-nucleus and the electron-electron interactions,               1.00                                                    1.00
+                                                                                                               ESSS                                                 ESSS
+which are softened to avoid the Coulomb singularity. Such a                    0.95                            TDSE
+                                                                                                                                       0.95
+                                                                                                                                                                    TDSE
+                                                                   |cg (t)|2
+                                                                                                                           2
+1D model allows us to study two-electron effects with much                                                                             0.90
+                                                                                                                            |cg (t)|
+                                                                                                                                       0.85
+less computational difficulty than the three-dimensional (3D)                  0.90
+                                                                                                                                       0.80
+simulations. For core-resonant ionization by linearly polarized                           (a) Nc = 60                                             (b) Nc = 120
+                                                                               0.85                                                    0.75
+laser pulses, the 1D ab initio calculations can be used as                            0      50      100 150 200 250                          0      100 200 300 400 500
+practical references to examine the accuracy of the essential-                                          t (a.u.)                                             t (a.u.)
+
+states theory. By choosing parameters Zen = 1.1225, Zee =                      1.00                                                    1.00
+                                                                                                               ESSS                                                 ESSS
+0.6317, and a = 0.091 69, we obtain the He ground-state                        0.90                            TDSE
+                                                                                                                                       0.90
+                                                                                                                                       0.80
+                                                                                                                                                                    TDSE
+                                                                   |cg (t)|2
+                                                                                                                           2
+energy Eg = −2.90, He+ ground-state energy E1 = −2.00,                         0.80                                         |cg (t)|   0.70
+and first-excited-state energy E2 = −0.50, which are in good                                                                           0.60
+                                                                               0.70       (c) Nc = 180                                 0.50       (d) Nc = 360
+agreement with the values for the real system. The same
+parameters were also used in Ref. [27] for simulating double                          0        200         400      600                       0        400      800     1200
+                                                                                                        t (a.u.)                                             t (a.u.)
+ionization of helium.
+   The laser interaction in Eq. (23) is described in velocity          FIG. 2. Time-dependent ground-state probability obtained by the
+gauge by the vector potential                                      essential-states (labeled as ESSS) and the TDSE calculations for a
+                               t                                  fixed laser frequency ω = 1.50 and different pulse durations.
+                    A(t ) = −      dt  F (t  ),           (26)
+                               −∞
+
+which fulfills A(−∞) = A(+∞) = 0 [28,29]. In our calcu-            which corresponds to a peak intensity of 1014 W/cm2 . Such
+lations, the electric field F (t ) in Eq. (2) has a sine-squared   laser pulses can yield a large amount of single ionization with
+envelope                                                           a near-zero probability for double ionization (< 10−4 ), for
+                                                                 which we expect the essential-states expansion [Eq. (1)] to
+              2 πt                                                 be valid. The dipole moment between the two ionic states for
+ f (t ) = sin         [θ (t ) − θ (t − tp )], (tp = 2π Nc /ω),
+                 tp                                                the 1D model is D12 = 0.4823. To obtain the essential-states
+                                                           (27)    results by using Eqs. (19)–(21), we also need to know the
+                                                                   value of Dg . This value can be extracted by fitting the norm
+with an integer number of cycles Nc .                              square of Eq. (19) at the end of the pulse to the final ground-
+    For the TDSE simulations, we discretize the simulation         state probability obtained from the corresponding TDSE cal-
+volume by employing a finite-element discrete variable rep-        culation. We find Dg = 0.5213 for ω = 1.50 from a single
+resentation (FEDVR) [30–32] combined with infinite-range           calculation with Nc = 60 and then apply this value to other
+exterior complex scaling (irECS) [33]. The coordinate space        essential-states calculations with different Nc .
+is divided into inner and outer regions by a complex scaling           Figure 2 shows the time-dependent ground-state probabil-
+radius rc , which is chosen to be 50 for the calculations in       ity obtained from Eq. (19) and that obtained by projection on
+this work. The inner region [−rc , rc ] is discretized by finite   the ground state in the TDSE calculations. We find excellent
+elements with a fixed equal size of 2 and 11 Gauss-Lobatto         agreement between the analytical (essential-states) and the
+basis functions in each element. The outer regions (−∞, −rc ]      numerical (TDSE) results for different Nc , which proves
+and [rc , +∞) are complex scaled with a scaling angle θ = 0.3      that the essential-states theory can indeed describe the time
+and discretized by 30 basis functions. (See Refs. [33–35] for      evolution of the ground-state population for different pulse
+details of the irECS method and the basis functions.)              durations. Note that the drop of the ground-state probability
+    We propagate the TDSE with the Arnoldi-Lanczos time-           can reach ∼0.5 for a relatively long pulse with Nc = 360. In
+propagator [36,37] with a time step of t = 0.002. The             this sense we say that the considered laser pulses are intense,
+initial state is obtained by imaginary time propagation            although they are not extremely strong to cause considerable
+[38]. The channel-resolved PES are extracted by using              double ionization. Since our aim here is mainly to examine
+the time-dependent surface flux (tSURFF) method [39,40]            the analytical approach for pulsed laser interaction, we do
+with the tSURFF surfaces placed at x = ±45. We emphasize           not consider extremely high intensity, e.g., ∼1016 W/cm2 ,
+that the irECS method works as an efficient absorber so that       which would invalidate the present essential-states expansion
+the wave function in the inner region remains accurate for         [Eq. (1)] not accounting for double ionization.
+applying the tSURFF method. The use of velocity gauge in the           Comparisons of the channel-resolved PES between the
+TDSE calculations is required by the irECS method [33]. Note       essential-state and the TDSE calculations are presented in
+that recently, this methodology was used for investigating         Fig. 3. For the selected pulse durations, we display four types
+high-order above-threshold ionization of helium in the long-       of representative spectral features: (a) only a single peak is
+wavelength regime [41].                                            observed in both channels; (b) two peaks are observed in chan-
+                                                                   nel 1 (the ionic ground-state channel) while only one peak is
+                        III. RESULTS                               observed in channel 2 (the ionic first-excited-state channel);
+                                                                   (c) two peaks are observed in both channels; and (d) the spec-
+                  A. Essential states vs TDSE                      tra manifest multipeak structures, i.e., pronounced dynamic
+   Let us begin our discussion with a comparison between           interference features. In all these cases, the essential-states
+some essential-states and TDSE results. The TDSE calcula-          and the TDSE results show quantitative agreement, which
+tions are performed for a fixed field strength F0 = 0.0534,        justifies the analytical estimation of the channel-resolved PES
+
+                                                             033404-4
+CORE-RESONANT IONIZATION OF HELIUM BY INTENSE …                                                                                                                                      PHYSICAL REVIEW A 98, 033404 (2018)
+
+                        2                                                                            1.5                                                    8                                                                    6
+                              (a) Nc = 60, ω = 1.50 a.u.                 channel−1 ( ESSS )                                                                     (b) Nc = 120, ω = 1.50 a.u.              channel−1 ( ESSS )
+                                                                         channel−2 ( ESSS )                                                                 7                                            channel−2 ( ESSS )      5
+                                                                         channel−1 ( TDSE )                                                                                                              channel−1 ( TDSE )
+                       1.5                                               channel−2 ( TDSE )          1                                                      6                                            channel−2 ( TDSE )      4
+
+
+
+ dP1/d ε (a.u.)                                                                                                     dP2/d ε (a.u.)        dP1/d ε (a.u.)                                                                             dP2/d ε (a.u.)
+                                                                                                                                                            5                                                                    3
+                        1                                                                            0.5                                                    4                                                                    2
+                                                                                                                                                            3                                                                    1
+                       0.5                                                                           0                                                      2                                                                    0
+                                                                                                                                                            1                                                                    −1
+                        0                                                                            −0.5                                                   0                                                                    −2
+                             0.52   0.54     0.56    0.58      0.6     0.62   0.64   0.66     0.68                                                              0.54      0.56      0.58         0.6     0.62    0.64     0.66
+                                                            ε (a.u.)                                                                                                                          ε (a.u.)
+                       10                                                                            8                                                     30                                                                    25
+                              (c) Nc = 180, ω = 1.50 a.u.                channel−1 ( ESSS )                                                                     (d) Nc = 360, ω = 1.50 a.u.              channel−1 ( ESSS )
+                                                                         channel−2 ( ESSS )                                                                25                                            channel−2 ( ESSS )      20
+                        8                                                channel−1 ( TDSE )          6                                                                                                   channel−1 ( TDSE )
+                                                                         channel−2 ( TDSE )                                                                                                              channel−2 ( TDSE )
+                                                                                                                                                           20                                                                    15
+
+
+      dP1/d ε (a.u.)                                                                                     dP2/d ε (a.u.)              dP1/d ε (a.u.)                                                                                       dP2/d ε (a.u.)
+                        6                                                                            4
+                                                                                                                                                           15                                                                    10
+                        4                                                                            2
+                                                                                                                                                           10                                                                    5
+
+                        2                                                                            0
+                                                                                                                                                            5                                                                    0
+
+                        0                                                                            −2                                                     0                                                                    −5
+                             0.56   0.57     0.58    0.59      0.6     0.61   0.62   0.63     0.64                                                              0.57      0.58      0.59         0.6     0.61    0.62     0.63
+                                                            ε (a.u.)                                                                                                                          ε (a.u.)
+
+   FIG. 3. Channel-resolved PES obtained by the essential-states (labeled as ESSS) and the TDSE calculations for a fixed frequency ω = 1.50.
+Channel 1 (channel 2) denotes ionization into the ionic ground-state (first-excited-state) channel and its vertical axis is to the left (right). The
+four selected pulse durations are the same as in Fig. 2.
+
+
+based on Eqs. (20) and (21). The different types of spectral                                                                              normalized to 1. We find that the PES in both channels evolve
+features in Fig. 3 imply that for the considered pulses it might                                                                          from single-peak to multipeak features as the pulse duration
+be more appropriate to view the spectral features as dynamic                                                                              increases. A minimum number of cycles Nc ≈ 84 is needed to
+interference [20] rather than only peak splitting.                                                                                        identify two peaks in the PES of channel 1, which is consistent
+                                                                                                                                          with the above condition determined by the spectral width.
+                                                                                                                                          Comparatively, a minimum number of cycles Nc ≈ 144 is
+                             B. Effects of pulse durations and envelopes                                                                  needed to identify two peaks in the PES of channel 2. Since
+   The justified analytical estimation of the channel-resolved                                                                            the essential-state theory indicates that ionization initially
+PES can offer a convenient approach to explore the effects of                                                                             happens in channel 1, it would take more time for the free
+pulse durations and envelopes. A doublet in the PES, which                                                                                electron (and also the spectral features) to appear in channel 2
+originates from the Rabi splitting of two ionic states, has                                                                               than in channel 1.
+been considered as a key feature of core-resonant ionization                                                                                 In Ref. [15] the number of peaks in the spectra was   related
+[4]. For the effect of pulse durations on the channel-resolved                                                                            to the number of Rabi cycles, or the pulse area 0 dtf (t ).
+PES, it is natural to ask what the minimum pulse duration                                                                                 Here we would like to emphasize that linking the number of
+is for observing a doublet in each channel. One necessary                                                                                 peaks in the spectra to the pulse area is reasonable only for
+condition is that the spectral width should be smaller than the                                                                           a single pulse with one pair of rising and falling edges. For
+doublet splitting, where the latter equals the Rabi frequency                                                                             more complicated envelopes with more than one pair of rising
+0 = D12 F0 [4]. For the considered sine-squared envelope                                                                                 and falling edges, the dynamic interference features in the
+[Eq. (27)], the spectral width (defined as the full width at                                                                              spectra can hardly be related to the pulse area. To demonstrate
+half maximum) is approximately 1.44ω/Nc [42]. Therefore                                                                                   this and to model a pump-probe scenario, we show in Fig. 5
+a minimum number of cycles Nc ≈ 84 is required for F0 =                                                                                   the channel-resolved spectra for two sequent pulses, i.e.,
+0.0534. In fact, this condition determines only the minimum                                                                               a combined envelope of the form f2 (t ) = f (t ) + f (t − tp )
+pulse duration for observing a doublet in channel 1, while                                                                                with f (t ) given by Eq. (27). The two pulses used in Fig. 5(a)
+more cycles are required for observing a doublet in channel                                                                               are identical to the single pulse used in Fig. 3(a), and the total
+2, a point we will come back to below.                                                                                                    pulse area for Fig. 5(a) is the same as that for Fig. 3(b). The
+   To study how the spectral features are affected by the                                                                                 multipeak structures observed in Fig. 5(a), however, resemble
+pulse durations, we apply the analytical estimation of the                                                                                neither Fig. 3(a) nor Fig. 3(b). Therefore the pulse area is not
+channel-resolved PES for a series of Nc ranging from 40 to                                                                                very helpful for predicting the number of spectral peaks in this
+400 and display the results in Fig. 4. The spectral intensity                                                                             case. The same argument applies when one compares Fig. 5(b)
+in this plot is divided by the corresponding total ioniza-                                                                                with Figs. 3(c) and 3(d). Therefore in this work we just briefly
+tion probability [1 − |cg (tp )|2 ], which means that the total                                                                           conclude that it requires a longer pulse to observe multipeak
+integrated spectral intensity (channel 1 plus channel 2) is                                                                               spectral features in the ionic first-excited-state channel than
+
+                                                                                                         033404-5
+CHUAN YU AND LARS BOJER MADSEN                                                                                                                                            PHYSICAL REVIEW A 98, 033404 (2018)
+
+
+                       (a) channel−1                                                                                                        (b) channel−2
+
+
+
+
+                                                                                                             400                                                                                          400
+
+
+                                                                                                             350                                                                                          350
+
+
+                                                                                                            300                                                                                          300
+
+                                                                                                                                                                                                                 40
+                                                                                                            250                                                                                          250
+
+                                                                                                                                                                                                                 30
+                                                                                                          200                                                                                        200
+                                                                                                                Nc                                                                                         Nc
+                                    40                                                                                                               40
+                                                                                                        150                                                                                          150         20
+        dP1/d ε (a.u.) 30                                                                                                         dP2/d ε (a.u.) 30
+                   2                                                                                                                         2
+        [1−|c (t )| ] 20
+                       g p                                                                                                        [1−|c (t )| ] 20
+                                                                                                                                            g p
+                                    10                                                                 100                                           10                                             100          10
+                                     0                                                                                                                0
+                                                0.56      0.58                                        50                                                    0.56   0.58                             50
+                                                                         0.6      0.62                                                                                          0.6   0.62                       0
+                                                                                            0.64                                                                                             0.64
+                                                              ε (a.u.)                                                                                               ε (a.u.)
+
+   FIG. 4. Normalized channel-resolved PES for a series of different number of cycles (from 40 to 400), obtained by the essential-states
+calculations for a fixed laser frequency ω = 1.50. Channel 1 (channel 2) denotes ionization into the ionic ground-state (first-excited-state)
+channel. The solid black curves indicate the minimum pulse duration for which one can visually observe two peaks in the spectra.
+
+
+in the ionic ground-state channel, without making further                                                                                      ionization into the ionic ground-state channel, and it takes
+analysis based on the pulse area. The difference in the pulse                                                                                  some time for population to build up.
+duration needed can be understood by noting that ionization                                                                                        Again, the essential-states and the TDSE results in Fig. 5
+into the ionic first-excited-state channel only proceeds after                                                                                 manifest excellent agreement. This means that the analytical
+                                                                                                                                               estimation of the channel-resolved PES has a wide applicabil-
+                                                                                                                                               ity for various and complicated pulse envelopes.
+                       8                                                                                          6
+                             (a) Nc = 60 (2 pulses), ω = 1.50 a.u.              channel−1 ( ESSS )
+                       7                                                        channel−2 ( ESSS )                5
+                                                                                channel−1 ( TDSE )
+                       6                                                        channel−2 ( TDSE )                4
+                                                                                                                                                            C. Studies for the nonzero-detuning cases
+
+     dP1/d ε (a.u.)                                                                                                   dP2/d ε (a.u.)
+                       5                                                                                          3
+                       4                                                                                          2                               The analytical expressions presented in Eqs. (20) and (21)
+                       3                                                                                          1                            are only valid for the exact core resonance. In case of a small
+                       2                                                                                          0                            but nonzero detuning  = E2 − E1 − ω, Eqs. (15) and (16)
+                       1                                                                                        −1                             cannot be decoupled, and in this case we do not have analyti-
+                       0                                                                                        −2                             cal solutions. The method of characteristics used in Sec. II A,
+                             0.54         0.56         0.58        0.6         0.62      0.64      0.66
+                                                                                                                                               however, still allows us to determine the channel-resolved
+                                                                 ε (a.u.)
+                                                                                                                                               PES by numerical calculations. In particular, as we will now
+                      35                                                                                          25
+                             (b) Nc = 180 (2 pulses), ω = 1.50 a.u.             channel−1 ( ESSS )                                             discuss, this method can offer a time-resolved perspective on
+                      30                                                        channel−2 ( ESSS )                20                           how the PES are built up.
+                                                                                channel−1 ( TDSE )
+                      25                                                        channel−2 ( TDSE )                15                              To evaluate the spectra at the end of the pulse tp , we solve
+
+dP1/d ε (a.u.)                                                                                                             dP2/d ε (a.u.)
+                      20                                                                                          10                           Eqs. (15) and (16) for a series of κj (η = s, ζ = tp − s) with
+                      15                                                                                          5
+                                                                                                                                               the corresponding initial condition κj (η = s − tp , ζ = tp −
+                                                                                                                                               s) = 0 (j = 1, 2). Here the variables η and ζ are introduced
+                      10                                                                                          0
+                                                                                                                                               in the same way as in Sec. II A, and s is any time within
+                       5                                                                                        −5                             the pulse duration (0 < s < tp ). Note that the source term in
+                       0                                                                                        −10                            Eqs. (15) and (16) is a Dirac δ function, so we can in practice
+                             0.56        0.57      0.58       0.59       0.6      0.61    0.62       0.63
+                                                                 ε (a.u.)
+                                                                                                                                               use the initial condition
+
+    FIG. 5. Channel-resolved PES obtained by the essential-states
+                                                                                                                                                                           
+(labeled as ESSS) and the TDSE calculations for two sequent pulses                                                                                 κ1 (η = 0+ , ζ = tp − s)       D F
+                                                                                                                                                                                −i g2 0 f (tp − s)cg (tp − s)
+with frequency ω = 1.50. Channel 1 (channel 2) denotes ionization                                                                                                             =                               ,
+                                                                                                                                                   κ2 (η = 0+ , ζ = tp − s)                   0
+into the ionic ground-state (first-excited-state) channel and its verti-
+cal axis is to the left (right).                                                                                                                                                                                (28)
+
+                                                                                                                             033404-6
+CORE-RESONANT IONIZATION OF HELIUM BY INTENSE …                                                 PHYSICAL REVIEW A 98, 033404 (2018)
+
+                                                                               D F
+(a) Δ < 0                             (b) Δ > 0                           −i g2 0 f (tp − s)cg (tp − s). Then this part of the photoelec-
+                                                                          tron is governed by the time-dependent Hamiltonian of the
+E2−Eg −2 ω
+                                     E1−Eg −ω                             coupled continua [Eq. (30)], undergoing Rabi oscillations
+E1−Eg − ω                                                                 between the two ionic channels. All such contributions are
+                                      E2−Eg −2 ω                          coherently summed up according to Eq. (10), with the factor
+                                                                          exp(−iεs) accounting for the accumulated phase of the free
+                     f(t)                                  f(t)           electron from time (tp − s) to tp . With cj (ε, tp ) (j = 1, 2)
+                                                                          numerically evaluated, one can then use Eq. (22) to calculate
+                                                                          the channel-resolved PES at the end of the pulse tp . The time-
+               (t p −s)      tp                      (t p −s)      tp     resolved picture described here also includes the exact core
+                                                                          resonance as a special case where the unitary transformation
+    FIG. 6. Dynamics of the coupled continua for the nonzero-             for diagonalizing H is time independent, leading to an analyt-
+detuning cases, illustrated with the field-dressed energy levels of the   ically solvable Rabi model. Although analytical expressions
+Hamiltonian H given by Eq. (30). The time-dependent eigenenergies         are not generally available, the presented formalism clearly
+of H are displayed by red and blue curves, which respectively             shows that the coherent sum of all contributions during the
+correspond to channel 1 (the ground-state He+ ) and channel 2 (the        pulse is the origin of dynamic interference in the spectra.
+first-excited state He+ ) when the pulse is off. In this field-dressed        As shown in Fig. 6, we can also illustrate the process
+picture, the free electron born at time (tp − s) will undergoes adia-     with the time-dependent eigenenergies of H, which reflect the
+batic and nonadiabatic processes indicated by solid and dotted lines      field-induced energy shifts. The field-free and field-dressed
+with arrows, respectively.                                                eigenstates are connected by the unitary transformation for
+                                                                          diagonalizing H:
+and propagate the coupled homogeneous equations (for
+                                                                                                                                 
+η > 0)                                                                                                           λ1 (t )     0
+                                                                                     U† (t )H(t )U(t ) =                         .   (31)
+            d κ1 (η, ζ = tp − s)                                                                                   0       λ2 (t )
+          i
+            dη κ2 (η, ζ = tp − s)
+                                                                        Thus the “jump” into the field-free continuum |1ε at time
+                               κ1 (η, ζ = tp − s)                         (tp − s) can be expressed in terms of the field-dressed con-
+             = H(tp − s + η)                        (29)
+                              κ2 (η, ζ = tp − s)                          tinua by applying U† (tp − s) to Eq. (28). For a small but
+                                                                          nonzero detuning , the free electron born at time (tp − s)
+with the 2 × 2 Hamiltonian matrix H given by
+                                                                          will not completely follow the field-dressed continua adia-
+                                                                        batically; nonadiabatic processes will also occur due to the
+                   E1 − Eg − ω      0 f (t )/2
+         H(t ) =                                 .                (30)    time dependence of the unitary transformation [Eq. (31)]. In
+                    0 f (t )/2   E2 − Eg − 2ω
+                                                                          pursuit of accurate estimations of the channel-resolved PES,
+Note that Eq. (19) is still valid, as one can directly find κ1 (s =       we emphasize, and this will be demonstrated by an example
+0, t ) = [κ1 (0− , t ) + κ1 (0+ , t )]/2 by integrating Eq. (15) with     below, that it is necessary to consider both adiabatic and
+respect to η over an infinitesimal range [0− , 0+ ].                      nonadiabatic dynamics of the field-dressed continua when nu-
+    One can understand the process in the following way. At               merically solving Eq. (29). Mathematically, this means that it
+time (tp − s), the system makes a transition (“jump”) from                is inexact to assume purely adiabatic dynamics corresponding
+the ground state |g to the first continuum |1ε with amplitude           to the following equation:
+
+  A                                                 tp −s+η                                                                    
+  κ1 (η = η , ζ = tp − s)                                         λ1 (t  )          0                     κ1 (η = 0+ , ζ = tp − s)
+                             = U(tp − s + η ) exp −i           dt                               †
+                                                                                                U (tp − s)                              ,
+   A       
+  κ2 (η = η , ζ = tp − s)                             tp −s           0              λ2 (t  )              κ2 (η = 0+ , ζ = tp − s)
+                                                                                                                                       (32)
+
+
+where the superscript A on the amplitudes κjA (j = 1, 2)                  essential-states results that are obtained by neglecting nonadi-
+denotes adiabatic evolution in the field-dressed picture.                 abatic processes in the field-dressed picture using Eq. (32).
+   We apply our presented essential-states procedure for two              Within this adiabatic approximation, the estimated spectra
+selected laser frequencies ω = 1.49 and ω = 1.51 with a                   do not deviate too much from the reference results. Some
+fixed number of cycles Nc = 180, and compare the channel-                 channel-resolved spectral features are, however, not well de-
+resolved PES with the corresponding TDSE results in Fig. 7.               scribed when assuming purely adiabatic dynamics of the field-
+Compared with the exact core-resonant cases (Figs. 3 and 5),              dressed continua. With nonadiabatic processes neglected, the
+we see that the nonzero detuning breaks the symmetry of the               primary spectral peak in channel 1 is overestimated while the
+spectral peaks. One can also find in Fig. 7 that the PES in               secondary spectral peak in channel 2 is missing.
+channel 1 has higher spectral intensity than that in channel 2,              The excellent agreement between the essential-states and
+as the nonzero detuning attenuates the amplitude of the Rabi              the TDSE results observed in Fig. 7 validates our proce-
+oscillations. We also show in Fig. 7 an additional group of               dure for calculating the channel-resolved PES. Key to our
+
+                                                                    033404-7
+CHUAN YU AND LARS BOJER MADSEN                                                                                                              PHYSICAL REVIEW A 98, 033404 (2018)
+
+                 20                                                                            15                    with a peak intensity of ∼1014 W/cm2 . In addition to easy
+                       (a) Nc = 180, ω = 1.49 a.u.                 channel−1 ( ESSS )
+                                                                   channel−2 ( ESSS )                                interpretation of the physical processes, the essential-state
+                                                                   channel−1 ( TDSE )
+                 15                                                channel−2 ( TDSE )          10                    approach also offers a significant reduction in the computa-
+                                                                                                                     tional cost for evaluation of the spectra. For example, it takes
+dP1/d ε (a.u.)                                                                                      dP2/d ε (a.u.)
+                                                                  channel−1 ( ESSSA )
+                                                                  channel−2 ( ESSSA )
+                 10                                                                            5                     only ∼2 minutes to obtain the essential-state results shown in
+                                                                                                                     Fig. 7 on a single CPU core, while the corresponding TDSE
+                  5                                                                            0
+                                                                                                                     calculations require a few hours for multicore processors.
+                                                                                                                     For simulating 3D cases, this speedup would be even more
+                                                                                                                     favorable. Although it is difficult to justify the essential-
+                  0                                                                            −5
+                      0.55   0.56     0.57    0.58     0.59     0.6    0.61   0.62      0.63                         state approach by ab initio calculations for larger systems,
+                                                     ε (a.u.)                                                        the present essential-state approach would be generally appli-
+                 20                                                                            15                    cable when the following conditions are fulfilled: (1) the ionic
+                       (b) Nc = 180, ω = 1.51 a.u.                 channel−1 ( ESSS )
+                                                                   channel−2 ( ESSS )                                ground state and an isolated ionic excited state are resonantly
+                 15
+                                                                   channel−1 ( TDSE )
+                                                                                               10                    coupled by a photon energy that can simultaneously ionize the
+                                                                   channel−2 ( TDSE )
+                                                                                                                     neutral by single-photon absorption; and (2) the laser intensity
+dP1/d ε (a.u.)                                                                                      dP2/d ε (a.u.)
+                                                                  channel−1 ( ESSSA )
+                                                                  channel−2 ( ESSSA )
+                 10                                                                            5
+                                                                                                                     causes no considerable multiple ionization, i.e., the intensity
+                                                                                                                     is not extremely high.
+                  5                                                                            0
+
+                                                                                                                                            IV. CONCLUSION
+                  0                                                                            −5
+                      0.57   0.58     0.59     0.6     0.61     0.62   0.63   0.64      0.65                            We studied core-resonant ionization of helium by laser
+                                                     ε (a.u.)
+                                                                                                                     pulses with a peak intensity of 1014 W/cm2 . With the pulse-
+                                                                                                                     envelope effects taken into account, we derived analytical
+    FIG. 7. Channel-resolved PES obtained by the essential-states
+(labeled as ESSS) and the TDSE calculations for slightly different
+                                                                                                                     expressions for the channel-resolved PES on the basis of
+laser frequencies (a) ω = 1.49 and (b) ω = 1.51. Channel 1 (chan-                                                    the essential-states theory. We justified the validity of the
+nel 2) denotes ionization into the ionic ground-state (first-excited-                                                essential-states approach by comparing the results with those
+state) channel and its vertical axis is to the left (right). Dashed                                                  obtained from ab initio calculations performed for a 1D model
+curves (labeled as ESSSA) are obtained by neglecting nonadia-                                                        helium. Therefore the analytical estimation of the channel-
+batic processes of the field-dressed continua in the essential-states                                                resolved PES can be applied to explore the effects of pulse
+calculations.                                                                                                        durations and envelopes. For example, a longer pulse duration
+                                                                                                                     is required for observing the spectral peak splitting in the
+                                                                                                                     ionic first-excited-state channel than in the ionic ground-state
+procedure is that the system is first ionized into channel 1
+                                                                                                                     channel. It was also found that ionization by two sequent
+(the field-free continuum |1ε) and then the photoelectron can
+                                                                                                                     pulses produces more complicated multipeak structures in
+be coherently redistributed in different channels by the time-
+                                                                                                                     the channel-resolved PES than ionization by a single pulse.
+dependent Hamiltonian of the ionic system. This idea can also
+                                                                                                                     For the nonzero-detuning cases where no analytical expres-
+be extended to cases with more than two continua involved
+                                                                                                                     sions are available, the essential-state approach still allows
+(see, e.g., the essential-states expansion used in Ref. [15]).
+                                                                                                                     us to numerically calculate the channel-resolved PES at low
+We mention that a different simple estimation of the PES was
+                                                                                                                     computational cost. Importantly, the method of characteristics
+proposed in Ref. [20]. Comparatively, our approach is more
+                                                                                                                     used in treating the essential-states equations provides a time-
+accurate. (See Fig. 6 in Ref. [20], where the disagreement
+                                                                                                                     resolved perspective on how the spectra are formed.
+between the estimated and computed spectra can be clearly
+observed.)
+   In closing this section, we note that the essential-states
+                                                                                                                                        ACKNOWLEDGMENTS
+approach can also be extended to 3D cases, for which one
+should use the corresponding values for the dipole couplings.                                                          This work was supported by the Villum Kann Rasmussen
+The validation of the essential-states approach shown in this                                                        (VKR) Center of Excellence QUSCOPE – Quantum Scale
+work indicates that it could be applicable for modeling core-                                                        Optical Processes. The numerical results were obtained at the
+resonant ionization of real helium atoms by laser pulses                                                             Centre for Scientific Computing, Aarhus.
+
+
+
+       [1] S. Hüfner, Photoelectron Spectroscopy: Principles and Appli-                                               [4] R. Grobe and J. H. Eberly, Observation of coherence transfer
+           cations (Springer, New York, 2003).                                                                            by electron-electron correlation, Phys. Rev. A 48, 623 (1993).
+       [2] A. Stolow, A. E. Bragg, and D. M. Neumark, Femtosecond                                                     [5] L. G. Hanson, J. Zhang, and P. Lambropoulos, Theory of core-
+           time-resolved photoelectron spectroscopy, Chem. Rev. 104,                                                      resonant ionization, Europhys. Lett. 30, 81 (1995).
+           1719 (2004).                                                                                               [6] S. L. Haan, M. Bolt, H. Nymeyer, and R. Grobe, Effects of
+       [3] F. Krausz and M. Ivanov, Attosecond physics, Rev. Mod. Phys.                                                   positive-ion resonances in photoionization of neutral atoms,
+           81, 163 (2009).                                                                                                Phys. Rev. A 51, 4640 (1995).
+
+
+                                                                                                      033404-8
+CORE-RESONANT IONIZATION OF HELIUM BY INTENSE …                                                PHYSICAL REVIEW A 98, 033404 (2018)
+
+ [7] R. Grobe, S. L. Haan, and J. H. Eberly, Double-core resonance     [26] M. Ruggenthaler and D. Bauer, Rabi Oscillations and Few-
+     in two-electron atoms, Phys. Rev. A 54, 1516 (1996).                   Level Approximations in Time-Dependent Density Functional
+ [8] L. G. Hanson, J. Zhang, and P. Lambropoulos, Manifestations            Theory, Phys. Rev. Lett. 102, 233001 (2009).
+     of atomic and core resonances in photoelectron energy spectra,    [27] S. Selstø, T. Birkeland, S. Kvaal, R. Nepstad, and M. Førre,
+     Phys. Rev. A 55, 2232 (1997).                                          A master equation approach to double ionization of helium, J.
+ [9] B. Walker, M. Kaluža, B. Sheehy, P. Agostini, and L. F. Di-            Phys. B 44, 215003 (2011).
+     Mauro, Observation of Continuum-Continuum Autler-Townes           [28] L. B. Madsen, Gauge invariance in the interaction between
+     Splitting, Phys. Rev. Lett. 75, 633 (1995).                            atoms and few-cycle laser pulses, Phys. Rev. A 65, 053417
+[10] T. Sekikawa, A. Kosuge, T. Kanai, and S. Watanabe, Nonlinear           (2002).
+     optics in the extreme ultraviolet, Nature (London) 432, 605       [29] D. B. Milošević, G. G. Paulus, D. Bauer, and W. Becker, Above-
+     (2004).                                                                threshold ionization by few-cycle pulses, J. Phys. B 39, R203
+[11] W. Ackermann, G. Asova, V. Ayvazyan, A. Azima, N. Baboi, J.            (2006).
+     Bähr, V. Balandin, B. Beutner, A. Brandt, A. Bolzmann et al.,     [30] T. N. Rescigno and C. W. McCurdy, Numerical grid methods
+     Operation of a free-electron laser from the extreme ultraviolet        for quantum-mechanical scattering problems, Phys. Rev. A 62,
+     to the water window, Nat. Photon. 1, 336 (2007).                       032706 (2000).
+[12] B. W. McNeil and N. R. Thompson, X-ray free-electron lasers,      [31] B. I. Schneider, L. A. Collins, and S. X. Hu, Parallel solver for
+     Nat. Photon. 4, 814 (2010).                                            the time-dependent linear and nonlinear Schrödinger equation,
+[13] G. Sansone, L. Poletto, and M. Nisoli, High-energy attosecond          Phys. Rev. E 73, 036708 (2006).
+     light sources, Nat. Photon. 5, 655 (2011).                        [32] K. Balzer, S. Bauch, and M. Bonitz, Efficient grid-based
+[14] M. Chini, K. Zhao, and Z. Chang, The generation, characteriza-         method in nonequilibrium Green’s function calculations: Appli-
+     tion and applications of broadband isolated attosecond pulses,         cation to model atoms and molecules, Phys. Rev. A 81, 022510
+     Nat. Photon. 8, 178 (2014).                                            (2010).
+[15] S. B. Zhang and N. Rohringer, Photoemission spectroscopy          [33] A. Scrinzi, Infinite-range exterior complex scaling as a perfect
+     with high-intensity short-wavelength lasers, Phys. Rev. A 89,          absorber in time-dependent problems, Phys. Rev. A 81, 053845
+     013407 (2014).                                                         (2010).
+[16] P. V. Demekhin and L. S. Cederbaum, Dynamic Interference          [34] M. Weinmüller, M. Weinmüller, J. Rohland, and A. Scrinzi,
+     of Photoelectrons Produced by High-Frequency Laser Pulses,             Perfect absorption in Schrödinger-like problems using non-
+     Phys. Rev. Lett. 108, 253001 (2012).                                   equidistant complex grids, J. Comput. Phys. 333, 199
+[17] P. V. Demekhin and L. S. Cederbaum, Coherent intense resonant          (2017).
+     laser pulses lead to interference in the time domain seen in      [35] Y. Orimo, T. Sato, A. Scrinzi, and K. L. Ishikawa, Implementa-
+     the spectrum of the emitted particles, Phys. Rev. A 86, 063412         tion of the infinite-range exterior complex scaling to the time-
+     (2012).                                                                dependent complete-active-space self-consistent-field method,
+[18] P. V. Demekhin and L. S. Cederbaum, ac Stark effect in the             Phys. Rev. A 97, 023423 (2018).
+     electronic continuum and its impact on the photoionization of     [36] T. J. Park and J. C. Light, Unitary quantum time evolution by
+     atoms by coherent intense short high-frequency laser pulses,           iterative Lanczos reduction, J. Chem. Phys. 85, 5870 (1986).
+     Phys. Rev. A 88, 043414 (2013).                                   [37] X. Guan, O. Zatsarinny, K. Bartschat, B. I. Schneider, J. Feist,
+[19] L. Yue and L. B. Madsen, Dissociative ionization of H2 +               and C. J. Noble, General approach to few-cycle intense laser
+     using intense femtosecond XUV laser pulses, Phys. Rev. A 90,           interactions with complex atoms, Phys. Rev. A 76, 053411
+     063408 (2014).                                                         (2007).
+[20] A. N. Artemyev, A. D. Müller, D. Hochstuhl, L. S. Cederbaum,      [38] R. Kosloff and H. Tal-Ezer, A direct relaxation method
+     and P. V. Demekhin, Dynamic interference in the photoion-              for calculating eigenfunctions and eigenvalues of the
+     ization of He by coherent intense high-frequency laser pulses:         Schrödinger equation on a grid, Chem. Phys. Lett. 127, 223
+     Direct propagation of the two-electron wave packets on large           (1986).
+     spatial grids, Phys. Rev. A 93, 043418 (2016).                    [39] A. Scrinzi, t-SURFF: Fully differential two-electron photo-
+[21] M. Baghery, U. Saalmann, and J. M. Rost, Essential Conditions          emission spectra, New J. Phys. 14, 085008 (2012).
+     for Dynamic Interference, Phys. Rev. Lett. 118, 143202 (2017).    [40] A. Zielinski, V. P. Majety, and A. Scrinzi, Double photoelectron
+[22] J. H. Eberly, J. Javanainen, and K. Rz˛ażzewski, Above-               momentum spectra of helium at infrared wavelength, Phys. Rev.
+     threshold ionization, Phys. Rep. 204, 331 (1991).                      A 93, 023406 (2016).
+[23] K. Rz˛ażewski, L. Wang, and J. W. Haus, Predictions from a       [41] C. Yu and L. B. Madsen, Above-threshold ionization of helium
+     two-color above-threshold ionization model, J. Opt. Soc. Am.           in the long-wavelength regime: Examining the single-active-
+     B 7, 481 (1990).                                                       electron approximation and the two-electron strong-field ap-
+[24] R. Grobe and J. H. Eberly, Photoelectron Spectra for a Two-            proximation, Phys. Rev. A 95, 063407 (2017).
+     Electron System in a Strong Laser Field, Phys. Rev. Lett. 68,     [42] E. Foumouo, A. Hamido, P. Antoine, B. Piraux, H. Bachau,
+     2905 (1992).                                                           and R. Shakeshaft, Time-dependent analysis of the mecha-
+[25] M. Lein, E. K. U. Gross, and V. Engel, Intense-Field Double            nism for two-photon double escape in helium: From very
+     Ionization of Helium: Identifying the Mechanism, Phys. Rev.            long to attosecond time scales, J. Phys. B 43, 091001
+     Lett. 85, 4707 (2000).                                                 (2010).
+
+
+
+
+                                                                 033404-9
+

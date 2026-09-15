@@ -1,0 +1,41 @@
+{
+  "config": {
+    "grid": {
+      "n": 512,
+      "halfbox": 48.0,
+      "cutoff_inner": 24.0,
+      "cutoff_outer": 30.0,
+      "cap_start": 38.0,
+      "cap_strength": 1.0
+    },
+    "pulse": {
+      "omega": 1.5,
+      "cycles": 60,
+      "field": 0.0534
+    },
+    "surface": 34.0,
+    "dt": 0.04,
+    "post_time": 70.0,
+    "surface_stride": 2
+  },
+  "energy": -2.903982397661149,
+  "ground_residual": 9.312147988242828e-11,
+  "ionic_energies": [
+    -2.0002244696761,
+    -0.5000370605302358,
+    -0.257448910581888,
+    -0.1407536633681039
+  ],
+  "d12": 0.4822668025035765,
+  "dt": 0.03999594377485479,
+  "surface_dt": 0.07999188754970958,
+  "steps": 8034,
+  "positions": [
+    -33.9375,
+    33.9375
+  ],
+  "seconds": 170.30711538693868,
+  "exchange_error": 1.0898359492676501e-14,
+  "final_norm": 0.8897930838512591,
+  "final_ground_population": 0.8897388162668978
+}
