@@ -1,0 +1,6 @@
+{
+  "created_utc": "2026-09-15T17:13:54.598341+00:00",
+  "prediction_before_half_frequency_spectrum": true,
+  "ionic_negative_control": "He+ 1s to 2p by two equal-helicity 0.75 photons is forbidden; evaluate old energy band and ionic m populations.",
+  "neutral_background": "0.75 a.u. is near the neutral-He 1s2p singlet-P excitation (~0.780 a.u.). At F0=0.1068 the mostly remaining neutral atoms can exhibit strong resonant excitation and multiphoton ionization. A nonzero or split NEW photoelectron band does not invalidate the ionic negative control."
+}

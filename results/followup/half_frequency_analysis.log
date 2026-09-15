@@ -1,0 +1,44 @@
+[
+  {
+    "band": "old pump band",
+    "energy_window": [
+      0.18,
+      0.42
+    ],
+    "recorded_1s_probability": 0.0067817182160086345,
+    "dominant_m": 0,
+    "dominant_fraction": 0.9999763409543412,
+    "expected_m": 0,
+    "local_peak_energies": [
+      0.29200000000000004
+    ]
+  },
+  {
+    "band": "new two-photon band",
+    "energy_window": [
+      0.5,
+      0.75
+    ],
+    "recorded_1s_probability": 0.026632501232680638,
+    "dominant_m": 2,
+    "dominant_fraction": 0.9999440747081894,
+    "expected_m": 2,
+    "local_peak_energies": [
+      0.583
+    ]
+  },
+  {
+    "band": "new three-photon band",
+    "energy_window": [
+      1.15,
+      1.55
+    ],
+    "recorded_1s_probability": 5.7932955471249734e-05,
+    "dominant_m": 3,
+    "dominant_fraction": 0.987699476678846,
+    "expected_m": 3,
+    "local_peak_energies": [
+      1.33
+    ]
+  }
+]

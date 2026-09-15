@@ -9,3 +9,7 @@ results/**/surface.npy
 results/**/checkpoint*.npz
 results/**/initial.npz
 results/**/final.npz
+results/**/ground_cache/
+results/**/*.tmp.*
+results/**/.*.lock
+results/followup/quarantine/

@@ -1,0 +1,138 @@
+START pump_only
+ground E=-2.8997030024, residual=6.869e-10; (88, 88, 81), flux=0.638GiB
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+3D 200/1200, inner norm=0.99999999, Pg=0.99866561, wall=51.1s
+3D 400/1200, inner norm=0.99976208, Pg=0.99319038, wall=104.5s
+3D 600/1200, inner norm=0.99449885, Pg=0.99295683, wall=154.0s
+3D 800/1200, inner norm=0.99298153, Pg=0.99295683, wall=199.8s
+3D 1000/1200, inner norm=0.99296003, Pg=0.99295683, wall=245.4s
+3D 1200/1200, inner norm=0.99295959, Pg=0.99295683, wall=303.7s
+FINISHED pump_only
+START pump_probe_plus
+ground E=-2.8997030024, residual=6.869e-10; (88, 88, 81), flux=2.337GiB
+3D 200/4400, inner norm=0.99999999, Pg=0.99866561, wall=61.4s
+3D 400/4400, inner norm=0.99976208, Pg=0.99319038, wall=118.8s
+3D 600/4400, inner norm=0.99449885, Pg=0.99295683, wall=155.3s
+3D 800/4400, inner norm=0.99298153, Pg=0.99295683, wall=204.2s
+3D 1000/4400, inner norm=0.99296003, Pg=0.99295683, wall=261.7s
+3D 1200/4400, inner norm=0.99295959, Pg=0.99295683, wall=319.5s
+3D 1400/4400, inner norm=0.99295924, Pg=0.99294110, wall=381.7s
+3D 1600/4400, inner norm=0.99294309, Pg=0.99248239, wall=440.7s
+3D 1800/4400, inner norm=0.99247973, Pg=0.98978633, wall=503.9s
+3D 2000/4400, inner norm=0.98976711, Pg=0.98188303, wall=579.5s
+3D 2200/4400, inner norm=0.98183419, Pg=0.96655315, wall=665.2s
+3D 2400/4400, inner norm=0.96647237, Pg=0.94448655, wall=742.4s
+3D 2600/4400, inner norm=0.94438614, Pg=0.91963699, wall=810.2s
+3D 2800/4400, inner norm=0.91953818, Pg=0.89727341, wall=892.9s
+3D 3000/4400, inner norm=0.89719567, Pg=0.88125676, wall=970.8s
+3D 3200/4400, inner norm=0.88120710, Pg=0.87245100, wall=1047.3s
+3D 3400/4400, inner norm=0.87242769, Pg=0.86905979, wall=1101.0s
+3D 3600/4400, inner norm=0.86905454, Pg=0.86832594, wall=1158.7s
+3D 3800/4400, inner norm=0.86832700, Pg=0.86827849, wall=1217.1s
+3D 4000/4400, inner norm=0.86828013, Pg=0.86827846, wall=1268.7s
+3D 4200/4400, inner norm=0.86828006, Pg=0.86827846, wall=1318.4s
+3D 4400/4400, inner norm=0.86828003, Pg=0.86827846, wall=1365.6s
+FINISHED pump_probe_plus
+START pump_probe_minus
+ground E=-2.8997030024, residual=6.869e-10; (88, 88, 81), flux=2.337GiB
+3D 200/4400, inner norm=0.99999999, Pg=0.99866561, wall=62.3s
+3D 400/4400, inner norm=0.99976208, Pg=0.99319038, wall=124.6s
+3D 600/4400, inner norm=0.99449885, Pg=0.99295683, wall=184.5s
+3D 800/4400, inner norm=0.99298153, Pg=0.99295683, wall=238.9s
+3D 1000/4400, inner norm=0.99296003, Pg=0.99295683, wall=295.4s
+3D 1200/4400, inner norm=0.99295959, Pg=0.99295683, wall=348.7s
+3D 1400/4400, inner norm=0.99295924, Pg=0.99294110, wall=395.4s
+3D 1600/4400, inner norm=0.99294309, Pg=0.99248239, wall=443.4s
+3D 1800/4400, inner norm=0.99247973, Pg=0.98978633, wall=506.5s
+3D 2000/4400, inner norm=0.98976711, Pg=0.98188303, wall=582.0s
+3D 2200/4400, inner norm=0.98183419, Pg=0.96655315, wall=665.0s
+3D 2400/4400, inner norm=0.96647237, Pg=0.94448655, wall=750.7s
+3D 2600/4400, inner norm=0.94438614, Pg=0.91963699, wall=845.3s
+3D 2800/4400, inner norm=0.91953818, Pg=0.89727341, wall=931.4s
+3D 3000/4400, inner norm=0.89719567, Pg=0.88125676, wall=1006.8s
+3D 3200/4400, inner norm=0.88120710, Pg=0.87245100, wall=1033.9s
+3D 3400/4400, inner norm=0.87242769, Pg=0.86905979, wall=1076.8s
+3D 3600/4400, inner norm=0.86905454, Pg=0.86832594, wall=1122.7s
+3D 3800/4400, inner norm=0.86832700, Pg=0.86827849, wall=1168.8s
+3D 4000/4400, inner norm=0.86828013, Pg=0.86827846, wall=1209.7s
+3D 4200/4400, inner norm=0.86828006, Pg=0.86827846, wall=1241.6s
+3D 4400/4400, inner norm=0.86828003, Pg=0.86827846, wall=1281.0s
+FINISHED pump_probe_minus
+START pump_probe_linear
+ground E=-2.8997030024, residual=6.869e-10; (88, 88, 19), flux=0.548GiB
+3D 200/4400, inner norm=0.99999999, Pg=0.99866561, wall=43.4s
+3D 400/4400, inner norm=0.99976208, Pg=0.99319038, wall=73.7s
+3D 600/4400, inner norm=0.99449885, Pg=0.99295683, wall=104.8s
+3D 800/4400, inner norm=0.99298153, Pg=0.99295683, wall=147.2s
+3D 1000/4400, inner norm=0.99296003, Pg=0.99295683, wall=188.7s
+3D 1200/4400, inner norm=0.99295959, Pg=0.99295683, wall=230.3s
+3D 1400/4400, inner norm=0.99295924, Pg=0.99294112, wall=275.8s
+3D 1600/4400, inner norm=0.99294346, Pg=0.99247055, wall=319.7s
+3D 1800/4400, inner norm=0.99247983, Pg=0.98984871, wall=363.9s
+3D 2000/4400, inner norm=0.98976582, Pg=0.98172669, wall=416.0s
+3D 2200/4400, inner norm=0.98183288, Pg=0.96683286, wall=475.3s
+3D 2400/4400, inner norm=0.96647259, Pg=0.94413526, wall=541.4s
+3D 2600/4400, inner norm=0.94438741, Pg=0.91994214, wall=607.9s
+3D 2800/4400, inner norm=0.91953552, Pg=0.89708270, wall=671.0s
+3D 3000/4400, inner norm=0.89719054, Pg=0.88133738, wall=711.6s
+3D 3200/4400, inner norm=0.88120577, Pg=0.87242918, wall=759.1s
+3D 3400/4400, inner norm=0.87242721, Pg=0.86905496, wall=800.4s
+3D 3600/4400, inner norm=0.86905242, Pg=0.86832584, wall=843.1s
+3D 3800/4400, inner norm=0.86832500, Pg=0.86827673, wall=882.5s
+3D 4000/4400, inner norm=0.86827835, Pg=0.86827673, wall=920.4s
+3D 4200/4400, inner norm=0.86827827, Pg=0.86827673, wall=959.8s
+3D 4400/4400, inner norm=0.86827823, Pg=0.86827673, wall=994.0s
+FINISHED pump_probe_linear
+START probe_only_plus
+ground E=-2.8997030024, residual=6.869e-10; (88, 88, 81), flux=2.337GiB
+3D 200/4400, inner norm=1.00000000, Pg=1.00000000, wall=7.2s
+3D 400/4400, inner norm=1.00000000, Pg=1.00000000, wall=14.1s
+3D 600/4400, inner norm=1.00000000, Pg=1.00000000, wall=21.0s
+3D 800/4400, inner norm=1.00000000, Pg=1.00000000, wall=27.9s
+3D 1000/4400, inner norm=1.00000000, Pg=1.00000000, wall=34.6s
+3D 1200/4400, inner norm=1.00000000, Pg=1.00000000, wall=41.5s
+3D 1400/4400, inner norm=1.00000000, Pg=0.99998416, wall=105.8s
+3D 1600/4400, inner norm=0.99998389, Pg=0.99952221, wall=170.9s
+3D 1800/4400, inner norm=0.99951736, Pg=0.99680706, wall=247.7s
+3D 2000/4400, inner norm=0.99678560, Pg=0.98884775, wall=321.8s
+3D 2200/4400, inner norm=0.98879646, Pg=0.97340930, wall=410.4s
+3D 2400/4400, inner norm=0.97332572, Pg=0.95118534, wall=499.1s
+3D 2600/4400, inner norm=0.95108289, Pg=0.92615900, wall=596.5s
+3D 2800/4400, inner norm=0.92605875, Pg=0.90363827, wall=688.5s
+3D 3000/4400, inner norm=0.90355781, Pg=0.88750753, wall=776.6s
+3D 3200/4400, inner norm=0.88745586, Pg=0.87863865, wall=864.4s
+3D 3400/4400, inner norm=0.87861420, Pg=0.87522408, wall=918.9s
+3D 3600/4400, inner norm=0.87521716, Pg=0.87448509, wall=948.8s
+3D 3800/4400, inner norm=0.87448450, Pg=0.87443730, wall=986.9s
+3D 4000/4400, inner norm=0.87443732, Pg=0.87443727, wall=1017.0s
+3D 4200/4400, inner norm=0.87443727, Pg=0.87443727, wall=1050.3s
+3D 4400/4400, inner norm=0.87443727, Pg=0.87443727, wall=1081.4s
+FINISHED probe_only_plus
+START pump_probe_half_frequency
+ground E=-2.9003626852, residual=8.422e-10; (88, 88, 256), flux=7.387GiB
+3D 200/4400, inner norm=0.99999999, Pg=0.99866198, wall=111.0s
+3D 400/4400, inner norm=0.99976316, Pg=0.99317142, wall=240.0s
+3D 600/4400, inner norm=0.99449217, Pg=0.99293706, wall=336.2s
+3D 800/4400, inner norm=0.99296228, Pg=0.99293706, wall=420.1s
+3D 1000/4400, inner norm=0.99294033, Pg=0.99293706, wall=508.9s
+3D 1200/4400, inner norm=0.99293988, Pg=0.99293706, wall=591.0s
+3D 1400/4400, inner norm=0.99293952, Pg=0.99271863, wall=683.6s
+3D 1600/4400, inner norm=0.99293934, Pg=0.98480047, wall=800.6s
+3D 1800/4400, inner norm=0.99293601, Pg=0.93073712, wall=1001.7s
+3D 2000/4400, inner norm=0.99284122, Pg=0.77277271, wall=1229.3s
+3D 2200/4400, inner norm=0.99206649, Pg=0.58048888, wall=1455.8s
+3D 2400/4400, inner norm=0.98935683, Pg=0.59923696, wall=1687.8s
+3D 2600/4400, inner norm=0.98415415, Pg=0.82166326, wall=1917.2s
+3D 2800/4400, inner norm=0.97735696, Pg=0.89324811, wall=2145.2s
+3D 3000/4400, inner norm=0.97132981, Pg=0.75061811, wall=2379.0s
+3D 3200/4400, inner norm=0.96789542, Pg=0.64732941, wall=2612.7s
+3D 3400/4400, inner norm=0.96657578, Pg=0.66364344, wall=2849.7s
+3D 3600/4400, inner norm=0.96626516, Pg=0.71252258, wall=3068.3s
+3D 3800/4400, inner norm=0.96623322, Pg=0.72880770, wall=3269.9s
+3D 4000/4400, inner norm=0.96623231, Pg=0.72891674, wall=3476.0s
+3D 4200/4400, inner norm=0.96623229, Pg=0.72891674, wall=3671.2s
+3D 4400/4400, inner norm=0.96623224, Pg=0.72891674, wall=3862.9s
+FINISHED pump_probe_half_frequency

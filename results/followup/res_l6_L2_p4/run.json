@@ -1,0 +1,95 @@
+{
+  "signature": "0e1e9ae5dac5cfed7b260e9823b5519bbe08b443eec2d6b662bec75ea821dd9f",
+  "config": {
+    "radial": {
+      "edges": [
+        0,
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.25,
+        1.5,
+        2,
+        2.5,
+        3,
+        4,
+        5,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28
+      ],
+      "order": 4,
+      "tail": 24,
+      "ecs_angle": 0.5,
+      "alpha": 0.8
+    },
+    "lmax": 6,
+    "M": 0,
+    "cutoff_radii": [
+      12,
+      16
+    ],
+    "surface": 20,
+    "pulses": [
+      {
+        "pulse": {
+          "omega": 1.5,
+          "cycles": 180,
+          "field": 0.0534
+        },
+        "polarization": "z"
+      }
+    ],
+    "post_time": 55,
+    "dt": 0.12,
+    "surface_stride": 1,
+    "checkpoint_every": 200,
+    "krylov_dimension": 48,
+    "krylov_tolerance": 1e-10,
+    "ground_tolerance": 1e-10,
+    "max_surface_gib": 20,
+    "spectrum_energy": [
+      0.54,
+      0.65,
+      221
+    ],
+    "total_Lmax": 2,
+    "time_integrator": "cf4-pade",
+    "ionic_propagator": "cf4",
+    "linear_tolerance": 1e-10
+  },
+  "ground_energy": -2.9030012809902006,
+  "ground_residual": 2.867125517633138e-10,
+  "nrad": 116,
+  "channels": 35,
+  "dt": 0.1199914323437482,
+  "nsteps": 6742,
+  "completed_steps": 6742,
+  "complete": true,
+  "surface_bytes": 2190126400,
+  "surface_indices": [
+    75,
+    76,
+    77,
+    78,
+    79
+  ],
+  "seconds_this_invocation": 2798.9998973349575,
+  "backend": "torch",
+  "device": "cuda:0",
+  "precision": "complex128",
+  "ground_angular_basis": "coupled total L=0, expanded without angular approximation",
+  "time_integrator": "cf4-pade",
+  "maximum_linear_residual_this_invocation": 9.998233160884414e-11,
+  "linear_iterations_this_invocation": 193016
+}

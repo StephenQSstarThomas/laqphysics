@@ -1,0 +1,61 @@
+{
+  "scope": "next-stage multipulse refinement; not certified production spectra",
+  "cases": [
+    "pump_only",
+    "pump_probe_plus",
+    "pump_probe_minus",
+    "pump_probe_linear",
+    "probe_only_plus",
+    "pump_probe_half_frequency",
+    "pump_probe_plus_delay192",
+    "pump_probe_plus_l4",
+    "pump_probe_plus_radial8",
+    "pump_probe_plus_dt003"
+  ],
+  "pairs": [
+    {
+      "reference": "pump_probe_plus",
+      "refinement": "pump_probe_plus_l4",
+      "axis": "individual lmax 3 -> 4"
+    },
+    {
+      "reference": "pump_probe_plus",
+      "refinement": "pump_probe_plus_radial8",
+      "axis": "inner/outer radial order 8/6 -> 10/8"
+    },
+    {
+      "reference": "pump_probe_plus",
+      "refinement": "pump_probe_plus_dt003",
+      "axis": "dt 0.06 -> 0.03"
+    }
+  ],
+  "acceptance": {
+    "peak_shift_au": 0.001,
+    "normalized_shape_L1": 0.02,
+    "relative_yield": 0.02,
+    "gate_channels": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        1
+      ]
+    ],
+    "energy_windows": [
+      [
+        0.18,
+        0.42
+      ],
+      [
+        0.52,
+        0.68
+      ]
+    ],
+    "extra_channels": "all n<=2 recorded; old and new energy bands are tested separately"
+  },
+  "completion_requires": "These are the first refinement pairs. Continue failed axes, then check cutoff, absorber and the changed frequency regime independently. Prepared-ion and open-system tasks have separate scope."
+}

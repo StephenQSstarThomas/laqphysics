@@ -1,0 +1,80 @@
+{
+  "model": "separated-pulse coherent assembly calibrated with independent pump/control TDSE and ionic transfer",
+  "assumptions": "old band initially 1s; neglected other old ionic and neutral bound channels; old electron beyond interaction cutoff",
+  "not_full_TDSE_at_each_delay": true,
+  "pump_ground_amplitude_real": 0.9964703550936416,
+  "pump_ground_amplitude_imag": -0.0019136539029407929,
+  "pump_displacement": [
+    0.0,
+    0.0,
+    1.1674304132255166e-14
+  ],
+  "pump_A2_integral": 0.003295483597294049,
+  "comparisons": [
+    {
+      "polarization": "sigma+",
+      "direct_reference": "pump_probe_plus",
+      "joint_intensity_relative_L1": 7.051792143530561e-05,
+      "unfitted_complex_amplitude_relative_L2": 0.001604592388630689,
+      "maximum_angle_integrated_delay_change_relative": 4.290683380252479e-09,
+      "display_energy": 0.46299999999999997,
+      "display_theta_degrees": 41.72637249031642,
+      "display_phi_degrees": 45.0,
+      "display_mean_density": 1.255731813351707e-07,
+      "ideal_azimuthal_visibility": 0.9996896031764335,
+      "conditional_entropy_bits_range": [
+        0.613482620745809,
+        0.6134826207484492
+      ],
+      "conditional_pure_negativity_range": [
+        0.371396149141497,
+        0.3713961491425506
+      ],
+      "weak_overlap_tail_check": {
+        "energy_window": [
+          0.44,
+          0.48
+        ],
+        "joint_intensity_relative_L1": 0.00998440585111529,
+        "unfitted_complex_amplitude_relative_L2": 0.009469567758741946,
+        "selected_point_direct_density": 2.4293228972365033e-07,
+        "selected_point_predicted_density": 2.488854445590335e-07
+      },
+      "held_out_delay192": {
+        "joint_intensity_relative_L1": 6.969430504106194e-05,
+        "unfitted_complex_amplitude_relative_L2": 0.001602465680850298,
+        "weak_tail_intensity_relative_L1": 0.007552045045454098
+      }
+    },
+    {
+      "polarization": "sigma-",
+      "direct_reference": "pump_probe_minus",
+      "joint_intensity_relative_L1": 7.05179214336099e-05,
+      "unfitted_complex_amplitude_relative_L2": 0.0016045923886307126,
+      "maximum_angle_integrated_delay_change_relative": 4.290683252345926e-09,
+      "display_energy": 0.46299999999999997,
+      "display_theta_degrees": 41.72637249031642,
+      "display_phi_degrees": 45.0,
+      "display_mean_density": 1.2558885511673663e-07,
+      "ideal_azimuthal_visibility": 0.9996865629881332,
+      "conditional_entropy_bits_range": [
+        0.6134826207458087,
+        0.6134826207484475
+      ],
+      "conditional_pure_negativity_range": [
+        0.371396149141517,
+        0.3713961491425294
+      ],
+      "weak_overlap_tail_check": {
+        "energy_window": [
+          0.44,
+          0.48
+        ],
+        "joint_intensity_relative_L1": 0.009984405851009084,
+        "unfitted_complex_amplitude_relative_L2": 0.009469567758585564,
+        "selected_point_direct_density": 1.4701006451588593e-07,
+        "selected_point_predicted_density": 1.4899984055057705e-07
+      }
+    }
+  ]
+}

@@ -115,6 +115,7 @@ def extract(out):
     initial=np.load(out/'initial.npz');chi=initial['ionic_states'][:,:2].astype(complex)
     # Real basis coefficients differ only in exponentially small tails of final bound states.
     realgrid=line_grid(**{**cfg['radial'],'angle':0});chi*=np.sqrt(h.grid.weights/realgrid.weights)[:,None]
+    chi=chi.conj()  # dual of the analytically continued (localized) bound ket
     data=np.load(out/'flux.npy',mmap_mode='r');dt=m['surface_dt'];t=np.arange(len(data))*dt;A=p.vector(t)
     intA=cumulative_trapezoid(A,t,initial=0);intA2=cumulative_trapezoid(A*A,t,initial=0)
     energy=np.linspace(.45,.75,301);k=np.r_[-np.sqrt(2*energy),np.sqrt(2*energy)]

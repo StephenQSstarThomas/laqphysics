@@ -1,0 +1,24 @@
+[
+  {
+    "step": 12,
+    "time": 1.4398971881249785,
+    "real_region_norm": 1.0000000000000042,
+    "ground_population": 0.9999999999999636,
+    "exchange_error": 8.88335150123356e-15,
+    "linear_iterations": 16,
+    "linear_residual": 1.7399693263836078e-14,
+    "dimension": 0,
+    "residual_estimate": null
+  },
+  {
+    "step": 16,
+    "time": 1.9198629174999713,
+    "real_region_norm": 1.000000000000005,
+    "ground_population": 0.9999999999998834,
+    "exchange_error": 1.0219861126382695e-14,
+    "linear_iterations": 16,
+    "linear_residual": 1.7862518925714174e-14,
+    "dimension": 0,
+    "residual_estimate": null
+  }
+]

@@ -8,7 +8,7 @@ from scipy.special import eval_genlaguerre, factorial
 @lru_cache(None)
 def C(bra,k,q,ket):
     l,m=bra;j,n=ket
-    if m!=n+q:return 0.
+    if m!=n+q or abs(q)>k or not abs(l-j)<=k<=l+j or (l+k+j)%2:return 0.
     return float((-1)**m*np.sqrt((2*l+1)*(2*j+1))*wigner_3j(l,k,j,0,0,0)*wigner_3j(l,k,j,-m,q,n))
 
 def cartesian(bra,ket):
@@ -17,7 +17,11 @@ def cartesian(bra,ket):
 
 def coulomb(bra,ket,lam):
     a,b=bra;c,d=ket
-    return sum((-1.)**q*C(a,lam,q,c)*C(b,lam,-q,d) for q in range(-lam,lam+1))
+    # Magnetic conservation fixes the only nonzero q in the Gaunt sum.
+    q=a[1]-c[1]
+    if abs(q)>lam or b[1]-d[1]!=-q:return 0.
+    first=C(a,lam,q,c)
+    return (-1.)**q*first*C(b,lam,-q,d) if first else 0.
 
 def channels(lmax,M=0):
     if lmax<0:raise ValueError('lmax>=0')
@@ -37,7 +41,9 @@ def radial_dipole(n,l,nn,ll,Z=2.):
 
 def bound_dipole(bra,ket,q,Z=2.):
     n,l,m=bra;nn,ll,mm=ket
-    return C((l,m),1,q,(ll,mm))*radial_dipole(n,l,nn,ll,Z)
+    coefficient=C((l,m),1,q,(ll,mm))
+    if coefficient==0:return 0.
+    return coefficient*radial_dipole(n,l,nn,ll,Z)
 
 def two_photon(bra,ket,q,omega,nmax=12,Z=2.):
     """Bound intermediate states only. Structural zeros are exact; nonzero absolute

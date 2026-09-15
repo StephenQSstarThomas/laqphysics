@@ -30,8 +30,14 @@ class Pulse:
         u = np.clip(np.asarray(t)-self.start,0,self.duration)
         b = 2*np.pi/self.duration
         def integ(w):
-            return (np.sin(w*u+self.cep)-np.sin(self.cep))/w
-        return -self.field*(.5*integ(self.omega)-.25*integ(self.omega+b)-.25*integ(self.omega-b))
+            # Stable also when omega-b approaches zero near one cycle.
+            return u*np.cos(self.cep+w*u/2)*np.sinc(w*u/(2*np.pi))
+        value=-self.field*(.5*integ(self.omega)-.25*integ(self.omega+b)-.25*integ(self.omega-b))
+        # At integer cycle count the analytic pulse has exactly zero area for any
+        # CEP. Remove only endpoint roundoff, not a physical residual impulse.
+        if round(self.cycles)>=2 and abs(self.cycles-round(self.cycles))<1e-12:
+            value=np.where(np.asarray(t)>=self.start+self.duration,0.,value)
+        return value
 
     def area_envelope(self,t):
         u=np.clip(np.asarray(t)-self.start,0,self.duration)

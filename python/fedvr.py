@@ -4,6 +4,7 @@ Continuity is assembled BEFORE normalization. The complex mass sqrt, including
 the bridge node, must not be replaced by abs(weight) or a conjugate transpose.
 """
 from dataclasses import dataclass
+from functools import lru_cache
 import numpy as np
 from scipy.special import roots_jacobi, eval_legendre, roots_genlaguerre, eval_laguerre
 from scipy.sparse import csr_matrix
@@ -22,22 +23,31 @@ class Grid:
     weights: np.ndarray
     kinetic: csr_matrix
     real_radius: float
-    order: int
+    order: int | tuple
     ecs_angle: float
     interior_weights: np.ndarray | None = None
 
+@lru_cache(None)
+def lobatto(order):
+    x=np.r_[-1.,roots_jacobi(order-1,1,1)[0],1.]
+    w=2/(order*(order+1)*eval_legendre(order,x)**2)
+    return x,w,derivative(x)
+
 def make_grid(edges,order=8,ecs_angle=0.,tail=0,alpha=1.):
     edges=np.asarray(edges,dtype=float)
-    if edges.ndim!=1 or len(edges)<2 or not np.all(np.isfinite(edges)) or edges[0]!=0 or np.any(np.diff(edges)<=0) or order<2 or tail<0 or alpha<=0:
+    if edges.ndim!=1 or len(edges)<2 or not np.all(np.isfinite(edges)) or edges[0]!=0 or np.any(np.diff(edges)<=0) or tail<0 or alpha<=0:
         raise ValueError('increasing edges starting at 0; order>=2; tail>=0; alpha>0')
+    orders=np.full(len(edges)-1,order) if np.ndim(order)==0 else np.asarray(order)
+    if orders.shape!=(len(edges)-1,) or np.any(orders<2) or np.any(orders!=np.round(orders)):
+        raise ValueError('one integer order >=2 is required per finite element')
+    orders=orders.astype(int)
     if not 0<=ecs_angle<np.pi/2:raise ValueError('absorbing ECS angle must be in [0,pi/2)')
     if ecs_angle and not tail:raise ValueError('ECS requires a tail element')
-    x=np.r_[-1.,roots_jacobi(order-1,1,1)[0],1.]
-    w=2/(order*(order+1)*eval_legendre(order,x)**2);D=derivative(x)
-    nr=(len(edges)-1)*order+1+tail
+    nr=int(sum(orders))+1+tail
     r=np.zeros(nr,complex);weights=np.zeros(nr,complex);K=np.zeros((nr,nr),complex)
+    offset=0
     for e,(a,b) in enumerate(zip(edges[:-1],edges[1:])):
-        idx=np.arange(e*order,(e+1)*order+1);h=b-a
+        p=int(orders[e]);x,w,D=lobatto(p);idx=np.arange(offset,offset+p+1);h=b-a;offset+=p
         r[idx]=a+h*(x+1)/2;weights[idx]+=w*h/2
         K[np.ix_(idx,idx)]+=D.T@(w[:,None]*D)/h
     interior_weights=weights.real.copy()
@@ -63,4 +73,5 @@ def make_grid(edges,order=8,ecs_angle=0.,tail=0,alpha=1.):
     r=r[keep];weights=weights[keep];K=K[np.ix_(keep,keep)]
     K/=np.sqrt(weights[:,None]*weights[None,:])
     K[np.abs(K)<1e-13]=0
-    return Grid(r,weights,csr_matrix(K),float(edges[-1]),order,ecs_angle,interior_weights[keep])
+    description=int(orders[0]) if np.ndim(order)==0 else tuple(map(int,orders))
+    return Grid(r,weights,csr_matrix(K),float(edges[-1]),description,ecs_angle,interior_weights[keep])

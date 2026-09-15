@@ -1,9 +1,11 @@
-# 氦原子核共振单电离：计算与核验
+# 氦原子残余离子共振与单电离：计算与核验
 
 实体位置：`/playpen/shiqiu/task-jiukongdian`。原 `/home/shiqiu/task-jiukongdian` 保留软链接入口；迁移校验见 [migration.json](migration.json)。
 
 ## 先读这些交付文档
 
+- [专家反馈后的研究与实现](docs/followup/专家反馈与研究.md)：脉冲带宽、实际圆偏振/多脉冲计算、含连续态的离子控制、高精度算法与新发现的投影问题。
+- [后续交付与复现](docs/followup/交付与复现.md)：本轮完成状态、复现命令、生产收敛任务及资源限制。
 - [交付摘要](docs/交付摘要.md)：实际完成项、定量结果、修复的问题及剩余生产验收。
 - [物理与算法核验](docs/物理与算法核验.md)：可观测量、选择定则、ESSS/TDSE 方程、边界选择与适用范围。
 - [数值结果](docs/数值结果.md)：从实际完成的计算自动生成的基态、谱和误差表。
@@ -21,8 +23,8 @@
 | 原子角代数 | 精确 Wigner/Gaunt 矩阵、氢样径向偶极矩、单/双光子选择定则 |
 | 1D 双电子 TDSE | Fortran/OpenMP FFT、独立基态求解、真实离子反向传播的 tSURFF、CAP |
 | 1D 独立边界对照 | 双侧 FE-DVR＋irECS；Fortran 算符与稀疏矩阵对照；离子矩阵指数分裂 |
-| 3D 双电子 TDSE | 两径向坐标、球谐通道、多极电子排斥、FE-DVR、长度/速度算符、Arnoldi、tSURFF + irECS |
-| 圆偏振、多脉冲 | 三维 x/y/z 复角耦合及多脉冲驱动入口；长期手性实验尚待生产级收敛 |
+| 3D 双电子 TDSE | FE-DVR、乘积/耦合球谐基、Fortran/OpenMP 与可选 complex128 CUDA、Arnoldi / CF4–Padé、tSURFF + irECS |
+| 圆偏振、多脉冲 | 双手性三维实跑、延迟线/圆偏振控制、独立控制脉冲、准备态 He⁺ 含连续态控制；完整生产收敛按报告逐项验收 |
 | 退相干 | 有限连续谱密度矩阵 Lindblad 扫描、迹/正性检查、条件 negativity、局域操作对照 |
 | 可复现性 | Debug/Release 测试、每步模块快照、三维检查点及恢复测试、参数文件和结果元数据 |
 
@@ -30,7 +32,7 @@
 
 ## 编译与验证
 
-依赖：gfortran（支持 OpenMP）和 `requirements.txt` 中的 Python 包。无需 GPU 或外部 Fortran 数值库。
+基础依赖：gfortran（支持 OpenMP）和 `requirements.txt` 中的 Python 包。原 Fortran 路径无需 GPU。后续 CF4–Padé 及 Torch CPU/CUDA 路径另需 `requirements-gpu.txt`；安装适配目标机器的 PyTorch CPU/CUDA 构建。
 
 ```bash
 cd /playpen/shiqiu/task-jiukongdian
@@ -120,7 +122,34 @@ sbatch scripts/helium3d.slurm
 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python scripts/resources.py
 ```
 
-实际硬件和每套配置的波函数、Krylov 缓冲、表面文件估算见 `results/resources.json`。本服务器有能力运行小规模乃至部分生产算例；完整的高 l、多半径、双手性扫描需要显著更多总核时。GPU 尚未移植，不假定空闲 GPU 会自动加速 CPU 程序。
+基础配置资源见 `results/resources.json`。后续已增加并核验双精度 GPU 后端；当前服务器的 CPU/GPU 足以完成本轮多项实跑，完整高 l、多半径、双手性扫描仍需要更多总机时。高精度线偏振参考配置dt=0.06 时每次表面历史约 23.55 GiB，时间步减半约翻倍；建议设置 `HELIUM_SURFACE_ROOT` 指向容量足够且跨作业保留的 scratch。
+
+## 专家反馈后的计算入口
+
+```bash
+# 按配置签名跳过已完成项、从检查点恢复；圆偏振使用全部 M。
+OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 \
+  python scripts/followup_campaign.py --group circular --device cuda:0
+OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 \
+  python scripts/followup_campaign.py --group pump-probe --device cuda:0
+
+# 只使用 CPU 也能运行新的隐式传播器。
+OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 \
+  python scripts/ionic_tdse_campaign.py --auto-resume --device cpu \
+  --config configs/followup/ion_2p_counter.json --out results/followup/ion_2p_counter
+
+# 高精度的参考计算及七个独立细化作业；提交前设置集群账户/分区。
+sbatch scripts/followup_production.slurm
+python scripts/audit_followup_production.py
+
+# 由实际结果再生表格和科学图。
+OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 python scripts/analyze_followup.py
+OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 python scripts/analyze_ionic_followup.py
+OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 python scripts/followup_entanglement.py
+OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 python scripts/asymptotic_delay_scan.py
+```
+
+新一轮图在 `results/followup/figures/`，原图和粗基准保留。另交付 `configs/followup_multipulse/` 的 10 项多脉冲细化候选；独立输出目录、Slurm 数组及逐能窗验收命令见后续交付文档。`production_acceptance.json` 中的待运行/未通过项不能当成已经收敛；阈值对齐仅用于诊断，验收采用绝对能量坐标。
 
 ## 结果、图与复现
 

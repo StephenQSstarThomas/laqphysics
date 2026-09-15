@@ -1,0 +1,76 @@
+{
+  "runs": [
+    {
+      "case": "ion_2p_co",
+      "final_P3p": 4.6414208010429476e-21,
+      "final_P3d": 1.9355734374920194e-14,
+      "final_inner_norm": 0.9999999363727405,
+      "recorded_n_le_6_bound_probability": 0.9999999357224983,
+      "final_3p_m_populations": {
+        "-1": 2.507192516950832e-24,
+        "0": 0.0,
+        "1": 4.638913608525997e-21
+      }
+    },
+    {
+      "case": "ion_2p_counter",
+      "final_P3p": 0.00011956055437976555,
+      "final_P3d": 1.1595002060185801e-15,
+      "final_inner_norm": 0.999998201308974,
+      "recorded_n_le_6_bound_probability": 0.9999982011087362,
+      "final_3p_m_populations": {
+        "-1": 0.00011956055437976555,
+        "0": 0.0,
+        "1": 2.157749925998292e-21
+      }
+    },
+    {
+      "case": "ion_2p_counter_dt05",
+      "final_P3p": 0.00011955768029076875,
+      "final_P3d": 1.159953432546439e-15,
+      "final_inner_norm": 0.9999982012931131,
+      "recorded_n_le_6_bound_probability": 0.9999982010928861,
+      "final_3p_m_populations": {
+        "-1": 0.00011955768029076875,
+        "0": 0.0,
+        "1": 2.1560864435955526e-21
+      }
+    },
+    {
+      "case": "ion_2p_counter_weak",
+      "final_P3p": 9.763978753318973e-06,
+      "final_P3d": 2.2438972542264758e-17,
+      "final_inner_norm": 0.9999999898385298,
+      "recorded_n_le_6_bound_probability": 0.9999999897823167,
+      "final_3p_m_populations": {
+        "-1": 9.763978753318972e-06,
+        "0": 0.0,
+        "1": 1.3043704464823083e-21
+      }
+    }
+  ],
+  "two_state_second_order_P3p": [
+    {
+      "field": 0.003,
+      "without_stark": 0.00016498615658967983,
+      "with_stark": 0.00013043975872148474
+    },
+    {
+      "field": 0.0015,
+      "without_stark": 1.0312166481959289e-05,
+      "with_stark": 1.0165135255577673e-05
+    }
+  ],
+  "scope": "Prepared He+ TDSE, continuum included. Field-free projections during the pulse contain virtual dressing and are gauge dependent.",
+  "perturbation_limit": "Second-order estimates explain suppression but differ from TDSE by about 9%; they are not substituted for the full propagation.",
+  "time_refinement": {
+    "nominal_dt_coarse": 0.5,
+    "nominal_dt_fine": 0.25,
+    "P3p_relative_change": 2.4039350628113354e-05,
+    "inner_norm_absolute_change": 1.586086817439991e-11
+  },
+  "weak_field_check": {
+    "relative_to_field_fourth_power_scaling": 1.3066488430363359,
+    "TDSE_relative_difference_from_second_order_with_Stark": -0.03946396109570527
+  }
+}

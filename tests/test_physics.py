@@ -9,6 +9,10 @@ def test_field_vector_potential_consistency():
     p=Pulse(cycles=8);t=np.linspace(.001,p.duration-.001,1000);h=1e-5
     np.testing.assert_allclose(-(p.vector(t+h)-p.vector(t-h))/(2*h),p.electric(t),atol=2e-10)
     assert abs(p.vector(p.duration+100))<1e-14
+    near_one=Pulse(cycles=1+1e-13,field=.01,cep=.3)
+    # One sin^2-envelope cycle has a finite pulse area; it must not be rounded
+    # into the zero-area integer-cycle rule valid for N>=2.
+    np.testing.assert_allclose(near_one.vector(near_one.duration),near_one.field*near_one.duration*np.cos(near_one.cep)/4,atol=1e-13)
 
 def test_ionic_dipole_and_selection_rules():
     # Analytic hydrogenic <2p0|z|1s> = 256/(243 sqrt(2)) / Z.
@@ -20,6 +24,17 @@ def test_ionic_dipole_and_selection_rules():
         assert two_photon((3,2,m),(2,1,1),-1,5/36,nmax=5)==0
     assert bound_dipole((3,2,2),(2,1,1),1)!=0
     assert bound_dipole((3,2,0),(2,1,1),-1)!=0
+
+def test_magnetic_selection_coulomb_matches_explicit_gaunt_sum():
+    from angular import channels,coulomb
+    basis=channels(3,M=0)
+    rng=np.random.default_rng(2026)
+    for _ in range(300):
+        bra=basis[rng.integers(len(basis))];ket=basis[rng.integers(len(basis))]
+        for lam in range(7):
+            a,b=bra;c,d=ket
+            explicit=sum((-1.)**q*C(a,lam,q,c)*C(b,lam,-q,d) for q in range(-lam,lam+1))
+            assert coulomb(bra,ket,lam)==explicit
 
 def test_esss_integral_matches_independent_ode():
     p=Pulse(cycles=12);e=np.linspace(.45,.75,41)

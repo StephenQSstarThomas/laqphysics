@@ -1,0 +1,30 @@
+ground E=-2.8997030024, residual=6.869e-10; (88, 88, 81), flux=2.550GiB
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+3D 200/4800, inner norm=0.99999999, Pg=0.99866561, wall=47.0s
+3D 400/4800, inner norm=0.99976208, Pg=0.99319038, wall=93.0s
+3D 600/4800, inner norm=0.99449885, Pg=0.99295683, wall=136.7s
+3D 800/4800, inner norm=0.99298153, Pg=0.99295683, wall=170.3s
+3D 1000/4800, inner norm=0.99296003, Pg=0.99295683, wall=207.2s
+3D 1200/4800, inner norm=0.99295959, Pg=0.99295683, wall=246.3s
+3D 1400/4800, inner norm=0.99295924, Pg=0.99295683, wall=285.4s
+3D 1600/4800, inner norm=0.99295909, Pg=0.99295683, wall=324.6s
+3D 1800/4800, inner norm=0.99295896, Pg=0.99294110, wall=364.1s
+3D 2000/4800, inner norm=0.99294288, Pg=0.99248240, wall=408.7s
+3D 2200/4800, inner norm=0.99247958, Pg=0.98978636, wall=444.6s
+3D 2400/4800, inner norm=0.98976701, Pg=0.98188330, wall=483.3s
+3D 2600/4800, inner norm=0.98183410, Pg=0.96655406, wall=518.2s
+3D 2800/4800, inner norm=0.96647225, Pg=0.94448585, wall=548.3s
+3D 3000/4800, inner norm=0.94438603, Pg=0.91963599, wall=596.0s
+3D 3200/4800, inner norm=0.91953811, Pg=0.89727498, wall=617.5s
+3D 3400/4800, inner norm=0.89719563, Pg=0.88125701, wall=638.1s
+3D 3600/4800, inner norm=0.88120706, Pg=0.87245025, wall=658.4s
+3D 3800/4800, inner norm=0.87242763, Pg=0.86906016, wall=673.4s
+3D 4000/4800, inner norm=0.86905449, Pg=0.86832602, wall=688.4s
+3D 4200/4800, inner norm=0.86832697, Pg=0.86827848, wall=703.2s
+3D 4400/4800, inner norm=0.86828009, Pg=0.86827846, wall=716.3s
+3D 4600/4800, inner norm=0.86828001, Pg=0.86827846, wall=728.4s
+3D 4800/4800, inner norm=0.86828000, Pg=0.86827846, wall=740.6s
+COMPLETE pump_probe_plus_delay192

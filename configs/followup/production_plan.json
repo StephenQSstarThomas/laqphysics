@@ -1,0 +1,69 @@
+{
+  "scope": "180-cycle resonant helium spectrum, independent refinement axes",
+  "cases": [
+    "prod_reference",
+    "prod_radial14",
+    "prod_outer8",
+    "prod_l12",
+    "prod_L4",
+    "prod_dt003",
+    "prod_radius",
+    "prod_absorber"
+  ],
+  "pairs": [
+    {
+      "reference": "prod_reference",
+      "refinement": "prod_radial14",
+      "axis": "near-nucleus radial order 12 -> 14"
+    },
+    {
+      "reference": "prod_reference",
+      "refinement": "prod_outer8",
+      "axis": "outer radial order 6 -> 8, inner order remains 12"
+    },
+    {
+      "reference": "prod_reference",
+      "refinement": "prod_l12",
+      "axis": "individual electron lmax 10 -> 12"
+    },
+    {
+      "reference": "prod_reference",
+      "refinement": "prod_L4",
+      "axis": "total Lmax 3 -> 4"
+    },
+    {
+      "reference": "prod_reference",
+      "refinement": "prod_dt003",
+      "axis": "time step 0.06 -> 0.03"
+    },
+    {
+      "reference": "prod_reference",
+      "refinement": "prod_radius",
+      "axis": "potential cutoff [12,16] -> [16,20], surface 20 -> 24"
+    },
+    {
+      "reference": "prod_reference",
+      "refinement": "prod_absorber",
+      "axis": "irECS tail 24 -> 32, angle 0.5 -> 0.6"
+    }
+  ],
+  "acceptance": {
+    "peak_shift_au": 0.001,
+    "normalized_shape_L1": 0.02,
+    "relative_yield": 0.02,
+    "gate_channels": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "extra_channels": "all n<=2 stored and reported; original dominant channels define these gates"
+  },
+  "completion_requires": "All pairs have actual complete TDSE spectra and pass. Then repeat relevant axes for every changed physical pulse regime."
+}

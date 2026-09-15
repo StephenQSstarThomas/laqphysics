@@ -1,0 +1,96 @@
+{
+  "scope": "candidate configurations only; allocation estimates, not peak memory or completed runs",
+  "cases": [
+    {
+      "case": "pump_only",
+      "radial_nodes": 126,
+      "angular_channels": 256,
+      "steps": 2400,
+      "surface_GiB": 8.078315734863281,
+      "precomputed_coulomb_GiB": 0.9623701572418213,
+      "GMRES_basis_33_vectors_GiB": 1.9985504150390625
+    },
+    {
+      "case": "pump_probe_plus",
+      "radial_nodes": 126,
+      "angular_channels": 256,
+      "steps": 8800,
+      "surface_GiB": 29.61151885986328,
+      "precomputed_coulomb_GiB": 0.9623701572418213,
+      "GMRES_basis_33_vectors_GiB": 1.9985504150390625
+    },
+    {
+      "case": "pump_probe_minus",
+      "radial_nodes": 126,
+      "angular_channels": 256,
+      "steps": 8800,
+      "surface_GiB": 29.61151885986328,
+      "precomputed_coulomb_GiB": 0.9623701572418213,
+      "GMRES_basis_33_vectors_GiB": 1.9985504150390625
+    },
+    {
+      "case": "pump_probe_linear",
+      "radial_nodes": 126,
+      "angular_channels": 44,
+      "steps": 8800,
+      "surface_GiB": 5.0894798040390015,
+      "precomputed_coulomb_GiB": 0.23089313507080078,
+      "GMRES_basis_33_vectors_GiB": 0.34350085258483887
+    },
+    {
+      "case": "probe_only_plus",
+      "radial_nodes": 126,
+      "angular_channels": 256,
+      "steps": 8800,
+      "surface_GiB": 29.61151885986328,
+      "precomputed_coulomb_GiB": 0.9623701572418213,
+      "GMRES_basis_33_vectors_GiB": 1.9985504150390625
+    },
+    {
+      "case": "pump_probe_half_frequency",
+      "radial_nodes": 126,
+      "angular_channels": 625,
+      "steps": 8800,
+      "surface_GiB": 72.29374721646309,
+      "precomputed_coulomb_GiB": 4.524417221546173,
+      "GMRES_basis_33_vectors_GiB": 4.879273474216461
+    },
+    {
+      "case": "pump_probe_plus_delay192",
+      "radial_nodes": 126,
+      "angular_channels": 256,
+      "steps": 9600,
+      "surface_GiB": 32.30316925048828,
+      "precomputed_coulomb_GiB": 0.9623701572418213,
+      "GMRES_basis_33_vectors_GiB": 1.9985504150390625
+    },
+    {
+      "case": "pump_probe_plus_l4",
+      "radial_nodes": 126,
+      "angular_channels": 625,
+      "steps": 8800,
+      "surface_GiB": 72.29374721646309,
+      "precomputed_coulomb_GiB": 4.524417221546173,
+      "GMRES_basis_33_vectors_GiB": 4.879273474216461
+    },
+    {
+      "case": "pump_probe_plus_radial8",
+      "radial_nodes": 158,
+      "angular_channels": 256,
+      "steps": 8800,
+      "surface_GiB": 47.74102020263672,
+      "precomputed_coulomb_GiB": 1.51326584815979,
+      "GMRES_basis_33_vectors_GiB": 3.1425933837890625
+    },
+    {
+      "case": "pump_probe_plus_dt003",
+      "radial_nodes": 126,
+      "angular_channels": 256,
+      "steps": 17600,
+      "surface_GiB": 59.21967315673828,
+      "precomputed_coulomb_GiB": 0.9623701572418213,
+      "GMRES_basis_33_vectors_GiB": 1.9985504150390625
+    }
+  ],
+  "all_surface_histories_GiB": 385.8537091612816
+}

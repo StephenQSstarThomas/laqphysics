@@ -1,0 +1,47 @@
+COMPLETE res_baseline_cf4
+COMPLETE res_l6_L2_p4
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+3D 3400/6742, inner norm=0.84573989, Pg=0.82312212, wall=28.7s
+3D 3600/6742, inner norm=0.82340612, Pg=0.80304232, wall=195.5s
+3D 3800/6742, inner norm=0.80273978, Pg=0.78417631, wall=341.1s
+3D 4000/6742, inner norm=0.78435630, Pg=0.76881435, wall=433.0s
+3D 4200/6742, inner norm=0.76865438, Pg=0.75575697, wall=525.7s
+3D 4400/6742, inner norm=0.75580895, Pg=0.74582326, wall=665.8s
+3D 4600/6742, inner norm=0.74578508, Pg=0.73839038, wall=806.5s
+3D 4800/6742, inner norm=0.73837065, Pg=0.73320619, wall=945.1s
+3D 5000/6742, inner norm=0.73321925, Pg=0.72992867, wall=1064.0s
+3D 5200/6742, inner norm=0.72990173, Pg=0.72794660, wall=1138.4s
+3D 5400/6742, inner norm=0.72795978, Pg=0.72696773, wall=1177.2s
+3D 5600/6742, inner norm=0.72695743, Pg=0.72652037, wall=1262.1s
+3D 5800/6742, inner norm=0.72652354, Pg=0.72638096, wall=1365.2s
+3D 6000/6742, inner norm=0.72637988, Pg=0.72634988, wall=1466.9s
+3D 6200/6742, inner norm=0.72634999, Pg=0.72634768, wall=1568.4s
+3D 6400/6742, inner norm=0.72634768, Pg=0.72634767, wall=1665.9s
+3D 6600/6742, inner norm=0.72634767, Pg=0.72634767, wall=1745.6s
+3D 6742/6742, inner norm=0.72634767, Pg=0.72634767, wall=1797.9s
+COMPLETE res_l6_L2_p6
+ground E=-2.9033932303, residual=2.862e-10; (162, 162, 47), flux=5.355GiB
+3D 200/6742, inner norm=1.00000000, Pg=0.99999950, wall=629.4s
+3D 400/6742, inner norm=0.99999948, Pg=0.99998291, wall=760.6s
+3D 600/6742, inner norm=0.99998327, Pg=0.99987814, wall=866.7s
+3D 800/6742, inner norm=0.99987516, Pg=0.99948207, wall=918.3s
+3D 1000/6742, inner norm=0.99948972, Pg=0.99852979, wall=1038.8s
+3D 1200/6742, inner norm=0.99850615, Pg=0.99643929, wall=1173.3s
+3D 1400/6742, inner norm=0.99647217, Pg=0.99290679, wall=1318.7s
+3D 1600/6742, inner norm=0.99284071, Pg=0.98698107, wall=1487.7s
+3D 1800/6742, inner norm=0.98703681, Pg=0.97863008, wall=1674.4s
+3D 2000/6742, inner norm=0.97854537, Pg=0.96699058, wall=1867.2s
+3D 2200/6742, inner norm=0.96700538, Pg=0.95230388, wall=2058.0s
+3D 2400/6742, inner norm=0.95229010, Pg=0.93468058, wall=2264.8s
+3D 2600/6742, inner norm=0.93455854, Pg=0.91411920, wall=2482.0s
+3D 2800/6742, inner norm=0.91425934, Pg=0.89238245, wall=2704.4s
+3D 3000/6742, inner norm=0.89209428, Pg=0.86866276, wall=2927.0s
+3D 3200/6742, inner norm=0.86893582, Pg=0.84609632, wall=3156.7s
+3D 3400/6742, inner norm=0.84573135, Pg=0.82311160, wall=3349.9s
+3D 3600/6742, inner norm=0.82339635, Pg=0.80303077, wall=3497.9s
+3D 3800/6742, inner norm=0.80272888, Pg=0.78416382, wall=3632.1s
+3D 3922/6742, inner norm=0.79121228, Pg=0.77427750, wall=3761.6s
+Checkpoint saved; resume this campaign to continue.

@@ -1,0 +1,42 @@
+[
+  {
+    "case": "pump_probe_plus",
+    "number_of_times": 4401,
+    "energy_indices": [
+      0,
+      30,
+      60,
+      90,
+      120,
+      150,
+      180,
+      210,
+      240,
+      270,
+      300
+    ],
+    "seconds": 72.24053531698883,
+    "amplitude_max_relative_difference": 2.650886057383618e-12,
+    "intensity_max_relative_difference": 1.059526115559146e-14
+  },
+  {
+    "case": "res_l6_L2_p6",
+    "number_of_times": 6743,
+    "energy_indices": [
+      0,
+      22,
+      44,
+      66,
+      88,
+      110,
+      132,
+      154,
+      176,
+      198,
+      220
+    ],
+    "seconds": 420.6131358880084,
+    "amplitude_max_relative_difference": 2.9675363230753384e-16,
+    "intensity_max_relative_difference": 3.767290439225816e-16
+  }
+]

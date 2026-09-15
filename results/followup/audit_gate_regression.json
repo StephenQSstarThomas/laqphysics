@@ -1,0 +1,71 @@
+{
+  "all_gates_passed": false,
+  "all_cases_complete": true,
+  "comparisons": [
+    {
+      "reference": "res_l6_L2_p4",
+      "refinement": "res_l6_L2_p6",
+      "axis": "known real radial refinement",
+      "windows": [
+        {
+          "status": "failed",
+          "energy_window": [
+            0.54,
+            0.65
+          ],
+          "normalized_shape_L1": [
+            0.06020055345086077,
+            0.0253433757611114
+          ],
+          "relative_yield_change": [
+            0.0004374459452567425,
+            0.00039428021675447233
+          ],
+          "maximum_peak_shift": 0.00034862759129472565,
+          "all_recorded_channel_yields": [
+            0.1338648789316367,
+            0.13846722551590537
+          ],
+          "labels": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "status": "failed"
+    }
+  ],
+  "criteria": {
+    "peak_shift_au": 0.001,
+    "normalized_shape_L1": 0.02,
+    "relative_yield": 0.02,
+    "gate_channels": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "energy_windows": [
+      [
+        0.54,
+        0.65
+      ]
+    ]
+  },
+  "scope": "audit regression using actual completed TDSE spectra",
+  "completion_requires": "must reject the known 6% radial shape change"
+}

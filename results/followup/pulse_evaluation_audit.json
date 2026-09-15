@@ -1,0 +1,113 @@
+{
+  "scope": "stable sinc integral versus preceding algebraically equivalent expression on delivered pulse configurations",
+  "comparisons": [
+    {
+      "configuration": "circular_minus.json",
+      "maximum_A_difference": 1.0083080204115191e-17
+    },
+    {
+      "configuration": "circular_plus.json",
+      "maximum_A_difference": 1.0083080204115191e-17
+    },
+    {
+      "configuration": "ion_2p_co.json",
+      "maximum_A_difference": 2.2039661762285334e-15
+    },
+    {
+      "configuration": "ion_2p_counter.json",
+      "maximum_A_difference": 2.2039661762285334e-15
+    },
+    {
+      "configuration": "ion_2p_counter_dt05.json",
+      "maximum_A_difference": 2.2039661762285334e-15
+    },
+    {
+      "configuration": "ion_2p_counter_omega014.json",
+      "maximum_A_difference": 2.1588633658531364e-15
+    },
+    {
+      "configuration": "ion_2p_counter_weak.json",
+      "maximum_A_difference": 1.1019830881142667e-15
+    },
+    {
+      "configuration": "probe_only_plus.json",
+      "maximum_A_difference": 1.9475523624357116e-15
+    },
+    {
+      "configuration": "prod_L4.json",
+      "maximum_A_difference": 3.840244094943657e-15
+    },
+    {
+      "configuration": "prod_absorber.json",
+      "maximum_A_difference": 3.840244094943657e-15
+    },
+    {
+      "configuration": "prod_dt003.json",
+      "maximum_A_difference": 3.840244094943657e-15
+    },
+    {
+      "configuration": "prod_l12.json",
+      "maximum_A_difference": 3.840244094943657e-15
+    },
+    {
+      "configuration": "prod_outer8.json",
+      "maximum_A_difference": 3.840244094943657e-15
+    },
+    {
+      "configuration": "prod_radial14.json",
+      "maximum_A_difference": 3.840244094943657e-15
+    },
+    {
+      "configuration": "prod_radius.json",
+      "maximum_A_difference": 3.840244094943657e-15
+    },
+    {
+      "configuration": "prod_reference.json",
+      "maximum_A_difference": 3.840244094943657e-15
+    },
+    {
+      "configuration": "pump_only.json",
+      "maximum_A_difference": 8.825405684032006e-17
+    },
+    {
+      "configuration": "pump_probe_half_frequency.json",
+      "maximum_A_difference": 3.5752650839881994e-15
+    },
+    {
+      "configuration": "pump_probe_linear.json",
+      "maximum_A_difference": 1.9475523624357116e-15
+    },
+    {
+      "configuration": "pump_probe_minus.json",
+      "maximum_A_difference": 1.9475523624357116e-15
+    },
+    {
+      "configuration": "pump_probe_plus.json",
+      "maximum_A_difference": 1.9475523624357116e-15
+    },
+    {
+      "configuration": "pump_probe_plus_delay192.json",
+      "maximum_A_difference": 1.9475523624357116e-15
+    },
+    {
+      "configuration": "res_baseline_cf4.json",
+      "maximum_A_difference": 3.840244094943657e-15
+    },
+    {
+      "configuration": "res_l6_L2_p4.json",
+      "maximum_A_difference": 3.840244094943657e-15
+    },
+    {
+      "configuration": "res_l6_L2_p6.json",
+      "maximum_A_difference": 3.840244094943657e-15
+    },
+    {
+      "configuration": "res_l8_L2_p6.json",
+      "maximum_A_difference": 3.840244094943657e-15
+    },
+    {
+      "configuration": "weak_24.json",
+      "maximum_A_difference": 3.539920093165172e-17
+    }
+  ]
+}

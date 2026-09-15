@@ -1,0 +1,10 @@
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+{'dt': 0.05, 'error': 8.109883172617963e-05}
+{'dt': 0.025, 'error': 5.116625649231274e-06}
+{'dt': 0.0125, 'error': 3.2053844017080884e-07}
+large implicit 0.04 seconds 1.5047279328573495 {'linear_iterations': 168, 'linear_residual': 8.979063306723239e-11, 'dimension': 0, 'residual_estimate': None}
+large implicit 0.08 seconds 2.473751540062949 {'linear_iterations': 280, 'linear_residual': 9.287731116071545e-11, 'dimension': 0, 'residual_estimate': None}
+large implicit 0.12 seconds 2.3110690300818533 {'linear_iterations': 368, 'linear_residual': 9.533613364902386e-11, 'dimension': 0, 'residual_estimate': None}

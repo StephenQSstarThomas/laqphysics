@@ -1,0 +1,22 @@
+{'order': 6, 'two_photon_2p_to_3p': -1.5023168290265785, 'two_photon_2p_to_3d': 0.0, 'initial_stark_coefficient': 1.4705565610446294, 'final_stark_coefficient': -47.04616260756539, 'peak_differential_shift_at_F003': -0.0004366504725174902, 'peak_two_photon_rabi_at_F003': 6.760425730619603e-06}
+{'order': 8, 'two_photon_2p_to_3p': -1.502316809657743, 'two_photon_2p_to_3d': 0.0, 'initial_stark_coefficient': 1.470556563076801, 'final_stark_coefficient': -47.046164294135515, 'peak_differential_shift_at_F003': -0.00043665048771491084, 'peak_two_photon_rabi_at_F003': 6.760425643459844e-06}
+{'order': 10, 'two_photon_2p_to_3p': -1.502316809667612, 'two_photon_2p_to_3d': 0.0, 'initial_stark_coefficient': 1.470556563075316, 'final_stark_coefficient': -47.04616429416883, 'peak_differential_shift_at_F003': -0.00043665048771519735, 'peak_two_photon_rabi_at_F003': 6.7604256435042544e-06}
+{'order': 12, 'two_photon_2p_to_3p': -1.5023168096642565, 'two_photon_2p_to_3d': 0.0, 'initial_stark_coefficient': 1.470556563076088, 'final_stark_coefficient': -47.04616429416514, 'peak_differential_shift_at_F003': -0.00043665048771517105, 'peak_two_photon_rabi_at_F003': 6.760425643489154e-06}
+[
+  {
+    "nmax": 4,
+    "bound_only_amplitude": -2.135464149491887
+  },
+  {
+    "nmax": 8,
+    "bound_only_amplitude": -1.7431872585421402
+  },
+  {
+    "nmax": 12,
+    "bound_only_amplitude": -1.7038500624764847
+  },
+  {
+    "nmax": 20,
+    "bound_only_amplitude": -1.6858952299235466
+  }
+]

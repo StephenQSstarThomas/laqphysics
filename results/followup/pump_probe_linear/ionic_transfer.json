@@ -1,0 +1,60 @@
+{
+  "requested_times": [
+    144.0
+  ],
+  "transfers_from_1s": [
+    {
+      "requested_time": 144.0,
+      "actual_time": 144.0,
+      "labels": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          -1
+        ],
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "amplitude_real": [
+        -0.032351183317116484,
+        1.5694465645334915e-06,
+        0.0,
+        -0.33651653603584614,
+        0.0
+      ],
+      "amplitude_imag": [
+        -0.006412050314781485,
+        5.424366809544945e-07,
+        0.0,
+        0.9395957131005799,
+        0.0
+      ],
+      "probabilities": [
+        0.0010877134512569653,
+        2.757400071770906e-12,
+        0.0,
+        0.9960834831025519,
+        0.0
+      ],
+      "scope": "transition to recorded final bound states; omitted bound states and ionization are not traced here"
+    }
+  ]
+}

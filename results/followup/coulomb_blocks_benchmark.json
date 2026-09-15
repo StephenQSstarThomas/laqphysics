@@ -1,0 +1,49 @@
+{
+  "rows": [
+    {
+      "backend": "sparse",
+      "H_seconds_samples": [
+        0.010544028831645846,
+        0.010736281983554363,
+        0.012730254093185067,
+        0.012737970100715756,
+        0.011472487123683095
+      ],
+      "H_median_seconds": 0.011472487123683095,
+      "H_relative_difference_vs_Fortran": 4.773213376860526e-14,
+      "step_seconds": 1.6681926979217678,
+      "step_info": {
+        "linear_iterations": 32,
+        "linear_residual": 2.6703443793001624e-15,
+        "dimension": 0,
+        "residual_estimate": null
+      },
+      "block_bytes": 0
+    },
+    {
+      "backend": "blocks",
+      "H_seconds_samples": [
+        0.006586248055100441,
+        0.006596114952117205,
+        0.011404545977711678,
+        0.011494478909298778,
+        0.0074361690785735846
+      ],
+      "H_median_seconds": 0.0074361690785735846,
+      "H_relative_difference_vs_Fortran": 4.773037169771258e-14,
+      "step_seconds": 1.46354630892165,
+      "step_info": {
+        "linear_iterations": 32,
+        "linear_residual": 2.6568249716539312e-15,
+        "dimension": 0,
+        "residual_estimate": null
+      },
+      "block_bytes": 344741184
+    }
+  ],
+  "same_step_relative_L2_difference": 1.3334101058918026e-15,
+  "checkpoint_step": 3200,
+  "time_au": 383.97258349999424,
+  "dt": 0.1199914323437482,
+  "scope": "shared GPU timing; exact symmetry-block contraction without truncation"
+}

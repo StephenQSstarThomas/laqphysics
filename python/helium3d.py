@@ -80,7 +80,12 @@ class Helium:
     def operator(self,field=(0.,0.,0.),velocity=False):
         return LinearOperator((self.size,self.size),matvec=lambda x:self.apply(x,field,velocity),dtype=complex)
 
-    def ground(self,tol=1e-10):
+    def ground(self,tol=1e-10,method='coupled',cache_dir=None):
+        if method=='coupled':
+            from ground_s import GroundS
+            import os
+            return GroundS(self).solve(tol,cache_dir or os.environ.get('HELIUM_GROUND_CACHE'))
+        if method!='uncoupled':raise ValueError('ground method must be coupled or uncoupled')
         if self.grid.ecs_angle:raise ValueError('ground eigsh requires a real grid')
         r=self.r.real;w=self.grid.weights.real
         u=r*np.exp(-1.6875*r)*np.sqrt(w)

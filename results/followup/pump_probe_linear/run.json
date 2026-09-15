@@ -1,0 +1,127 @@
+{
+  "signature": "22d3864bb21a31db2b960c925fea205b331393a3c46b0c14008855c4cc35b35e",
+  "config": {
+    "radial": {
+      "edges": [
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28
+      ],
+      "order": 4,
+      "tail": 24,
+      "ecs_angle": 0.5,
+      "alpha": 0.8
+    },
+    "lmax": 2,
+    "M": 0,
+    "cutoff_radii": [
+      12,
+      16
+    ],
+    "surface": 20,
+    "pulses": [
+      {
+        "pulse": {
+          "omega": 1.2,
+          "cycles": 12,
+          "field": 0.02
+        },
+        "polarization": "z"
+      },
+      {
+        "pulse": {
+          "omega": 1.5,
+          "cycles": 76,
+          "field": 0.0534,
+          "start": 144
+        },
+        "polarization": "z"
+      }
+    ],
+    "post_time": 55,
+    "dt": 0.12,
+    "surface_stride": 1,
+    "checkpoint_every": 200,
+    "krylov_dimension": 48,
+    "krylov_tolerance": 1e-10,
+    "ground_tolerance": 1e-09,
+    "max_surface_gib": 12,
+    "spectrum_energy": [
+      0.1,
+      1.0,
+      301
+    ],
+    "time_integrator": "cf4-pade",
+    "ionic_propagator": "cf4",
+    "linear_tolerance": 1e-10,
+    "end_time": 528.0,
+    "ionic_transfer_times": [
+      144.0
+    ],
+    "ionic_channels": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        -1
+      ],
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        2,
+        1,
+        1
+      ]
+    ]
+  },
+  "ground_energy": -2.8997030024240567,
+  "ground_residual": 6.869223781594157e-10,
+  "nrad": 88,
+  "channels": 19,
+  "dt": 0.12,
+  "nsteps": 4400,
+  "completed_steps": 4400,
+  "complete": true,
+  "surface_bytes": 588677760,
+  "surface_indices": [
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "seconds_this_invocation": 993.951466236962,
+  "backend": "torch",
+  "device": "cuda:0",
+  "precision": "complex128",
+  "ground_angular_basis": "coupled total L=0, expanded without angular approximation",
+  "time_integrator": "cf4-pade",
+  "maximum_linear_residual_this_invocation": 9.9984706008413e-11,
+  "linear_iterations_this_invocation": 82664
+}

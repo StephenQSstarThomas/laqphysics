@@ -1,0 +1,8 @@
+{
+  "reference": "3d_resonant_small",
+  "candidate": "res_baseline_cf4",
+  "relative_L1": [
+    0.0016048283650323097,
+    0.0014631552865921563
+  ]
+}

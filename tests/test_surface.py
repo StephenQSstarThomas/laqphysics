@@ -33,3 +33,16 @@ def test_3d_surface_commutator():
     reference=(h.apply((theta*u).ravel(order='F'),A,True).reshape(h.shape,order='F')-
                theta*h.apply(p,A,True).reshape(h.shape,order='F'))[:,idx,:]
     np.testing.assert_allclose(actual,reference,atol=2e-12,rtol=2e-12)
+
+def test_residual_pulse_impulse_is_not_silently_projected_as_field_free():
+    import pytest
+    from pulses import Pulse
+    from surface3d import extract
+    p=Pulse(cycles=2.5,field=.01,cep=np.pi/2)
+    t=np.linspace(0,p.duration,2001)
+    np.testing.assert_allclose(p.vector(p.duration),-simpson(p.electric(t),x=t),atol=2e-13)
+    assert abs(p.vector(p.duration))>1e-4
+    h=Helium(make_grid([0,1,2,4,6,8],3),1,M=0,cutoff_radii=[1,2]);idx=h.prepare_surface(5.)
+    with pytest.raises(ValueError,match='zero final vector potential'):
+        extract(h,np.zeros((2,h.n,len(idx),h.nc),complex),np.array([0,p.duration]),
+                lambda s:np.array([0.,0.,p.vector(s)]),[(1,0,0)],np.array([.6]),(np.array([1.]),np.array([0.])),p.duration)

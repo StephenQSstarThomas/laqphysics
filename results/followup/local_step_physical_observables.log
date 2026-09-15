@@ -1,0 +1,57 @@
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+{"dt_au": 0.1199914323437482, "full_vs_two_half_relative_L2": 3.515870175542977e-05, "richardson_fine_local_error_estimate": 2.3439134503619846e-06, "real_interior_relative_L2": 3.51284490663558e-05, "core_relative_L2_r_le_8": 3.383557737364847e-05, "ground_amplitude_absolute_difference": 4.826320198058657e-10, "ground_probability_absolute_difference": 3.518391133994214e-10, "surface_flux_relative_L2_difference": 0.00010925312634939845, "maximum_true_linear_residual": 3.011370481131846e-15, "seconds": 43.914977631065995}
+{"dt_au": 0.0599957161718741, "full_vs_two_half_relative_L2": 3.143123803893235e-06, "richardson_fine_local_error_estimate": 2.0954158692621567e-07, "real_interior_relative_L2": 3.1420268421008345e-06, "core_relative_L2_r_le_8": 3.0945749742523854e-06, "ground_amplitude_absolute_difference": 1.8161695223535138e-11, "ground_probability_absolute_difference": 1.3917866859003425e-11, "surface_flux_relative_L2_difference": 6.716648006999462e-06, "maximum_true_linear_residual": 1.526322150163902e-15, "seconds": 44.509948702994734}
+{"dt_au": 0.02999785808593705, "full_vs_two_half_relative_L2": 1.176372917290457e-06, "richardson_fine_local_error_estimate": 7.842486115269713e-08, "real_interior_relative_L2": 1.1765167183172705e-06, "core_relative_L2_r_le_8": 1.1796561842196924e-06, "ground_amplitude_absolute_difference": 8.021262027042062e-13, "ground_probability_absolute_difference": 2.517985819849855e-13, "surface_flux_relative_L2_difference": 8.568204509022661e-07, "maximum_true_linear_residual": 7.84406726826655e-13, "seconds": 27.45222608721815}
+{
+  "source_signature": "074d82f84c27241f69fa519f33ae511e44bc878513e081405fd75cddd9ebf7bf",
+  "checkpoint_step": 2200,
+  "time_au": 263.981151156246,
+  "vector_potential": [
+    0.0,
+    0.0,
+    -0.0037739742279625944
+  ],
+  "actual_checkpoint_Torch_vs_Fortran_H_relative_L2": 4.717065048724025e-14,
+  "step_doubling": [
+    {
+      "dt_au": 0.1199914323437482,
+      "full_vs_two_half_relative_L2": 3.515870175542977e-05,
+      "richardson_fine_local_error_estimate": 2.3439134503619846e-06,
+      "real_interior_relative_L2": 3.51284490663558e-05,
+      "core_relative_L2_r_le_8": 3.383557737364847e-05,
+      "ground_amplitude_absolute_difference": 4.826320198058657e-10,
+      "ground_probability_absolute_difference": 3.518391133994214e-10,
+      "surface_flux_relative_L2_difference": 0.00010925312634939845,
+      "maximum_true_linear_residual": 3.011370481131846e-15,
+      "seconds": 43.914977631065995
+    },
+    {
+      "dt_au": 0.0599957161718741,
+      "full_vs_two_half_relative_L2": 3.143123803893235e-06,
+      "richardson_fine_local_error_estimate": 2.0954158692621567e-07,
+      "real_interior_relative_L2": 3.1420268421008345e-06,
+      "core_relative_L2_r_le_8": 3.0945749742523854e-06,
+      "ground_amplitude_absolute_difference": 1.8161695223535138e-11,
+      "ground_probability_absolute_difference": 1.3917866859003425e-11,
+      "surface_flux_relative_L2_difference": 6.716648006999462e-06,
+      "maximum_true_linear_residual": 1.526322150163902e-15,
+      "seconds": 44.509948702994734
+    },
+    {
+      "dt_au": 0.02999785808593705,
+      "full_vs_two_half_relative_L2": 1.176372917290457e-06,
+      "richardson_fine_local_error_estimate": 7.842486115269713e-08,
+      "real_interior_relative_L2": 1.1765167183172705e-06,
+      "core_relative_L2_r_le_8": 1.1796561842196924e-06,
+      "ground_amplitude_absolute_difference": 8.021262027042062e-13,
+      "ground_probability_absolute_difference": 2.517985819849855e-13,
+      "surface_flux_relative_L2_difference": 8.568204509022661e-07,
+      "maximum_true_linear_residual": 7.84406726826655e-13,
+      "seconds": 27.45222608721815
+    }
+  ],
+  "scope": "Same actual correlated state at all step sizes, no phase fitting; Richardson estimates assume the asymptotic order, not a global spectrum-convergence certificate."
+}

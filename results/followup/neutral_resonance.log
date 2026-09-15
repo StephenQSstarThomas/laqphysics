@@ -1,0 +1,13 @@
+{
+  "ground_energy": -2.9003626851821322,
+  "singlet_P_energy": -2.123641383348532,
+  "excitation_energy": 0.7767213018336001,
+  "dipole_z": 0.42341112306042167,
+  "oscillator_strength": 0.27849649723929765,
+  "detuning_from_075": 0.02672130183360011,
+  "rabi_scale_at_F01068": 0.04522030794285304,
+  "eigen_residual": 1.3499340324117769e-09,
+  "exchange_error": 0.0,
+  "seconds": 10.79742037015967,
+  "scope": "same l=3, p=4, truncated-Coulomb grid as half-frequency TDSE; not an infinite-basis atomic reference"
+}

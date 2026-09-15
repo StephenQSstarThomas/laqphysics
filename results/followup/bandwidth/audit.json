@@ -1,0 +1,14 @@
+{
+  "support_cycles": 8,
+  "support_au": 33.510321638291124,
+  "support_as": 810.5759178985213,
+  "intensity_envelope_fwhm_cycles": 2.912453310191014,
+  "field_envelope_fwhm_cycles": 4.0,
+  "fourier_intensity_fwhm_au": 0.2701092337725509,
+  "tdse_fwhm_au": 0.27377609996482,
+  "tdse_halfmax_interval": [
+    0.44062004313672354,
+    0.7143961431015435
+  ],
+  "fwhm_constant": 1.4405825801202716
+}

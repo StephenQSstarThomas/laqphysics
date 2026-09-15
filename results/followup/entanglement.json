@@ -1,0 +1,1010 @@
+[
+  {
+    "run": "pump_only",
+    "energy_window": [
+      0.18,
+      0.42
+    ],
+    "recorded_sector_probability": 0.006765712110702355,
+    "entropy_bits": 0.00010467282594670947,
+    "purity": 0.9999897282700465,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.0040160248430323175,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.003288042095786703,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.0024358403798764305,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.0014774104925031617,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.0005435070637338502,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 2.705749134768176e-05,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 1.8225725795240066e-07,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "pump_only",
+    "energy_window": [
+      0.52,
+      0.68
+    ],
+    "recorded_sector_probability": 8.96913062415756e-07,
+    "entropy_bits": 0.021073444835388564,
+    "purity": 0.9966351482030279,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.08226916094755377,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.06735301916138248,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.049892525637522,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.030256759784056064,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.011125307455561395,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 0.0005521381657103142,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 3.7164631803143777e-06,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "pump_only",
+    "energy_window": [
+      0.1,
+      1.0
+    ],
+    "recorded_sector_probability": 0.0070360918585545005,
+    "entropy_bits": 0.0008191550888823059,
+    "purity": 0.9999020645669183,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.011165286734828639,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.009141319521470903,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.006772004292473155,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.004107364524212009,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.0015109301686676568,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 7.516030547793928e-05,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 5.059123995287962e-07,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "pump_probe_plus",
+    "energy_window": [
+      0.18,
+      0.42
+    ],
+    "recorded_sector_probability": 0.006740813400084225,
+    "entropy_bits": 9.770855281163934e-05,
+    "purity": 0.999990523109917,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.0038952489446851812,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.003015658871263649,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.002081235193075903,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.0011555324523888633,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.00038624432953460186,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 1.831380293026985e-05,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 1.231052509931274e-07,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "pump_probe_plus",
+    "energy_window": [
+      0.52,
+      0.68
+    ],
+    "recorded_sector_probability": 0.12442389754603674,
+    "entropy_bits": 0.5663161512132908,
+    "purity": 0.7696756773434221,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.3529820074721983,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.27623481776027803,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.1919138458715839,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.10649422170928058,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.035310524443374236,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 0.0016496988160928927,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 1.1077823142358056e-05,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "pump_probe_plus",
+    "energy_window": [
+      0.1,
+      1.0
+    ],
+    "recorded_sector_probability": 0.1314349800449116,
+    "entropy_bits": 0.6135280785311731,
+    "purity": 0.743635665831973,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.37352161390835426,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.2946114220237859,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.2069254954157964,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.11645257112150231,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.03916021880242626,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 0.0018425365380965175,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 1.2376969016791861e-05,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "pump_probe_minus",
+    "energy_window": [
+      0.18,
+      0.42
+    ],
+    "recorded_sector_probability": 0.0067408134000839,
+    "entropy_bits": 9.770855281957004e-05,
+    "purity": 0.9999905231099172,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.003895248944892349,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.0030156588714312926,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.0020812351931930317,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.0011555324524484822,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.00038624432955003396,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 1.831380293071394e-05,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 1.2310525121517202e-07,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "pump_probe_minus",
+    "energy_window": [
+      0.52,
+      0.68
+    ],
+    "recorded_sector_probability": 0.12442389754603492,
+    "entropy_bits": 0.5663161512132822,
+    "purity": 0.7696756773434279,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.35298200747220965,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.27623481776028624,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.19191384587158944,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.10649422170928435,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.03531052444337612,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 0.0016496988160935588,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 1.1077823143246235e-05,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "pump_probe_minus",
+    "energy_window": [
+      0.1,
+      1.0
+    ],
+    "recorded_sector_probability": 0.13143498004490944,
+    "entropy_bits": 0.6135280785311649,
+    "purity": 0.7436356658319764,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.3735216139083377,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.2946114220237721,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.20692549541578598,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.11645257112149565,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.039160218802423374,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 0.0018425365380959624,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 1.2376969016347772e-05,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "pump_probe_linear",
+    "energy_window": [
+      0.18,
+      0.42
+    ],
+    "recorded_sector_probability": 0.006746086332582036,
+    "entropy_bits": 9.290095515526411e-05,
+    "purity": 0.9999907089999585,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.0033527806428000906,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.0025755172447962105,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.001738499432270224,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.0009041320282308085,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.0002538990791756124,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 1.0264893238298711e-05,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 6.860924450791117e-08,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "pump_probe_linear",
+    "energy_window": [
+      0.52,
+      0.68
+    ],
+    "recorded_sector_probability": 0.12446314385457108,
+    "entropy_bits": 0.5673612397297458,
+    "purity": 0.7694625619393125,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.36205659810720014,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.2836738178320266,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.19743310452224638,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.10984680300857153,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.03654492762155759,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 0.0017111628457575634,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 1.1491963732956911e-05,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "pump_probe_linear",
+    "energy_window": [
+      0.1,
+      1.0
+    ],
+    "recorded_sector_probability": 0.13148064848934368,
+    "entropy_bits": 0.6143247716341482,
+    "purity": 0.7435234005189845,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.38034400808845426,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.30020461634663753,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.21107601088002315,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.11897458602980393,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.04008923286309929,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 0.0018888068867038976,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 1.2688754383538559e-05,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "pump_probe_half_frequency",
+    "energy_window": [
+      0.18,
+      0.42
+    ],
+    "recorded_sector_probability": 0.006781734390973312,
+    "entropy_bits": 5.021707777823448e-05,
+    "purity": 0.9999952421085639,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.0024924086096226317,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.0020406105706078925,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.001511720307401876,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.0009169032482286843,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.00033730784750418685,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 1.67911611796967e-05,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 1.1304882485685397e-07,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "pump_probe_half_frequency",
+    "energy_window": [
+      0.52,
+      0.68
+    ],
+    "recorded_sector_probability": 0.026640885975428262,
+    "entropy_bits": 0.0052738724301349856,
+    "purity": 0.9991704479911975,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.02223646100111043,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.018205669759535748,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.013487086347068189,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.008180324523840765,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.0030093637960790787,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 0.00014981489356313826,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 1.008434221905219e-06,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "pump_probe_half_frequency",
+    "energy_window": [
+      0.1,
+      1.6
+    ],
+    "recorded_sector_probability": 0.03375608815219703,
+    "entropy_bits": 0.004489974939541949,
+    "purity": 0.9993175662096913,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.022879690996073454,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.01873230206340759,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.013877225303188578,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.008416955957177508,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.003096415952649423,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 0.0001541505136138932,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 1.038146777876392e-06,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "pump_probe_plus_delay192",
+    "energy_window": [
+      0.18,
+      0.42
+    ],
+    "recorded_sector_probability": 0.006740813656145838,
+    "entropy_bits": 9.706421213010738e-05,
+    "purity": 0.9999905906653076,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.003879166321709371,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.0030024806341047983,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.0020714123952260133,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.0011494718416812377,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.00038395115329370455,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 1.819776054601263e-05,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 1.223198355937427e-07,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "pump_probe_plus_delay192",
+    "energy_window": [
+      0.52,
+      0.68
+    ],
+    "recorded_sector_probability": 0.12442389740310705,
+    "entropy_bits": 0.5663161496468379,
+    "purity": 0.7696756770070158,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.35298033932317774,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.27623345203580896,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.19191283415287885,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.10649360809017827,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.03531029870845315,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 0.001649687577377379,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 1.1077747416710082e-05,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "pump_probe_plus_delay192",
+    "energy_window": [
+      0.1,
+      1.0
+    ],
+    "recorded_sector_probability": 0.13143497912408,
+    "entropy_bits": 0.613527976379191,
+    "purity": 0.7436356766666352,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.3735179271301383,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.29460840336208993,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.20692325896240438,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.11645121452195695,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.03915971969862353,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 0.0018425116881558568,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 1.2376801565960882e-05,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "res_l6_L2_p4",
+    "energy_window": [
+      0.54,
+      0.65
+    ],
+    "recorded_sector_probability": 0.27221899803359406,
+    "entropy_bits": 0.9967562897109861,
+    "purity": 0.5022466830817074,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.498875393719861,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.4083587152118435,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.3024268559397645,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.18334712202569703,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.06740706426237142,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 0.003354410218386117,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 2.2601205892480714e-05,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "res_l6_L2_p6",
+    "energy_window": [
+      0.54,
+      0.65
+    ],
+    "recorded_sector_probability": 0.272332104447542,
+    "entropy_bits": 0.996754023261639,
+    "purity": 0.502248251708032,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.4988746076380154,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.4083579926025611,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.30242623536584545,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.18334666841787894,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.06740685833435012,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 0.003354398510231893,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 2.260112642504808e-05,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  },
+  {
+    "run": "res_l8_L2_p6",
+    "energy_window": [
+      0.54,
+      0.65
+    ],
+    "recorded_sector_probability": 0.27234719320880496,
+    "entropy_bits": 0.9967539184414269,
+    "purity": 0.5022483242548346,
+    "post_pulse_local_dephasing": [
+      {
+        "gammaT": 0,
+        "negativity": 0.498874571282785,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.2,
+        "negativity": 0.4083579591057068,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 0.5,
+        "negativity": 0.3024262065247628,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 1,
+        "negativity": 0.1833466472786358,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 2,
+        "negativity": 0.06740684871332825,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 5,
+        "negativity": 0.0033543979624917064,
+        "electron_reduced_state_change": 0.0
+      },
+      {
+        "gammaT": 10,
+        "negativity": 2.2601122707244237e-05,
+        "electron_reduced_state_change": 0.0
+      }
+    ],
+    "scope": "conditional on recorded ionic channels/window; post-pulse CPTP control, not dynamical bath simulation"
+  }
+]

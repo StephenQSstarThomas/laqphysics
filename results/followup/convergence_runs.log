@@ -1,0 +1,103 @@
+START res_baseline_cf4
+ground E=-2.8972353188, residual=2.093e-09; (88, 88, 6), flux=0.267GiB
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+3D 200/6784, inner norm=1.00000000, Pg=0.99999951, wall=22.9s
+3D 400/6784, inner norm=0.99999948, Pg=0.99998328, wall=47.4s
+3D 600/6784, inner norm=0.99998343, Pg=0.99988068, wall=68.0s
+3D 800/6784, inner norm=0.99987682, Pg=0.99949300, wall=89.8s
+3D 1000/6784, inner norm=0.99949749, Pg=0.99856038, wall=112.5s
+3D 1200/6784, inner norm=0.99853064, Pg=0.99651369, wall=127.5s
+3D 1400/6784, inner norm=0.99653272, Pg=0.99305346, wall=140.3s
+3D 1600/6784, inner norm=0.99296744, Pg=0.98725103, wall=160.5s
+3D 1800/6784, inner norm=0.98727119, Pg=0.97906716, wall=182.3s
+3D 2000/6784, inner norm=0.97893896, Pg=0.96766670, wall=206.4s
+3D 2200/6784, inner norm=0.96761611, Pg=0.95326391, wall=227.5s
+3D 2400/6784, inner norm=0.95317750, Pg=0.93599229, wall=250.5s
+3D 2600/6784, inner norm=0.93577675, Pg=0.91581113, wall=271.7s
+3D 2800/6784, inner norm=0.91585228, Pg=0.89448585, wall=295.2s
+3D 3000/6784, inner norm=0.89408959, Pg=0.87118472, wall=311.2s
+3D 3200/6784, inner norm=0.87134392, Pg=0.84901242, wall=331.1s
+3D 3400/6784, inner norm=0.84854401, Pg=0.82641679, wall=356.1s
+3D 3600/6784, inner norm=0.82658984, Pg=0.80665219, wall=382.0s
+3D 3800/6784, inner norm=0.80626696, Pg=0.78809504, wall=405.5s
+3D 4000/6784, inner norm=0.78818264, Pg=0.77294873, wall=428.1s
+3D 4200/6784, inner norm=0.77273186, Pg=0.76010067, wall=451.8s
+3D 4400/6784, inner norm=0.76008898, Pg=0.75029361, wall=469.5s
+3D 4600/6784, inner norm=0.75022188, Pg=0.74297733, wall=484.1s
+3D 4800/6784, inner norm=0.74292301, Pg=0.73785558, wall=507.4s
+3D 5000/6784, inner norm=0.73785214, Pg=0.73462744, wall=529.0s
+3D 5200/6784, inner norm=0.73458694, Pg=0.73266898, wall=552.4s
+3D 5400/6784, inner norm=0.73267612, Pg=0.73170373, wall=573.7s
+3D 5600/6784, inner norm=0.73169022, Pg=0.73126177, wall=594.7s
+3D 5800/6784, inner norm=0.73126372, Pg=0.73112400, wall=623.9s
+3D 6000/6784, inner norm=0.73112265, Pg=0.73109329, wall=660.5s
+3D 6200/6784, inner norm=0.73109334, Pg=0.73109110, wall=700.3s
+3D 6400/6784, inner norm=0.73109110, Pg=0.73109109, wall=737.5s
+3D 6600/6784, inner norm=0.73109109, Pg=0.73109109, wall=771.5s
+3D 6784/6784, inner norm=0.73109109, Pg=0.73109109, wall=802.0s
+FINISHED res_baseline_cf4
+START res_l6_L2_p4
+ground E=-2.9030012810, residual=2.867e-10; (116, 116, 35), flux=2.040GiB
+3D 200/6742, inner norm=1.00000000, Pg=0.99999950, wall=58.8s
+3D 400/6742, inner norm=0.99999948, Pg=0.99998292, wall=109.4s
+3D 600/6742, inner norm=0.99998327, Pg=0.99987822, wall=162.2s
+3D 800/6742, inner norm=0.99987519, Pg=0.99948241, wall=220.3s
+3D 1000/6742, inner norm=0.99948990, Pg=0.99853077, wall=277.6s
+3D 1200/6742, inner norm=0.99850678, Pg=0.99644166, wall=330.7s
+3D 1400/6742, inner norm=0.99647382, Pg=0.99291147, wall=411.6s
+3D 1600/6742, inner norm=0.99284430, Pg=0.98698968, wall=494.7s
+3D 1800/6742, inner norm=0.98704364, Pg=0.97864407, wall=589.7s
+3D 2000/6742, inner norm=0.97855709, Pg=0.96701215, wall=695.1s
+3D 2200/6742, inner norm=0.96702388, Pg=0.95233467, wall=802.6s
+3D 2400/6742, inner norm=0.95231738, Pg=0.93472248, wall=900.5s
+3D 2600/6742, inner norm=0.93459642, Pg=0.91417354, wall=980.6s
+3D 2800/6742, inner norm=0.91430942, Pg=0.89244978, wall=1077.8s
+3D 3000/6742, inner norm=0.89215754, Pg=0.86874377, wall=1176.2s
+3D 3200/6742, inner norm=0.86901280, Pg=0.84618988, wall=1268.5s
+3D 3400/6742, inner norm=0.84582186, Pg=0.82321767, wall=1367.1s
+3D 3600/6742, inner norm=0.82349973, Pg=0.80314718, wall=1454.5s
+3D 3800/6742, inner norm=0.80284400, Pg=0.78428989, wall=1524.8s
+3D 4000/6742, inner norm=0.78446982, Pg=0.76893459, wall=1563.7s
+3D 4200/6742, inner norm=0.76877578, Pg=0.75588290, wall=1620.2s
+3D 4400/6742, inner norm=0.75593676, Pg=0.74595331, wall=1696.6s
+3D 4600/6742, inner norm=0.74591788, Pg=0.73852354, wall=1770.9s
+3D 4800/6742, inner norm=0.73850716, Pg=0.73334147, wall=1861.0s
+3D 5000/6742, inner norm=0.73335836, Pg=0.73006529, wall=1964.9s
+3D 5200/6742, inner norm=0.73004252, Pg=0.72808405, wall=2063.0s
+3D 5400/6742, inner norm=0.72810156, Pg=0.72710558, wall=2158.1s
+3D 5600/6742, inner norm=0.72709967, Pg=0.72665842, wall=2233.8s
+3D 5800/6742, inner norm=0.72666594, Pg=0.72651908, wall=2328.6s
+3D 6000/6742, inner norm=0.72652225, Pg=0.72648802, wall=2424.3s
+3D 6200/6742, inner norm=0.72649225, Pg=0.72648582, wall=2529.3s
+3D 6400/6742, inner norm=0.72648982, Pg=0.72648581, wall=2634.6s
+3D 6600/6742, inner norm=0.72648970, Pg=0.72648581, wall=2733.6s
+3D 6742/6742, inner norm=0.72648962, Pg=0.72648581, wall=2799.0s
+FINISHED res_l6_L2_p4
+START res_l6_L2_p6
+ground E=-2.9033497328, residual=2.839e-10; (162, 162, 35), flux=3.988GiB
+3D 200/6742, inner norm=1.00000000, Pg=0.99999950, wall=308.8s
+3D 400/6742, inner norm=0.99999948, Pg=0.99998291, wall=389.8s
+3D 600/6742, inner norm=0.99998327, Pg=0.99987815, wall=463.4s
+3D 800/6742, inner norm=0.99987516, Pg=0.99948210, wall=556.7s
+3D 1000/6742, inner norm=0.99948973, Pg=0.99852989, wall=661.1s
+3D 1200/6742, inner norm=0.99850621, Pg=0.99643953, wall=760.9s
+3D 1400/6742, inner norm=0.99647232, Pg=0.99290726, wall=873.7s
+3D 1600/6742, inner norm=0.99284103, Pg=0.98698193, wall=998.5s
+3D 1800/6742, inner norm=0.98703743, Pg=0.97863149, wall=1099.9s
+3D 2000/6742, inner norm=0.97854645, Pg=0.96699272, wall=1227.2s
+3D 2200/6742, inner norm=0.96700709, Pg=0.95230697, wall=1357.5s
+3D 2400/6742, inner norm=0.95229264, Pg=0.93468473, wall=1480.2s
+3D 2600/6742, inner norm=0.93456208, Pg=0.91412463, wall=1659.3s
+3D 2800/6742, inner norm=0.91426403, Pg=0.89238912, wall=1829.2s
+3D 3000/6742, inner norm=0.89210021, Pg=0.86867081, wall=2004.2s
+3D 3200/6742, inner norm=0.86894306, Pg=0.84610560, wall=2180.9s
+3D 3366/6742, inner norm=0.84964729, Pg=0.82682689, wall=2326.9s
+Traceback (most recent call last):
+  File "<stdin>", line 9, in <module>
+  File "/playpen/shiqiu/task-jiukongdian/python/run3d.py", line 137, in extract_run
+    (out/'run.json').write_text(json.dumps(meta,indent=2)+'\n')
+                            ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: propagation incomplete

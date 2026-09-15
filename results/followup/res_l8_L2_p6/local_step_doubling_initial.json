@@ -1,0 +1,16 @@
+{
+  "source_signature": "074d82f84c27241f69fa519f33ae511e44bc878513e081405fd75cddd9ebf7bf",
+  "checkpoint_step": 2000,
+  "time_au": 239.9828646874964,
+  "dt_au": 0.1199914323437482,
+  "vector_potential": [
+    0.0,
+    0.0,
+    -0.02432228723868927
+  ],
+  "full_vs_two_half_relative_L2": 2.8286864426344605e-05,
+  "richardson_fine_local_error_estimate": 1.885790961756307e-06,
+  "maximum_true_linear_residual": 2.817373016399522e-15,
+  "seconds": 43.3667075810954,
+  "scope": "Actual correlated state, local step doubling without phase fitting; not a global spectrum-convergence certificate."
+}

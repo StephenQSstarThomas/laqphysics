@@ -1,0 +1,21 @@
+{
+  "rows": [
+    {
+      "mode": "sylvester",
+      "seconds_per_step": 1.1201652879826725,
+      "linear_iterations": 24,
+      "linear_residual": 4.7596750934380674e-11,
+      "dimension": 0,
+      "residual_estimate": null
+    },
+    {
+      "mode": "adi",
+      "seconds_per_step": 18.362553416052833,
+      "linear_iterations": 556,
+      "linear_residual": 9.855579080038319e-11,
+      "dimension": 0,
+      "residual_estimate": null
+    }
+  ],
+  "difference": 1.3543353394558062e-10
+}

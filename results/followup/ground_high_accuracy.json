@@ -1,0 +1,35 @@
+[
+  {
+    "lmax": 8,
+    "core_order": 10,
+    "outer_order": 6,
+    "nrad": 123,
+    "energy": -2.9035781082260352,
+    "error_vs_reference": 0.0001462688080842156,
+    "residual": 7.072539452487815e-10,
+    "iterations": 20,
+    "seconds": 0.39599990705028176
+  },
+  {
+    "lmax": 10,
+    "core_order": 12,
+    "outer_order": 6,
+    "nrad": 137,
+    "energy": -2.9036276362067555,
+    "error_vs_reference": 9.67408273639947e-05,
+    "residual": 7.131516687507907e-10,
+    "iterations": 20,
+    "seconds": 0.7353092809207737
+  },
+  {
+    "lmax": 12,
+    "core_order": 14,
+    "outer_order": 6,
+    "nrad": 151,
+    "energy": -2.90365555742328,
+    "error_vs_reference": 6.881961083937682e-05,
+    "residual": 7.268568950777517e-10,
+    "iterations": 20,
+    "seconds": 1.3047092880588025
+  }
+]

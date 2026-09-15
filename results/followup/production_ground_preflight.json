@@ -1,0 +1,29 @@
+[
+  {
+    "lmax": 10,
+    "core_order": 12,
+    "nrad": 180,
+    "energy": -2.9036276362067723,
+    "error_vs_reference": 9.674082734711931e-05,
+    "residual": 7.97636839286387e-10,
+    "seconds": 1.951186449965462
+  },
+  {
+    "lmax": 10,
+    "core_order": 14,
+    "nrad": 194,
+    "energy": -2.903647696027234,
+    "error_vs_reference": 7.668100688551505e-05,
+    "residual": 7.865620738581347e-10,
+    "seconds": 2.532097834860906
+  },
+  {
+    "lmax": 12,
+    "core_order": 12,
+    "nrad": 180,
+    "energy": -2.9036356143079627,
+    "error_vs_reference": 8.876272615676584e-05,
+    "residual": 8.25395458275812e-10,
+    "seconds": 2.4920971039682627
+  }
+]

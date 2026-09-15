@@ -1,0 +1,8 @@
+{
+  "time_utc": "2026-09-15T18:33:14.339000+00:00",
+  "issue": "automatic resume allowed duplicate writers during launcher rescheduling",
+  "resolution": "both processes stopped; entire attempt quarantined; added advisory process locks; clean rerun from initial state",
+  "quarantined_output": "results/followup/quarantine/pump_probe_plus_delay192_launcher_race",
+  "quarantined_raw_history": "/playpen1/shiqiu/laqphysics-data/followup/pump_probe_plus_delay192_launcher_race/flux.npy",
+  "scientific_use": "excluded from all analysis and delivery spectra"
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "angular_sparse": false,
+    "seconds_per_H": 0.011415404849685729,
+    "relative_error": 2.4017154458581473e-16
+  },
+  {
+    "angular_sparse": true,
+    "seconds_per_H": 0.0032765274052508177,
+    "relative_error": 2.4017201012764243e-16
+  }
+]

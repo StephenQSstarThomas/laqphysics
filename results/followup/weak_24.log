@@ -1,0 +1,31 @@
+ground E=-2.8972353188, residual=2.093e-09; (88, 88, 6), flux=0.051GiB
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:20: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:20: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+3D 100/2594, inner norm=1.00000000, Pg=0.99999999, wall=8.1s
+3D 200/2594, inner norm=1.00000000, Pg=0.99999955, wall=16.4s
+3D 300/2594, inner norm=1.00000000, Pg=0.99999703, wall=26.0s
+3D 400/2594, inner norm=1.00000000, Pg=0.99998948, wall=35.8s
+3D 500/2594, inner norm=0.99999998, Pg=0.99997267, wall=45.1s
+3D 600/2594, inner norm=0.99999960, Pg=0.99994192, wall=54.6s
+3D 700/2594, inner norm=0.99999712, Pg=0.99989554, wall=65.1s
+3D 800/2594, inner norm=0.99998900, Pg=0.99983834, wall=71.9s
+3D 900/2594, inner norm=0.99997097, Pg=0.99977988, wall=78.8s
+3D 1000/2594, inner norm=0.99993964, Pg=0.99972853, wall=86.0s
+3D 1100/2594, inner norm=0.99989485, Pg=0.99968817, wall=92.7s
+3D 1200/2594, inner norm=0.99984011, Pg=0.99965974, wall=99.3s
+3D 1300/2594, inner norm=0.99978224, Pg=0.99964299, wall=106.4s
+3D 1400/2594, inner norm=0.99972903, Pg=0.99963572, wall=112.3s
+3D 1500/2594, inner norm=0.99968675, Pg=0.99963376, wall=118.7s
+3D 1600/2594, inner norm=0.99965823, Pg=0.99963354, wall=125.1s
+3D 1700/2594, inner norm=0.99964245, Pg=0.99963354, wall=131.2s
+3D 1800/2594, inner norm=0.99963575, Pg=0.99963354, wall=136.2s
+3D 1900/2594, inner norm=0.99963384, Pg=0.99963354, wall=138.5s
+3D 2000/2594, inner norm=0.99963356, Pg=0.99963354, wall=141.0s
+3D 2100/2594, inner norm=0.99963354, Pg=0.99963354, wall=143.4s
+3D 2200/2594, inner norm=0.99963354, Pg=0.99963354, wall=145.9s
+3D 2300/2594, inner norm=0.99963354, Pg=0.99963354, wall=148.6s
+3D 2400/2594, inner norm=0.99963354, Pg=0.99963354, wall=151.8s
+3D 2500/2594, inner norm=0.99963354, Pg=0.99963354, wall=155.1s
+3D 2594/2594, inner norm=0.99963354, Pg=0.99963354, wall=158.1s
