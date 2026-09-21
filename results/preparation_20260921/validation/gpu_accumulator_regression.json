@@ -1,0 +1,5 @@
+{
+  "CPU_vs_GPU_spectral_accumulator_relative_L2": 1.635817737192691e-16,
+  "both_use_CPU_parallel_replay": true,
+  "scope": "complete circular CUDA TDSE, identical physical inputs and grids"
+}

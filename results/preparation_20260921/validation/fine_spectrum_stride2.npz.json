@@ -1,0 +1,14 @@
+{
+  "configuration_signature": "b9f521f837d932ea5d4e457154dda73063364859326bdd36ab5507d34c67523d",
+  "kernel": "23a01bc305e3b199f428f41e7bef96934ba73e763dbf5910f016303a0265fc7a",
+  "snapshot": "/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6",
+  "device": "cuda:1",
+  "energy_points": 1340,
+  "angular_points": 192,
+  "time_stride": 2,
+  "flux_integral_end_time": 1301.9468311620644,
+  "projection_final_time": 1301.9468311620644,
+  "seconds": 7.1085884887725115,
+  "propagation_rerun": false,
+  "scope": "Saved ionic projection re-integrated coherently; ionic terminal time is unchanged."
+}

@@ -1,0 +1,644 @@
+RUN_ID selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837 
+INPUT /playpen/shiqiu/task-jiukongdian/configs/preparation_20260921/selected_F008_N48_pi201_refined_n3_accelerated.json 
+OUTPUT /playpen1/shiqiu/laqphysics-data/iteration20260921/runs/selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837
+ground E=-2.9031285846, residual=5.017e-11; (156, 156, 156), storage=projected, raw-equivalent=27.545GiB
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/ionic_adjoint.py:49: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/ionic_adjoint.py:49: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+IONIC PREP 10240 frames remaining
+IONIC PREP 7680 frames remaining
+IONIC PREP 5120 frames remaining
+IONIC PREP 2560 frames remaining
+IONIC PREP 0 frames remaining
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/ionic_adjoint.py:49: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/ionic_adjoint.py:49: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/ionic_adjoint.py:49: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/ionic_adjoint.py:49: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/ionic_adjoint.py:49: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/ionic_adjoint.py:49: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/ionic_adjoint.py:49: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/ionic_adjoint.py:49: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+3D 200/10850, inner norm=1.00000000, Pg=0.99984874, wall=1760.1s
+3D 400/10850, inner norm=0.99997958, Pg=0.99534582, wall=1824.5s
+3D 600/10850, inner norm=0.99810316, Pg=0.97070379, wall=1896.1s
+3D 800/10850, inner norm=0.98289645, Pg=0.91029436, wall=1978.8s
+3D 1000/10850, inner norm=0.93668059, Pg=0.82375882, wall=2066.7s
+3D 1200/10850, inner norm=0.85783716, Pg=0.74093605, wall=2154.0s
+3D 1400/10850, inner norm=0.77021891, Pg=0.68393076, wall=2240.8s
+3D 1600/10850, inner norm=0.70217433, Pg=0.65650170, wall=2321.3s
+3D 1800/10850, inner norm=0.66507770, Pg=0.64891441, wall=2391.8s
+3D 2000/10850, inner norm=0.65225778, Pg=0.64822603, wall=2455.0s
+3D 2200/10850, inner norm=0.65014554, Pg=0.64822509, wall=2506.8s
+3D 2400/10850, inner norm=0.64993111, Pg=0.64822509, wall=2547.2s
+3D 2600/10850, inner norm=0.64979029, Pg=0.64822509, wall=2587.7s
+3D 2800/10850, inner norm=0.64967834, Pg=0.64822509, wall=2627.9s
+3D 3000/10850, inner norm=0.64959023, Pg=0.64822509, wall=2669.0s
+3D 3200/10850, inner norm=0.64952031, Pg=0.64822506, wall=2733.7s
+3D 3400/10850, inner norm=0.64946238, Pg=0.64822411, wall=2798.8s
+3D 3600/10850, inner norm=0.64941333, Pg=0.64821773, wall=2864.0s
+3D 3737/10850, inner norm=0.64938300, Pg=0.64820481, wall=2909.0s
+CHECKPOINTED; repeat the same command to finish the mandatory spectrum.
+{
+  "step": 3737,
+  "time_au": 448.421687378123,
+  "ground_overlap_abs": 0.9999999999999989,
+  "initial_phase_real": 1.0,
+  "initial_phase_imag": 0.0,
+  "wavefunction_relative_L2": 0.0,
+  "partial_complex_spectrum_relative_L2": 8.211813686828819e-11,
+  "scope": "same actual committed TDSE time; serial LU/CPU accumulation versus CPU iterative parallel replay/GPU accumulation. Initial-state phase only, no spectral fit.",
+  "reference_run_metadata": {
+    "signature": "ef056a58ed381513d6afbf42bf5223bb2fbeee64561b3e14ba12cb83ba1925e9",
+    "config": {
+      "radial": {
+        "edges": [
+          0,
+          0.25,
+          0.5,
+          0.75,
+          1,
+          1.5,
+          2,
+          3,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          22,
+          24,
+          26,
+          28
+        ],
+        "order": [
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "tail": 24,
+        "ecs_angle": 0.5,
+        "alpha": 0.8
+      },
+      "lmax": 3,
+      "M": null,
+      "cutoff_radii": [
+        12,
+        16
+      ],
+      "surface": 20,
+      "pulses": [
+        {
+          "pulse": {
+            "omega": 1.2,
+            "cycles": 48,
+            "field": 0.08
+          },
+          "polarization": "z"
+        },
+        {
+          "pulse": {
+            "omega": 1.5,
+            "cycles": 201,
+            "field": 0.020035791491176656,
+            "start": 360.0
+          },
+          "polarization": "sigma+"
+        }
+      ],
+      "post_time": 100.0,
+      "dt": 0.12,
+      "surface_stride": 1,
+      "checkpoint_every": 200,
+      "krylov_dimension": 48,
+      "krylov_tolerance": 1e-10,
+      "ground_tolerance": 1e-10,
+      "max_surface_gib": 12,
+      "spectrum_energy": [
+        0.01,
+        2.4,
+        957
+      ],
+      "time_integrator": "cf4-pade",
+      "ionic_propagator": "cf4",
+      "linear_tolerance": 1e-10,
+      "ionic_transfer_times": [
+        360.0
+      ],
+      "ionic_channels": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          -1
+        ],
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          -1
+        ],
+        [
+          3,
+          1,
+          0
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          -2
+        ],
+        [
+          3,
+          2,
+          -1
+        ],
+        [
+          3,
+          2,
+          0
+        ],
+        [
+          3,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          2
+        ]
+      ],
+      "spectrum": {
+        "energy_segments": [
+          [
+            0.01,
+            0.18,
+            35
+          ],
+          [
+            0.18,
+            0.75,
+            1141
+          ],
+          [
+            0.75,
+            2.4,
+            166
+          ]
+        ],
+        "theta_points": 12,
+        "phi_points": 16
+      },
+      "storage": {
+        "mode": "projected",
+        "max_file_bytes": 4000000000,
+        "ionic_block_frames": 128,
+        "ionic_device": "lu"
+      },
+      "design": {
+        "scope": "selected candidate: combined radial/angular refinement and final channels through n=3; not full convergence",
+        "target_old_band": [
+          0.18,
+          0.42
+        ],
+        "unwanted_new_band": [
+          0.52,
+          0.68
+        ],
+        "pi_area_RWA": 3.1415926535897927,
+        "hydrogenic_1s_2p_dipole_au": 0.37246776951390165,
+        "note": "Weakening a fixed-area pi pulse lowers fluence but also narrows the new band; peak height must be measured separately."
+      },
+      "total_Lmax": 3,
+      "angular_representation": "bipolar",
+      "natural_parity": false,
+      "coulomb_contraction": "blocks"
+    },
+    "ground_energy": -2.9031285845687456,
+    "ground_residual": 5.016910492718275e-11,
+    "nrad": 156,
+    "channels": 156,
+    "dt": 0.11999509964627322,
+    "nsteps": 10850,
+    "completed_steps": 3737,
+    "complete": false,
+    "surface_bytes": 29575832832,
+    "surface_indices": [
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113
+    ],
+    "seconds_this_invocation": 3620.480151657015,
+    "backend": "torch",
+    "device": "cuda:0",
+    "precision": "complex128",
+    "ground_angular_basis": "coupled total L=0, expanded without angular approximation",
+    "time_integrator": "cf4-pade",
+    "gauge": {
+      "type": "velocity"
+    },
+    "ground_projection_scope": "field-free basis in the propagated gauge; compare physical populations at A=0",
+    "coulomb_contraction": "blocks",
+    "precomputed_coulomb_bytes": 69308928,
+    "preconditioner_precision": "complex64",
+    "linear_solver": "FGMRES",
+    "gmres_restart": 16,
+    "maximum_linear_residual_this_invocation": 9.99927387574771e-11,
+    "linear_iterations_this_invocation": 67796,
+    "surface_storage": "projected",
+    "raw_flux_written": false,
+    "max_file_bytes": 4000000000,
+    "phase": "propagation",
+    "numerical_snapshot": "211f705141b33fecd17aa7adccfd0acbe400d8f3d43224b0c42bbce971bce7e4",
+    "cuda_visible_devices": "1",
+    "peak_cuda_allocated_GiB": 3.0570592880249023,
+    "peak_cuda_reserved_GiB": 4.09375
+  },
+  "candidate_prefix_run_metadata": {
+    "signature": "b9f521f837d932ea5d4e457154dda73063364859326bdd36ab5507d34c67523d",
+    "config": {
+      "radial": {
+        "edges": [
+          0,
+          0.25,
+          0.5,
+          0.75,
+          1,
+          1.5,
+          2,
+          3,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          22,
+          24,
+          26,
+          28
+        ],
+        "order": [
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "tail": 24,
+        "ecs_angle": 0.5,
+        "alpha": 0.8
+      },
+      "lmax": 3,
+      "M": null,
+      "cutoff_radii": [
+        12,
+        16
+      ],
+      "surface": 20,
+      "pulses": [
+        {
+          "pulse": {
+            "omega": 1.2,
+            "cycles": 48,
+            "field": 0.08
+          },
+          "polarization": "z"
+        },
+        {
+          "pulse": {
+            "omega": 1.5,
+            "cycles": 201,
+            "field": 0.020035791491176656,
+            "start": 360.0
+          },
+          "polarization": "sigma+"
+        }
+      ],
+      "post_time": 100.0,
+      "dt": 0.12,
+      "surface_stride": 1,
+      "checkpoint_every": 200,
+      "krylov_dimension": 48,
+      "krylov_tolerance": 1e-10,
+      "ground_tolerance": 1e-10,
+      "max_surface_gib": 12,
+      "spectrum_energy": [
+        0.01,
+        2.4,
+        957
+      ],
+      "time_integrator": "cf4-pade",
+      "ionic_propagator": "cf4",
+      "linear_tolerance": 1e-10,
+      "ionic_transfer_times": [
+        360.0
+      ],
+      "ionic_channels": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          -1
+        ],
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          -1
+        ],
+        [
+          3,
+          1,
+          0
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          -2
+        ],
+        [
+          3,
+          2,
+          -1
+        ],
+        [
+          3,
+          2,
+          0
+        ],
+        [
+          3,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          2
+        ]
+      ],
+      "spectrum": {
+        "energy_segments": [
+          [
+            0.01,
+            0.18,
+            35
+          ],
+          [
+            0.18,
+            0.75,
+            1141
+          ],
+          [
+            0.75,
+            2.4,
+            166
+          ]
+        ],
+        "theta_points": 12,
+        "phi_points": 16
+      },
+      "storage": {
+        "mode": "projected",
+        "max_file_bytes": 4000000000,
+        "ionic_block_frames": 128,
+        "ionic_device": "cpu",
+        "replay_workers": 4,
+        "accumulator_device": "auto"
+      },
+      "design": {
+        "scope": "selected candidate: combined radial/angular refinement and final channels through n=3; not full convergence",
+        "target_old_band": [
+          0.18,
+          0.42
+        ],
+        "unwanted_new_band": [
+          0.52,
+          0.68
+        ],
+        "pi_area_RWA": 3.1415926535897927,
+        "hydrogenic_1s_2p_dipole_au": 0.37246776951390165,
+        "note": "Weakening a fixed-area pi pulse lowers fluence but also narrows the new band; peak height must be measured separately."
+      },
+      "total_Lmax": 3,
+      "angular_representation": "bipolar",
+      "natural_parity": false,
+      "coulomb_contraction": "blocks"
+    },
+    "ground_energy": -2.9031285845687456,
+    "ground_residual": 5.016910492718275e-11,
+    "nrad": 156,
+    "channels": 156,
+    "dt": 0.11999509964627322,
+    "nsteps": 10850,
+    "completed_steps": 3737,
+    "complete": false,
+    "surface_bytes": 29575832832,
+    "surface_indices": [
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113
+    ],
+    "seconds_this_invocation": 2908.9847121969797,
+    "backend": "torch",
+    "device": "cuda:0",
+    "precision": "complex128",
+    "ground_angular_basis": "coupled total L=0, expanded without angular approximation",
+    "time_integrator": "cf4-pade",
+    "gauge": {
+      "type": "velocity"
+    },
+    "ground_projection_scope": "field-free basis in the propagated gauge; compare physical populations at A=0",
+    "coulomb_contraction": "blocks",
+    "precomputed_coulomb_bytes": 69308928,
+    "preconditioner_precision": "complex64",
+    "linear_solver": "FGMRES",
+    "gmres_restart": 16,
+    "maximum_linear_residual_this_invocation": 9.99927387574771e-11,
+    "linear_iterations_this_invocation": 67796,
+    "surface_storage": "projected",
+    "raw_flux_written": false,
+    "max_file_bytes": 4000000000,
+    "phase": "propagation",
+    "numerical_snapshot": "85863a9a23cbd7d655bdb5cd3ea98cbe482484aa2240f5fc19b27d0c77ab8b5b",
+    "cuda_visible_devices": "2",
+    "peak_cuda_allocated_GiB": 3.166224479675293,
+    "peak_cuda_reserved_GiB": 4.287109375
+  },
+  "passed": true
+}
+RUN_ID selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837 
+INPUT /playpen/shiqiu/task-jiukongdian/configs/preparation_20260921/selected_F008_N48_pi201_refined_n3_accelerated.json 
+OUTPUT /playpen1/shiqiu/laqphysics-data/iteration20260921/runs/selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/torch_backend.py:21: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/torch_backend.py:21: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/ionic_adjoint.py:49: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/ionic_adjoint.py:49: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/ionic_adjoint.py:49: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/ionic_adjoint.py:49: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/ionic_adjoint.py:49: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/ionic_adjoint.py:49: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/ionic_adjoint.py:49: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/85863a9a23cbd7d6/python/ionic_adjoint.py:49: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  self.H=torch.sparse_csr_tensor(self.ptr,self.col,values,size=(self.ndof,self.ndof),device=self.device,check_invariants=False);self.key=key
+3D 3800/10850, inner norm=0.64936892, Pg=0.64819478, wall=60.0s
+3D 4000/10850, inner norm=0.64931535, Pg=0.64813546, wall=124.8s
+3D 4200/10850, inner norm=0.64922858, Pg=0.64801092, wall=189.8s
+3D 4400/10850, inner norm=0.64907885, Pg=0.64778438, wall=255.2s
+3D 4600/10850, inner norm=0.64883054, Pg=0.64741368, wall=322.6s
+3D 4800/10850, inner norm=0.64843914, Pg=0.64685499, wall=388.0s
+3D 5000/10850, inner norm=0.64785676, Pg=0.64606774, wall=453.0s
+3D 5200/10850, inner norm=0.64704368, Pg=0.64502024, wall=517.6s
+3D 5400/10850, inner norm=0.64597253, Pg=0.64369456, wall=582.2s
+3D 5600/10850, inner norm=0.64462591, Pg=0.64208941, wall=647.0s
+3D 5800/10850, inner norm=0.64299922, Pg=0.64022142, wall=712.7s
+3D 6000/10850, inner norm=0.64110916, Pg=0.63812569, wall=778.2s
+3D 6200/10850, inner norm=0.63899463, Pg=0.63585511, wall=842.8s
+3D 6400/10850, inner norm=0.63670880, Pg=0.63347664, wall=908.0s
+3D 6600/10850, inner norm=0.63431455, Pg=0.63106503, wall=973.1s
+3D 6800/10850, inner norm=0.63188499, Pg=0.62869649, wall=1038.0s
+3D 7000/10850, inner norm=0.62949870, Pg=0.62644375, wall=1102.0s
+3D 7200/10850, inner norm=0.62722884, Pg=0.62437095, wall=1165.8s
+3D 7400/10850, inner norm=0.62513744, Pg=0.62252817, wall=1230.1s
+3D 7600/10850, inner norm=0.62327506, Pg=0.62094764, wall=1294.2s
+3D 7800/10850, inner norm=0.62167689, Pg=0.61964306, wall=1358.1s
+3D 8000/10850, inner norm=0.62035699, Pg=0.61861110, wall=1421.9s
+3D 8200/10850, inner norm=0.61931005, Pg=0.61783353, wall=1485.8s
+3D 8400/10850, inner norm=0.61851774, Pg=0.61727971, wall=1549.8s
+3D 8600/10850, inner norm=0.61795039, Pg=0.61691036, wall=1614.4s
+3D 8800/10850, inner norm=0.61756723, Pg=0.61668287, wall=1678.7s
+3D 9000/10850, inner norm=0.61732352, Pg=0.61655633, wall=1742.9s
+3D 9200/10850, inner norm=0.61717964, Pg=0.61649509, wall=1808.3s
+3D 9400/10850, inner norm=0.61710266, Pg=0.61647086, wall=1872.2s
+3D 9600/10850, inner norm=0.61706393, Pg=0.61646390, wall=1937.1s
+3D 9800/10850, inner norm=0.61704171, Pg=0.61646281, wall=2001.4s
+3D 10000/10850, inner norm=0.61702538, Pg=0.61646278, wall=2067.5s
+3D 10200/10850, inner norm=0.61701266, Pg=0.61646278, wall=2109.5s
+3D 10400/10850, inner norm=0.61700225, Pg=0.61646278, wall=2148.7s
+3D 10600/10850, inner norm=0.61699171, Pg=0.61646278, wall=2187.9s
+3D 10800/10850, inner norm=0.61698043, Pg=0.61646278, wall=2227.2s
+3D 10850/10850, inner norm=0.61697762, Pg=0.61646278, wall=2237.9s
+COMPLETE SI SPECTRUM /playpen1/shiqiu/laqphysics-data/iteration20260921/runs/selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837/figures/selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837__p1w1p2F0p08N48z_p2w1p5F0p0200358N201spt360__SI.png
+FINE REFINEMENT AND PREFIX VERIFICATION COMPLETE

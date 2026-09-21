@@ -4,7 +4,9 @@
 
 ## 先读这些交付文档
 
-- [最新：最小验证交接](docs/convergence/最小验证交接.md)：新增算法的直接交叉验证、高精度长算例检查、可复现交接及合作者的 Slurm 待办。
+- [单电离谱运行手册（2026-09-21）](docs/iteration20260921/使用说明.md)：每次任务的输入、命名谱图、CPU/GPU Slurm、5 GB 文件上限与在线提谱。
+- [本轮结果索引](results/preparation_20260921/INDEX.md)与[结论及剩余工作](results/preparation_20260921/SUMMARY.md)：总谱与离子符合谱、0.3 主峰制备方案及细化核验。
+- [前轮最小验证交接](docs/convergence/最小验证交接.md)：新增算法的直接交叉验证、高精度长算例检查、可复现交接及合作者的 Slurm 待办。
 - [完整收敛运行协议](docs/convergence/运行协议.md)：混合规范推导、通用圆偏振角基、缓存和真实残差核验。
 - [专家反馈后的研究与实现](docs/followup/专家反馈与研究.md)：脉冲带宽、实际圆偏振/多脉冲计算、含连续态的离子控制、高精度算法与新发现的投影问题。
 - [后续交付与复现](docs/followup/交付与复现.md)：本轮完成状态、复现命令、生产收敛任务及资源限制。
@@ -53,9 +55,18 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python scripts/decoherence_scan.py
 
 测试和基准日志已随结果保存，无需重新计算才能阅读报告。运行时应限制 BLAS 线程，防止其与 OpenMP 叠加。
 
-## 本地 TDSE
+## 本地单电离谱任务
 
-输出目录用新名字，三维显式提供 `--resume` 才能继续已有检查点。
+推荐使用以下入口；完整任务会生成总谱、指定离子终态符合谱、PNG/PDF/CSV，重复命令自动恢复：
+
+```bash
+OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 \
+  python scripts/simulate_spectrum.py \
+  --config configs/preparation_20260921/longer_pump_F008_N48_pi201.json \
+  --out-root /persistent/scratch/helium-preparation --device cuda:0 --cpu-threads 2
+```
+
+下列底层入口保留给旧算例和独立诊断。三维底层恢复仍须显式提供 `--resume`。
 
 ```bash
 OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 \
@@ -95,26 +106,31 @@ SIGUSR1/SIGTERM 会请求在下一个表面采样步保存三维检查点并退�
 
 ## Slurm 交付
 
-本机未安装 `sbatch`，所以交付的是已检查 shell 语法、核心入口已本地实跑的脚本；未冒称完成集群提交测试。按目标集群添加自己的 `--partition`、`--account` 和 Python 环境。
+本机没有可用的 `sbatch`；本轮完成了 shell 语法、模拟调度参数检查及真实本地 CPU/CUDA 数值测试。超算入口按用户已跑通的 `GPU40G` 模板修改，GPU 每任务 **1 卡 + 16 核**，CPU 每任务 **64 核**，详见 [运行手册](docs/iteration20260921/使用说明.md)。
 
-将工程复制到另一台机器后先执行 `make clean all`，用目标机的编译器重建动态库。
+在目标机器先执行 `make all debug`，使用其编译器构建动态库。
 
 ```bash
-export HELIUM_REPO=/path/on/cluster/task-jiukongdian
+export HELIUM_REPO=/path/on/cluster/laqphysics
 export HELIUM_PYTHON=/path/to/python
+export HELIUM_OUTPUT_ROOT=/persistent/scratch/helium-preparation
 
+scripts/submit_spectra.sh gpu          # 默认 production/reference 单个任务
+scripts/submit_spectra.sh cpu          # 同一物理输入，纯 CPU
+# 全部 16 项生产/控制输入，最多四个一卡任务同时运行：
+scripts/submit_spectra.sh gpu --array=0-15%4
+```
+
+三维每项任务推进一份双电子波函数，使用线程和可选 CPU 离子回放进程。独立参数通过作业数组并行，不使用多节点 MPI。保持输入、输出根目录和 tag 不变可恢复；跨代码修改续跑时必须使用原 `HELIUM_SNAPSHOT`。完整谱及求积/收敛验收步骤见运行手册。
+
+旧一维入口保留：
+
+```bash
+mkdir -p logs
 HELIUM_CONFIG=configs/1d_production.json \
 HELIUM_OUT=/path/to/scratch/helium-1d \
 sbatch scripts/helium1d.slurm
-
-HELIUM_CONFIG=configs/3d_resonant.json \
-HELIUM_OUT=/path/to/scratch/helium-3d \
-sbatch scripts/helium3d.slurm
 ```
-
-三维脚本使用一个节点上的 OpenMP，申请 16 核/64 GB，时限 24 小时，提前发送信号保存检查点。它不请求 GPU，也不是多节点 MPI 程序。用相同 `HELIUM_OUT` 重新提交可恢复；配置不能更改。参数扫描可并行提交不同输出目录的独立作业。
-
-`configs/3d_convergence.json` 提高 lmax 和径向阶数，磁盘需求比主生产配置高，宜放到容量足够的 scratch。`configs/3d_delayed_circular.json` 是多脉冲入口示例，不是已证明旧电子无条件谱分裂的实验。
 
 三维提谱配置支持 `ionic_channels: [[n,l,m], ...]`，例如加入 `[3,1,-1]` 检验修正后的 3p 末态，l 必须不超过 lmax。`scripts/ionic_controls.py` 另提供包含完整 m 子态的束缚基控制算例；其中没有连续态损失，结果只用于验证共振与选择定则。
 
@@ -124,7 +140,7 @@ sbatch scripts/helium3d.slurm
 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python scripts/resources.py
 ```
 
-基础配置资源见 `results/resources.json`。后续已增加并核验双精度 GPU 后端；当前服务器的 CPU/GPU 足以完成本轮多项实跑，完整高 l、多半径、双手性扫描仍需要更多总机时。高精度线偏振参考配置dt=0.06 时每次表面历史约 23.55 GiB，时间步减半约翻倍；建议设置 `HELIUM_SURFACE_ROOT` 指向容量足够且跨作业保留的 scratch。
+基础配置资源见 `results/resources.json`；新两脉冲生产输入的逐项估算见 `configs/preparation_20260921/production/resource_estimates.json`。新谱任务直接累计复振幅，可选保留缩小的离子投影历史，默认单文件 4 GB、硬上限十进制 5 GB。完整高 l、多半径及其他脉冲扫描仍需要更多总机时；配置和脚本的存在不代表已完成数值收敛。
 
 ## 专家反馈后的计算入口
 
@@ -140,9 +156,12 @@ OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 \
   python scripts/ionic_tdse_campaign.py --auto-resume --device cpu \
   --config configs/followup/ion_2p_counter.json --out results/followup/ion_2p_counter
 
-# 高精度的参考计算及七个独立细化作业；提交前设置集群账户/分区。
+# 前轮线偏振参考与七个细化输入，现使用在线提谱和命名输出。
+# 先设置上文 HELIUM_OUTPUT_ROOT；旧结果仍可用 audit_followup_production.py 审计。
+mkdir -p logs
 sbatch scripts/followup_production.slurm
-python scripts/audit_followup_production.py
+python scripts/audit_spectra_campaign.py --plan configs/followup/production_plan.json \
+  --out-root "$HELIUM_OUTPUT_ROOT" --tag production
 
 # 由实际结果再生表格和科学图。
 OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 python scripts/analyze_followup.py
@@ -151,7 +170,7 @@ OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 python scripts/followup_entanglement.py
 OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 python scripts/asymptotic_delay_scan.py
 ```
 
-新一轮图在 `results/followup/figures/`，原图和粗基准保留。另交付 `configs/followup_multipulse/` 的 10 项多脉冲细化候选；独立输出目录、Slurm 数组及逐能窗验收命令见后续交付文档。`production_acceptance.json` 中的待运行/未通过项不能当成已经收敛；阈值对齐仅用于诊断，验收采用绝对能量坐标。
+前轮图在 `results/followup/figures/`，原图和粗基准保留。本次主谱见 `results/preparation_20260921/INDEX.md`。另交付 `configs/followup_multipulse/` 的 10 项多脉冲细化候选；独立输出目录、Slurm 数组及逐能窗验收命令见后续交付文档。`production_acceptance.json` 中的待运行/未通过项不能当成已经收敛；阈值对齐仅用于诊断，验收采用绝对能量坐标。
 
 ## 结果、图与复现
 

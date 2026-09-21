@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "first_exit": 95,
+  "resumed_exit": 0,
+  "complete_status": {
+    "state": "complete",
+    "complete_spectrum": true,
+    "run_id": "cli_resume_smoke__8358adb0e5",
+    "input": "input.json",
+    "spectrum": "cli_resume_smoke__8358adb0e5__p1w5F0p15N2sp__SI.npz",
+    "figure": "figures/cli_resume_smoke__8358adb0e5__p1w5F0p15N2sp__SI.png",
+    "conditional_figure": "figures/cli_resume_smoke__8358adb0e5__p1w5F0p15N2sp__SI__conditional.png",
+    "observables": "observables.json",
+    "design_targets_passed": null,
+    "numerical_convergence_certified": false
+  },
+  "largest_actual_file_bytes": 228474,
+  "file_cap_bytes": 500000,
+  "no_raw_flux": true,
+  "all_named_artifacts_present": true,
+  "scope": "Tiny circular CUDA command-line integration test: checkpoint, same-command resume, mandatory SI data/PNG/PDF/CSV and actual-size audit.",
+  "case": "/playpen1/shiqiu/laqphysics-data/iteration20260921/cli_smoke/cli_resume_smoke__8358adb0e5"
+}

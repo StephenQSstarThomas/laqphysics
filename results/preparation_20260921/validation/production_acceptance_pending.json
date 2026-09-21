@@ -1,0 +1,107 @@
+{
+  "cases_found": {},
+  "comparisons": [
+    {
+      "reference": "reference",
+      "refinement": "l6",
+      "axis": "individual angular cutoff 4 -> 6",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "L5",
+      "axis": "total angular cutoff 4 -> 5",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "inner14",
+      "axis": "inner radial order 12 -> 14",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "outer8",
+      "axis": "outer radial order 6 -> 8",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "dt003",
+      "axis": "time step 0.06 -> 0.03",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "surface28",
+      "axis": "surface radius 24 -> 28",
+      "status": "pending"
+    },
+    {
+      "reference": "surface28",
+      "refinement": "cutoff24",
+      "axis": "Coulomb cutoff [16,20] -> [20,24]",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "tail32",
+      "axis": "absorber order 24 -> 32",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "angle06",
+      "axis": "ECS angle 0.5 -> 0.6",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "alpha10",
+      "axis": "Laguerre scale 0.8 -> 1",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "mixed_gauge",
+      "axis": "velocity vs independent mixed gauge",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "post240",
+      "axis": "post-pulse propagation 120 -> 240 a.u.",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "ionic_n4",
+      "axis": "recorded final ion n <= 3 -> 4",
+      "allow_ionic_extension": true,
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "reference",
+      "refinement_file": "spectrum_angles.npz",
+      "axis": "angular quadrature 24x32 -> 32x48",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "reference",
+      "refinement_file": "spectrum_energy.npz",
+      "axis": "energy spacing 0.0005 -> 0.00025 in target bands",
+      "status": "pending"
+    },
+    {
+      "reference": "reference",
+      "refinement": "reference",
+      "refinement_file": "spectrum_stride2.npz",
+      "axis": "surface quadrature every step vs every 2 steps",
+      "status": "pending"
+    }
+  ],
+  "all_defined_gates_passed": false,
+  "scope": "Only the given plan and matching input templates; task names do not certify convergence."
+}

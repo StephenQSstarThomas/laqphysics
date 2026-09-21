@@ -1,0 +1,178 @@
+{
+  "run_id": "longer_pump_F008_N48_pi201_pump_only__a8372ebfe4",
+  "configuration_signature": "a8372ebfe4da9badb8c2ee67a79333a8c275ad7c165d0f261b031b8405dc4b7d",
+  "complete": true,
+  "labels": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      -1
+    ],
+    [
+      2,
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      1
+    ]
+  ],
+  "bands": [
+    {
+      "window": [
+        0.18,
+        0.42
+      ],
+      "available": true,
+      "complete_window": true,
+      "energy_window_used": [
+        0.18,
+        0.42
+      ],
+      "peak_height": 9.202262810269254,
+      "peak_energy_grid": 0.301,
+      "yield": 0.34699723489267315,
+      "channel_yields": [
+        0.3469888273133639,
+        4.553794881255125e-06,
+        1.0755469906994981e-06,
+        1.7026904466429705e-06,
+        1.075546990686286e-06
+      ]
+    },
+    {
+      "window": [
+        0.52,
+        0.68
+      ],
+      "available": true,
+      "complete_window": true,
+      "energy_window_used": [
+        0.52,
+        0.6799999999999999
+      ],
+      "peak_height": 1.4338468291847058e-05,
+      "peak_energy_grid": 0.52,
+      "yield": 1.8490790102538595e-06,
+      "channel_yields": [
+        5.233930018351203e-08,
+        9.85002564730078e-07,
+        2.2959033317488183e-07,
+        3.5255647897446335e-07,
+        2.2959033319092421e-07
+      ]
+    }
+  ],
+  "artifacts": {
+    "spectrum": "longer_pump_F008_N48_pi201_pump_only__a8372ebfe4__p1w1p2F0p08N48z__SI.npz",
+    "csv": "longer_pump_F008_N48_pi201_pump_only__a8372ebfe4__p1w1p2F0p08N48z__SI.csv",
+    "figure": "figures/longer_pump_F008_N48_pi201_pump_only__a8372ebfe4__p1w1p2F0p08N48z__SI.png",
+    "pdf": "figures/longer_pump_F008_N48_pi201_pump_only__a8372ebfe4__p1w1p2F0p08N48z__SI.pdf",
+    "conditional_figure": "figures/longer_pump_F008_N48_pi201_pump_only__a8372ebfe4__p1w1p2F0p08N48z__SI__conditional.png",
+    "full_angular_amplitudes": "spectrum.npz"
+  },
+  "peak_height_ratio_03_over_06": 641788.4130274722,
+  "yield_ratio_03_over_06": 187659.4958725068,
+  "old_band_2p_plus1_fraction": 3.0995837503401274e-06,
+  "prepared_ion_P_2p_plus1": null,
+  "channel_peak_comparisons": [
+    {
+      "label": [
+        1,
+        0,
+        0
+      ],
+      "peak_03": 9.202230890318377,
+      "peak_06": 1.0413706196344803e-06,
+      "peak_ratio_03_over_06": 8836653.07702684
+    },
+    {
+      "label": [
+        2,
+        0,
+        0
+      ],
+      "peak_03": 6.187013421743204e-05,
+      "peak_06": 1.1441080315882286e-05,
+      "peak_ratio_03_over_06": 5.407717847373654
+    },
+    {
+      "label": [
+        2,
+        1,
+        -1
+      ],
+      "peak_03": 1.1672923527284765e-05,
+      "peak_06": 3.720339440071774e-06,
+      "peak_ratio_03_over_06": 3.1375963713299146
+    },
+    {
+      "label": [
+        2,
+        1,
+        0
+      ],
+      "peak_03": 1.826837947773669e-05,
+      "peak_06": 5.6720554562273086e-06,
+      "peak_ratio_03_over_06": 3.220768840981618
+    },
+    {
+      "label": [
+        2,
+        1,
+        1
+      ],
+      "peak_03": 1.1672923526694498e-05,
+      "peak_06": 3.7203394403368024e-06,
+      "peak_ratio_03_over_06": 3.1375963709477404
+    }
+  ],
+  "channel_yields_on_energy_grid": [
+    0.3476606732959931,
+    0.0003282133164174731,
+    8.116559799483693e-05,
+    0.0005338172591704825,
+    8.116559799445804e-05
+  ],
+  "conditional_normalization": "Unit area over the explicitly computed energy grid, separately for each ion; not absolute counts.",
+  "predeclared_targets": {
+    "peak_height_ratio_min": 3.0,
+    "band_yield_ratio_min": 5.0,
+    "old_band_2p_plus1_fraction_min": 0.95,
+    "prepared_ion_transfer_min": 0.95
+  },
+  "target_applicable": false,
+  "target_passed": null,
+  "scope": "Sum of explicitly recorded bound ionic channels, plus channel-resolved SI spectra; no claim of complete ionic-channel or spatial convergence.",
+  "pulses": [
+    {
+      "number": 1,
+      "polarization": "z",
+      "omega": 1.2,
+      "cycles": 48,
+      "field": 0.08,
+      "start": 0.0,
+      "cep": 0.0,
+      "duration_au": 251.32741228718345,
+      "duration_fs": 6.079319384238911,
+      "intensity_FWHM_fs": 2.2132167330418766,
+      "equivalent_cycle_average_peak_intensity_W_cm2": 224604492800000.0
+    }
+  ],
+  "ionic_transfer": {
+    "requested_times": [],
+    "transfers_from_1s": []
+  }
+}

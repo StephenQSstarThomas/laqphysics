@@ -1,0 +1,261 @@
+{
+  "cases": [
+    {
+      "run_id": "selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837",
+      "state": "complete",
+      "input": "selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837/input.json",
+      "run_card": "selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837/RUN.md",
+      "figure": "selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837/figures/selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837__p1w1p2F0p08N48z_p2w1p5F0p0200358N201spt360__SI.png",
+      "spectrum": "selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837/selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837__p1w1p2F0p08N48z_p2w1p5F0p0200358N201spt360__SI.npz",
+      "pulses": [
+        {
+          "number": 1,
+          "polarization": "z",
+          "omega": 1.2,
+          "cycles": 48,
+          "field": 0.08,
+          "start": 0.0,
+          "cep": 0.0,
+          "duration_au": 251.32741228718345,
+          "duration_fs": 6.079319384238911,
+          "intensity_FWHM_fs": 2.2132167330418766,
+          "equivalent_cycle_average_peak_intensity_W_cm2": 224604492800000.0
+        },
+        {
+          "number": 2,
+          "polarization": "sigma+",
+          "omega": 1.5,
+          "cycles": 201,
+          "field": 0.020035791491176656,
+          "start": 360.0,
+          "cep": 0.0,
+          "duration_au": 841.9468311620645,
+          "duration_fs": 20.36571993720035,
+          "intensity_FWHM_fs": 7.414276055690285,
+          "equivalent_cycle_average_peak_intensity_W_cm2": 14088069067839.65
+        }
+      ],
+      "peak_ratio": 4.015816283860522,
+      "yield_ratio": 10.964459853079418,
+      "old_2p_plus1_fraction": 0.9998404635954417,
+      "prepared_ion_P_2p_plus1": 0.9985125609176596,
+      "resolution": {
+        "lmax": 3,
+        "Lmax": 3,
+        "radial_points": 156,
+        "recorded_ion_nmax": 3
+      },
+      "targets_passed": true
+    },
+    {
+      "run_id": "longer_pump_F008_N48_pi201__ccc6f27abe",
+      "state": "complete",
+      "input": "longer_pump_F008_N48_pi201__ccc6f27abe/input.json",
+      "run_card": "longer_pump_F008_N48_pi201__ccc6f27abe/RUN.md",
+      "figure": "longer_pump_F008_N48_pi201__ccc6f27abe/figures/longer_pump_F008_N48_pi201__ccc6f27abe__p1w1p2F0p08N48z_p2w1p5F0p0200358N201spt360__SI.png",
+      "spectrum": "longer_pump_F008_N48_pi201__ccc6f27abe/longer_pump_F008_N48_pi201__ccc6f27abe__p1w1p2F0p08N48z_p2w1p5F0p0200358N201spt360__SI.npz",
+      "pulses": [
+        {
+          "number": 1,
+          "polarization": "z",
+          "omega": 1.2,
+          "cycles": 48,
+          "field": 0.08,
+          "start": 0.0,
+          "cep": 0.0,
+          "duration_au": 251.32741228718345,
+          "duration_fs": 6.079319384238911,
+          "intensity_FWHM_fs": 2.2132167330418766,
+          "equivalent_cycle_average_peak_intensity_W_cm2": 224604492800000.0
+        },
+        {
+          "number": 2,
+          "polarization": "sigma+",
+          "omega": 1.5,
+          "cycles": 201,
+          "field": 0.020035791491176656,
+          "start": 360.0,
+          "cep": 0.0,
+          "duration_au": 841.9468311620645,
+          "duration_fs": 20.36571993720035,
+          "intensity_FWHM_fs": 7.414276055690285,
+          "equivalent_cycle_average_peak_intensity_W_cm2": 14088069067839.65
+        }
+      ],
+      "peak_ratio": 4.014999668746701,
+      "yield_ratio": 10.951460984445273,
+      "old_2p_plus1_fraction": 0.9998414754857075,
+      "prepared_ion_P_2p_plus1": 0.9984940537533484,
+      "resolution": {
+        "lmax": 2,
+        "Lmax": null,
+        "radial_points": 88,
+        "recorded_ion_nmax": 2
+      },
+      "targets_passed": true
+    },
+    {
+      "run_id": "longer_pump_F008_N48_pi201_control_only__f2dbbeaa05",
+      "state": "complete",
+      "input": "longer_pump_F008_N48_pi201_control_only__f2dbbeaa05/input.json",
+      "run_card": "longer_pump_F008_N48_pi201_control_only__f2dbbeaa05/RUN.md",
+      "figure": "longer_pump_F008_N48_pi201_control_only__f2dbbeaa05/figures/longer_pump_F008_N48_pi201_control_only__f2dbbeaa05__p1w1p5F0p0200358N201spt360__SI.png",
+      "spectrum": "longer_pump_F008_N48_pi201_control_only__f2dbbeaa05/longer_pump_F008_N48_pi201_control_only__f2dbbeaa05__p1w1p5F0p0200358N201spt360__SI.npz",
+      "pulses": [
+        {
+          "number": 1,
+          "polarization": "sigma+",
+          "omega": 1.5,
+          "cycles": 201,
+          "field": 0.020035791491176656,
+          "start": 360.0,
+          "cep": 0.0,
+          "duration_au": 841.9468311620645,
+          "duration_fs": 20.36571993720035,
+          "intensity_FWHM_fs": 7.414276055690285,
+          "equivalent_cycle_average_peak_intensity_W_cm2": 14088069067839.65
+        }
+      ],
+      "peak_ratio": 4.734371136484881e-10,
+      "yield_ratio": 1.3126123398433547e-09,
+      "old_2p_plus1_fraction": null,
+      "prepared_ion_P_2p_plus1": 0.9984940537533484,
+      "resolution": {
+        "lmax": 2,
+        "Lmax": null,
+        "radial_points": 88,
+        "recorded_ion_nmax": 2
+      },
+      "targets_passed": null
+    },
+    {
+      "run_id": "longer_pump_F008_N48_pi201_pump_only__a8372ebfe4",
+      "state": "complete",
+      "input": "longer_pump_F008_N48_pi201_pump_only__a8372ebfe4/input.json",
+      "run_card": "longer_pump_F008_N48_pi201_pump_only__a8372ebfe4/RUN.md",
+      "figure": "longer_pump_F008_N48_pi201_pump_only__a8372ebfe4/figures/longer_pump_F008_N48_pi201_pump_only__a8372ebfe4__p1w1p2F0p08N48z__SI.png",
+      "spectrum": "longer_pump_F008_N48_pi201_pump_only__a8372ebfe4/longer_pump_F008_N48_pi201_pump_only__a8372ebfe4__p1w1p2F0p08N48z__SI.npz",
+      "pulses": [
+        {
+          "number": 1,
+          "polarization": "z",
+          "omega": 1.2,
+          "cycles": 48,
+          "field": 0.08,
+          "start": 0.0,
+          "cep": 0.0,
+          "duration_au": 251.32741228718345,
+          "duration_fs": 6.079319384238911,
+          "intensity_FWHM_fs": 2.2132167330418766,
+          "equivalent_cycle_average_peak_intensity_W_cm2": 224604492800000.0
+        }
+      ],
+      "peak_ratio": 641788.4130274722,
+      "yield_ratio": 187659.4958725068,
+      "old_2p_plus1_fraction": 3.0995837503401274e-06,
+      "prepared_ion_P_2p_plus1": null,
+      "resolution": {
+        "lmax": 2,
+        "Lmax": null,
+        "radial_points": 88,
+        "recorded_ion_nmax": 2
+      },
+      "targets_passed": null
+    },
+    {
+      "run_id": "short_pump_F012_N24_pi201__de8c245203",
+      "state": "complete",
+      "input": "short_pump_F012_N24_pi201__de8c245203/input.json",
+      "run_card": "short_pump_F012_N24_pi201__de8c245203/RUN.md",
+      "figure": "short_pump_F012_N24_pi201__de8c245203/figures/short_pump_F012_N24_pi201__de8c245203__p1w1p2F0p12N24z_p2w1p5F0p0200358N201spt240__SI.png",
+      "spectrum": "short_pump_F012_N24_pi201__de8c245203/short_pump_F012_N24_pi201__de8c245203__p1w1p2F0p12N24z_p2w1p5F0p0200358N201spt240__SI.npz",
+      "pulses": [
+        {
+          "number": 1,
+          "polarization": "z",
+          "omega": 1.2,
+          "cycles": 24,
+          "field": 0.12,
+          "start": 0.0,
+          "cep": 0.0,
+          "duration_au": 125.66370614359172,
+          "duration_fs": 3.0396596921194554,
+          "intensity_FWHM_fs": 1.1066083665209383,
+          "equivalent_cycle_average_peak_intensity_W_cm2": 505360108800000.0
+        },
+        {
+          "number": 2,
+          "polarization": "sigma+",
+          "omega": 1.5,
+          "cycles": 201,
+          "field": 0.020035791491176656,
+          "start": 240.0,
+          "cep": 0.0,
+          "duration_au": 841.9468311620645,
+          "duration_fs": 20.36571993720035,
+          "intensity_FWHM_fs": 7.414276055690285,
+          "equivalent_cycle_average_peak_intensity_W_cm2": 14088069067839.65
+        }
+      ],
+      "peak_ratio": 2.31407981784205,
+      "yield_ratio": 12.729008103716652,
+      "old_2p_plus1_fraction": 0.9998396165406115,
+      "prepared_ion_P_2p_plus1": 0.9984940537148871,
+      "resolution": {
+        "lmax": 2,
+        "Lmax": null,
+        "radial_points": 88,
+        "recorded_ion_nmax": 2
+      },
+      "targets_passed": false
+    },
+    {
+      "run_id": "short_pump_F012_N24_pi402__43b121bb2b",
+      "state": "complete",
+      "input": "short_pump_F012_N24_pi402__43b121bb2b/input.json",
+      "run_card": "short_pump_F012_N24_pi402__43b121bb2b/RUN.md",
+      "figure": "short_pump_F012_N24_pi402__43b121bb2b/figures/short_pump_F012_N24_pi402__43b121bb2b__p1w1p2F0p12N24z_p2w1p5F0p0100179N402spt240__SI.png",
+      "spectrum": "short_pump_F012_N24_pi402__43b121bb2b/short_pump_F012_N24_pi402__43b121bb2b__p1w1p2F0p12N24z_p2w1p5F0p0100179N402spt240__SI.npz",
+      "pulses": [
+        {
+          "number": 1,
+          "polarization": "z",
+          "omega": 1.2,
+          "cycles": 24,
+          "field": 0.12,
+          "start": 0.0,
+          "cep": 0.0,
+          "duration_au": 125.66370614359172,
+          "duration_fs": 3.0396596921194554,
+          "intensity_FWHM_fs": 1.1066083665209383,
+          "equivalent_cycle_average_peak_intensity_W_cm2": 505360108800000.0
+        },
+        {
+          "number": 2,
+          "polarization": "sigma+",
+          "omega": 1.5,
+          "cycles": 402,
+          "field": 0.010017895745588328,
+          "start": 240.0,
+          "cep": 0.0,
+          "duration_au": 1683.893662324129,
+          "duration_fs": 40.7314398744007,
+          "intensity_FWHM_fs": 14.82855211138057,
+          "equivalent_cycle_average_peak_intensity_W_cm2": 3522017266959.9126
+        }
+      ],
+      "peak_ratio": 2.296330008877113,
+      "yield_ratio": 25.153217695748868,
+      "old_2p_plus1_fraction": 0.9999515882781161,
+      "prepared_ion_P_2p_plus1": 0.9992817981710607,
+      "resolution": {
+        "lmax": 2,
+        "Lmax": null,
+        "radial_points": 88,
+        "recorded_ion_nmax": 2
+      },
+      "targets_passed": false
+    }
+  ],
+  "note": "Only state=complete has the mandatory final spectrum and figures."
+}

@@ -1,0 +1,132 @@
+{
+  "radial": {
+    "edges": [
+      0,
+      0.5,
+      1,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      24,
+      26,
+      28
+    ],
+    "order": 4,
+    "tail": 24,
+    "ecs_angle": 0.5,
+    "alpha": 0.8
+  },
+  "lmax": 2,
+  "M": null,
+  "cutoff_radii": [
+    12,
+    16
+  ],
+  "surface": 20,
+  "pulses": [
+    {
+      "pulse": {
+        "omega": 1.5,
+        "cycles": 201,
+        "field": 0.020035791491176656,
+        "start": 360.0
+      },
+      "polarization": "sigma+"
+    }
+  ],
+  "post_time": 100.0,
+  "dt": 0.12,
+  "surface_stride": 1,
+  "checkpoint_every": 200,
+  "krylov_dimension": 48,
+  "krylov_tolerance": 1e-10,
+  "ground_tolerance": 1e-09,
+  "max_surface_gib": 12,
+  "spectrum_energy": [
+    0.01,
+    2.4,
+    957
+  ],
+  "time_integrator": "cf4-pade",
+  "ionic_propagator": "cf4",
+  "linear_tolerance": 1e-10,
+  "ionic_transfer_times": [
+    360.0
+  ],
+  "ionic_channels": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      -1
+    ],
+    [
+      2,
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      1
+    ]
+  ],
+  "spectrum": {
+    "energy_segments": [
+      [
+        0.01,
+        0.18,
+        35
+      ],
+      [
+        0.18,
+        0.75,
+        571
+      ],
+      [
+        0.75,
+        2.4,
+        166
+      ]
+    ],
+    "theta_points": 12,
+    "phi_points": 16
+  },
+  "storage": {
+    "mode": "spectrum",
+    "max_file_bytes": 4000000000,
+    "ionic_block_frames": 128,
+    "ionic_device": "lu"
+  },
+  "design": {
+    "scope": "calibration on the matched previous small model, not converged production",
+    "target_old_band": [
+      0.18,
+      0.42
+    ],
+    "unwanted_new_band": [
+      0.52,
+      0.68
+    ],
+    "pi_area_RWA": 3.1415926535897927,
+    "hydrogenic_1s_2p_dipole_au": 0.37246776951390165,
+    "note": "Weakening a fixed-area pi pulse lowers fluence but also narrows the new band; peak height must be measured separately."
+  }
+}

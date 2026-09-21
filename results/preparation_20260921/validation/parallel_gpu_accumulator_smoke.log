@@ -1,0 +1,39 @@
+RUN_ID parallel_cuda_smoke__gpu_accumulator__47b620fcb7 
+INPUT /playpen/shiqiu/task-jiukongdian/configs/preparation_20260921/parallel_cuda_smoke.json 
+OUTPUT /playpen1/shiqiu/laqphysics-data/iteration20260921/smoke/parallel_cuda_smoke__gpu_accumulator__47b620fcb7
+ground E=-2.9012996227, residual=3.921e-11; (60, 60, 81), storage=projected, raw-equivalent=0.171GiB
+IONIC PREP 0 frames remaining
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen/shiqiu/task-jiukongdian/python/torch_backend.py:21: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+3D 200/470, inner norm=0.99997340, Pg=0.99907210, wall=23.1s
+3D 400/470, inner norm=0.99923379, Pg=0.99907210, wall=39.2s
+3D 470/470, inner norm=0.99918093, Pg=0.99907210, wall=45.0s
+Traceback (most recent call last):
+  File "/playpen/shiqiu/task-jiukongdian/scripts/simulate_spectrum.py", line 97, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ~~~~^^
+  File "/playpen/shiqiu/task-jiukongdian/scripts/simulate_spectrum.py", line 32, in main
+    return execute_case(out,a,config,template,input_path,signature,run_id,resource)
+  File "/playpen/shiqiu/task-jiukongdian/python/output_lock.py", line 18, in wrapped
+    return function(*args,**kwargs)
+  File "/playpen/shiqiu/task-jiukongdian/scripts/simulate_spectrum.py", line 80, in execute_case
+    result=publish(out,run_id)
+  File "/playpen/shiqiu/task-jiukongdian/python/spectrum_report.py", line 80, in publish
+    atomic_json(out/'observables.json',result)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/playpen/shiqiu/task-jiukongdian/python/surface_storage.py", line 11, in atomic_json
+    temporary.write_text(json.dumps(value,indent=2)+'\n');os.replace(temporary,path)
+                         ~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/shiqiu/miniconda3/lib/python3.13/json/__init__.py", line 242, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/home/shiqiu/miniconda3/lib/python3.13/json/encoder.py", line 202, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/shiqiu/miniconda3/lib/python3.13/json/encoder.py", line 263, in iterencode
+    return _iterencode(o, 0)
+  File "/home/shiqiu/miniconda3/lib/python3.13/json/encoder.py", line 182, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type int64 is not JSON serializable

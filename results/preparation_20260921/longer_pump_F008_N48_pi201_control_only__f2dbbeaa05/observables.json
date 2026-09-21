@@ -1,0 +1,234 @@
+{
+  "run_id": "longer_pump_F008_N48_pi201_control_only__f2dbbeaa05",
+  "configuration_signature": "f2dbbeaa056b136c8d30fbae67cb2423fbb06f03d4cd2ced90271347ba1f20c4",
+  "complete": true,
+  "labels": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      -1
+    ],
+    [
+      2,
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      1
+    ]
+  ],
+  "bands": [
+    {
+      "window": [
+        0.18,
+        0.42
+      ],
+      "available": true,
+      "complete_window": true,
+      "energy_window_used": [
+        0.18,
+        0.42
+      ],
+      "peak_height": 1.6679513211452315e-09,
+      "peak_energy_grid": 0.42,
+      "yield": 6.392825079800253e-11,
+      "channel_yields": [
+        3.120566277783241e-11,
+        2.7416224614625507e-16,
+        6.6780631484075835e-18,
+        3.336575245498459e-18,
+        3.272230384328558e-11
+      ]
+    },
+    {
+      "window": [
+        0.52,
+        0.68
+      ],
+      "available": true,
+      "complete_window": true,
+      "energy_window_used": [
+        0.52,
+        0.6799999999999999
+      ],
+      "peak_height": 3.5230683718294884,
+      "peak_energy_grid": 0.6,
+      "yield": 0.04870307009732336,
+      "channel_yields": [
+        0.024190996084292257,
+        7.76094067950991e-07,
+        1.1360245356674427e-18,
+        3.7245177972760576e-19,
+        0.02451129791896315
+      ]
+    }
+  ],
+  "artifacts": {
+    "spectrum": "longer_pump_F008_N48_pi201_control_only__f2dbbeaa05__p1w1p5F0p0200358N201spt360__SI.npz",
+    "csv": "longer_pump_F008_N48_pi201_control_only__f2dbbeaa05__p1w1p5F0p0200358N201spt360__SI.csv",
+    "figure": "figures/longer_pump_F008_N48_pi201_control_only__f2dbbeaa05__p1w1p5F0p0200358N201spt360__SI.png",
+    "pdf": "figures/longer_pump_F008_N48_pi201_control_only__f2dbbeaa05__p1w1p5F0p0200358N201spt360__SI.pdf",
+    "conditional_figure": "figures/longer_pump_F008_N48_pi201_control_only__f2dbbeaa05__p1w1p5F0p0200358N201spt360__SI__conditional.png",
+    "full_angular_amplitudes": "spectrum.npz"
+  },
+  "peak_height_ratio_03_over_06": 4.734371136484881e-10,
+  "yield_ratio_03_over_06": 1.3126123398433547e-09,
+  "old_band_2p_plus1_fraction": null,
+  "prepared_ion_P_2p_plus1": 0.9984940537533484,
+  "channel_peak_comparisons": [
+    {
+      "label": [
+        1,
+        0,
+        0
+      ],
+      "peak_03": 8.223863643700848e-10,
+      "peak_06": 1.7519465849756284,
+      "peak_ratio_03_over_06": 4.694129212743807e-10
+    },
+    {
+      "label": [
+        2,
+        0,
+        0
+      ],
+      "peak_03": 1.2175208832691741e-14,
+      "peak_06": 5.3493370329293447e-05,
+      "peak_ratio_03_over_06": 2.276022011278001e-10
+    },
+    {
+      "label": [
+        2,
+        1,
+        -1
+      ],
+      "peak_03": 1.1130758317713566e-16,
+      "peak_06": 3.527844963939837e-17,
+      "peak_ratio_03_over_06": 3.1551154972759705
+    },
+    {
+      "label": [
+        2,
+        1,
+        0
+      ],
+      "peak_03": 5.5507695309330274e-17,
+      "peak_06": 6.170894656314514e-18,
+      "peak_ratio_03_over_06": 8.995080681296466
+    },
+    {
+      "label": [
+        2,
+        1,
+        1
+      ],
+      "peak_03": 8.455649281625177e-10,
+      "peak_06": 1.7710682934835307,
+      "peak_ratio_03_over_06": 4.774321415349648e-10
+    }
+  ],
+  "channel_yields_on_energy_grid": [
+    0.024191964031860465,
+    7.761355500139798e-07,
+    2.5984458464850905e-17,
+    1.2776379756519644e-17,
+    0.024512272851073182
+  ],
+  "conditional_normalization": "Unit area over the explicitly computed energy grid, separately for each ion; not absolute counts.",
+  "predeclared_targets": {
+    "peak_height_ratio_min": 3.0,
+    "band_yield_ratio_min": 5.0,
+    "old_band_2p_plus1_fraction_min": 0.95,
+    "prepared_ion_transfer_min": 0.95
+  },
+  "target_applicable": false,
+  "target_passed": null,
+  "scope": "Sum of explicitly recorded bound ionic channels, plus channel-resolved SI spectra; no claim of complete ionic-channel or spatial convergence.",
+  "pulses": [
+    {
+      "number": 1,
+      "polarization": "sigma+",
+      "omega": 1.5,
+      "cycles": 201,
+      "field": 0.020035791491176656,
+      "start": 360.0,
+      "cep": 0.0,
+      "duration_au": 841.9468311620645,
+      "duration_fs": 20.36571993720035,
+      "intensity_FWHM_fs": 7.414276055690285,
+      "equivalent_cycle_average_peak_intensity_W_cm2": 14088069067839.65
+    }
+  ],
+  "ionic_transfer": {
+    "requested_times": [
+      360.0
+    ],
+    "transfers_from_1s": [
+      {
+        "requested_time": 360.0,
+        "actual_time": 359.98529893881965,
+        "labels": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0
+          ],
+          [
+            2,
+            1,
+            -1
+          ],
+          [
+            2,
+            1,
+            0
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        "amplitude_real": [
+          0.011075242602963314,
+          -1.6462227264048742e-06,
+          -3.7145776977176386e-09,
+          0.0,
+          0.23976083235879686
+        ],
+        "amplitude_imag": [
+          0.00587802682725087,
+          6.098768523870742e-07,
+          9.94409086636869e-10,
+          0.0,
+          0.9700560793170493
+        ],
+        "probabilities": [
+          0.0001572121980963745,
+          3.0819990400094623e-12,
+          1.4786936903967246e-17,
+          0.0,
+          0.9984940537533484
+        ],
+        "scope": "transition from prepared ionic 1s into recorded final bound channels"
+      }
+    ]
+  }
+}

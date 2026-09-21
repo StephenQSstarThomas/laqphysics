@@ -1,0 +1,29 @@
+{
+  "cases": [
+    {
+      "case": "longer_pump_F008_N48_pi201__ccc6f27abe",
+      "ground_energy": -2.8997030024241277,
+      "fitted_peaks": [
+        [
+          0.3006909603654839
+        ],
+        [
+          0.6002731850362407
+        ]
+      ]
+    },
+    {
+      "case": "selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837",
+      "ground_energy": -2.9031285845687456,
+      "fitted_peaks": [
+        [
+          0.29723252472689937
+        ],
+        [
+          0.5968444775519999
+        ]
+      ]
+    }
+  ],
+  "scope": "Locate each native-grid peak; no translation or alignment is applied. Several numerical parameters changed together."
+}

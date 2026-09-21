@@ -14,3 +14,9 @@ results/**/*.tmp.*
 results/**/.*.lock
 results/followup/quarantine/
 results/**/projected_*.npy
+results/**/surface_online/ionic_endpoints/
+results/**/surface_online/projected/
+results/**/surface_online/accumulator_*.npz
+results/**/flux_shards/
+results/**/projected_cache/
+results/**/code/

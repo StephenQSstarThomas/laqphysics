@@ -1,0 +1,70 @@
+{
+  "shell_syntax_files": 11,
+  "dispatch": [
+    {
+      "kind": "gpu",
+      "cores": 16,
+      "argv": [
+        "--cpu-bind=cores",
+        "python",
+        "/playpen1/shiqiu/laqphysics-data/test_tmp/slurm_mock_98jvij65/frozen/scripts/simulate_spectrum.py",
+        "--config",
+        "configs/preparation_20260921/production/reference.json",
+        "--out-root",
+        "/playpen1/shiqiu/laqphysics-data/test_tmp/slurm_mock_98jvij65/outputs",
+        "--device",
+        "cuda:0",
+        "--memory-fraction",
+        "0.8",
+        "--cpu-threads",
+        "16",
+        "--tag",
+        "production"
+      ],
+      "environment": {
+        "OMP_NUM_THREADS": "16",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "HELIUM_DEVICE": "cuda:0"
+      },
+      "passed": true
+    },
+    {
+      "kind": "cpu",
+      "cores": 64,
+      "argv": [
+        "--cpu-bind=cores",
+        "python",
+        "/playpen1/shiqiu/laqphysics-data/test_tmp/slurm_mock_98jvij65/frozen/scripts/simulate_spectrum.py",
+        "--config",
+        "configs/preparation_20260921/production/reference.json",
+        "--out-root",
+        "/playpen1/shiqiu/laqphysics-data/test_tmp/slurm_mock_98jvij65/outputs",
+        "--device",
+        "cpu",
+        "--memory-fraction",
+        "0.8",
+        "--cpu-threads",
+        "64",
+        "--tag",
+        "production"
+      ],
+      "environment": {
+        "OMP_NUM_THREADS": "64",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "HELIUM_DEVICE": "cpu"
+      },
+      "passed": true
+    }
+  ],
+  "multiple_MPI_tasks_rejected": true,
+  "submit": {
+    "argv": [
+      "--array=0-15%4",
+      "scripts/spectra_gpu.slurm"
+    ],
+    "logs_existed_before_submission": true
+  },
+  "scope": "Shell syntax and mocked dispatch contract; no actual Slurm controller or cluster allocation exercised."
+}

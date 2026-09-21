@@ -1,0 +1,146 @@
+{
+  "cases": [
+    {
+      "directory": "/playpen/shiqiu/task-jiukongdian/results/followup/pump_probe_plus",
+      "label": "Previous: F1=.02, N1=12; F2=.0534, N2=76",
+      "signature": "2e41c93053d7e048ca066a5dcdfd2383b3331ac7a06f085b6d8f9404f2335213",
+      "pulses": [
+        {
+          "pulse": {
+            "omega": 1.2,
+            "cycles": 12,
+            "field": 0.02
+          },
+          "polarization": "z"
+        },
+        {
+          "pulse": {
+            "omega": 1.5,
+            "cycles": 76,
+            "field": 0.0534,
+            "start": 144
+          },
+          "polarization": "sigma+"
+        }
+      ],
+      "spectrum_file_sha256": "34d09189974b54423401715e580e27119f3e02197bf2254acff52bee2a49241e",
+      "embedded_signature_present": false,
+      "ground_energy": -2.8997030024240567,
+      "bands": [
+        {
+          "window": [
+            0.18,
+            0.42
+          ],
+          "peak": 0.04484146037353439,
+          "yield": 0.006740813400084227
+        },
+        {
+          "window": [
+            0.52,
+            0.68
+          ],
+          "peak": 3.3914072309347674,
+          "yield": 0.12442389754603675
+        }
+      ],
+      "peak_ratio": 0.013222080782429311,
+      "yield_ratio": 0.054176195514130485
+    },
+    {
+      "directory": "results/preparation_20260921/longer_pump_F008_N48_pi201__ccc6f27abe",
+      "label": "Selected: F1=.08, N1=48; pi pulse N2=201 (small model)",
+      "signature": "ccc6f27abe0a5d17a3b60ae2b612736cd83cda5cbd6d535a6955bd819dd7b776",
+      "pulses": [
+        {
+          "pulse": {
+            "omega": 1.2,
+            "cycles": 48,
+            "field": 0.08
+          },
+          "polarization": "z"
+        },
+        {
+          "pulse": {
+            "omega": 1.5,
+            "cycles": 201,
+            "field": 0.020035791491176656,
+            "start": 360.0
+          },
+          "polarization": "sigma+"
+        }
+      ],
+      "spectrum_file_sha256": "31427770562c9d05540790569b782965c44720d2a6c50fa2e0778643eb0dc515",
+      "embedded_signature_present": true,
+      "ground_energy": -2.8997030024241277,
+      "bands": [
+        {
+          "window": [
+            0.18,
+            0.42
+          ],
+          "peak": 9.189742979769624,
+          "yield": 0.34651878469775854
+        },
+        {
+          "window": [
+            0.52,
+            0.68
+          ],
+          "peak": 2.288852736727184,
+          "yield": 0.031641329425355275
+        }
+      ],
+      "peak_ratio": 4.014999668746701,
+      "yield_ratio": 10.951460984445276
+    },
+    {
+      "directory": "results/preparation_20260921/selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837",
+      "label": "Selected: finer radial/angle basis, final ion n<=3",
+      "signature": "b9f521f837d932ea5d4e457154dda73063364859326bdd36ab5507d34c67523d",
+      "pulses": [
+        {
+          "pulse": {
+            "omega": 1.2,
+            "cycles": 48,
+            "field": 0.08
+          },
+          "polarization": "z"
+        },
+        {
+          "pulse": {
+            "omega": 1.5,
+            "cycles": 201,
+            "field": 0.020035791491176656,
+            "start": 360.0
+          },
+          "polarization": "sigma+"
+        }
+      ],
+      "spectrum_file_sha256": "90060d7afe8a2323cecc3b36335725ddab20fbb8020aec9913baff29abf5b3a8",
+      "embedded_signature_present": true,
+      "ground_energy": -2.9031285845687456,
+      "bands": [
+        {
+          "window": [
+            0.18,
+            0.42
+          ],
+          "peak": 9.22962487191824,
+          "yield": 0.34809181458731664
+        },
+        {
+          "window": [
+            0.52,
+            0.68
+          ],
+          "peak": 2.2983185035161844,
+          "yield": 0.031747283427696935
+        }
+      ],
+      "peak_ratio": 4.015816283860522,
+      "yield_ratio": 10.96445985307942
+    }
+  ],
+  "scope": "Different pulse designs and stated discretizations; these comparisons do not constitute a convergence test."
+}

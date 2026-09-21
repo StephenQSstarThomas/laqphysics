@@ -1,0 +1,12 @@
+{
+  "state": "complete",
+  "complete_spectrum": true,
+  "run_id": "longer_pump_F008_N48_pi201_pump_only__a8372ebfe4",
+  "input": "input.json",
+  "spectrum": "longer_pump_F008_N48_pi201_pump_only__a8372ebfe4__p1w1p2F0p08N48z__SI.npz",
+  "figure": "figures/longer_pump_F008_N48_pi201_pump_only__a8372ebfe4__p1w1p2F0p08N48z__SI.png",
+  "conditional_figure": "figures/longer_pump_F008_N48_pi201_pump_only__a8372ebfe4__p1w1p2F0p08N48z__SI__conditional.png",
+  "observables": "observables.json",
+  "design_targets_passed": null,
+  "numerical_convergence_certified": false
+}

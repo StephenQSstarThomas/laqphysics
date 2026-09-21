@@ -1,0 +1,96 @@
+{
+  "recipe": {
+    "configuration": "a8372ebfe4da9badb8c2ee67a79333a8c275ad7c165d0f261b031b8405dc4b7d",
+    "kernel": "441c1b4004fbefb82a8dde7411b34eb5f7c1904977477681beafc771d8d9672a",
+    "frames": 3001,
+    "block": 128,
+    "ionic_device": "lu"
+  },
+  "mode": "spectrum",
+  "labels": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      -1
+    ],
+    [
+      2,
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      1
+    ]
+  ],
+  "outer_states": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      -1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      -2
+    ],
+    [
+      2,
+      -1
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ]
+  ],
+  "r": [
+    20.0,
+    20.345346329292024,
+    21.0,
+    21.654653670707976,
+    22.0
+  ],
+  "weights": [
+    0.2,
+    0.5444444444444448,
+    0.7111111111111111,
+    0.5444444444444446,
+    0.2
+  ],
+  "times": {
+    "dt": 0.12,
+    "count": 3001
+  },
+  "max_file_bytes": 4000000000,
+  "raw_flux_written": false,
+  "note": "Ionic endpoints plus bounded RAM replay; complex Volkov amplitudes accumulated online."
+}

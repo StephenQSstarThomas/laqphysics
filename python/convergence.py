@@ -22,7 +22,8 @@ def compare(first,second,criteria,window=None):
     if not (np.isfinite(a).all() and np.isfinite(b).all()):raise ValueError('nonfinite spectrum')
     if min(a.min(),b.min())<0:raise ValueError('negative probability density')
     labels_a=list(map(tuple,first['labels']));labels_b=list(map(tuple,second['labels']))
-    if set(labels_a)!=set(labels_b):raise ValueError('recorded ionic channels differ')
+    if set(labels_a)!=set(labels_b) and not criteria.get('allow_ionic_extension',False):raise ValueError('recorded ionic channels differ')
+    if criteria.get('allow_ionic_extension',False) and not set(labels_a)<=set(labels_b):raise ValueError('ionic refinement must retain every reference channel')
     ca=a[[labels_a.index(tuple(x)) for x in criteria['gate_channels']]]
     cb=b[[labels_b.index(tuple(x)) for x in criteria['gate_channels']]]
     ya=simpson(ca,x=e,axis=1);yb=simpson(cb,x=e,axis=1)
@@ -35,9 +36,15 @@ def compare(first,second,criteria,window=None):
         return peaks(energy[mask],data['angle_integrated'][:,mask].sum(axis=0))
     pa=native_peaks(first);pb=native_peaks(second)
     shift=float(max(abs(np.array(pa)-pb))) if pa and len(pa)==len(pb) else None
+    ta=a.sum(axis=0);tb=b.sum(axis=0);tya=float(simpson(ta,x=e));tyb=float(simpson(tb,x=e))
+    total_shape=float(simpson(abs(ta/tya-tb/tyb),x=e));total_change=tyb/tya-1
+    total_passed=total_shape<=criteria['normalized_shape_L1'] and abs(total_change)<=criteria['relative_yield']
     passed=shift is not None and shift<=criteria['peak_shift_au'] and max(shape)<=criteria['normalized_shape_L1'] and max(abs(change))<=criteria['relative_yield']
+    if criteria.get('gate_total',False):passed=passed and total_passed
     return {'status':'passed' if passed else 'failed','energy_window':[float(e[0]),float(e[-1])],
             'gate_channels':criteria['gate_channels'],'reference_yields':ya.tolist(),'refined_yields':yb.tolist(),
             'normalized_shape_L1':shape.tolist(),'relative_yield_change':change.tolist(),
             'reference_peaks':pa,'refined_peaks':pb,'maximum_peak_shift':shift,
+            'total_recorded_SI':{'gated':bool(criteria.get('gate_total',False)),'reference_yield':tya,'refined_yield':tyb,
+                                 'normalized_shape_L1':total_shape,'relative_yield_change':total_change,'passed':bool(total_passed)},
             'all_recorded_channel_yields':simpson(b,x=e,axis=1).tolist(),'labels':second['labels'].tolist()}

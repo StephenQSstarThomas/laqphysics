@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "completed_physical_cases": [
+    {
+      "case": "longer_pump_F008_N48_pi201__ccc6f27abe",
+      "primary_data_equal_to_original": true,
+      "largest_source_file_bytes": 23659726,
+      "raw_flux_written": false
+    },
+    {
+      "case": "longer_pump_F008_N48_pi201_control_only__f2dbbeaa05",
+      "primary_data_equal_to_original": true,
+      "largest_source_file_bytes": 23659726,
+      "raw_flux_written": false
+    },
+    {
+      "case": "longer_pump_F008_N48_pi201_pump_only__a8372ebfe4",
+      "primary_data_equal_to_original": true,
+      "largest_source_file_bytes": 23657514,
+      "raw_flux_written": false
+    },
+    {
+      "case": "selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837",
+      "primary_data_equal_to_original": true,
+      "largest_source_file_bytes": 345968154,
+      "raw_flux_written": false
+    },
+    {
+      "case": "short_pump_F012_N24_pi201__de8c245203",
+      "primary_data_equal_to_original": true,
+      "largest_source_file_bytes": 23659734,
+      "raw_flux_written": false
+    },
+    {
+      "case": "short_pump_F012_N24_pi402__43b121bb2b",
+      "primary_data_equal_to_original": true,
+      "largest_source_file_bytes": 23659730,
+      "raw_flux_written": false
+    }
+  ],
+  "broken_local_markdown_links": [],
+  "original_documents_and_archive_unchanged": true,
+  "fine_spectral_quadrature_passed": true,
+  "production_convergence_complete": false
+}

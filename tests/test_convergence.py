@@ -25,3 +25,15 @@ def test_peak_comparison_uses_native_grids_without_interpolation_cusp():
     limits={'peak_shift_au':5e-6,'normalized_shape_L1':.02,'relative_yield':.02,'gate_channels':[[1,0,0]]}
     result=compare(data(201),data(1001),limits)
     assert result['maximum_peak_shift']<5e-6 and result['status']=='passed'
+
+def test_ionic_extension_gates_total_even_when_old_channels_are_identical():
+    e=np.linspace(.1,.9,161);y=np.exp(-((e-.4)/.05)**2)
+    a={'energy':e,'angle_integrated':y[None,:],'labels':np.array([[1,0,0]])}
+    b={'energy':e,'angle_integrated':np.array([y,.03*y]),'labels':np.array([[1,0,0],[2,0,0]])}
+    limits={'peak_shift_au':.001,'normalized_shape_L1':.02,'relative_yield':.02,
+            'gate_channels':[[1,0,0]],'gate_total':True,'allow_ionic_extension':True}
+    result=compare(a,b,limits)
+    assert result['relative_yield_change']==[0.] and result['status']=='failed'
+    assert abs(result['total_recorded_SI']['relative_yield_change']-.03)<1e-14
+    b['angle_integrated'][1]*=.1
+    assert compare(a,b,limits)['status']=='passed'

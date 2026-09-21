@@ -2,10 +2,9 @@
 #SBATCH --job-name=helium1d
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
-#SBATCH --mem=16G
+#SBATCH --cpus-per-task=64
 #SBATCH --time=12:00:00
-#SBATCH --output=helium1d-%j.log
+#SBATCH --output=logs/helium1d-%j.log
 set -euo pipefail
 repo_dir="${HELIUM_REPO:-${SLURM_SUBMIT_DIR:-$PWD}}"
 cd "$repo_dir"

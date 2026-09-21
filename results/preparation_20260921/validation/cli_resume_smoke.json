@@ -1,0 +1,83 @@
+{
+  "radial": {
+    "edges": [
+      0,
+      1,
+      2,
+      4,
+      6,
+      8
+    ],
+    "order": 3,
+    "tail": 6,
+    "ecs_angle": 0.3
+  },
+  "lmax": 1,
+  "M": null,
+  "total_Lmax": 2,
+  "angular_representation": "bipolar",
+  "cutoff_radii": [
+    1,
+    2
+  ],
+  "surface": 5.0,
+  "pulses": [
+    {
+      "pulse": {
+        "omega": 5.0,
+        "cycles": 2,
+        "field": 0.15
+      },
+      "polarization": "sigma+"
+    }
+  ],
+  "dt": 0.12,
+  "post_time": 0.2,
+  "checkpoint_every": 5,
+  "ground_tolerance": 1e-10,
+  "time_integrator": "cf4-pade",
+  "ionic_propagator": "cf4",
+  "linear_tolerance": 1e-11,
+  "ionic_channels": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      -1
+    ],
+    [
+      2,
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      1
+    ]
+  ],
+  "spectrum_energy": [
+    0.2,
+    1.2,
+    7
+  ],
+  "spectrum": {
+    "theta_points": 4,
+    "phi_points": 4
+  },
+  "storage": {
+    "mode": "projected",
+    "max_file_bytes": 500000,
+    "ionic_block_frames": 4,
+    "ionic_device": "lu"
+  }
+}

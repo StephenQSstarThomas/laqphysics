@@ -1,0 +1,118 @@
+{
+  "source_run_directory": "/playpen1/shiqiu/laqphysics-data/iteration20260921/runs/short_pump_F012_N24_pi201__de8c245203",
+  "configuration_signature": "de8c24520351c21b310e24132d7dc7d9c95e72a77e276499d84088e9d4823f21",
+  "files": [
+    {
+      "path": ".case.lock",
+      "bytes": 0
+    },
+    {
+      "path": ".propagation.lock",
+      "bytes": 0
+    },
+    {
+      "path": "RUN.md",
+      "bytes": 2104
+    },
+    {
+      "path": "STATUS.json",
+      "bytes": 606
+    },
+    {
+      "path": "checkpoint.npz",
+      "bytes": 20074518
+    },
+    {
+      "path": "config.json",
+      "bytes": 2142
+    },
+    {
+      "path": "figures/short_pump_F012_N24_pi201__de8c245203__p1w1p2F0p12N24z_p2w1p5F0p0200358N201spt240__SI.pdf",
+      "bytes": 32729
+    },
+    {
+      "path": "figures/short_pump_F012_N24_pi201__de8c245203__p1w1p2F0p12N24z_p2w1p5F0p0200358N201spt240__SI.png",
+      "bytes": 330409
+    },
+    {
+      "path": "figures/short_pump_F012_N24_pi201__de8c245203__p1w1p2F0p12N24z_p2w1p5F0p0200358N201spt240__SI__conditional.png",
+      "bytes": 129986
+    },
+    {
+      "path": "history.json",
+      "bytes": 15846
+    },
+    {
+      "path": "input.json",
+      "bytes": 2142
+    },
+    {
+      "path": "ionic_transfer.json",
+      "bytes": 1071
+    },
+    {
+      "path": "observables.json",
+      "bytes": 5931
+    },
+    {
+      "path": "output_manifest.json",
+      "bytes": 2399
+    },
+    {
+      "path": "rendering_provenance.json",
+      "bytes": 219
+    },
+    {
+      "path": "resource_estimate.json",
+      "bytes": 999
+    },
+    {
+      "path": "run.json",
+      "bytes": 3825
+    },
+    {
+      "path": "short_pump_F012_N24_pi201__de8c245203__p1w1p2F0p12N24z_p2w1p5F0p0200358N201spt240__SI.csv",
+      "bytes": 134828
+    },
+    {
+      "path": "short_pump_F012_N24_pi201__de8c245203__p1w1p2F0p12N24z_p2w1p5F0p0200358N201spt240__SI.npz",
+      "bytes": 77379
+    },
+    {
+      "path": "spectrum.npz",
+      "bytes": 17786754
+    },
+    {
+      "path": "surface_online/accumulator_0.npz",
+      "bytes": 23659734
+    },
+    {
+      "path": "surface_online/accumulator_1.npz",
+      "bytes": 23659734
+    },
+    {
+      "path": "surface_online/complete.json",
+      "bytes": 362
+    },
+    {
+      "path": "surface_online/ionic_endpoints/array.json",
+      "bytes": 123
+    },
+    {
+      "path": "surface_online/ionic_endpoints/part_000000.npy",
+      "bytes": 4942208
+    },
+    {
+      "path": "surface_online/layout.json",
+      "bytes": 1217
+    },
+    {
+      "path": "surface_online/preparation.json",
+      "bytes": 336
+    }
+  ],
+  "largest_source_file_bytes": 23659734,
+  "primary_spectrum_sha256": "d2ee1cb0eaacdbdde8d94c82910f1ab72e82332a601d58de191151dcdac99d1e",
+  "full_angular_spectrum_sha256": "629219c7fc0633f61a23629d65a4279920fd43aefbda3be09735541c26396f19",
+  "scope": "Lightweight completed-result handoff; no wavefunction, ionic endpoints, projected history or restart accumulators copied."
+}

@@ -1,0 +1,4 @@
+RUN_ID parallel_cuda_smoke__gpu_accumulator__47b620fcb7 
+INPUT /playpen/shiqiu/task-jiukongdian/configs/preparation_20260921/parallel_cuda_smoke.json 
+OUTPUT /playpen1/shiqiu/laqphysics-data/iteration20260921/smoke/parallel_cuda_smoke__gpu_accumulator__47b620fcb7
+COMPLETE SI SPECTRUM /playpen1/shiqiu/laqphysics-data/iteration20260921/smoke/parallel_cuda_smoke__gpu_accumulator__47b620fcb7/figures/parallel_cuda_smoke__gpu_accumulator__47b620fcb7__p1w1p5F0p02N3sp__SI.png

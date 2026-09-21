@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "positive_identical_spectra_gate": true,
+  "different_kernels_rejected": true,
+  "scope": "Synthetic known-spectrum fixture tests report discovery, total+channel gates and provenance rejection, not physical convergence."
+}

@@ -1,0 +1,138 @@
+{
+  "cases": [
+    "reference",
+    "pump_only",
+    "control_only",
+    "l6",
+    "L5",
+    "inner14",
+    "outer8",
+    "dt003",
+    "surface28",
+    "cutoff24",
+    "tail32",
+    "angle06",
+    "alpha10",
+    "mixed_gauge",
+    "post240",
+    "ionic_n4"
+  ],
+  "pairs": [
+    {
+      "reference": "reference",
+      "refinement": "l6",
+      "axis": "individual angular cutoff 4 -> 6"
+    },
+    {
+      "reference": "reference",
+      "refinement": "L5",
+      "axis": "total angular cutoff 4 -> 5"
+    },
+    {
+      "reference": "reference",
+      "refinement": "inner14",
+      "axis": "inner radial order 12 -> 14"
+    },
+    {
+      "reference": "reference",
+      "refinement": "outer8",
+      "axis": "outer radial order 6 -> 8"
+    },
+    {
+      "reference": "reference",
+      "refinement": "dt003",
+      "axis": "time step 0.06 -> 0.03"
+    },
+    {
+      "reference": "reference",
+      "refinement": "surface28",
+      "axis": "surface radius 24 -> 28"
+    },
+    {
+      "reference": "surface28",
+      "refinement": "cutoff24",
+      "axis": "Coulomb cutoff [16,20] -> [20,24]"
+    },
+    {
+      "reference": "reference",
+      "refinement": "tail32",
+      "axis": "absorber order 24 -> 32"
+    },
+    {
+      "reference": "reference",
+      "refinement": "angle06",
+      "axis": "ECS angle 0.5 -> 0.6"
+    },
+    {
+      "reference": "reference",
+      "refinement": "alpha10",
+      "axis": "Laguerre scale 0.8 -> 1"
+    },
+    {
+      "reference": "reference",
+      "refinement": "mixed_gauge",
+      "axis": "velocity vs independent mixed gauge"
+    },
+    {
+      "reference": "reference",
+      "refinement": "post240",
+      "axis": "post-pulse propagation 120 -> 240 a.u."
+    },
+    {
+      "reference": "reference",
+      "refinement": "ionic_n4",
+      "axis": "recorded final ion n <= 3 -> 4",
+      "allow_ionic_extension": true
+    }
+  ],
+  "scope": "selected two-pulse preparation, production candidates; none certified by configuration alone",
+  "acceptance": {
+    "peak_shift_au": 0.001,
+    "normalized_shape_L1": 0.02,
+    "relative_yield": 0.02,
+    "gate_total": true,
+    "gate_channels": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        1
+      ]
+    ],
+    "energy_windows": [
+      [
+        0.18,
+        0.42
+      ],
+      [
+        0.52,
+        0.68
+      ]
+    ]
+  },
+  "extraction_pairs": [
+    {
+      "reference": "reference",
+      "refinement": "reference",
+      "refinement_file": "spectrum_angles.npz",
+      "axis": "angular quadrature 24x32 -> 32x48"
+    },
+    {
+      "reference": "reference",
+      "refinement": "reference",
+      "refinement_file": "spectrum_energy.npz",
+      "axis": "energy spacing 0.0005 -> 0.00025 in target bands"
+    },
+    {
+      "reference": "reference",
+      "refinement": "reference",
+      "refinement_file": "spectrum_stride2.npz",
+      "axis": "surface quadrature every step vs every 2 steps"
+    }
+  ],
+  "completion_requires": "Pass all listed comparisons, refine spectral/time quadrature from the retained projected history, test final ionic-channel completeness and confirm the final combined setting."
+}

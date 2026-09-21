@@ -1,0 +1,13 @@
+{
+  "recipe": {
+    "configuration": "43b121bb2bef6e5b93dc94170ae51b54ea7c0cc0d131868cb78f9dd5805c49fd",
+    "kernel": "441c1b4004fbefb82a8dde7411b34eb5f7c1904977477681beafc771d8d9672a",
+    "frames": 16867,
+    "block": 128,
+    "ionic_device": "lu"
+  },
+  "complete": true,
+  "sample_index": 16866,
+  "maximum_ionic_residual": 0.0,
+  "raw_flux_written": false
+}

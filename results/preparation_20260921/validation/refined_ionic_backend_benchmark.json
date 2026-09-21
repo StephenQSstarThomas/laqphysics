@@ -1,0 +1,18 @@
+{
+  "rows": [
+    {
+      "backend": "lu",
+      "setup_seconds": 0.0005911332555115223,
+      "seconds_per_step": 0.18605465098517016,
+      "maximum_residual": 0.0
+    },
+    {
+      "backend": "cpu",
+      "setup_seconds": 0.10538908280432224,
+      "seconds_per_step": 0.13806206663139164,
+      "maximum_residual": 1.505404616265096e-15
+    }
+  ],
+  "relative_state_error": 9.756348026767413e-15,
+  "scope": "8 backward ionic steps from an actual fine-grid endpoint; shared-server timing"
+}

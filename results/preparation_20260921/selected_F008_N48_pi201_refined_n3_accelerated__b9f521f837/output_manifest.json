@@ -1,0 +1,94 @@
+{
+  "scope": "Only exported files; full scratch inventory is in export.json and source_output_manifest.json",
+  "files": [
+    {
+      "path": "RUN.md",
+      "bytes": 2625
+    },
+    {
+      "path": "STATUS.json",
+      "bytes": 689
+    },
+    {
+      "path": "attempts.json",
+      "bytes": 527
+    },
+    {
+      "path": "config.json",
+      "bytes": 2941
+    },
+    {
+      "path": "export.json",
+      "bytes": 3900
+    },
+    {
+      "path": "figures/selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837__p1w1p2F0p08N48z_p2w1p5F0p0200358N201spt360__SI.pdf",
+      "bytes": 34293
+    },
+    {
+      "path": "figures/selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837__p1w1p2F0p08N48z_p2w1p5F0p0200358N201spt360__SI.png",
+      "bytes": 310005
+    },
+    {
+      "path": "figures/selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837__p1w1p2F0p08N48z_p2w1p5F0p0200358N201spt360__SI__conditional.png",
+      "bytes": 134754
+    },
+    {
+      "path": "history.json",
+      "bytes": 17803
+    },
+    {
+      "path": "input.json",
+      "bytes": 2941
+    },
+    {
+      "path": "input_template.json",
+      "bytes": 2941
+    },
+    {
+      "path": "ionic_transfer.json",
+      "bytes": 2294
+    },
+    {
+      "path": "observables.json",
+      "bytes": 10421
+    },
+    {
+      "path": "rendering_provenance.json",
+      "bytes": 219
+    },
+    {
+      "path": "resource_estimate.json",
+      "bytes": 1162
+    },
+    {
+      "path": "run.json",
+      "bytes": 4814
+    },
+    {
+      "path": "selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837__p1w1p2F0p08N48z_p2w1p5F0p0200358N201spt360__SI.csv",
+      "bytes": 536168
+    },
+    {
+      "path": "selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837__p1w1p2F0p08N48z_p2w1p5F0p0200358N201spt360__SI.npz",
+      "bytes": 325440
+    },
+    {
+      "path": "source_output_manifest.json",
+      "bytes": 3359
+    },
+    {
+      "path": "surface_online/complete.json",
+      "bytes": 383
+    },
+    {
+      "path": "surface_online/layout.json",
+      "bytes": 1951
+    },
+    {
+      "path": "surface_online/preparation.json",
+      "bytes": 356
+    }
+  ],
+  "largest_actual_file_bytes": 536168
+}

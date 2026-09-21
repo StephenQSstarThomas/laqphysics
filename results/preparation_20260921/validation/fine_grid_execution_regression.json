@@ -1,0 +1,533 @@
+{
+  "step": 3737,
+  "time_au": 448.421687378123,
+  "ground_overlap_abs": 0.9999999999999989,
+  "initial_phase_real": 1.0,
+  "initial_phase_imag": 0.0,
+  "wavefunction_relative_L2": 0.0,
+  "partial_complex_spectrum_relative_L2": 8.211813686828819e-11,
+  "scope": "same actual committed TDSE time; serial LU/CPU accumulation versus CPU iterative parallel replay/GPU accumulation. Initial-state phase only, no spectral fit.",
+  "reference_run_metadata": {
+    "signature": "ef056a58ed381513d6afbf42bf5223bb2fbeee64561b3e14ba12cb83ba1925e9",
+    "config": {
+      "radial": {
+        "edges": [
+          0,
+          0.25,
+          0.5,
+          0.75,
+          1,
+          1.5,
+          2,
+          3,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          22,
+          24,
+          26,
+          28
+        ],
+        "order": [
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "tail": 24,
+        "ecs_angle": 0.5,
+        "alpha": 0.8
+      },
+      "lmax": 3,
+      "M": null,
+      "cutoff_radii": [
+        12,
+        16
+      ],
+      "surface": 20,
+      "pulses": [
+        {
+          "pulse": {
+            "omega": 1.2,
+            "cycles": 48,
+            "field": 0.08
+          },
+          "polarization": "z"
+        },
+        {
+          "pulse": {
+            "omega": 1.5,
+            "cycles": 201,
+            "field": 0.020035791491176656,
+            "start": 360.0
+          },
+          "polarization": "sigma+"
+        }
+      ],
+      "post_time": 100.0,
+      "dt": 0.12,
+      "surface_stride": 1,
+      "checkpoint_every": 200,
+      "krylov_dimension": 48,
+      "krylov_tolerance": 1e-10,
+      "ground_tolerance": 1e-10,
+      "max_surface_gib": 12,
+      "spectrum_energy": [
+        0.01,
+        2.4,
+        957
+      ],
+      "time_integrator": "cf4-pade",
+      "ionic_propagator": "cf4",
+      "linear_tolerance": 1e-10,
+      "ionic_transfer_times": [
+        360.0
+      ],
+      "ionic_channels": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          -1
+        ],
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          -1
+        ],
+        [
+          3,
+          1,
+          0
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          -2
+        ],
+        [
+          3,
+          2,
+          -1
+        ],
+        [
+          3,
+          2,
+          0
+        ],
+        [
+          3,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          2
+        ]
+      ],
+      "spectrum": {
+        "energy_segments": [
+          [
+            0.01,
+            0.18,
+            35
+          ],
+          [
+            0.18,
+            0.75,
+            1141
+          ],
+          [
+            0.75,
+            2.4,
+            166
+          ]
+        ],
+        "theta_points": 12,
+        "phi_points": 16
+      },
+      "storage": {
+        "mode": "projected",
+        "max_file_bytes": 4000000000,
+        "ionic_block_frames": 128,
+        "ionic_device": "lu"
+      },
+      "design": {
+        "scope": "selected candidate: combined radial/angular refinement and final channels through n=3; not full convergence",
+        "target_old_band": [
+          0.18,
+          0.42
+        ],
+        "unwanted_new_band": [
+          0.52,
+          0.68
+        ],
+        "pi_area_RWA": 3.1415926535897927,
+        "hydrogenic_1s_2p_dipole_au": 0.37246776951390165,
+        "note": "Weakening a fixed-area pi pulse lowers fluence but also narrows the new band; peak height must be measured separately."
+      },
+      "total_Lmax": 3,
+      "angular_representation": "bipolar",
+      "natural_parity": false,
+      "coulomb_contraction": "blocks"
+    },
+    "ground_energy": -2.9031285845687456,
+    "ground_residual": 5.016910492718275e-11,
+    "nrad": 156,
+    "channels": 156,
+    "dt": 0.11999509964627322,
+    "nsteps": 10850,
+    "completed_steps": 3737,
+    "complete": false,
+    "surface_bytes": 29575832832,
+    "surface_indices": [
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113
+    ],
+    "seconds_this_invocation": 3620.480151657015,
+    "backend": "torch",
+    "device": "cuda:0",
+    "precision": "complex128",
+    "ground_angular_basis": "coupled total L=0, expanded without angular approximation",
+    "time_integrator": "cf4-pade",
+    "gauge": {
+      "type": "velocity"
+    },
+    "ground_projection_scope": "field-free basis in the propagated gauge; compare physical populations at A=0",
+    "coulomb_contraction": "blocks",
+    "precomputed_coulomb_bytes": 69308928,
+    "preconditioner_precision": "complex64",
+    "linear_solver": "FGMRES",
+    "gmres_restart": 16,
+    "maximum_linear_residual_this_invocation": 9.99927387574771e-11,
+    "linear_iterations_this_invocation": 67796,
+    "surface_storage": "projected",
+    "raw_flux_written": false,
+    "max_file_bytes": 4000000000,
+    "phase": "propagation",
+    "numerical_snapshot": "211f705141b33fecd17aa7adccfd0acbe400d8f3d43224b0c42bbce971bce7e4",
+    "cuda_visible_devices": "1",
+    "peak_cuda_allocated_GiB": 3.0570592880249023,
+    "peak_cuda_reserved_GiB": 4.09375
+  },
+  "candidate_prefix_run_metadata": {
+    "signature": "b9f521f837d932ea5d4e457154dda73063364859326bdd36ab5507d34c67523d",
+    "config": {
+      "radial": {
+        "edges": [
+          0,
+          0.25,
+          0.5,
+          0.75,
+          1,
+          1.5,
+          2,
+          3,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          22,
+          24,
+          26,
+          28
+        ],
+        "order": [
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "tail": 24,
+        "ecs_angle": 0.5,
+        "alpha": 0.8
+      },
+      "lmax": 3,
+      "M": null,
+      "cutoff_radii": [
+        12,
+        16
+      ],
+      "surface": 20,
+      "pulses": [
+        {
+          "pulse": {
+            "omega": 1.2,
+            "cycles": 48,
+            "field": 0.08
+          },
+          "polarization": "z"
+        },
+        {
+          "pulse": {
+            "omega": 1.5,
+            "cycles": 201,
+            "field": 0.020035791491176656,
+            "start": 360.0
+          },
+          "polarization": "sigma+"
+        }
+      ],
+      "post_time": 100.0,
+      "dt": 0.12,
+      "surface_stride": 1,
+      "checkpoint_every": 200,
+      "krylov_dimension": 48,
+      "krylov_tolerance": 1e-10,
+      "ground_tolerance": 1e-10,
+      "max_surface_gib": 12,
+      "spectrum_energy": [
+        0.01,
+        2.4,
+        957
+      ],
+      "time_integrator": "cf4-pade",
+      "ionic_propagator": "cf4",
+      "linear_tolerance": 1e-10,
+      "ionic_transfer_times": [
+        360.0
+      ],
+      "ionic_channels": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          -1
+        ],
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          -1
+        ],
+        [
+          3,
+          1,
+          0
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          -2
+        ],
+        [
+          3,
+          2,
+          -1
+        ],
+        [
+          3,
+          2,
+          0
+        ],
+        [
+          3,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          2
+        ]
+      ],
+      "spectrum": {
+        "energy_segments": [
+          [
+            0.01,
+            0.18,
+            35
+          ],
+          [
+            0.18,
+            0.75,
+            1141
+          ],
+          [
+            0.75,
+            2.4,
+            166
+          ]
+        ],
+        "theta_points": 12,
+        "phi_points": 16
+      },
+      "storage": {
+        "mode": "projected",
+        "max_file_bytes": 4000000000,
+        "ionic_block_frames": 128,
+        "ionic_device": "cpu",
+        "replay_workers": 4,
+        "accumulator_device": "auto"
+      },
+      "design": {
+        "scope": "selected candidate: combined radial/angular refinement and final channels through n=3; not full convergence",
+        "target_old_band": [
+          0.18,
+          0.42
+        ],
+        "unwanted_new_band": [
+          0.52,
+          0.68
+        ],
+        "pi_area_RWA": 3.1415926535897927,
+        "hydrogenic_1s_2p_dipole_au": 0.37246776951390165,
+        "note": "Weakening a fixed-area pi pulse lowers fluence but also narrows the new band; peak height must be measured separately."
+      },
+      "total_Lmax": 3,
+      "angular_representation": "bipolar",
+      "natural_parity": false,
+      "coulomb_contraction": "blocks"
+    },
+    "ground_energy": -2.9031285845687456,
+    "ground_residual": 5.016910492718275e-11,
+    "nrad": 156,
+    "channels": 156,
+    "dt": 0.11999509964627322,
+    "nsteps": 10850,
+    "completed_steps": 3737,
+    "complete": false,
+    "surface_bytes": 29575832832,
+    "surface_indices": [
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113
+    ],
+    "seconds_this_invocation": 2908.9847121969797,
+    "backend": "torch",
+    "device": "cuda:0",
+    "precision": "complex128",
+    "ground_angular_basis": "coupled total L=0, expanded without angular approximation",
+    "time_integrator": "cf4-pade",
+    "gauge": {
+      "type": "velocity"
+    },
+    "ground_projection_scope": "field-free basis in the propagated gauge; compare physical populations at A=0",
+    "coulomb_contraction": "blocks",
+    "precomputed_coulomb_bytes": 69308928,
+    "preconditioner_precision": "complex64",
+    "linear_solver": "FGMRES",
+    "gmres_restart": 16,
+    "maximum_linear_residual_this_invocation": 9.99927387574771e-11,
+    "linear_iterations_this_invocation": 67796,
+    "surface_storage": "projected",
+    "raw_flux_written": false,
+    "max_file_bytes": 4000000000,
+    "phase": "propagation",
+    "numerical_snapshot": "85863a9a23cbd7d655bdb5cd3ea98cbe482484aa2240f5fc19b27d0c77ab8b5b",
+    "cuda_visible_devices": "2",
+    "peak_cuda_allocated_GiB": 3.166224479675293,
+    "peak_cuda_reserved_GiB": 4.287109375
+  },
+  "passed": true
+}

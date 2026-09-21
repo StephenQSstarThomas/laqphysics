@@ -1,0 +1,32 @@
+{
+  "cases": [
+    "longer_pump_F008_N48_pi201__ccc6f27abe",
+    "longer_pump_F008_N48_pi201_pump_only__a8372ebfe4",
+    "longer_pump_F008_N48_pi201_control_only__f2dbbeaa05"
+  ],
+  "prepared_ion_transfer": 0.9984940537533484,
+  "neutral_ground_survival_after_pulse1": 0.6496758423079028,
+  "old_band_2p_plus1": {
+    "energy_window": [
+      0.18,
+      0.42
+    ],
+    "predicted_yield": 0.3464662807912414,
+    "measured_yield": 0.346463852975721,
+    "relative_yield_difference": -7.007364511313341e-06,
+    "absolute_density_relative_L1": 8.950704722142438e-06,
+    "normalized_shape_L1": 6.1878507883067516e-06
+  },
+  "new_band_total": {
+    "energy_window": [
+      0.52,
+      0.68
+    ],
+    "predicted_yield": 0.03164120808845938,
+    "measured_yield": 0.031641329425355275,
+    "relative_yield_difference": 3.834774435773625e-06,
+    "absolute_density_relative_L1": 3.8347744356255396e-06,
+    "normalized_shape_L1": 6.785409458130268e-06
+  },
+  "scope": "Small-model separated-pulse diagnostic using independently measured transfer/survival, with no fitted scales or energy shifts. Not a convergence gate."
+}

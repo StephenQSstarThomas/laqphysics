@@ -1,0 +1,13 @@
+RUN_ID parallel_cuda_smoke__dbb1320867 
+INPUT /playpen/shiqiu/task-jiukongdian/configs/preparation_20260921/parallel_cuda_smoke.json 
+OUTPUT /playpen1/shiqiu/laqphysics-data/iteration20260921/smoke/parallel_cuda_smoke__dbb1320867
+ground E=-2.9012996227, residual=3.921e-11; (60, 60, 81), storage=projected, raw-equivalent=0.171GiB
+IONIC PREP 0 frames remaining
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/00ae8a537fd9a1b4/python/torch_backend.py:21: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen1/shiqiu/laqphysics-data/iteration20260921/code/00ae8a537fd9a1b4/python/torch_backend.py:21: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+3D 200/470, inner norm=0.99997340, Pg=0.99907210, wall=28.8s
+3D 400/470, inner norm=0.99923379, Pg=0.99907210, wall=49.7s
+3D 470/470, inner norm=0.99918093, Pg=0.99907210, wall=55.9s
+COMPLETE SI SPECTRUM /playpen1/shiqiu/laqphysics-data/iteration20260921/smoke/parallel_cuda_smoke__dbb1320867/figures/parallel_cuda_smoke__dbb1320867__p1w1p5F0p02N3sp__SI.png

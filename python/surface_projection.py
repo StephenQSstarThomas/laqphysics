@@ -11,7 +11,7 @@ from scipy.special import spherical_jn,sph_harm_y
 from surface3d import Ionic
 
 def project(h,flux,times,avec,labels,dt,substeps=1,angular_transform=None,
-            propagator='expm',diagnostics=None,output=None,fold_m=True,ion_factory=None,ionic_field=None,ionic_device=None):
+            propagator='expm',diagnostics=None,output=None,fold_m=True,ion_factory=None,ionic_field=None,ionic_device=None,max_file_bytes=None):
     from scipy.sparse import csr_matrix
     from scipy.sparse import issparse
     from scipy.sparse.linalg import expm_multiply
@@ -39,7 +39,13 @@ def project(h,flux,times,avec,labels,dt,substeps=1,angular_transform=None,
             if (inner[0],abs(inner[1]) if folded else inner[1]) in ion.index]
     outerstates=sorted({h.ch[c][1] for c in active});outerindex={x:i for i,x in enumerate(outerstates)}
     shape=(len(times),len(labels),len(outerstates),len(h.surface_indices))
-    history=np.lib.format.open_memmap(output,mode='w+',dtype=complex,shape=shape) if output else np.empty(shape,complex)
+    if output is not None and max_file_bytes is not None:
+        from surface_storage import ShardedArray
+        history=ShardedArray(output,shape,mode='w+',max_file_bytes=max_file_bytes)
+    elif output is not None:
+        if np.prod(shape)*16+4096>5_000_000_000:raise ValueError('projected history needs bounded shards; supply max_file_bytes')
+        history=np.lib.format.open_memmap(output,mode='w+',dtype=complex,shape=shape)
+    else:history=np.empty(shape,complex)
     # In an M=0 coupled basis, each column has fixed (l1,l2). With z polarization,
     # a target m picks exactly one product harmonic per coupled column. Contract
     # its CG coefficient with chi before expanding the surface tensor.

@@ -1,0 +1,41 @@
+{
+  "source_root": "/playpen1/shiqiu/laqphysics-data/iteration20260921/runs",
+  "completed_cases": [
+    {
+      "run_id": "longer_pump_F008_N48_pi201__ccc6f27abe",
+      "source": "/playpen1/shiqiu/laqphysics-data/iteration20260921/runs/longer_pump_F008_N48_pi201__ccc6f27abe",
+      "source_largest_file_bytes": 23659726
+    },
+    {
+      "run_id": "longer_pump_F008_N48_pi201_control_only__f2dbbeaa05",
+      "source": "/playpen1/shiqiu/laqphysics-data/iteration20260921/runs/longer_pump_F008_N48_pi201_control_only__f2dbbeaa05",
+      "source_largest_file_bytes": 23659726
+    },
+    {
+      "run_id": "longer_pump_F008_N48_pi201_pump_only__a8372ebfe4",
+      "source": "/playpen1/shiqiu/laqphysics-data/iteration20260921/runs/longer_pump_F008_N48_pi201_pump_only__a8372ebfe4",
+      "source_largest_file_bytes": 23657514
+    },
+    {
+      "run_id": "selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837",
+      "source": "/playpen1/shiqiu/laqphysics-data/iteration20260921/runs/selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837",
+      "source_largest_file_bytes": 345968154
+    },
+    {
+      "run_id": "short_pump_F012_N24_pi201__de8c245203",
+      "source": "/playpen1/shiqiu/laqphysics-data/iteration20260921/runs/short_pump_F012_N24_pi201__de8c245203",
+      "source_largest_file_bytes": 23659734
+    },
+    {
+      "run_id": "short_pump_F012_N24_pi402__43b121bb2b",
+      "source": "/playpen1/shiqiu/laqphysics-data/iteration20260921/runs/short_pump_F012_N24_pi402__43b121bb2b",
+      "source_largest_file_bytes": 23659730
+    }
+  ],
+  "numerical_source_snapshots": [
+    "824d0b747221a889",
+    "85863a9a23cbd7d6"
+  ],
+  "pending_runs_omitted": true,
+  "scope": "Completed physical results only; no production convergence certification."
+}

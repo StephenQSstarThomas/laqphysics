@@ -1,0 +1,86 @@
+{
+  "scope": "Only exported files; full scratch inventory is in export.json and source_output_manifest.json",
+  "files": [
+    {
+      "path": "RUN.md",
+      "bytes": 2476
+    },
+    {
+      "path": "STATUS.json",
+      "bytes": 606
+    },
+    {
+      "path": "config.json",
+      "bytes": 2142
+    },
+    {
+      "path": "export.json",
+      "bytes": 2940
+    },
+    {
+      "path": "figures/short_pump_F012_N24_pi201__de8c245203__p1w1p2F0p12N24z_p2w1p5F0p0200358N201spt240__SI.pdf",
+      "bytes": 32729
+    },
+    {
+      "path": "figures/short_pump_F012_N24_pi201__de8c245203__p1w1p2F0p12N24z_p2w1p5F0p0200358N201spt240__SI.png",
+      "bytes": 330409
+    },
+    {
+      "path": "figures/short_pump_F012_N24_pi201__de8c245203__p1w1p2F0p12N24z_p2w1p5F0p0200358N201spt240__SI__conditional.png",
+      "bytes": 129986
+    },
+    {
+      "path": "history.json",
+      "bytes": 15846
+    },
+    {
+      "path": "input.json",
+      "bytes": 2142
+    },
+    {
+      "path": "ionic_transfer.json",
+      "bytes": 1071
+    },
+    {
+      "path": "observables.json",
+      "bytes": 5931
+    },
+    {
+      "path": "rendering_provenance.json",
+      "bytes": 219
+    },
+    {
+      "path": "resource_estimate.json",
+      "bytes": 999
+    },
+    {
+      "path": "run.json",
+      "bytes": 3825
+    },
+    {
+      "path": "short_pump_F012_N24_pi201__de8c245203__p1w1p2F0p12N24z_p2w1p5F0p0200358N201spt240__SI.csv",
+      "bytes": 134828
+    },
+    {
+      "path": "short_pump_F012_N24_pi201__de8c245203__p1w1p2F0p12N24z_p2w1p5F0p0200358N201spt240__SI.npz",
+      "bytes": 77379
+    },
+    {
+      "path": "source_output_manifest.json",
+      "bytes": 2399
+    },
+    {
+      "path": "surface_online/complete.json",
+      "bytes": 362
+    },
+    {
+      "path": "surface_online/layout.json",
+      "bytes": 1217
+    },
+    {
+      "path": "surface_online/preparation.json",
+      "bytes": 336
+    }
+  ],
+  "largest_actual_file_bytes": 330409
+}

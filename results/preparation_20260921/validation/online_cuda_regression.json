@@ -1,0 +1,10 @@
+{
+  "comparison": "new CUDA online propagation and spectrum vs previously validated full-history circular TDSE at identical physical inputs",
+  "initial_ground_overlap_abs": 0.9999999999999997,
+  "initial_phase_real": 1.0,
+  "initial_phase_imag": 0.0,
+  "final_wavefunction_relative_L2": 6.888214449444222e-14,
+  "complex_spectrum_relative_L2": 2.588086334827356e-12,
+  "new_raw_flux_written": false,
+  "largest_actual_file_bytes": 9333270
+}

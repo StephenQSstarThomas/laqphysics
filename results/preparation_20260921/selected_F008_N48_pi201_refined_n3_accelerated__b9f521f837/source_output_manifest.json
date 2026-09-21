@@ -1,0 +1,155 @@
+{
+  "run_id": "selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837",
+  "files": [
+    {
+      "path": ".case.lock",
+      "bytes": 0
+    },
+    {
+      "path": ".projection.lock",
+      "bytes": 0
+    },
+    {
+      "path": ".propagation.lock",
+      "bytes": 0
+    },
+    {
+      "path": "RUN.md",
+      "bytes": 2232
+    },
+    {
+      "path": "STATUS.json",
+      "bytes": 689
+    },
+    {
+      "path": "attempts.json",
+      "bytes": 527
+    },
+    {
+      "path": "checkpoint.npz",
+      "bytes": 121487382
+    },
+    {
+      "path": "config.json",
+      "bytes": 2941
+    },
+    {
+      "path": "figures/selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837__p1w1p2F0p08N48z_p2w1p5F0p0200358N201spt360__SI.pdf",
+      "bytes": 34293
+    },
+    {
+      "path": "figures/selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837__p1w1p2F0p08N48z_p2w1p5F0p0200358N201spt360__SI.png",
+      "bytes": 310005
+    },
+    {
+      "path": "figures/selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837__p1w1p2F0p08N48z_p2w1p5F0p0200358N201spt360__SI__conditional.png",
+      "bytes": 134754
+    },
+    {
+      "path": "history.json",
+      "bytes": 17803
+    },
+    {
+      "path": "input.json",
+      "bytes": 2941
+    },
+    {
+      "path": "input_template.json",
+      "bytes": 2941
+    },
+    {
+      "path": "ionic_transfer.json",
+      "bytes": 2294
+    },
+    {
+      "path": "observables.json",
+      "bytes": 10421
+    },
+    {
+      "path": "rendering_provenance.json",
+      "bytes": 219
+    },
+    {
+      "path": "resource_estimate.json",
+      "bytes": 1162
+    },
+    {
+      "path": "run.json",
+      "bytes": 4814
+    },
+    {
+      "path": "selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837__p1w1p2F0p08N48z_p2w1p5F0p0200358N201spt360__SI.csv",
+      "bytes": 536168
+    },
+    {
+      "path": "selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837__p1w1p2F0p08N48z_p2w1p5F0p0200358N201spt360__SI.npz",
+      "bytes": 325440
+    },
+    {
+      "path": "spectrum.npz",
+      "bytes": 86616090
+    },
+    {
+      "path": "spectrum_angles.npz",
+      "bytes": 345968154
+    },
+    {
+      "path": "spectrum_angles.npz.json",
+      "bytes": 616
+    },
+    {
+      "path": "spectrum_energy.npz",
+      "bytes": 147434802
+    },
+    {
+      "path": "spectrum_energy.npz.json",
+      "bytes": 616
+    },
+    {
+      "path": "spectrum_stride2.npz",
+      "bytes": 86616090
+    },
+    {
+      "path": "spectrum_stride2.npz.json",
+      "bytes": 617
+    },
+    {
+      "path": "surface_online/accumulator_0.npz",
+      "bytes": 115269074
+    },
+    {
+      "path": "surface_online/accumulator_1.npz",
+      "bytes": 115269074
+    },
+    {
+      "path": "surface_online/complete.json",
+      "bytes": 383
+    },
+    {
+      "path": "surface_online/ionic_endpoints/array.json",
+      "bytes": 124
+    },
+    {
+      "path": "surface_online/ionic_endpoints/part_000000.npy",
+      "bytes": 48083072
+    },
+    {
+      "path": "surface_online/layout.json",
+      "bytes": 1951
+    },
+    {
+      "path": "surface_online/preparation.json",
+      "bytes": 356
+    },
+    {
+      "path": "surface_online/projected/array.json",
+      "bytes": 134
+    },
+    {
+      "path": "surface_online/projected/part_000000.npy",
+      "bytes": 272230016
+    }
+  ],
+  "largest_actual_file_bytes": 345968154,
+  "max_file_bytes": 4000000000
+}

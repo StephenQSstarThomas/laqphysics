@@ -1,0 +1,247 @@
+{
+  "run_id": "short_pump_F012_N24_pi201__de8c245203",
+  "configuration_signature": "de8c24520351c21b310e24132d7dc7d9c95e72a77e276499d84088e9d4823f21",
+  "complete": true,
+  "labels": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      -1
+    ],
+    [
+      2,
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      1
+    ]
+  ],
+  "bands": [
+    {
+      "window": [
+        0.18,
+        0.42
+      ],
+      "available": true,
+      "complete_window": true,
+      "energy_window_used": [
+        0.18,
+        0.42
+      ],
+      "peak_height": 4.9917983780578,
+      "peak_energy_grid": 0.3,
+      "yield": 0.37960116561712387,
+      "channel_yields": [
+        5.97785997459577e-05,
+        1.228049876253585e-07,
+        5.1982106529845085e-08,
+        9.283612894755842e-07,
+        0.3795402838689943
+      ]
+    },
+    {
+      "window": [
+        0.52,
+        0.68
+      ],
+      "available": true,
+      "complete_window": true,
+      "energy_window_used": [
+        0.52,
+        0.6799999999999999
+      ],
+      "peak_height": 2.157141832174486,
+      "peak_energy_grid": 0.6,
+      "yield": 0.029821739645706318,
+      "channel_yields": [
+        0.014811935758763141,
+        5.000089803362981e-07,
+        1.1373647803493328e-08,
+        1.089288137517803e-07,
+        0.015009183575501286
+      ]
+    }
+  ],
+  "artifacts": {
+    "spectrum": "short_pump_F012_N24_pi201__de8c245203__p1w1p2F0p12N24z_p2w1p5F0p0200358N201spt240__SI.npz",
+    "csv": "short_pump_F012_N24_pi201__de8c245203__p1w1p2F0p12N24z_p2w1p5F0p0200358N201spt240__SI.csv",
+    "figure": "figures/short_pump_F012_N24_pi201__de8c245203__p1w1p2F0p12N24z_p2w1p5F0p0200358N201spt240__SI.png",
+    "pdf": "figures/short_pump_F012_N24_pi201__de8c245203__p1w1p2F0p12N24z_p2w1p5F0p0200358N201spt240__SI.pdf",
+    "conditional_figure": "figures/short_pump_F012_N24_pi201__de8c245203__p1w1p2F0p12N24z_p2w1p5F0p0200358N201spt240__SI__conditional.png",
+    "full_angular_amplitudes": "spectrum.npz"
+  },
+  "peak_height_ratio_03_over_06": 2.31407981784205,
+  "yield_ratio_03_over_06": 12.729008103716652,
+  "old_band_2p_plus1_fraction": 0.9998396165406115,
+  "prepared_ion_P_2p_plus1": 0.9984940537148871,
+  "channel_peak_comparisons": [
+    {
+      "label": [
+        1,
+        0,
+        0
+      ],
+      "peak_03": 0.0007857418257690038,
+      "peak_06": 1.0727003202082483,
+      "peak_ratio_03_over_06": 0.0007324895974827937
+    },
+    {
+      "label": [
+        2,
+        0,
+        0
+      ],
+      "peak_03": 2.1698408723012706e-06,
+      "peak_06": 3.303682115123545e-05,
+      "peak_ratio_03_over_06": 0.06567946904964635
+    },
+    {
+      "label": [
+        2,
+        1,
+        -1
+      ],
+      "peak_03": 6.515620434333942e-07,
+      "peak_06": 1.7376955829107455e-07,
+      "peak_ratio_03_over_06": 3.7495752986952313
+    },
+    {
+      "label": [
+        2,
+        1,
+        0
+      ],
+      "peak_03": 1.282612647625731e-05,
+      "peak_06": 1.7644288913146705e-06,
+      "peak_ratio_03_over_06": 7.269279334176286
+    },
+    {
+      "label": [
+        2,
+        1,
+        1
+      ],
+      "peak_03": 4.991005220798673,
+      "peak_06": 1.084408467110686,
+      "peak_ratio_03_over_06": 4.602514063816544
+    }
+  ],
+  "channel_yields_on_energy_grid": [
+    0.015441540031636324,
+    0.0006447429368929128,
+    0.0001230653094666611,
+    0.001484806847130288,
+    0.39670238388414786
+  ],
+  "conditional_normalization": "Unit area over the explicitly computed energy grid, separately for each ion; not absolute counts.",
+  "predeclared_targets": {
+    "peak_height_ratio_min": 3.0,
+    "band_yield_ratio_min": 5.0,
+    "old_band_2p_plus1_fraction_min": 0.95,
+    "prepared_ion_transfer_min": 0.95
+  },
+  "target_applicable": true,
+  "target_passed": false,
+  "scope": "Sum of explicitly recorded bound ionic channels, plus channel-resolved SI spectra; no claim of complete ionic-channel or spatial convergence.",
+  "pulses": [
+    {
+      "number": 1,
+      "polarization": "z",
+      "omega": 1.2,
+      "cycles": 24,
+      "field": 0.12,
+      "start": 0.0,
+      "cep": 0.0,
+      "duration_au": 125.66370614359172,
+      "duration_fs": 3.0396596921194554,
+      "intensity_FWHM_fs": 1.1066083665209383,
+      "equivalent_cycle_average_peak_intensity_W_cm2": 505360108800000.0
+    },
+    {
+      "number": 2,
+      "polarization": "sigma+",
+      "omega": 1.5,
+      "cycles": 201,
+      "field": 0.020035791491176656,
+      "start": 240.0,
+      "cep": 0.0,
+      "duration_au": 841.9468311620645,
+      "duration_fs": 20.36571993720035,
+      "intensity_FWHM_fs": 7.414276055690285,
+      "equivalent_cycle_average_peak_intensity_W_cm2": 14088069067839.65
+    }
+  ],
+  "ionic_transfer": {
+    "requested_times": [
+      240.0
+    ],
+    "transfers_from_1s": [
+      {
+        "requested_time": 240.0,
+        "actual_time": 239.98920429686586,
+        "labels": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0
+          ],
+          [
+            2,
+            1,
+            -1
+          ],
+          [
+            2,
+            1,
+            0
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        "amplitude_real": [
+          0.011120817268895808,
+          -1.6442337625264373e-06,
+          -3.706695839177936e-09,
+          0.0,
+          0.24733028235601254
+        ],
+        "amplitude_imag": [
+          0.005791343639866332,
+          6.127048956819529e-07,
+          1.023389588713951e-09,
+          0.0,
+          0.9681538024222093
+        ],
+        "probabilities": [
+          0.00015721223788319142,
+          3.0789119550244774e-12,
+          1.4786920294467132e-17,
+          0.0,
+          0.9984940537148871
+        ],
+        "scope": "transition from prepared ionic 1s into recorded final bound channels"
+      }
+    ]
+  }
+}
