@@ -1,0 +1,6 @@
+PASS: 297 package files; source commit ff81765d7d2c0e3588338ab162af08ae691a1c1e
+The package contains completed small-result evidence; full production convergence remains pending.
+mkdir -p build
+gfortran -O3 -fopenmp -fPIC -ffree-line-length-none -Jbuild -shared src/kernels.f90 -o build/libhelium.so.tmp
+mv build/libhelium.so.tmp build/libhelium.so
+/playpen1/shiqiu/laqphysics-data/minimum_bundle_check/release_b4n_assz/outputs/code/8268e4c7f05f7adf

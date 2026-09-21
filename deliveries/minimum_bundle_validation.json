@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "archive_sha256": "3cf8bf6e2bd29c5a1bcac5976f123aa7c4892b3b0a0e44250c5da2aa27febb37",
+  "package_directory": "/playpen1/shiqiu/laqphysics-data/minimum_bundle_check/unpacked_wk3s5oxb/laqphysics-minimum-20260921",
+  "git_directory_present": false,
+  "checks": [
+    {
+      "check": "verify_initial",
+      "exit_code": 0,
+      "seconds": 0.08063077926635742
+    },
+    {
+      "check": "compile_and_both_test_suites",
+      "exit_code": 0,
+      "seconds": 121.38679122924805
+    },
+    {
+      "check": "cpu_smoke",
+      "exit_code": 0,
+      "seconds": 5.2543699741363525
+    },
+    {
+      "check": "replot_six_completed_cases",
+      "exit_code": 0,
+      "seconds": 5.863412380218506
+    },
+    {
+      "check": "production_resource_estimate",
+      "exit_code": 0,
+      "seconds": 0.7801580429077148
+    },
+    {
+      "check": "snapshot_without_git",
+      "exit_code": 0,
+      "seconds": 0.0656588077545166
+    },
+    {
+      "check": "slurm_body_with_real_frozen_worker",
+      "exit_code": 0,
+      "seconds": 5.803924798965454
+    },
+    {
+      "check": "verify_after_running",
+      "exit_code": 0,
+      "seconds": 0.051088571548461914
+    }
+  ],
+  "scope": "Extracted standalone package: real local compilation, tests, propagation/publication, replot and frozen worker; srun mocked, no real cluster submission.",
+  "archive_bytes": 5361488,
+  "source_commit": "ff81765d7d2c0e3588338ab162af08ae691a1c1e",
+  "tested_payload_byte_identical_to_release": true,
+  "release_archive_verify_passed": true,
+  "release_snapshot_without_git_passed": true
+}

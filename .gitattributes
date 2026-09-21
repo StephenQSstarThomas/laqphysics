@@ -1,2 +1,3 @@
 # Preserve captured numerical stdout/stderr verbatim, including terminal spacing.
 results/**/*.log -whitespace
+deliveries/**/*.log -whitespace

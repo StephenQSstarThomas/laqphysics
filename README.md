@@ -4,6 +4,7 @@
 
 ## 先读这些交付文档
 
+- [独立最小交接代码包（约 5.4 MB）](deliveries/README.md)：无需 Git 和原服务器路径，含中文菜单、编译测试、谱图重画与 Slurm 入口，已独立解压实跑核验。
 - [单电离谱运行手册（2026-09-21）](docs/iteration20260921/使用说明.md)：每次任务的输入、命名谱图、CPU/GPU Slurm、5 GB 文件上限与在线提谱。
 - [本轮结果索引](results/preparation_20260921/INDEX.md)与[结论及剩余工作](results/preparation_20260921/SUMMARY.md)：总谱与离子符合谱、0.3 主峰制备方案及细化核验。
 - [前轮最小验证交接](docs/convergence/最小验证交接.md)：新增算法的直接交叉验证、高精度长算例检查、可复现交接及合作者的 Slurm 待办。
