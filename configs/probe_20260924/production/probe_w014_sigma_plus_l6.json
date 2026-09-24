@@ -1,0 +1,321 @@
+{
+  "radial": {
+    "edges": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1,
+      1.25,
+      1.5,
+      2,
+      2.5,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      24,
+      26,
+      28,
+      30,
+      32,
+      36.0,
+      40.0,
+      44.0,
+      48.0,
+      52.0,
+      56.0,
+      60.0,
+      64.0
+    ],
+    "order": [
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "tail": 24,
+    "ecs_angle": 0.5,
+    "alpha": 0.8
+  },
+  "lmax": 6,
+  "M": null,
+  "cutoff_radii": [
+    32.0,
+    40.0
+  ],
+  "surface": 44.0,
+  "pulses": [
+    {
+      "pulse": {
+        "omega": 1.2,
+        "cycles": 48,
+        "field": 0.08
+      },
+      "polarization": "z",
+      "role": "ionize"
+    },
+    {
+      "pulse": {
+        "omega": 1.5,
+        "cycles": 201,
+        "field": 0.020035791491176656,
+        "start": 360.0
+      },
+      "polarization": "sigma+",
+      "role": "prepare"
+    },
+    {
+      "pulse": {
+        "omega": 0.14,
+        "cycles": 48,
+        "field": 0.02,
+        "start": 1321.98
+      },
+      "polarization": "sigma+",
+      "role": "probe"
+    }
+  ],
+  "dt": 0.06,
+  "surface_stride": 1,
+  "checkpoint_every": 200,
+  "krylov_dimension": 48,
+  "krylov_tolerance": 1e-10,
+  "ground_tolerance": 1e-10,
+  "max_surface_gib": 12,
+  "spectrum_energy": [
+    0.01,
+    2.4,
+    957
+  ],
+  "time_integrator": "cf4-pade",
+  "ionic_propagator": "cf4",
+  "linear_tolerance": 1e-10,
+  "ionic_transfer_times": [
+    360.0
+  ],
+  "ionic_channels": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      -1
+    ],
+    [
+      2,
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      1
+    ],
+    [
+      3,
+      0,
+      0
+    ],
+    [
+      3,
+      1,
+      -1
+    ],
+    [
+      3,
+      1,
+      0
+    ],
+    [
+      3,
+      1,
+      1
+    ],
+    [
+      3,
+      2,
+      -2
+    ],
+    [
+      3,
+      2,
+      -1
+    ],
+    [
+      3,
+      2,
+      0
+    ],
+    [
+      3,
+      2,
+      1
+    ],
+    [
+      3,
+      2,
+      2
+    ],
+    [
+      5,
+      2,
+      -2
+    ],
+    [
+      5,
+      2,
+      2
+    ],
+    [
+      5,
+      4,
+      -4
+    ],
+    [
+      5,
+      4,
+      -2
+    ],
+    [
+      5,
+      4,
+      2
+    ],
+    [
+      5,
+      4,
+      4
+    ]
+  ],
+  "spectrum": {
+    "energy_segments": [
+      [
+        0.01,
+        0.18,
+        35
+      ],
+      [
+        0.18,
+        0.75,
+        1141
+      ],
+      [
+        0.75,
+        2.4,
+        166
+      ]
+    ],
+    "theta_points": 24,
+    "phi_points": 32,
+    "plot_channels": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        1
+      ],
+      [
+        5,
+        4,
+        4
+      ]
+    ]
+  },
+  "storage": {
+    "mode": "spectrum",
+    "max_file_bytes": 4000000000,
+    "ionic_block_frames": 128,
+    "ionic_device": "cpu",
+    "replay_workers": 4,
+    "accumulator_device": "auto"
+  },
+  "design": {
+    "scope": "production candidate: requires the independent comparisons listed in this plan",
+    "target_old_band": [
+      0.18,
+      0.42
+    ],
+    "unwanted_new_band": [
+      0.52,
+      0.68
+    ],
+    "pi_area_RWA": 3.1415926535897927,
+    "hydrogenic_1s_2p_dipole_au": 0.37246776951390165,
+    "note": "Weakening a fixed-area pi pulse lowers fluence but also narrows the new band; peak height must be measured separately."
+  },
+  "total_Lmax": 4,
+  "angular_representation": "bipolar",
+  "natural_parity": false,
+  "coulomb_contraction": "blocks",
+  "end_time": 3596.22,
+  "probe": {
+    "prepared_channel": [
+      2,
+      1,
+      1
+    ],
+    "target_channels": [
+      [
+        5,
+        4,
+        4
+      ]
+    ],
+    "transition": "sigma+: no n=3 state with m=+3 (two-photon forbidden); three-photon stretched ladder 2p(+1)->5g(+4) near 0.14",
+    "field_free_two_photon_resonance_au": 0.1388888888888889,
+    "field_free_three_photon_2p_to_n5_au": 0.13999999999999999,
+    "design_scan": "results/probe_20260924/ion_design/summary.json",
+    "timing": "starts when the two-pulse source input ends; the ionized electrons have already crossed the surface",
+    "physics_note": "An ion-only operation after the electron left cannot change the unconditional SI spectrum; coincidence spectra are redistributed. Compare with the source/no-probe control."
+  }
+}

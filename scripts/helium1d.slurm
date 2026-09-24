@@ -6,6 +6,8 @@
 #SBATCH --time=12:00:00
 #SBATCH --output=logs/helium1d-%j.log
 set -euo pipefail
+# Reports and indexes contain UTF-8 (Chinese, sigma, <=). Never depend on the node locale.
+export PYTHONUTF8=1 PYTHONIOENCODING=utf-8
 repo_dir="${HELIUM_REPO:-${SLURM_SUBMIT_DIR:-$PWD}}"
 cd "$repo_dir"
 export OMP_NUM_THREADS="${SLURM_CPUS_PER_TASK:-2}"

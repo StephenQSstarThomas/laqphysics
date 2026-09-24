@@ -1,0 +1,57 @@
+{
+  "cases": [
+    "source",
+    "probe_w014_sigma_minus",
+    "probe_w014_sigma_plus",
+    "probe_w5o36_sigma_minus",
+    "probe_w5o36_sigma_plus",
+    "probe_w014_sigma_minus_l6",
+    "probe_w014_sigma_plus_l6",
+    "no_probe_same_end"
+  ],
+  "primary_cases": [
+    "source",
+    "probe_w014_sigma_minus",
+    "probe_w014_sigma_plus"
+  ],
+  "factorization_checks": [
+    {
+      "source": "source",
+      "probe": "probe_w014_sigma_minus"
+    },
+    {
+      "source": "source",
+      "probe": "probe_w014_sigma_plus"
+    },
+    {
+      "source": "source",
+      "probe": "probe_w5o36_sigma_minus"
+    },
+    {
+      "source": "source",
+      "probe": "probe_w5o36_sigma_plus"
+    }
+  ],
+  "pairs": [],
+  "acceptance": {
+    "peak_shift_au": 0.001,
+    "normalized_shape_L1": 0.02,
+    "relative_yield": 0.02,
+    "energy_windows": [
+      [
+        0.18,
+        0.42
+      ]
+    ]
+  },
+  "scope": "Three-pulse probe inputs on the extended box; source=two-pulse preparation ending at the probe start. None is certified by configuration alone.",
+  "optional_cases": [
+    "probe_w5o36_sigma_minus",
+    "probe_w5o36_sigma_plus",
+    "no_probe_same_end",
+    "probe_w014_sigma_minus_l6",
+    "probe_w014_sigma_plus_l6"
+  ],
+  "optional_note": "*_l6 need a GPU with >=48 GB (measured peak 40.3 GiB allocated); they do not fit GPU40G.",
+  "recommended_order": "source first; then apply_ionic_probe.py with configs/probe_20260924/ion_basis_converged.json gives the converged probe result from it in about an hour of CPU/GPU; the two full lmax=4 probes at 0.14 a.u. check that map at production scale (identical ionic Hamiltonian). 5/36, no_probe_same_end and *_l6 are optional."
+}

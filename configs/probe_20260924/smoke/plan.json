@@ -1,0 +1,13 @@
+{
+  "cases": [
+    "source",
+    "probe"
+  ],
+  "factorization_checks": [
+    {
+      "source": "source",
+      "probe": "probe"
+    }
+  ],
+  "scope": "smoke inputs for the three-pulse chain; not production physics"
+}

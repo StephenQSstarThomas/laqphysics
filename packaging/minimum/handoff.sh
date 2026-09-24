@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
+# Reports and indexes contain UTF-8 (Chinese, sigma, <=). Never depend on the node locale.
+export PYTHONUTF8=1 PYTHONIOENCODING=utf-8
 package_root="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$package_root"
 python_bin="${HELIUM_PYTHON:-python3}"
@@ -7,9 +9,9 @@ output_root="${HELIUM_OUTPUT_ROOT:-$package_root/local_runs}"
 export PYTHONPATH="$package_root/python${PYTHONPATH:+:$PYTHONPATH}"
 export OMP_NUM_THREADS="${OMP_NUM_THREADS:-2}" OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
 if [[ $# == 0 && -t 0 ]]; then
-  echo '1 校验包  2 编译与测试  3 CPU 小算例  4 重画已交付谱  5 生产资源估算'
+  echo '1 校验包  2 编译与测试  3 CPU 小算例  4 重画已交付谱  5 生产资源估算  6 三脉冲（第三束探测）小算例'
   read -r -p '选择编号（其他输入退出）：' choice
-  case "$choice" in 1) set -- verify;; 2) set -- test;; 3) set -- smoke;; 4) set -- render;; 5) set -- estimate;; *) exit 0;; esac
+  case "$choice" in 1) set -- verify;; 2) set -- test;; 3) set -- smoke;; 4) set -- render;; 5) set -- estimate;; 6) set -- probe-smoke;; *) exit 0;; esac
 fi
 action="${1:-help}"; if [[ $# -gt 0 ]]; then shift; fi
 case "$action" in
@@ -24,6 +26,16 @@ case "$action" in
   smoke)
     make all
     exec "$python_bin" scripts/simulate_spectrum.py --config configs/handoff_smoke.json --out-root "$output_root/smoke" --device "${1:-cpu}" --cpu-threads "${HELIUM_TORCH_THREADS:-2}"
+    ;;
+  probe-smoke)
+    # Tiny three-pulse chain: two-pulse source, full probe run, and the fast
+    # ionic factorization of the same probe. Code-path check, not physics.
+    make all
+    device="${1:-cpu}"
+    "$python_bin" scripts/simulate_spectrum.py --config configs/probe_20260924/smoke/source.json --out-root "$output_root/probe_smoke" --device "$device" --cpu-threads "${HELIUM_TORCH_THREADS:-2}"
+    "$python_bin" scripts/simulate_spectrum.py --config configs/probe_20260924/smoke/probe.json --out-root "$output_root/probe_smoke" --device "$device" --cpu-threads "${HELIUM_TORCH_THREADS:-2}"
+    source_dir="$("$python_bin" scripts/simulate_spectrum.py --config configs/probe_20260924/smoke/source.json --out-root "$output_root/probe_smoke" --estimate-only | "$python_bin" -c 'import json,sys;print(json.load(sys.stdin)["output"])')"
+    exec "$python_bin" scripts/apply_ionic_probe.py --source "$source_dir" --config configs/probe_20260924/smoke/probe.json --out-root "$output_root/probe_smoke_factorized" --device lu
     ;;
   render)
     "$python_bin" - "$output_root/replotted" <<'PY'
@@ -50,7 +62,7 @@ PY
     exec scripts/submit_spectra.sh "$@"
     ;;
   *)
-    echo './handoff.sh verify | test | smoke [cpu|cuda:0] | render | estimate [CONFIG] | snapshot | submit [gpu|cpu] [sbatch options]'
+    echo './handoff.sh verify | test | smoke [cpu|cuda:0] | probe-smoke [cpu|cuda:0] | render | estimate [CONFIG] | snapshot | submit [gpu|cpu] [sbatch options]'
     echo 'HELIUM_PYTHON selects Python; HELIUM_OUTPUT_ROOT selects all new outputs (local default: ./local_runs).'
     ;;
 esac

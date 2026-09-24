@@ -50,4 +50,7 @@ def estimate(config):
             'replay_workers':int(s.get('replay_workers',0)),
             'replay_array_RAM_estimate_including_lookahead_bytes':(1+4*int(s.get('replay_workers',0)))*(B+1)*endpoint_frame,
             'FGMRES_Q_Z_bytes':33*wave,
+            # Measured peak/FGMRES = 1.65-1.70 for three bipolar CF4-Pade inputs (156-264 radial
+            # points, 156-705 channels): Coulomb blocks, preconditioner and solver workspace.
+            'GPU_peak_estimate_bytes':int(1.75*33*wave)+2*amplitude,
             'scope':'Array sizes plus conservative headers; GPU operators, workspaces, ground cache and logs add overhead. Not a runtime or peak GPU guarantee.'}

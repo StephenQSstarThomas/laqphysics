@@ -12,9 +12,9 @@ for out in sorted(folder.iterdir()):
         try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
         except BlockingIOError:
             print('SKIPPED active writer',out.name,flush=True);continue
-        meta=json.loads((out/'run.json').read_text())
+        meta=json.loads((out/'run.json').read_text(encoding='utf-8'))
         if not meta.get('complete'):continue
-        old=json.loads((out/'observables.json').read_text()) if (out/'observables.json').exists() else {}
+        old=json.loads((out/'observables.json').read_text(encoding='utf-8')) if (out/'observables.json').exists() else {}
         if not (out/'spectrum.npz').exists() and not (old.get('artifacts') and (out/old['artifacts']['spectrum']).exists()):continue
         result=publish(out,out.name)
         # Replace only known, generated presentation files from the first renderer.

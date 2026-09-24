@@ -13,11 +13,11 @@ from pulses import Pulse
 
 def main():
     root=Path(__file__).resolve().parents[1];results=root/'results';out=results/'figures';out.mkdir(exist_ok=True)
-    ground=json.loads((results/'ground_convergence.json').read_text());rows=[]
+    ground=json.loads((results/'ground_convergence.json').read_text(encoding='utf-8'));rows=[]
     one=[];three=[]
     for directory in sorted(results.iterdir()):
         if not directory.is_dir() or not (directory/'run.json').exists() or not (directory/'spectrum.npz').exists():continue
-        meta=json.loads((directory/'run.json').read_text())
+        meta=json.loads((directory/'run.json').read_text(encoding='utf-8'))
         if meta.get('synthetic',False):continue
         data=np.load(directory/'spectrum.npz');e=data['energy']
         is3='angle_integrated' in data;P=data['angle_integrated'] if is3 else data['pes']
@@ -50,7 +50,7 @@ def main():
         row['conditional_mode_entanglement']={**ent,'rho_real':rho.real.tolist(),'rho_imag':rho.imag.tolist(),
             'scope':'pure projection onto recorded ionic states and energy window; excludes spin dynamics and omitted channels'}
         if is3:
-            hist=json.loads((directory/'history.json').read_text());pg=hist[-1]['ground_population'];row['ground_population']=pg
+            hist=json.loads((directory/'history.json').read_text(encoding='utf-8'));pg=hist[-1]['ground_population'];row['ground_population']=pg
             if (directory/'checkpoint.npz').exists():
                 from fedvr import make_grid
                 grid=make_grid(**meta['config']['radial']);f=grid.interior_weights/abs(grid.weights)
@@ -95,7 +95,7 @@ def main():
             ax.set(xlabel='Energy (a.u.)',ylabel='dP/dE',title=f'3D TDSE: {name} (angular/radial convergence still required)');ax.legend()
             fig.savefig(out/(name+'.png'),dpi=180);plt.close(fig)
     summary={'ground_convergence':ground,'spectra':rows,'generated_from_completed_spectra_only':True}
-    (results/'summary.json').write_text(json.dumps(summary,indent=2,allow_nan=False)+'\n')
+    (results/'summary.json').write_text(json.dumps(summary,indent=2,allow_nan=False)+'\n',encoding='utf-8')
     lines=['# 数值结果（由原始文件自动汇总）','','运行 `python scripts/summarize_results.py` 可再生本文件。误差及未收敛条件须结合《物理与算法核验》《调试记录》阅读。','','## 基态收敛','','| 模型 | 网格/阶数 | lmax | 通道数 | 基态能量 | 本征残差 |','|---|---:|---:|---:|---:|---:|']
     for r in ground:
         mesh=f"N={r['n']}, dx={r['dx']:.5g}" if r['model']=='1d' else f"Nr={r['nrad']}, p={r['order']}"
@@ -108,6 +108,6 @@ def main():
         ent=row['conditional_mode_entanglement'];lines += [f"- 所记录单电离子空间的条件模式纠缠：S={ent['entropy_bits']:.6g} bit，purity={ent['purity']:.6g}，negativity={ent['negativity_pure']:.6g}（不含自旋动力学和遗漏通道）"]
         lines+=['']
     lines += ['## 图','','- `results/figures/1d_tdse_convergence.png`','- `results/figures/3d_short_spectrum.png`','- `results/figures/3d_short_angular.png`','- `results/esss/published_esss_panels.png`','- `results/esss/angular_esss.png`（归一化形状模型）','- `results/esss/duration_scan.gif`','', '长共振 TDSE 图若存在，仍应检查配置中的 lmax、径向阶数、dt、势截断半径及边界收敛，不可仅凭出现双峰宣称完整收敛。']
-    (root/'docs/数值结果.md').write_text('\n'.join(lines)+'\n')
+    (root/'docs/数值结果.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     print(json.dumps(rows,indent=2))
 if __name__=='__main__':main()

@@ -7,6 +7,7 @@ from surface_storage import atomic_json
 from campaign_resources import estimate
 from spectrum_report import publish,pulse_rows,update_index,parameter_tag
 from output_lock import exclusive_output
+from run_defaults import effective_config
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--config',required=True);p.add_argument('--out-root',required=True)
@@ -14,13 +15,8 @@ def main():
     p.add_argument('--cpu-threads',type=int,default=int(os.environ.get('HELIUM_TORCH_THREADS','2')))
     p.add_argument('--tag',default='');p.add_argument('--estimate-only',action='store_true');p.add_argument('--max-steps',type=int)
     p.add_argument('--storage',choices=['spectrum','projected','raw_shards'])
-    a=p.parse_args();input_path=Path(a.config).resolve();config=json.loads(input_path.read_text())
-    template=json.loads(json.dumps(config))
-    config.setdefault('storage',{'mode':'spectrum','max_file_bytes':4_000_000_000,'ionic_block_frames':128,'ionic_device':'cpu'})
-    config['storage'].setdefault('accumulator_device','auto')
-    if a.storage:config['storage']['mode']=a.storage
-    config.setdefault('time_integrator','cf4-pade');config.setdefault('ionic_propagator','cf4')
-    config.setdefault('spectrum',{'theta_points':24 if config.get('M',0) is None else 32,'phi_points':32 if config.get('M',0) is None else 1})
+    a=p.parse_args();input_path=Path(a.config).resolve();config=json.loads(input_path.read_text(encoding='utf-8'))
+    template=json.loads(json.dumps(config));config=effective_config(config,a.storage)
     signature=hashlib.sha256(json.dumps(config,sort_keys=True).encode()).hexdigest()
     name=input_path.stem+('__'+a.tag if a.tag else '')
     if not re.fullmatch(r'[A-Za-z0-9_.+-]+',name):raise ValueError('config stem/tag must use letters, digits, _, -, + or .')
@@ -37,41 +33,47 @@ def execute_case(out,a,config,template,input_path,signature,run_id,resource):
     # Finished data also retain their numerical provenance. A new code version
     # may re-render them, but must not silently present them as a fresh run.
     if (out/'run.json').exists():
-        existing=json.loads((out/'run.json').read_text())
+        existing=json.loads((out/'run.json').read_text(encoding='utf-8'))
         if existing.get('complete') and existing['config'].get('storage',{}).get('mode') in ('spectrum','projected'):
             from streaming_surface import numerical_signature
-            layout=json.loads((out/'surface_online/layout.json').read_text())
+            layout=json.loads((out/'surface_online/layout.json').read_text(encoding='utf-8'))
             if layout['recipe']['kernel']!=numerical_signature():
                 raise ValueError('completed result uses another numerical kernel; use its original snapshot, a fresh --tag for a new calculation, or render_spectra.py for figures only')
-    if (out/'input.json').exists() and json.loads((out/'input.json').read_text())!=config:raise ValueError('output input mismatch')
+    if (out/'input.json').exists() and json.loads((out/'input.json').read_text(encoding='utf-8'))!=config:raise ValueError('output input mismatch')
     atomic_json(out/'input.json',config);atomic_json(out/'input_template.json',template);atomic_json(out/'resource_estimate.json',resource)
     import datetime
-    attempts=json.loads((out/'attempts.json').read_text()) if (out/'attempts.json').exists() else []
+    attempts=json.loads((out/'attempts.json').read_text(encoding='utf-8')) if (out/'attempts.json').exists() else []
     attempts.append({'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
                      'slurm_job_id':os.environ.get('SLURM_JOB_ID'),'slurm_array_task_id':os.environ.get('SLURM_ARRAY_TASK_ID'),
                      'device':a.device,'cpu_threads':a.cpu_threads,
-                     'numerical_snapshot':json.loads((root/'numerical_snapshot.json').read_text())['id'] if (root/'numerical_snapshot.json').exists() else None})
+                     'numerical_snapshot':json.loads((root/'numerical_snapshot.json').read_text(encoding='utf-8'))['id'] if (root/'numerical_snapshot.json').exists() else None})
     atomic_json(out/'attempts.json',attempts)
     import shutil
     # Budget checkpoint replacement and the retained artifacts, not just raw flux.
     free=shutil.disk_usage(out).free
     if resource['temporary_write_peak_estimate_bytes']>free*.8 and not (out/'checkpoint.npz').exists():
         raise ValueError('insufficient scratch space for projected/spectrum state and atomic checkpoints')
-    (out/'RUN.md').write_text(f'# {run_id}\n\n输入：input.json\n\n状态：运行中，尚无完整单电离谱。\n\n资源估算：resource_estimate.json\n')
+    (out/'RUN.md').write_text(f'# {run_id}\n\n输入：input.json\n\n状态：运行中，尚无完整单电离谱。\n\n资源估算：resource_estimate.json\n',encoding='utf-8')
     print('RUN_ID',run_id,'\nINPUT',input_path,'\nOUTPUT',out,flush=True)
     try:
         import torch
         replay_workers=int(config['storage'].get('replay_workers',0))
         if a.cpu_threads<=replay_workers:raise ValueError('CPU budget must leave at least one parent thread besides replay workers')
         torch.set_num_threads(a.cpu_threads-replay_workers)
-        if a.device.startswith('cuda'):
+        # A finished propagation only needs publication; never block it on GPU sizing.
+        finished=(out/'run.json').exists() and json.loads((out/'run.json').read_text(encoding='utf-8')).get('complete')
+        if a.device.startswith('cuda') and not finished:
             budget=torch.cuda.get_device_properties(a.device).total_memory*a.memory_fraction
             free_gpu,_=torch.cuda.mem_get_info(a.device)
             if resource['FGMRES_Q_Z_bytes']+resource['spectral_accumulator_pair_bytes']>min(budget,free_gpu):
                 raise ValueError('FGMRES basis alone exceeds available/requested GPU memory; choose a larger GPU or a smaller numerical basis')
+            # Refuse before the (hours-long) ionic preparation rather than hitting OOM after it.
+            if resource.get('GPU_peak_estimate_bytes',0)>min(budget,free_gpu) and not os.environ.get('HELIUM_IGNORE_GPU_PEAK_ESTIMATE'):
+                raise ValueError(f"estimated GPU peak {resource['GPU_peak_estimate_bytes']/2**30:.1f} GiB exceeds the usable {min(budget,free_gpu)/2**30:.1f} GiB "
+                                 '(measured peak ~1.7x the FGMRES basis); use a larger GPU, a higher --memory-fraction, or set HELIUM_IGNORE_GPU_PEAK_ESTIMATE=1 to try anyway')
             torch.cuda.set_per_process_memory_fraction(a.memory_fraction,device=a.device)
         from run3d import run,extract_run
-        meta=json.loads((out/'run.json').read_text()) if (out/'run.json').exists() else {}
+        meta=json.loads((out/'run.json').read_text(encoding='utf-8')) if (out/'run.json').exists() else {}
         if meta and meta.get('signature')!=signature:raise ValueError('configuration changed')
         atomic_json(out/'STATUS.json',{'state':'running','run_id':run_id,'input':str(input_path),'output':str(out),
                     'requested_device':a.device,'cpu_budget':a.cpu_threads,'torch_cpu_threads':torch.get_num_threads(),'replay_workers':replay_workers,'resources':resource})
@@ -101,7 +103,9 @@ def execute_case(out,a,config,template,input_path,signature,run_id,resource):
         print('COMPLETE SI SPECTRUM',out/result['artifacts']['figure'],flush=True);return 0
     except BaseException as error:
         atomic_json(out/'STATUS.json',{'state':'failed','run_id':run_id,'error':str(error),'complete_spectrum':False})
-        update_index(out.parent)
+        # The index is a convenience; never let it mask the original failure.
+        try:update_index(out.parent)
+        except Exception as index_error:print('WARNING: INDEX.md not refreshed:',repr(index_error),file=sys.stderr,flush=True)
         raise
 
 if __name__=='__main__':raise SystemExit(main())

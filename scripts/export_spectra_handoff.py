@@ -18,11 +18,11 @@ def export(source,dest,fallback_snapshot=None):
     dest.mkdir(parents=True,exist_ok=True);snapshots=set();exports=[]
     for folder in sorted(source.iterdir()):
         if not folder.is_dir() or not (folder/'STATUS.json').exists():continue
-        status=json.loads((folder/'STATUS.json').read_text())
+        status=json.loads((folder/'STATUS.json').read_text(encoding='utf-8'))
         if status['state']!='complete':continue
-        meta=json.loads((folder/'run.json').read_text())
+        meta=json.loads((folder/'run.json').read_text(encoding='utf-8'))
         if not meta['complete']:raise ValueError('complete status without finished propagation')
-        obs=json.loads((folder/'observables.json').read_text());target=dest/folder.name;target.mkdir(exist_ok=True)
+        obs=json.loads((folder/'observables.json').read_text(encoding='utf-8'));target=dest/folder.name;target.mkdir(exist_ok=True)
         names=['input.json','input_template.json','config.json','run.json','STATUS.json','RUN.md','attempts.json','observables.json',
                'ionic_transfer.json','history.json','history.csv','resource_estimate.json','rendering_provenance.json',
                'surface_online/layout.json','surface_online/preparation.json','surface_online/complete.json']
@@ -40,12 +40,12 @@ def export(source,dest,fallback_snapshot=None):
                 'primary_spectrum_sha256':sha256(primary),'full_angular_spectrum_sha256':sha256(full) if full.exists() else None,
                 'scope':'Lightweight completed-result handoff; no wavefunction, ionic endpoints, projected history or restart accumulators copied.'}
         atomic_json(target/'export.json',record)
-        with (target/'RUN.md').open('a') as stream:
+        with (target/'RUN.md').open('a',encoding='utf-8') as stream:
             stream.write('\n## 轻量交接范围\n\n此目录保留可重画总谱与符合能谱的主 NPZ/CSV、图和完整输入。大数组、全角复振幅与恢复检查点仍在原计算目录：\n\n`'+str(folder)+'`\n\n原始文件清单、大小和数据摘要见 export.json；本目录不能直接恢复传播。\n')
         local=[{'path':str(f.relative_to(target)),'bytes':f.stat().st_size} for f in sorted(target.rglob('*')) if f.is_file() and f.name!='output_manifest.json']
         atomic_json(target/'output_manifest.json',{'scope':'Only exported files; full scratch inventory is in export.json and source_output_manifest.json',
                     'files':local,'largest_actual_file_bytes':max(f['bytes'] for f in local)})
-        attempts=json.loads((folder/'attempts.json').read_text()) if (folder/'attempts.json').exists() else []
+        attempts=json.loads((folder/'attempts.json').read_text(encoding='utf-8')) if (folder/'attempts.json').exists() else []
         if meta.get('numerical_snapshot'):
             snapshots.add(meta['numerical_snapshot'][:16])
         elif not attempts and fallback_snapshot:

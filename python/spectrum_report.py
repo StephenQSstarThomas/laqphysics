@@ -19,21 +19,39 @@ def parameter_tag(config):
 def pulse_rows(config):
     result=[]
     for i,entry in enumerate(config['pulses']):
-        p=Pulse(**entry['pulse']);result.append({'number':i+1,'polarization':entry.get('polarization','z'),**p.__dict__,
+        p=Pulse(**entry['pulse']);result.append({'number':i+1,'polarization':entry.get('polarization','z'),'role':entry.get('role'),**p.__dict__,
                 'duration_au':p.duration,'duration_fs':p.duration*.0241888432659,
                 'intensity_FWHM_fs':p.duration*.0241888432659*2*np.arccos(2**(-.25))/np.pi,
                 'equivalent_cycle_average_peak_intensity_W_cm2':3.5094452e16*p.field**2})
     return result
 
+def probe_indices(config):
+    """Pulses explicitly marked role=probe (the third, two-photon pulse)."""
+    return [i for i,entry in enumerate(config['pulses']) if entry.get('role')=='probe']
+
+def band_peaks(e,y,low,high,prominence=.05):
+    """Local maxima inside [low,high] whose prominence exceeds a fraction of the window maximum.
+
+    A split (doublet) old band shows two such maxima; the fraction is recorded so
+    a weak shoulder is not silently reported as a splitting.
+    """
+    from scipy.signal import find_peaks
+    mask=(e>=low)&(e<=high);x=e[mask];v=y[mask]
+    if len(v)<5 or not np.isfinite(v).all() or v.max()<=0:return []
+    # Interior maxima only: a band edge on a flank is not a peak.
+    index,properties=find_peaks(v,prominence=prominence*v.max())
+    return [{'energy':float(x[i]),'height':float(v[i]),'relative_prominence':float(p/v.max())}
+            for i,p in zip(index,properties['prominences'])]
+
 def publish(out,run_id):
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
-    out=Path(out);meta=json.loads((out/'run.json').read_text())
+    out=Path(out);meta=json.loads((out/'run.json').read_text(encoding='utf-8'))
     if not meta.get('complete'):raise ValueError('cannot label an incomplete propagation as a final SI spectrum')
     source=out/'spectrum.npz'
     if not source.exists() and (out/'observables.json').exists():
-        source=out/json.loads((out/'observables.json').read_text())['artifacts']['spectrum']
+        source=out/json.loads((out/'observables.json').read_text(encoding='utf-8'))['artifacts']['spectrum']
     # Publishing energy spectra does not need the much larger angular amplitudes.
     with np.load(source) as loaded:d={k:loaded[k] for k in ['energy','angle_integrated','labels','source_signature']}
     if str(d['source_signature'])!=meta['signature']:raise ValueError('spectrum/configuration mismatch')
@@ -53,8 +71,11 @@ def publish(out,run_id):
     both=all(w['complete_window'] for w in windows)
     ratio=windows[0]['peak_height']/windows[1]['peak_height'] if both and windows[1]['peak_height'] else None
     yr=windows[0]['yield']/windows[1]['yield'] if both and windows[1]['yield'] else None
-    applicable=bool(meta['config'].get('design')) and len(meta['config']['pulses'])>=2
-    transfer=json.loads((out/'ionic_transfer.json').read_text()) if (out/'ionic_transfer.json').exists() else {}
+    probes=probe_indices(meta['config'])
+    # The preparation targets (0.3 dominant, ion in 2p+1) are not goals of a probe
+    # run: the third pulse is meant to move the prepared ion out of 2p+1.
+    applicable=bool(meta['config'].get('design')) and len(meta['config']['pulses'])>=2 and not probes
+    transfer=json.loads((out/'ionic_transfer.json').read_text(encoding='utf-8')) if (out/'ionic_transfer.json').exists() else {}
     channel_yields=simpson(P,x=e,axis=1);conditional_valid=channel_yields>1e-10
     conditional=np.divide(P,channel_yields[:,None],out=np.zeros_like(P),where=conditional_valid[:,None])
     channel_comparisons=[]
@@ -67,6 +88,29 @@ def publish(out,run_id):
     for row in transfer.get('transfers_from_1s',[]):
         tlabels=list(map(tuple,row['labels']))
         if (2,1,1) in tlabels:prepared=float(row['probabilities'][tlabels.index((2,1,1))])
+    final_transfer={}
+    for row in transfer.get('transfers_from_1s',[]):
+        final_transfer={tuple(map(int,x)):float(y) for x,y in zip(row['labels'],row['probabilities'])}
+    probe=None
+    if probes:
+        spec=meta['config'].get('probe',{});targets=[tuple(x) for x in spec.get('target_channels',[])]
+        old=windows[0];yields=old['channel_yields'] if old['available'] else None
+        fractions={}
+        if yields and old['yield']>1e-12:
+            order=np.argsort(yields)[::-1]
+            keep=[labels[i] for i in order[:6]]+[x for x in targets+[(2,1,1)] if x in labels]
+            fractions={str(list(map(int,x))):float(yields[labels.index(x)]/old['yield']) for x in dict.fromkeys(keep)}
+        peaks=band_peaks(e,total,.18,.42)
+        by_channel={str(list(map(int,x))):band_peaks(e,P[labels.index(x)],.18,.42) for x in dict.fromkeys([(2,1,1),*targets]) if x in labels}
+        top=sorted(peaks,key=lambda x:-x['height'])[:2]
+        probe={'pulses':[i+1 for i in probes],'target_channels':[list(x) for x in targets],'design':spec,
+               'old_band_channel_fractions':fractions,
+               'old_band_total_peaks':peaks,'old_band_channel_peaks':by_channel,
+               'old_band_total_doublet':len(peaks)>=2,
+               'old_band_total_splitting_au':abs(top[0]['energy']-top[1]['energy']) if len(top)==2 else None,
+               'peak_rule':'scipy find_peaks, prominence >= 5% of the window maximum, on the computed energy grid',
+               'transfers_from_1s_to_final':{str(list(x)):final_transfer[x] for x in final_transfer if x in [(2,1,1),*targets]},
+               'scope':'Old band [0.18,0.42]. Compare with the matched no-probe control before attributing any change to the probe.'}
     stem=run_id+'__'+parameter_tag(meta['config'])+'__SI'
     if len(stem)>225:raise ValueError('result name too long; shorten the case stem/tag')
     artifacts={'spectrum':stem+'.npz','csv':stem+'.csv','figure':'figures/'+stem+'.png','pdf':'figures/'+stem+'.pdf',
@@ -80,7 +124,7 @@ def publish(out,run_id):
             'target_applicable':applicable,
             'target_passed':bool(ratio is not None and yr is not None and fraction is not None and prepared is not None and ratio>=3 and yr>=5 and fraction>=.95 and prepared>=.95) if applicable else None,
             'scope':'Sum of explicitly recorded bound ionic channels, plus channel-resolved SI spectra; no claim of complete ionic-channel or spatial convergence.',
-            'pulses':pulse_rows(meta['config']),'ionic_transfer':transfer}
+            'pulses':pulse_rows(meta['config']),'ionic_transfer':transfer,'probe':probe}
     atomic_json(out/'observables.json',result)
     data_name=artifacts['spectrum'];destination=out/data_name
     # The primary SI product is small and directly plottable. Full complex
@@ -95,6 +139,7 @@ def publish(out,run_id):
     polarizations={p.get('polarization','z') for p in meta['config']['pulses']}
     default_channels=[[1,0,0]]+([[2,1,1]] if 'sigma+' in polarizations else [])+([[2,1,-1]] if 'sigma-' in polarizations else [])
     if polarizations=={'z'}:default_channels.append([2,1,0])
+    if probes:default_channels=[[1,0,0],[2,1,1]]+[x for x in meta['config'].get('probe',{}).get('target_channels',[]) if x not in ([1,0,0],[2,1,1])]
     chosen=[tuple(x) for x in meta['config'].get('spectrum',{}).get('plot_channels',default_channels)]
     for ax in axes:
         ax.plot(e,total,color='black',lw=1.6,label='SI: sum of recorded ionic channels')
@@ -104,10 +149,13 @@ def publish(out,run_id):
         ax.axvspan(.18,.42,color='C0',alpha=.07);ax.axvspan(.52,.68,color='C3',alpha=.07);ax.grid(alpha=.18)
         ax.set(xlabel='Electron energy (a.u.)',ylabel='dP / dE (a.u.)')
     axes[0].set_xlim((.1,.78) if both else (e[0],e[-1]));axes[0].set_ylim(bottom=0);axes[0].legend(fontsize=8)
-    axes[0].set_title(f'Absolute SI spectrum | peak ratio {ratio:.2f}, band-yield ratio {yr:.2f}\nOld-band ion 2p(+1) fraction: {fraction:.4f}' if fraction is not None and ratio is not None and yr is not None else 'Absolute single-ionization spectrum')
+    if probe is not None:
+        shares=', '.join(f'{k}: {v:.4g}' for k,v in list(probe['old_band_channel_fractions'].items())[:4])
+        axes[0].set_title(f"Absolute SI spectrum with probe pulse(s) {probe['pulses']} | old-band maxima in total: {len(probe['old_band_total_peaks'])}\nOld-band ion shares: {shares}",fontsize=9)
+    else:axes[0].set_title(f'Absolute SI spectrum | peak ratio {ratio:.2f}, band-yield ratio {yr:.2f}\nOld-band ion 2p(+1) fraction: {fraction:.4f}' if fraction is not None and ratio is not None and yr is not None else 'Absolute single-ionization spectrum')
     axes[1].set_yscale('log');axes[1].set_xlim(e[0],e[-1]);axes[1].set_ylim(max(total.max()*1e-8,1e-14),max(total.max()*1.5,1e-12))
-    pulses=result['pulses'];title='; '.join(f"{p['polarization']}: w={p['omega']:g}, F={p['field']:.5g}, N={p['cycles']:g}, start={p['start']:g}" for p in pulses)
-    numerical=f"lmax={meta['config'].get('lmax','?')}, Lmax={meta['config'].get('total_Lmax','product')}, Nr={meta.get('nrad','?')}, dt={meta.get('dt',float('nan')):.6g}; recorded ion n<={max(n for n,l,m in labels)}"
+    pulses=result['pulses'];title='; '.join(f"{(p['role']+' ') if p['role'] else ''}{p['polarization']}: w={p['omega']:g}, F={p['field']:.5g}, N={p['cycles']:g}, start={p['start']:g}" for p in pulses)
+    numerical=f"lmax={meta['config'].get('lmax','?')}, Lmax={meta['config'].get('total_Lmax','product')}, Nr={meta.get('nrad','?')}, dt={meta.get('dt',float('nan')):.6g}; {len(labels)} recorded ion channels, nmax={max(n for n,l,m in labels)}"
     fig.suptitle(run_id+'\n'+title+'\n'+numerical,fontsize=8.5)
     figures=out/'figures';figures.mkdir(exist_ok=True);figure=figures/stem
     for suffix in ['png','pdf']:
@@ -122,23 +170,29 @@ def publish(out,run_id):
            title='Ion-conditioned spectra: unit area on the computed energy grid\nThese heights are not absolute signal strengths')
     ax.grid(alpha=.2);ax.legend(fontsize=8);fig.suptitle(run_id,fontsize=8.5)
     temp=out/'figures'/f'{stem}__conditional.tmp.png';fig.savefig(temp,dpi=220);os.replace(temp,out/artifacts['conditional_figure']);plt.close(fig)
-    resources=json.loads((out/'resource_estimate.json').read_text()) if (out/'resource_estimate.json').exists() else {}
+    resources=json.loads((out/'resource_estimate.json').read_text(encoding='utf-8')) if (out/'resource_estimate.json').exists() else {}
     lines=[f'# {run_id}','',f"[输入参数](input.json)（签名 `{meta['signature']}`）。",'',
            f"[主谱数据 NPZ]({data_name}) · [CSV]({artifacts['csv']})。",f"[主图 PNG]({artifacts['figure']}) · [PDF]({artifacts['pdf']})。",'',
            '主谱 NPZ 存能量、通道积分谱与总谱；完整复振幅和角分布保存在 spectrum.npz。','',
            f"[归一化条件谱]({artifacts['conditional_figure']})：各通道在计算能窗内积分归一，仅比较形状，不能据此判断峰的绝对强弱。",'',
            '图中各曲线使用同一绝对概率密度刻度，未按各自峰高归一化。总谱仅求和已记录的束缚离子通道。','',
-           '| 脉冲 | 偏振 | ω / a.u. | F / a.u. | 周期数 | 起点 / a.u. | 支撑宽度 / fs |','|---|---|---:|---:|---:|---:|---:|']
-    for p in pulses:lines.append(f"| {p['number']} | {p['polarization']} | {p['omega']:.8g} | {p['field']:.8g} | {p['cycles']:g} | {p['start']:g} | {p['duration_fs']:.4f} |")
+           '| 脉冲 | 作用 | 偏振 | ω / a.u. | F / a.u. | 周期数 | 起点 / a.u. | 支撑宽度 / fs |','|---|---|---|---:|---:|---:|---:|---:|']
+    for p in pulses:lines.append(f"| {p['number']} | {p['role'] or '—'} | {p['polarization']} | {p['omega']:.8g} | {p['field']:.8g} | {p['cycles']:g} | {p['start']:g} | {p['duration_fs']:.4f} |")
     lines+=['','`F` 为线偏振峰值电场；圆偏振两个分量各为 F/√2，具有相同周期平均强度。包络为 sin²。',
             '`dt`、径向网格、lmax、total_Lmax 和离子通道均在 input.json；这些是待继续收敛的数值参数。','',
             f'0.3/0.6 峰高比：{ratio}；能区积分产额比：{yr}（None 表示该能区未计算）。',
             f'旧能区 2p+1 条件份额：{fraction}。详细通道与准备态离子转移见 observables.json。',
             f'从已准备的离子 1s 到最终 2p+1 的绝对转移概率：{prepared}；与上面的条件份额分别报告。',
             f"是否达到本次制备目标：{result['target_passed']}。该标志不等于完整数值收敛。",'',
+            *([] if probe is None else [
+            f"第三束（探测）脉冲：第 {probe['pulses']} 束；目标离子通道 {probe['target_channels']}。制备目标对探测算例不适用。",
+            f"旧能区各离子通道份额：{probe['old_band_channel_fractions']}。",
+            f"旧能区总谱显著极大值 {len(probe['old_band_total_peaks'])} 个（判据：突出度≥窗口最大值 5%）；两最高峰间距：{probe['old_band_total_splitting_au']}。",
+            f"从 1s 离子（ionic_transfer_times）到最终目标通道的绝对转移概率：{probe['transfers_from_1s_to_final']}。",
+            '判断“劈裂”须与同一网格、同一结束时刻的无探测对照比较；电离电子离开后仅作用于离子的探测不改变无条件总谱（见 docs 中的说明）。','']),
             f"存储模式：{meta.get('surface_storage','legacy')}；文件上限：{meta.get('max_file_bytes',5000000000)} 字节。",
             f"资源估算：resource_estimate.json；预计持久数组 {resources.get('persistent_output_estimate_bytes','unknown')} 字节。"]
-    (out/'RUN.md').write_text('\n'.join(lines)+'\n')
+    (out/'RUN.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     return result
 
 def update_index(root):
@@ -148,9 +202,9 @@ def update_index(root):
         rows=[]
         for folder in sorted(root.iterdir()):
             if not folder.is_dir() or not (folder/'STATUS.json').exists():continue
-            status=json.loads((folder/'STATUS.json').read_text());c=json.loads((folder/'input.json').read_text())
-            meta=json.loads((folder/'run.json').read_text()) if (folder/'run.json').exists() else {}
-            obs=json.loads((folder/'observables.json').read_text()) if (folder/'observables.json').exists() else {}
+            status=json.loads((folder/'STATUS.json').read_text(encoding='utf-8'));c=json.loads((folder/'input.json').read_text(encoding='utf-8'))
+            meta=json.loads((folder/'run.json').read_text(encoding='utf-8')) if (folder/'run.json').exists() else {}
+            obs=json.loads((folder/'observables.json').read_text(encoding='utf-8')) if (folder/'observables.json').exists() else {}
             rows.append({'run_id':folder.name,'state':status['state'],'input':str(folder.name+'/input.json'),
                 'run_card':folder.name+'/RUN.md','figure':folder.name+'/'+status['figure'] if status.get('figure') else None,
                 'spectrum':folder.name+'/'+status['spectrum'] if status.get('spectrum') else None,
@@ -159,20 +213,25 @@ def update_index(root):
                 'prepared_ion_P_2p_plus1':obs.get('prepared_ion_P_2p_plus1'),
                 'resolution':{'lmax':c['lmax'],'Lmax':c.get('total_Lmax'),'radial_points':meta.get('nrad'),
                               'recorded_ion_nmax':max(x[0] for x in c.get('ionic_channels',[[1,0,0]]))},
-                'targets_passed':obs.get('target_passed')})
+                'targets_passed':obs.get('target_passed'),'probe':obs.get('probe')})
         rows.sort(key=lambda r:(r['state']!='complete',r['targets_passed'] is not True,-r['resolution']['lmax'],r['run_id']))
         atomic_json(root/'catalog.json',{'cases':rows,'note':'Only state=complete has the mandatory final spectrum and figures.'})
         text=['# 单电离谱结果索引','','每行是一份独立输入；完整参数在 input.json，参数含义和结果说明在 RUN.md。',
               '所有图采用绝对概率密度。同一配置重提会恢复检查点，不会新建一个伪重复结果。','',
-              '| 模拟与输入 | 状态 | 主图 | 0.3/0.6 峰高比 | 能区产额比 | 旧能区 2p+1 份额 |',
-              '|---|---|---|---:|---:|---:|']
+              '| 模拟与输入 | 状态 | 主图 | 0.3/0.6 峰高比 | 能区产额比 | 旧能区 2p+1 份额 | 第三束探测 |',
+              '|---|---|---|---:|---:|---:|---|']
         def number(x):return '—' if x is None else f'{x:.5g}'
+        def probe_cell(probe):
+            if not probe:return '—'
+            shares=[f"{k} {v:.3g}" for k,v in probe['old_band_channel_fractions'].items() if json.loads(k) in probe['target_channels']]
+            if not probe['old_band_channel_fractions']:return '旧能区不在计算能窗内'
+            return f"旧能区极大值 {len(probe['old_band_total_peaks'])}；"+('，'.join(shares) if shares else '目标通道未记录')
         for r in rows:
             figure=f"[单电离谱]({r['figure']})" if r['figure'] else '等待完成'
-            text.append(f"| [{r['run_id'].split('__')[0]}]({r['run_card']}) · [输入]({r['input']}) | {r['state']} | {figure} | {number(r['peak_ratio'])} | {number(r['yield_ratio'])} | {number(r['old_2p_plus1_fraction'])} |")
+            text.append(f"| [{r['run_id'].rsplit('__',1)[0]}]({r['run_card']}) · [输入]({r['input']}) | {r['state']} | {figure} | {number(r['peak_ratio'])} | {number(r['yield_ratio'])} | {number(r['old_2p_plus1_fraction'])} | {probe_cell(r.get('probe'))} |")
         recommended=next((r for r in rows if r['state']=='complete' and r['targets_passed'] is True),None)
         if recommended:text.insert(2,f"**优先查看：[当前通过目标的最高角基结果]({recommended['figure']})**。对应参数与离子通道范围见该行输入和 RUN.md。\n")
         if (root/'figures/preparation_before_after.png').exists():
             text.insert(2,'[改参数前后对照](figures/preparation_before_after.png) · [固定 π 面积的峰宽/峰高对照](figures/fixed_pi_area_width_vs_height.png) · [单脉冲控制组核验](figures/separated_pulse_controls.png)。\n')
-        (root/'INDEX.md').write_text('\n'.join(text)+'\n')
+        (root/'INDEX.md').write_text('\n'.join(text)+'\n',encoding='utf-8')
     return rows

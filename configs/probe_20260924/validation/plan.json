@@ -1,0 +1,18 @@
+{
+  "cases": [
+    "source",
+    "probe",
+    "probe_sigma_plus"
+  ],
+  "factorization_checks": [
+    {
+      "source": "source",
+      "probe": "probe"
+    },
+    {
+      "source": "source",
+      "probe": "probe_sigma_plus"
+    }
+  ],
+  "scope": "validation inputs for the three-pulse chain; not production physics"
+}

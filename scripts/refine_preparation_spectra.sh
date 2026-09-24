@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Run after production/reference finishes, using its recorded numerical snapshot.
 set -euo pipefail
+# Reports and indexes contain UTF-8 (Chinese, sigma, <=). Never depend on the node locale.
+export PYTHONUTF8=1 PYTHONIOENCODING=utf-8
 case_dir="${1:?Usage: refine_preparation_spectra.sh CASE_DIR NUMERICAL_SNAPSHOT}"
 snapshot_dir="${2:?Pass the SNAPSHOT path printed by the original job}"
 python_bin="${HELIUM_PYTHON:-python3}"

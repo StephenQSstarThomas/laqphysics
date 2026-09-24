@@ -1,6 +1,6 @@
 # laqphysics：独立最小交接代码包
 
-本包可脱离原仓库和 `/playpen` 路径运行，包含三维传播/在线提谱源码、全部 96 项测试、本轮 6 个完整算例的小型谱与图、输入、物理说明及 16 项 Slurm 生产输入。可从头重算，也可直接重画已有能谱。
+本包可脱离原仓库和 `/playpen` 路径运行，包含三维传播/在线提谱源码、全部测试、6 个两脉冲完整算例的小型谱与图、输入、物理说明、16 项两脉冲生产输入，以及第三束探测的输入、设计扫描和验证证据（2026-09-24）。可从头重算，也可直接重画已有能谱。
 
 **先看：[主图与输入索引](results/preparation_20260921/INDEX.md) · [已完成/待完成](results/preparation_20260921/SUMMARY.md) · [详细运行说明](docs/iteration20260921/使用说明.md)。**
 
@@ -15,7 +15,7 @@ python3 -m pip install -r requirements-gpu.txt
 ./handoff.sh test
 ```
 
-`test` 会在目标机编译 Release/Debug 两个 Fortran 库，再运行两套 96 项测试。新日志默认在 `local_runs/checks/`；原始交付结果保持不变。
+`test` 会在目标机编译 Release/Debug 两个 Fortran 库，再运行两套 107 项测试。新日志默认在 `local_runs/checks/`；原始交付结果保持不变。
 
 也可直接执行 `./handoff.sh`，按中文菜单选择校验、测试、小算例、重画或估算。
 
@@ -30,6 +30,21 @@ python3 -m pip install -r requirements-gpu.txt
 小算例输入在 `configs/handoff_smoke.json`；它只验证运行链路，不用于判断物理峰位或制备目标。新输出在 `local_runs/smoke/`，其中 `INDEX.md` 链接实际输入、总谱/符合谱 PNG/PDF、CSV 和完成状态。
 
 重画结果位于 `local_runs/replotted/INDEX.md`。主图采用绝对密度；条件归一谱单独标注。`HELIUM_PYTHON` 可指定 Python 路径，`HELIUM_OUTPUT_ROOT` 可替换上述新输出根目录。
+
+## 三脉冲（第三束探测）
+
+```bash
+./handoff.sh probe-smoke          # 小网格：两脉冲 source → 完整三脉冲 → 快速离子因子化
+```
+
+输入、物理设计、提交与恢复方法见 [第三束探测](docs/probe20260924/第三束探测.md)。生产计划为 `configs/probe_20260924/production/plan.json`：
+
+```bash
+export HELIUM_PLAN=configs/probe_20260924/production/plan.json
+./handoff.sh submit gpu --array=0-2
+```
+
+**若旧任务在报告阶段报 `UnicodeEncodeError: 'ascii'`：** 传播已经完成，无需重算。用本包原样重提同一任务，或执行 `PYTHONUTF8=1 python scripts/render_spectra.py --out-root <输出根>` 只重画（该文档 §1）。
 
 ## 第三步：交给 Slurm
 
@@ -51,6 +66,7 @@ GPU 分区沿用提供的 `GPU40G`；其他 partition/account 等可通过 sbatc
 
 - 细化模型已完成：总谱 0.3/0.6 峰高比 4.01582；2p+1 符合谱峰高比 7.99412；绝对离子转移概率 99.85126%。
 - Release/Debug 各 96 项、CUDA 专项 13 项，以及本地三项谱求积检查通过。机器可读证据位于 `results/preparation_20260921/validation/`。
+- 2026-09-24：Release/Debug 各 107 项、CUDA 专项 13 项通过；第三束的因子化与完整 TDSE 对照、CPU/GPU 对照、编码复现与恢复见 `results/probe_20260924/validation/`。
 - **完整生产收敛与后续长探测仍待执行。** 程序测试通过不代表全部空间、时间、边界和离子通道已收敛；延迟离子操作也不自动保证旧电子能谱劈裂。
 - 主 NPZ/CSV 足够重画总谱和所有已记录离子通道的能谱。此最小包不含旧波函数检查点、全角复振幅和边界历史，不能直接接续原服务器的大计算；从头运行不需要那些文件。
 - 导出元数据中的原服务器绝对路径、归档源码和历史检查脚本是追溯记录。当前运行入口不依赖那些路径；使用本页的 `handoff.sh`。

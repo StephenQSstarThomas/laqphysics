@@ -15,6 +15,7 @@ from surface3d import Ionic
 from implicit import cf4_step
 from run3d import vector_function
 from output_lock import exclusive_output
+from tdse1d import cutoff
 
 class IonGPU:
     a2_coefficient=.5
@@ -60,7 +61,8 @@ def run(config,out,device='cuda:0',resume=False,max_steps=None):
     saved=np.load(checkpoint) if resume else None
     if saved is not None and str(saved['signature'])!=signature:raise ValueError('config changed; refusing unsafe resume')
     grid=make_grid(**config['radial']);lmax=config['lmax']
-    dummy=SimpleNamespace(grid=grid,n=len(grid.r),r=grid.r,cut=np.ones(len(grid.r)),ch=[((l,m),(0,0)) for l in range(lmax+1) for m in range(-l,l+1)])
+    cut=cutoff(grid.r.real,*config['cutoff_radii']) if 'cutoff_radii' in config else np.ones(len(grid.r))
+    dummy=SimpleNamespace(grid=grid,n=len(grid.r),r=grid.r,cut=cut,ch=[((l,m),(0,0)) for l in range(lmax+1) for m in range(-l,l+1)])
     ion=Ionic(dummy);engine=IonGPU(ion,device);initial=tuple(config.get('initial',[2,1,1]))
     psi=saved['psi'] if resume else ion.final_states([initial])[:,0];state=engine.tensor(psi)
     labels=[(n,l,m) for n in range(1,7) for l in range(min(n,lmax+1)) for m in range(-l,l+1)]

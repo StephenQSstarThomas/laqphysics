@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Common body for the supplied site's CPU/GPU sbatch entry points.
 set -euo pipefail
+# Reports and indexes contain UTF-8 (Chinese, sigma, <=). Never depend on the node locale.
+export PYTHONUTF8=1 PYTHONIOENCODING=utf-8
 repo_dir="${HELIUM_REPO:-${SLURM_SUBMIT_DIR:-$PWD}}"
 cd "$repo_dir"
 if [[ "${SLURM_NTASKS:-1}" != 1 ]]; then
