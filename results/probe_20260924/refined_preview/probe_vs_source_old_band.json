@@ -1,0 +1,87 @@
+{
+  "reference": {
+    "label": "two-pulse refined source",
+    "run": "/playpen1/shiqiu/laqphysics-data/iteration20260921/runs/selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837",
+    "method": "full TDSE",
+    "source_run": null,
+    "configuration_signature": "b9f521f837d932ea5d4e457154dda73063364859326bdd36ab5507d34c67523d"
+  },
+  "window": [
+    0.18,
+    0.42
+  ],
+  "comparisons": [
+    {
+      "label": "probe 0.14 sigma-",
+      "run": "/playpen1/shiqiu/laqphysics-data/probe_20260924/refined_preview_final/refined_probe_w014_sigma_minus__factorized__002e94b642",
+      "method": "ionic_probe_factorization",
+      "source_run": "/playpen1/shiqiu/laqphysics-data/iteration20260921/runs/selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837",
+      "configuration_signature": "002e94b642da76a499a0e11063f0c2c745b992dfd89ceebbbc9fe0f4aee4ffab",
+      "channels": {
+        "total": {
+          "yield_reference": 0.34809181458731664,
+          "yield_case": 0.3472254249514104,
+          "yield_ratio": 0.9975110312865777,
+          "peak_reference": 0.297,
+          "peak_case": 0.297,
+          "peak_shift": 0.0,
+          "normalized_shape_L1": 6.9228830410027165e-06
+        },
+        "[1, 0, 0]": {
+          "yield_reference": 5.094446450980274e-05,
+          "yield_case": 5.094444239328782e-05,
+          "yield_ratio": 0.9999995658701072,
+          "peak_reference": 0.297,
+          "peak_case": 0.297,
+          "peak_shift": 0.0,
+          "normalized_shape_L1": 1.5727155730700142e-10
+        },
+        "[2, 1, 1]": {
+          "yield_reference": 0.34803628127076125,
+          "yield_case": 0.3456439095062826,
+          "yield_ratio": 0.9931260851433548,
+          "peak_reference": 0.297,
+          "peak_case": 0.297,
+          "peak_shift": 0.0,
+          "normalized_shape_L1": 1.62386321807789e-11
+        }
+      }
+    },
+    {
+      "label": "probe 0.14 sigma+",
+      "run": "/playpen1/shiqiu/laqphysics-data/probe_20260924/refined_preview_final/refined_probe_w014_sigma_plus__factorized__30c9d1cd21",
+      "method": "ionic_probe_factorization",
+      "source_run": "/playpen1/shiqiu/laqphysics-data/iteration20260921/runs/selected_F008_N48_pi201_refined_n3_accelerated__b9f521f837",
+      "configuration_signature": "30c9d1cd21aa502ed880c9aea7c3892e45af936c1f3eb9a927d7b9489241ae86",
+      "channels": {
+        "total": {
+          "yield_reference": 0.34809181458731664,
+          "yield_case": 0.34015329352151735,
+          "yield_ratio": 0.9771941748322612,
+          "peak_reference": 0.297,
+          "peak_case": 0.297,
+          "peak_shift": 0.0,
+          "normalized_shape_L1": 7.94811228501371e-06
+        },
+        "[1, 0, 0]": {
+          "yield_reference": 5.094446450980274e-05,
+          "yield_case": 5.09444019236145e-05,
+          "yield_ratio": 0.999998771482067,
+          "peak_reference": 0.297,
+          "peak_case": 0.297,
+          "peak_shift": 0.0,
+          "normalized_shape_L1": 3.9977572127341534e-10
+        },
+        "[2, 1, 1]": {
+          "yield_reference": 0.34803628127076125,
+          "yield_case": 0.33997965398067614,
+          "yield_ratio": 0.9768511855698823,
+          "peak_reference": 0.297,
+          "peak_case": 0.297,
+          "peak_shift": 0.0,
+          "normalized_shape_L1": 8.56920630151321e-12
+        }
+      }
+    }
+  ]
+}

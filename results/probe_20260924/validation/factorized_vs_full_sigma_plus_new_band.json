@@ -1,0 +1,63 @@
+{
+  "reference": {
+    "label": "full three-pulse TDSE sigma+",
+    "run": "/playpen1/shiqiu/laqphysics-data/probe_20260924/validation_gpu/probe_sigma_plus__5ef68b4112",
+    "method": "full TDSE",
+    "source_run": null,
+    "configuration_signature": "5ef68b41123b936f6851b9fb371e941be86bf16c456a799bedde6f8819a3739d"
+  },
+  "window": [
+    0.52,
+    0.68
+  ],
+  "comparisons": [
+    {
+      "label": "ionic factorization sigma+",
+      "run": "/playpen1/shiqiu/laqphysics-data/probe_20260924/validation_gpu/factorized_final/probe_sigma_plus__factorized__ba0b7c64bb",
+      "method": "ionic_probe_factorization",
+      "source_run": "/playpen1/shiqiu/laqphysics-data/probe_20260924/validation_gpu/source__64e48768c3",
+      "configuration_signature": "ba0b7c64bb6abb687afed16fef295b6f9bec7aff8b35dfc6f0ffff20387147b7",
+      "channels": {
+        "total": {
+          "yield_reference": 0.2754274366601441,
+          "yield_case": 0.275421969240807,
+          "yield_ratio": 0.9999801493293355,
+          "peak_reference": 0.6000000000000001,
+          "peak_case": 0.6000000000000001,
+          "peak_shift": 0.0,
+          "normalized_shape_L1": 0.00011434798192353099
+        },
+        "[1, 0, 0]": {
+          "yield_reference": 0.13086743351144636,
+          "yield_case": 0.1308684504874317,
+          "yield_ratio": 1.0000077710394255,
+          "peak_reference": 0.6000000000000001,
+          "peak_case": 0.6000000000000001,
+          "peak_shift": 0.0,
+          "normalized_shape_L1": 3.011472244291528e-05,
+          "complex_relative_L2": 0.0006227762147948026
+        },
+        "[2, 1, 1]": {
+          "yield_reference": 0.13187171847169038,
+          "yield_case": 0.13186561011240533,
+          "yield_ratio": 0.9999536795352647,
+          "peak_reference": 0.5950000000000001,
+          "peak_case": 0.5950000000000001,
+          "peak_shift": 0.0,
+          "normalized_shape_L1": 0.00020053416339691377,
+          "complex_relative_L2": 0.00043547693428456114
+        },
+        "[3, 2, 2]": {
+          "yield_reference": 0.012403022862164048,
+          "yield_case": 0.012402664879968035,
+          "yield_ratio": 0.9999711375041398,
+          "peak_reference": 0.5950000000000001,
+          "peak_case": 0.5950000000000001,
+          "peak_shift": 0.0,
+          "normalized_shape_L1": 0.00022242884188880224,
+          "complex_relative_L2": 0.0004237771373613149
+        }
+      }
+    }
+  ]
+}

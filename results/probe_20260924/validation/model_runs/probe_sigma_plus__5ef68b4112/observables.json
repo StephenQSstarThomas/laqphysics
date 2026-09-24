@@ -1,0 +1,569 @@
+{
+  "run_id": "probe_sigma_plus__5ef68b4112",
+  "configuration_signature": "5ef68b41123b936f6851b9fb371e941be86bf16c456a799bedde6f8819a3739d",
+  "complete": true,
+  "labels": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      -1
+    ],
+    [
+      2,
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      1
+    ],
+    [
+      3,
+      0,
+      0
+    ],
+    [
+      3,
+      1,
+      -1
+    ],
+    [
+      3,
+      1,
+      0
+    ],
+    [
+      3,
+      1,
+      1
+    ],
+    [
+      3,
+      2,
+      -2
+    ],
+    [
+      3,
+      2,
+      -1
+    ],
+    [
+      3,
+      2,
+      0
+    ],
+    [
+      3,
+      2,
+      1
+    ],
+    [
+      3,
+      2,
+      2
+    ]
+  ],
+  "bands": [
+    {
+      "window": [
+        0.18,
+        0.42
+      ],
+      "available": true,
+      "complete_window": true,
+      "energy_window_used": [
+        0.18,
+        0.41500000000000004
+      ],
+      "peak_height": 0.6801886606087896,
+      "peak_energy_grid": 0.29500000000000004,
+      "yield": 0.1019802870876309,
+      "channel_yields": [
+        0.0010232408703360974,
+        4.050384569312933e-05,
+        1.6025256796040702e-06,
+        4.835154470998859e-06,
+        0.09080669208309951,
+        0.00013847263766907257,
+        6.5104485015429275e-09,
+        8.570192930961956e-09,
+        0.0012501627610363724,
+        3.7399121968310613e-13,
+        2.1799322740174424e-12,
+        1.923735861803673e-05,
+        2.860500219597895e-05,
+        0.008666919765636747
+      ]
+    },
+    {
+      "window": [
+        0.52,
+        0.68
+      ],
+      "available": true,
+      "complete_window": true,
+      "energy_window_used": [
+        0.52,
+        0.675
+      ],
+      "peak_height": 2.6048052692210772,
+      "peak_energy_grid": 0.6000000000000001,
+      "yield": 0.2754274366601441,
+      "channel_yields": [
+        0.13086743351144636,
+        0.00027644265636116253,
+        3.141073392491431e-08,
+        2.786433580733874e-08,
+        0.13187171847169038,
+        3.865271323693307e-09,
+        4.970103013969059e-10,
+        4.4802434319190926e-10,
+        8.751711997123253e-06,
+        1.0974106304864342e-12,
+        8.36659335756754e-10,
+        1.427649228009186e-09,
+        1.0957033053313342e-09,
+        0.012403022862164048
+      ]
+    }
+  ],
+  "artifacts": {
+    "spectrum": "probe_sigma_plus__5ef68b4112__p1w1p2F0p08N12z_p2w1p5F0p1678N24spt70_p3w0p3F0p01N4spt230p6__SI.npz",
+    "csv": "probe_sigma_plus__5ef68b4112__p1w1p2F0p08N12z_p2w1p5F0p1678N24spt70_p3w0p3F0p01N4spt230p6__SI.csv",
+    "figure": "figures/probe_sigma_plus__5ef68b4112__p1w1p2F0p08N12z_p2w1p5F0p1678N24spt70_p3w0p3F0p01N4spt230p6__SI.png",
+    "pdf": "figures/probe_sigma_plus__5ef68b4112__p1w1p2F0p08N12z_p2w1p5F0p1678N24spt70_p3w0p3F0p01N4spt230p6__SI.pdf",
+    "conditional_figure": "figures/probe_sigma_plus__5ef68b4112__p1w1p2F0p08N12z_p2w1p5F0p1678N24spt70_p3w0p3F0p01N4spt230p6__SI__conditional.png",
+    "full_angular_amplitudes": "spectrum.npz"
+  },
+  "peak_height_ratio_03_over_06": 0.26112841088201133,
+  "yield_ratio_03_over_06": 0.37026190391288655,
+  "old_band_2p_plus1_fraction": 0.8904337757459928,
+  "prepared_ion_P_2p_plus1": 0.8915999790797803,
+  "channel_peak_comparisons": [
+    {
+      "label": [
+        1,
+        0,
+        0
+      ],
+      "peak_03": 0.006735056255245377,
+      "peak_06": 1.2538607827608959,
+      "peak_ratio_03_over_06": 0.005371454588774481
+    },
+    {
+      "label": [
+        2,
+        0,
+        0
+      ],
+      "peak_03": 0.00032926730221744373,
+      "peak_06": 0.002590155900263186,
+      "peak_ratio_03_over_06": 0.12712258060759465
+    },
+    {
+      "label": [
+        2,
+        1,
+        -1
+      ],
+      "peak_03": 1.735155071106107e-05,
+      "peak_06": 5.29661414319237e-07,
+      "peak_ratio_03_over_06": 32.75970316501659
+    },
+    {
+      "label": [
+        2,
+        1,
+        0
+      ],
+      "peak_03": 0.00018703528581275378,
+      "peak_06": 4.6691335798859846e-07,
+      "peak_ratio_03_over_06": 400.5781428453392
+    },
+    {
+      "label": [
+        2,
+        1,
+        1
+      ],
+      "peak_03": 0.6049747930824811,
+      "peak_06": 1.2407734266503327,
+      "peak_ratio_03_over_06": 0.48757877956470086
+    },
+    {
+      "label": [
+        3,
+        0,
+        0
+      ],
+      "peak_03": 0.001142688177039182,
+      "peak_06": 1.0260574719107938e-07,
+      "peak_ratio_03_over_06": 11136.687839826267
+    },
+    {
+      "label": [
+        3,
+        1,
+        -1
+      ],
+      "peak_03": 2.0937371931502295e-07,
+      "peak_06": 1.2987645989488182e-08,
+      "peak_ratio_03_over_06": 16.12099063097992
+    },
+    {
+      "label": [
+        3,
+        1,
+        0
+      ],
+      "peak_03": 1.3789410364875898e-07,
+      "peak_06": 1.3084914793999306e-08,
+      "peak_ratio_03_over_06": 10.538402872290519
+    },
+    {
+      "label": [
+        3,
+        1,
+        1
+      ],
+      "peak_03": 0.01036605914223455,
+      "peak_06": 8.158998639667859e-05,
+      "peak_ratio_03_over_06": 127.05062961815295
+    },
+    {
+      "label": [
+        3,
+        2,
+        -2
+      ],
+      "peak_03": 9.416400092866641e-12,
+      "peak_06": 1.10454198751289e-11,
+      "peak_ratio_03_over_06": 0.8525162645984747
+    },
+    {
+      "label": [
+        3,
+        2,
+        -1
+      ],
+      "peak_03": 3.677359073858185e-11,
+      "peak_06": 2.704214325821537e-08,
+      "peak_ratio_03_over_06": 0.0013598622855978725
+    },
+    {
+      "label": [
+        3,
+        2,
+        0
+      ],
+      "peak_03": 0.0001606507830271921,
+      "peak_06": 1.5290481727992245e-08,
+      "peak_ratio_03_over_06": 10506.58742380164
+    },
+    {
+      "label": [
+        3,
+        2,
+        1
+      ],
+      "peak_03": 0.00023857679817438664,
+      "peak_06": 2.5824573509386134e-08,
+      "peak_ratio_03_over_06": 9238.363533387072
+    },
+    {
+      "label": [
+        3,
+        2,
+        2
+      ],
+      "peak_03": 0.057892436355604614,
+      "peak_06": 0.1166950454557759,
+      "peak_ratio_03_over_06": 0.4961002082778587
+    }
+  ],
+  "channel_yields_on_energy_grid": [
+    0.14319765431739884,
+    0.0003857013427063758,
+    5.382221210827269e-06,
+    0.0001428583007393757,
+    0.23934113201051613,
+    0.00014206373982373155,
+    1.8465684547632734e-07,
+    2.3955144833309386e-07,
+    0.0012954690991516672,
+    1.897712373435808e-11,
+    1.6441521176904342e-08,
+    2.0018723900381744e-05,
+    3.569374243339264e-05,
+    0.022639354075312663
+  ],
+  "conditional_normalization": "Unit area over the explicitly computed energy grid, separately for each ion; not absolute counts.",
+  "predeclared_targets": {
+    "peak_height_ratio_min": 3.0,
+    "band_yield_ratio_min": 5.0,
+    "old_band_2p_plus1_fraction_min": 0.95,
+    "prepared_ion_transfer_min": 0.95
+  },
+  "target_applicable": false,
+  "target_passed": null,
+  "scope": "Sum of explicitly recorded bound ionic channels, plus channel-resolved SI spectra; no claim of complete ionic-channel or spatial convergence.",
+  "pulses": [
+    {
+      "number": 1,
+      "polarization": "z",
+      "role": "ionize",
+      "omega": 1.2,
+      "cycles": 12,
+      "field": 0.08,
+      "start": 0.0,
+      "cep": 0.0,
+      "duration_au": 62.83185307179586,
+      "duration_fs": 1.5198298460597277,
+      "intensity_FWHM_fs": 0.5533041832604692,
+      "equivalent_cycle_average_peak_intensity_W_cm2": 224604492800000.0
+    },
+    {
+      "number": 2,
+      "polarization": "sigma+",
+      "role": "prepare",
+      "omega": 1.5,
+      "cycles": 24,
+      "field": 0.1677997537386045,
+      "start": 70.0,
+      "cep": 0.0,
+      "duration_au": 100.53096491487338,
+      "duration_fs": 2.431727753695564,
+      "intensity_FWHM_fs": 0.8852866932167506,
+      "equivalent_cycle_average_peak_intensity_W_cm2": 988145969461440.6
+    },
+    {
+      "number": 3,
+      "polarization": "sigma+",
+      "role": "probe",
+      "omega": 0.3,
+      "cycles": 4,
+      "field": 0.01,
+      "start": 230.6,
+      "cep": 0.0,
+      "duration_au": 83.77580409572782,
+      "duration_fs": 2.0264397947463038,
+      "intensity_FWHM_fs": 0.7377389110139589,
+      "equivalent_cycle_average_peak_intensity_W_cm2": 3509445200000.0
+    }
+  ],
+  "ionic_transfer": {
+    "requested_times": [
+      70.0
+    ],
+    "transfers_from_1s": [
+      {
+        "requested_time": 70.0,
+        "actual_time": 70.0,
+        "labels": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0
+          ],
+          [
+            2,
+            1,
+            -1
+          ],
+          [
+            2,
+            1,
+            0
+          ],
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            3,
+            0,
+            0
+          ],
+          [
+            3,
+            1,
+            -1
+          ],
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            3,
+            2,
+            -2
+          ],
+          [
+            3,
+            2,
+            -1
+          ],
+          [
+            3,
+            2,
+            0
+          ],
+          [
+            3,
+            2,
+            1
+          ],
+          [
+            3,
+            2,
+            2
+          ]
+        ],
+        "amplitude_real": [
+          0.07236219824676875,
+          -0.00026276593902887667,
+          -4.354624758615263e-06,
+          0.0,
+          -0.9174454818154664,
+          2.3973637256020097e-05,
+          -1.8310759027749596e-07,
+          0.0,
+          0.0004479288410965135,
+          3.0686625715432735e-09,
+          0.0,
+          -3.714616599417303e-05,
+          0.0,
+          0.0806165827315201
+        ],
+        "amplitude_imag": [
+          0.06838181843926795,
+          -1.0270894766910538e-05,
+          5.392654128426879e-06,
+          0.0,
+          0.22336912717778842,
+          2.1302922719979326e-05,
+          8.008813169479848e-07,
+          0.0,
+          -0.0009189870109855272,
+          -3.10312459121626e-09,
+          0.0,
+          -6.05654361000008e-05,
+          0.0,
+          0.27813607703533094
+        ],
+        "probabilities": [
+          0.009912360828165667,
+          6.91514299930403e-08,
+          4.80434753371845e-11,
+          0.0,
+          0.8915999790797803,
+          1.0285497996966465e-09,
+          6.749392734535698e-13,
+          0.0,
+          1.0451773730461791e-06,
+          1.9046072206601652e-17,
+          0.0,
+          5.048009698049936e-09,
+          0.0,
+          0.08385871075991158
+        ],
+        "scope": "transition from prepared ionic 1s into recorded final bound channels"
+      }
+    ]
+  },
+  "probe": {
+    "pulses": [
+      3
+    ],
+    "target_channels": [
+      [
+        3,
+        2,
+        2
+      ]
+    ],
+    "design": {
+      "prepared_channel": [
+        2,
+        1,
+        1
+      ],
+      "target_channels": [
+        [
+          3,
+          2,
+          2
+        ]
+      ],
+      "transition": "two-photon 2p(+1)->3p(-1) at 5/36; three-photon 2p(+1)->n=5 (5g-2, 5d-2) near 0.14",
+      "field_free_two_photon_resonance_au": 0.1388888888888889,
+      "field_free_three_photon_2p_to_n5_au": 0.13999999999999999,
+      "design_scan": "results/probe_20260924/ion_design/summary.json",
+      "timing": "starts when the two-pulse source input ends; the ionized electrons have already crossed the surface",
+      "physics_note": "An ion-only operation after the electron left cannot change the unconditional SI spectrum; coincidence spectra are redistributed. Compare with the source/no-probe control.",
+      "scope": "factorization/code-path validation model (lmax=2, order 4); not converged physics"
+    },
+    "old_band_channel_fractions": {
+      "[2, 1, 1]": 0.8904337757459928,
+      "[3, 2, 2]": 0.08498622638892286,
+      "[3, 1, 1]": 0.012258866852984211,
+      "[1, 0, 0]": 0.010033712392443396,
+      "[3, 0, 0]": 0.001357837299968415,
+      "[2, 0, 0]": 0.0003971732856402402
+    },
+    "old_band_total_peaks": [
+      {
+        "energy": 0.29500000000000004,
+        "height": 0.6801886606087896,
+        "relative_prominence": 0.8210425936798579
+      }
+    ],
+    "old_band_channel_peaks": {
+      "[2, 1, 1]": [
+        {
+          "energy": 0.29500000000000004,
+          "height": 0.6049747930824811,
+          "relative_prominence": 0.8184954675739031
+        }
+      ],
+      "[3, 2, 2]": [
+        {
+          "energy": 0.29500000000000004,
+          "height": 0.057892436355604614,
+          "relative_prominence": 0.8213089979649313
+        }
+      ]
+    },
+    "old_band_total_doublet": false,
+    "old_band_total_splitting_au": null,
+    "peak_rule": "scipy find_peaks, prominence >= 5% of the window maximum, on the computed energy grid",
+    "transfers_from_1s_to_final": {
+      "[2, 1, 1]": 0.8915999790797803,
+      "[3, 2, 2]": 0.08385871075991158
+    },
+    "scope": "Old band [0.18,0.42]. Compare with the matched no-probe control before attributing any change to the probe."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "input_signature": "7a4353cc243395ec56a1d5bc0799799c32493c7e56b14eb46def432a79def36d",
+  "steps": 3744,
+  "cpu": {
+    "device": "cpu",
+    "invocations": "one, uninterrupted",
+    "maximum_linear_residual": 9.998770812353867e-11
+  },
+  "gpu": {
+    "device": "cuda:0",
+    "invocations": "interrupted after 1500 steps, resumed",
+    "maximum_linear_residual": 9.998960917267107e-11
+  },
+  "final_wavefunction_relative_L2": 1.132458682480501e-12,
+  "complex_SI_amplitudes_relative_L2": 6.599895021439595e-12,
+  "angle_integrated_spectrum_max_relative": 3.9459469203341315e-12,
+  "ionic_transfer_amplitudes_max_abs": 0.0,
+  "scope": "Implementation consistency (backend, replay workers, checkpoint/resume); both use the same numerics and linear tolerance 1e-10."
+}

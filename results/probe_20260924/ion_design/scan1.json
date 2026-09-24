@@ -1,0 +1,74 @@
+[
+ {
+  "omega": 0.1388888888888889,
+  "field": 0.01,
+  "cycles": 48,
+  "polarization": "sigma-"
+ },
+ {
+  "omega": 0.1388888888888889,
+  "field": 0.02,
+  "cycles": 48,
+  "polarization": "sigma-"
+ },
+ {
+  "omega": 0.1388888888888889,
+  "field": 0.04,
+  "cycles": 48,
+  "polarization": "sigma-"
+ },
+ {
+  "omega": 0.14,
+  "field": 0.01,
+  "cycles": 48,
+  "polarization": "sigma-"
+ },
+ {
+  "omega": 0.14,
+  "field": 0.02,
+  "cycles": 48,
+  "polarization": "sigma-"
+ },
+ {
+  "omega": 0.14,
+  "field": 0.04,
+  "cycles": 48,
+  "polarization": "sigma-"
+ },
+ {
+  "omega": 0.14,
+  "field": 0.005,
+  "cycles": 48,
+  "polarization": "sigma-"
+ },
+ {
+  "omega": 0.14,
+  "field": 0.02,
+  "cycles": 96,
+  "polarization": "sigma-"
+ },
+ {
+  "omega": 0.14,
+  "field": 0.02,
+  "cycles": 24,
+  "polarization": "sigma-"
+ },
+ {
+  "omega": 0.14,
+  "field": 0.02,
+  "cycles": 48,
+  "polarization": "sigma+"
+ },
+ {
+  "omega": 0.14,
+  "field": 0.04,
+  "cycles": 48,
+  "polarization": "sigma+"
+ },
+ {
+  "omega": 0.1388888888888889,
+  "field": 0.02,
+  "cycles": 48,
+  "polarization": "sigma+"
+ }
+]

@@ -1,0 +1,215 @@
+{
+  "signature": "64e48768c35b53ae51e4f06b7602bb843f7ff7b014f01b77388cada83270941f",
+  "config": {
+    "radial": {
+      "edges": [
+        0,
+        0.5,
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24
+      ],
+      "order": 4,
+      "tail": 12,
+      "ecs_angle": 0.5,
+      "alpha": 0.8
+    },
+    "lmax": 2,
+    "M": null,
+    "total_Lmax": 2,
+    "angular_representation": "bipolar",
+    "natural_parity": false,
+    "coulomb_contraction": "blocks",
+    "cutoff_radii": [
+      12.0,
+      16.0
+    ],
+    "surface": 20.0,
+    "dt": 0.1,
+    "surface_stride": 1,
+    "checkpoint_every": 500,
+    "ground_tolerance": 1e-10,
+    "time_integrator": "cf4-pade",
+    "ionic_propagator": "cf4",
+    "linear_tolerance": 1e-10,
+    "pulses": [
+      {
+        "pulse": {
+          "omega": 1.2,
+          "cycles": 12,
+          "field": 0.08
+        },
+        "polarization": "z",
+        "role": "ionize"
+      },
+      {
+        "pulse": {
+          "omega": 1.5,
+          "cycles": 24,
+          "field": 0.1677997537386045,
+          "start": 70.0
+        },
+        "polarization": "sigma+",
+        "role": "prepare"
+      }
+    ],
+    "ionic_transfer_times": [
+      70.0
+    ],
+    "spectrum": {
+      "energy_segments": [
+        [
+          0.05,
+          0.18,
+          14
+        ],
+        [
+          0.18,
+          0.75,
+          115
+        ],
+        [
+          0.75,
+          1.6,
+          35
+        ]
+      ],
+      "theta_points": 8,
+      "phi_points": 12
+    },
+    "storage": {
+      "mode": "spectrum",
+      "max_file_bytes": 4000000000,
+      "ionic_block_frames": 32,
+      "ionic_device": "cpu",
+      "replay_workers": 2,
+      "accumulator_device": "auto"
+    },
+    "end_time": 230.6,
+    "ionic_channels": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        -1
+      ],
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        2,
+        1,
+        1
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        1,
+        -1
+      ],
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        3,
+        1,
+        1
+      ],
+      [
+        3,
+        2,
+        -2
+      ],
+      [
+        3,
+        2,
+        -1
+      ],
+      [
+        3,
+        2,
+        0
+      ],
+      [
+        3,
+        2,
+        1
+      ],
+      [
+        3,
+        2,
+        2
+      ]
+    ]
+  },
+  "ground_energy": -2.899703002424128,
+  "ground_residual": 6.53082706780466e-11,
+  "nrad": 68,
+  "channels": 51,
+  "dt": 0.09999999999999999,
+  "nsteps": 2306,
+  "completed_steps": 2306,
+  "complete": true,
+  "surface_bytes": 640054080,
+  "surface_indices": [
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "seconds_this_invocation": 246.2228336930275,
+  "backend": "torch",
+  "device": "cuda:0",
+  "precision": "complex128",
+  "ground_angular_basis": "coupled total L=0, expanded without angular approximation",
+  "time_integrator": "cf4-pade",
+  "gauge": {
+    "type": "velocity"
+  },
+  "ground_projection_scope": "field-free basis in the propagated gauge; compare physical populations at A=0",
+  "coulomb_contraction": "blocks",
+  "precomputed_coulomb_bytes": 3625216,
+  "preconditioner_precision": "complex64",
+  "linear_solver": "FGMRES",
+  "gmres_restart": 16,
+  "maximum_linear_residual_this_invocation": 9.998960917267107e-11,
+  "linear_iterations_this_invocation": 42276,
+  "surface_storage": "spectrum",
+  "raw_flux_written": false,
+  "max_file_bytes": 4000000000,
+  "phase": "complete",
+  "maximum_linear_residual_all_segments": 9.998960917267107e-11,
+  "linear_iterations_all_segments": 42276,
+  "numerical_snapshot": null,
+  "cuda_visible_devices": "3",
+  "peak_cuda_allocated_GiB": 0.20639848709106445,
+  "peak_cuda_reserved_GiB": 0.240234375
+}

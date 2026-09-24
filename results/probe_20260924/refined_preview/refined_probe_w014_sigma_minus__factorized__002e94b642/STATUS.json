@@ -1,0 +1,13 @@
+{
+  "state": "complete",
+  "complete_spectrum": true,
+  "run_id": "refined_probe_w014_sigma_minus__factorized__002e94b642",
+  "input": "input.json",
+  "method": "ionic_probe_factorization",
+  "spectrum": "refined_probe_w014_sigma_minus__factorized__002e94b642__p1w1p2F0p08N48z_p2w1p5F0p0200358N201spt360_p3w0p14F0p02N48smt1302__SI.npz",
+  "figure": "figures/refined_probe_w014_sigma_minus__factorized__002e94b642__p1w1p2F0p08N48z_p2w1p5F0p0200358N201spt360_p3w0p14F0p02N48smt1302__SI.png",
+  "conditional_figure": "figures/refined_probe_w014_sigma_minus__factorized__002e94b642__p1w1p2F0p08N48z_p2w1p5F0p0200358N201spt360_p3w0p14F0p02N48smt1302__SI__conditional.png",
+  "observables": "observables.json",
+  "design_targets_passed": null,
+  "numerical_convergence_certified": false
+}

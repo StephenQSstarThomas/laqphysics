@@ -1,0 +1,12 @@
+{
+  "state": "complete",
+  "complete_spectrum": true,
+  "run_id": "source__64e48768c3",
+  "input": "input.json",
+  "spectrum": "source__64e48768c3__p1w1p2F0p08N12z_p2w1p5F0p1678N24spt70__SI.npz",
+  "figure": "figures/source__64e48768c3__p1w1p2F0p08N12z_p2w1p5F0p1678N24spt70__SI.png",
+  "conditional_figure": "figures/source__64e48768c3__p1w1p2F0p08N12z_p2w1p5F0p1678N24spt70__SI__conditional.png",
+  "observables": "observables.json",
+  "design_targets_passed": null,
+  "numerical_convergence_certified": false
+}

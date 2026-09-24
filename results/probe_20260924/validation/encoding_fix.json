@@ -1,0 +1,31 @@
+{
+  "user_traceback": {
+    "first": "spectrum_report.py line 141 publish -> RUN.md write_text: UnicodeEncodeError ascii position 38-41",
+    "second": "simulate_spectrum.py line 104 (failure handler) -> spectrum_report.py line 177 update_index -> INDEX.md: ascii position 2-9"
+  },
+  "diagnosis": "Earlier writes of the same Chinese RUN.md/INDEX.md (simulate_spectrum.py lines 60 and 78) succeeded in the same process, so the default text encoding became ASCII after propagation (LC_CTYPE switched to C while Python UTF-8 mode was off). The report code relied on the process locale.",
+  "reproduction": {
+    "code": "delivered bundle laqphysics-minimum-20260921 (kernel f44a73ea45853b17...)",
+    "script": "repro_old_code_midrun_ascii.py",
+    "environment": "LANG=en_US.UTF-8, PYTHONUTF8=0; locale.setlocale(LC_CTYPE, C) immediately before publish",
+    "result": "identical failure lines (simulate_spectrum.py 104 -> spectrum_report.py 177, INDEX.md position 2-9); run.json complete=true, STATUS failed"
+  },
+  "fix": [
+    "explicit encoding=utf-8 for every Markdown/JSON text read or write on the report path",
+    "PYTHONUTF8=1 PYTHONIOENCODING=utf-8 exported by spectrum_job.sh, refine_preparation_spectra.sh, handoff.sh and the 1D/ionic Slurm scripts (also protects older frozen snapshots)",
+    "failure handler: INDEX refresh is best effort and can no longer mask the original error"
+  ],
+  "kernel_signature_unchanged": "f44a73ea45853b17a17b280bbb2f31e9c7be1efc0ec13cb142789644009f53fe (main, this branch and the 20260921 bundle)",
+  "recovery_resubmit_same_command": {
+    "state": "complete",
+    "complete_spectrum": true,
+    "attempts": 2,
+    "checkpoint_modified": false,
+    "propagation_rerun": false
+  },
+  "recovery_render_spectra": {
+    "state": "complete",
+    "complete_spectrum": true
+  },
+  "regression_test": "tests/test_spectrum_report.py::test_reports_are_utf8_even_when_the_process_locale_is_ascii (fails with the old module: UnicodeEncodeError ascii)"
+}

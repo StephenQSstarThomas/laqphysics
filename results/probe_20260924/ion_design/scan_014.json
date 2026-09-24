@@ -1,0 +1,14 @@
+[
+ {
+  "omega": 0.14,
+  "field": 0.02,
+  "cycles": 48,
+  "polarization": "sigma-"
+ },
+ {
+  "omega": 0.14,
+  "field": 0.02,
+  "cycles": 48,
+  "polarization": "sigma+"
+ }
+]
