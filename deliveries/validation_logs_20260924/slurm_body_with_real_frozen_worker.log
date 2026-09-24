@@ -1,0 +1,33 @@
+{
+  "jobs": [
+    {
+      "array_task": "0",
+      "exit_code": 0,
+      "stdout_tail": [
+        "3D 181/181, inner norm=0.88848901, Pg=0.87976437, wall=9.8s",
+        "COMPLETE SI SPECTRUM /playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/slurm_check/outputs/source__slurmcheck__787b253088/figures/source__slurmcheck__787b253088__p1w5F0p15N2z_p2w1p5F0p2N3spt3__SI.png"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "array_task": "1",
+      "exit_code": 0,
+      "stdout_tail": [
+        "3D 364/364, inner norm=0.87849698, Pg=0.87702899, wall=20.2s",
+        "COMPLETE SI SPECTRUM /playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/slurm_check/outputs/probe__slurmcheck__892cdfc12b/figures/probe__slurmcheck__892cdfc12b__p1w5F0p15N2z_p2w1p5F0p2N3spt3_p3w0p7F0p05N2smt21p72__SI.png"
+      ],
+      "stderr_tail": []
+    }
+  ],
+  "case_states": {
+    "probe__slurmcheck__892cdfc12b": "complete",
+    "source__slurmcheck__787b253088": "complete"
+  },
+  "frozen_snapshots": [
+    "2068b53d304b182d"
+  ],
+  "index_has_probe_column": true,
+  "environment": "LC_ALL=C, PYTHONUTF8=0 outside; spectrum_job.sh exports PYTHONUTF8=1",
+  "srun": "mocked: executes its argument list",
+  "passed": true
+}

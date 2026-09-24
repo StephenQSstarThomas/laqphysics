@@ -1,0 +1,98 @@
+{
+  "passed": true,
+  "archive": "laqphysics-minimum-20260924.tar.gz",
+  "archive_sha256": "3c82289b28ef93d0d48f724257fa8bd0f58e638900798c39c57f0b425ab540e0",
+  "archive_bytes": 11832131,
+  "package_directory": "/playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/unpacked_3rjojzu0/laqphysics-minimum-20260924",
+  "git_directory_present": false,
+  "outer_environment": "LC_ALL=C, PYTHONUTF8=0, PYTHONCOERCECLOCALE=0 (ASCII default text encoding)",
+  "checks": [
+    {
+      "check": "verify_initial",
+      "command": "./handoff.sh verify",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "log": "verify_initial.log"
+    },
+    {
+      "check": "compile_and_both_test_suites",
+      "command": "./handoff.sh test",
+      "exit_code": 0,
+      "seconds": 163.6,
+      "log": "compile_and_both_test_suites.log"
+    },
+    {
+      "check": "cpu_smoke",
+      "command": "./handoff.sh smoke cpu",
+      "exit_code": 0,
+      "seconds": 5.0,
+      "log": "cpu_smoke.log"
+    },
+    {
+      "check": "probe_smoke_cpu_full_and_factorized",
+      "command": "./handoff.sh probe-smoke cpu",
+      "exit_code": 0,
+      "seconds": 41.3,
+      "log": "probe_smoke_cpu_full_and_factorized.log"
+    },
+    {
+      "check": "probe_smoke_gpu_full_and_factorized",
+      "command": "./handoff.sh probe-smoke cuda:0",
+      "exit_code": 0,
+      "seconds": 32.5,
+      "log": "probe_smoke_gpu_full_and_factorized.log"
+    },
+    {
+      "check": "replot_completed_cases",
+      "command": "./handoff.sh render",
+      "exit_code": 0,
+      "seconds": 5.6,
+      "log": "replot_completed_cases.log"
+    },
+    {
+      "check": "production_resource_estimate",
+      "command": "./handoff.sh estimate",
+      "exit_code": 0,
+      "seconds": 1.0,
+      "log": "production_resource_estimate.log"
+    },
+    {
+      "check": "probe_resource_estimate",
+      "command": "./handoff.sh estimate configs/probe_20260924/production/probe_w014_sigma_minus.json",
+      "exit_code": 0,
+      "seconds": 0.7,
+      "log": "probe_resource_estimate.log"
+    },
+    {
+      "check": "regenerate_probe_inputs",
+      "command": "/home/shiqiu/miniconda3/bin/python scripts/make_probe_campaign.py",
+      "exit_code": 0,
+      "seconds": 0.8,
+      "log": "regenerate_probe_inputs.log"
+    },
+    {
+      "check": "snapshot_without_git",
+      "command": "./handoff.sh snapshot",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "log": "snapshot_without_git.log"
+    },
+    {
+      "check": "slurm_body_with_real_frozen_worker",
+      "command": "/home/shiqiu/miniconda3/bin/python results/probe_20260924/validation/check_slurm_probe.py /playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/slurm_check",
+      "exit_code": 0,
+      "seconds": 37.7,
+      "log": "slurm_body_with_real_frozen_worker.log"
+    },
+    {
+      "check": "verify_after_running",
+      "command": "./handoff.sh verify",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "log": "verify_after_running.log"
+    }
+  ],
+  "regenerated_probe_inputs_byte_identical": true,
+  "source_commit": "9e6a24f61db91fc954aea019588cab59f39c7509",
+  "scope": "Isolated unpack without Git: compile, Release/Debug tests, two-pulse and three-pulse smoke runs (full TDSE and ionic factorization), replot, estimates, input regeneration, snapshot, Slurm body with the frozen worker (srun mocked). No real cluster submission."
+}

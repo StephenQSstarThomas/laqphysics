@@ -1,0 +1,8 @@
+source                       steps= 22033 radial=264 channels=375 ion channels=14 persistent=3.23 GB largest file=0.86 GB
+probe_w014_sigma_minus       steps= 59937 radial=264 channels=375 ion channels=20 persistent=3.64 GB largest file=0.99 GB
+probe_w014_sigma_plus        steps= 59937 radial=264 channels=375 ion channels=20 persistent=3.64 GB largest file=0.99 GB
+probe_w5o36_sigma_minus      steps= 60225 radial=264 channels=375 ion channels=20 persistent=3.64 GB largest file=1.00 GB
+probe_w5o36_sigma_plus       steps= 60225 radial=264 channels=375 ion channels=20 persistent=3.64 GB largest file=1.00 GB
+probe_w014_sigma_minus_l6    steps= 59937 radial=264 channels=705 ion channels=20 persistent=5.33 GB largest file=1.95 GB
+probe_w014_sigma_plus_l6     steps= 59937 radial=264 channels=705 ion channels=20 persistent=5.33 GB largest file=1.95 GB
+no_probe_same_end            steps= 59937 radial=264 channels=375 ion channels=20 persistent=3.64 GB largest file=0.99 GB

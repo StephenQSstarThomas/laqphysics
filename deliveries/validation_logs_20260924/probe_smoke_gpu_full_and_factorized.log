@@ -1,0 +1,61 @@
+make: Nothing to be done for 'all'.
+RUN_ID source__787b253088 
+INPUT /playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/unpacked_3rjojzu0/laqphysics-minimum-20260924/configs/probe_20260924/smoke/source.json 
+OUTPUT /playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/local_runs_gpu/probe_smoke/source__787b253088
+/home/shiqiu/miniconda3/lib/python3.13/site-packages/torch/cuda/__init__.py:1061: UserWarning: Can't initialize NVML
+  raw_cnt = _raw_device_count_nvml()
+ground E=-2.6773303462, residual=7.868e-11; (21, 21, 16), storage=projected, raw-equivalent=0.004GiB
+IONIC PREP 160 frames remaining
+IONIC PREP 80 frames remaining
+IONIC PREP 0 frames remaining
+/playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/unpacked_3rjojzu0/laqphysics-minimum-20260924/python/torch_backend.py:21: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/unpacked_3rjojzu0/laqphysics-minimum-20260924/python/torch_backend.py:21: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+3D 20/181, inner norm=0.99999997, Pg=0.99953261, wall=1.7s
+3D 40/181, inner norm=0.99996305, Pg=0.99947969, wall=2.4s
+3D 60/181, inner norm=0.99968707, Pg=0.99091457, wall=3.0s
+3D 80/181, inner norm=0.99959006, Pg=0.94902036, wall=3.7s
+3D 100/181, inner norm=0.99790231, Pg=0.89520724, wall=4.4s
+3D 120/181, inner norm=0.98390543, Pg=0.87990565, wall=5.0s
+3D 140/181, inner norm=0.94677942, Pg=0.87976435, wall=5.6s
+3D 160/181, inner norm=0.90828331, Pg=0.87976430, wall=6.1s
+3D 180/181, inner norm=0.88902692, Pg=0.87976436, wall=6.5s
+3D 181/181, inner norm=0.88848901, Pg=0.87976437, wall=6.5s
+COMPLETE SI SPECTRUM /playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/local_runs_gpu/probe_smoke/source__787b253088/figures/source__787b253088__p1w5F0p15N2z_p2w1p5F0p2N3spt3__SI.png
+RUN_ID probe__892cdfc12b 
+INPUT /playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/unpacked_3rjojzu0/laqphysics-minimum-20260924/configs/probe_20260924/smoke/probe.json 
+OUTPUT /playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/local_runs_gpu/probe_smoke/probe__892cdfc12b
+/home/shiqiu/miniconda3/lib/python3.13/site-packages/torch/cuda/__init__.py:1061: UserWarning: Can't initialize NVML
+  raw_cnt = _raw_device_count_nvml()
+ground E=-2.6773303462, residual=7.868e-11; (21, 21, 16), storage=spectrum, raw-equivalent=0.007GiB
+IONIC PREP 320 frames remaining
+IONIC PREP 240 frames remaining
+IONIC PREP 160 frames remaining
+IONIC PREP 80 frames remaining
+IONIC PREP 0 frames remaining
+/playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/unpacked_3rjojzu0/laqphysics-minimum-20260924/python/torch_backend.py:21: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/unpacked_3rjojzu0/laqphysics-minimum-20260924/python/torch_backend.py:21: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+3D 20/364, inner norm=0.99999997, Pg=0.99953261, wall=2.1s
+3D 40/364, inner norm=0.99996305, Pg=0.99947969, wall=2.8s
+3D 60/364, inner norm=0.99968707, Pg=0.99091457, wall=3.5s
+3D 80/364, inner norm=0.99959006, Pg=0.94902036, wall=4.1s
+3D 100/364, inner norm=0.99790231, Pg=0.89520724, wall=4.7s
+3D 120/364, inner norm=0.98390543, Pg=0.87990565, wall=5.4s
+3D 140/364, inner norm=0.94677942, Pg=0.87976435, wall=6.0s
+3D 160/364, inner norm=0.90828331, Pg=0.87976430, wall=6.4s
+3D 180/364, inner norm=0.88902692, Pg=0.87976436, wall=6.9s
+3D 200/364, inner norm=0.88284396, Pg=0.87976519, wall=7.6s
+3D 220/364, inner norm=0.88098175, Pg=0.87945553, wall=8.2s
+3D 240/364, inner norm=0.88038830, Pg=0.87646443, wall=8.8s
+3D 260/364, inner norm=0.88027041, Pg=0.87262193, wall=9.5s
+3D 280/364, inner norm=0.88000597, Pg=0.87427921, wall=10.1s
+3D 300/364, inner norm=0.87979430, Pg=0.87663771, wall=10.8s
+3D 320/364, inner norm=0.87952850, Pg=0.87702482, wall=11.5s
+3D 340/364, inner norm=0.87909925, Pg=0.87702896, wall=12.0s
+3D 360/364, inner norm=0.87859905, Pg=0.87702899, wall=12.4s
+3D 364/364, inner norm=0.87849698, Pg=0.87702899, wall=12.5s
+COMPLETE SI SPECTRUM /playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/local_runs_gpu/probe_smoke/probe__892cdfc12b/figures/probe__892cdfc12b__p1w5F0p15N2z_p2w1p5F0p2N3spt3_p3w0p7F0p05N2smt21p72__SI.png
+COMPLETE FACTORIZED SI SPECTRUM /playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/local_runs_gpu/probe_smoke_factorized/probe__factorized__8994c3a0ff/figures/probe__factorized__8994c3a0ff__p1w5F0p15N2z_p2w1p5F0p2N3spt3_p3w0p7F0p05N2smt21p72__SI.png

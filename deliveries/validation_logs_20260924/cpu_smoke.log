@@ -1,0 +1,16 @@
+make: Nothing to be done for 'all'.
+RUN_ID handoff_smoke__8358adb0e5 
+INPUT /playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/unpacked_3rjojzu0/laqphysics-minimum-20260924/configs/handoff_smoke.json 
+OUTPUT /playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/local_runs/smoke/handoff_smoke__8358adb0e5
+ground E=-2.6773303462, residual=7.868e-11; (21, 21, 16), storage=projected, raw-equivalent=0.000GiB
+IONIC PREP 0 frames remaining
+/playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/unpacked_3rjojzu0/laqphysics-minimum-20260924/python/torch_backend.py:21: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+/playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/unpacked_3rjojzu0/laqphysics-minimum-20260924/python/torch_backend.py:21: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  return torch.sparse_csr_tensor(torch.as_tensor(A.indptr.astype(np.int64),device=self.device),
+3D 5/23, inner norm=0.99999998, Pg=0.99999688, wall=0.3s
+3D 10/23, inner norm=0.99999997, Pg=0.99983193, wall=0.5s
+3D 15/23, inner norm=0.99999997, Pg=0.99953082, wall=0.8s
+3D 20/23, inner norm=0.99999997, Pg=0.99949778, wall=1.0s
+3D 23/23, inner norm=0.99999996, Pg=0.99949784, wall=1.2s
+COMPLETE SI SPECTRUM /playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/local_runs/smoke/handoff_smoke__8358adb0e5/figures/handoff_smoke__8358adb0e5__p1w5F0p15N2sp__SI.png

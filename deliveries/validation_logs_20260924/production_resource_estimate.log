@@ -1,0 +1,67 @@
+make: Nothing to be done for 'all'.
+{
+  "run_id": "reference__25b1ebd8a5",
+  "output": "/playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/local_runs/production/reference__25b1ebd8a5",
+  "input": "/playpen1/shiqiu/laqphysics-data/probe_20260924/bundle_check/unpacked_3rjojzu0/laqphysics-minimum-20260924/configs/preparation_20260921/production/reference.json",
+  "resources": {
+    "radial_points": 216,
+    "angular_channels": 375,
+    "steps": 22033,
+    "dt_actual": 0.05999849458367287,
+    "duration_au": 1321.9468311620644,
+    "surface_frames": 22034,
+    "energy_points": 1340,
+    "angular_points": 768,
+    "ionic_final_channels": 14,
+    "ionic_unique_states": 14,
+    "raw_flux_equivalent_bytes": 199892448000,
+    "raw_flux_written": false,
+    "ionic_endpoints_bytes": 210470400,
+    "optional_projected_history_bytes": 863732800,
+    "one_wavefunction_bytes": 279936000,
+    "wave_checkpoint_upper_bytes": 559937536,
+    "one_spectrum_checkpoint_upper_bytes": 461111296,
+    "final_spectrum_upper_bytes": 345999936,
+    "spectral_accumulator_pair_bytes": 461045760,
+    "persistent_output_estimate_bytes": 2902363264,
+    "temporary_write_peak_estimate_bytes": 3923412096,
+    "largest_output_file_upper_bytes": 863736896,
+    "max_file_bytes": 4000000000,
+    "ionic_replay_RAM_bytes": 156038400,
+    "replay_workers": 4,
+    "replay_array_RAM_estimate_including_lookahead_bytes": 2652652800,
+    "FGMRES_Q_Z_bytes": 9237888000,
+    "GPU_peak_estimate_bytes": 16627349760,
+    "scope": "Array sizes plus conservative headers; GPU operators, workspaces, ground cache and logs add overhead. Not a runtime or peak GPU guarantee."
+  },
+  "pulses": [
+    {
+      "number": 1,
+      "polarization": "z",
+      "role": null,
+      "omega": 1.2,
+      "cycles": 48,
+      "field": 0.08,
+      "start": 0.0,
+      "cep": 0.0,
+      "duration_au": 251.32741228718345,
+      "duration_fs": 6.079319384238911,
+      "intensity_FWHM_fs": 2.2132167330418766,
+      "equivalent_cycle_average_peak_intensity_W_cm2": 224604492800000.0
+    },
+    {
+      "number": 2,
+      "polarization": "sigma+",
+      "role": null,
+      "omega": 1.5,
+      "cycles": 201,
+      "field": 0.020035791491176656,
+      "start": 360.0,
+      "cep": 0.0,
+      "duration_au": 841.9468311620645,
+      "duration_fs": 20.36571993720035,
+      "intensity_FWHM_fs": 7.414276055690285,
+      "equivalent_cycle_average_peak_intensity_W_cm2": 14088069067839.65
+    }
+  ]
+}
