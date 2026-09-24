@@ -4,7 +4,7 @@
       "array_task": "0",
       "exit_code": 0,
       "stdout_tail": [
-        "3D 181/181, inner norm=0.88848901, Pg=0.87976437, wall=15.2s",
+        "3D 181/181, inner norm=0.88848901, Pg=0.87976437, wall=9.7s",
         "COMPLETE SI SPECTRUM /playpen1/shiqiu/laqphysics-data/probe_20260924/slurm_check/outputs/source__slurmcheck__787b253088/figures/source__slurmcheck__787b253088__p1w5F0p15N2z_p2w1p5F0p2N3spt3__SI.png"
       ],
       "stderr_tail": []
@@ -13,7 +13,7 @@
       "array_task": "1",
       "exit_code": 0,
       "stdout_tail": [
-        "3D 364/364, inner norm=0.87849698, Pg=0.87702899, wall=31.4s",
+        "3D 364/364, inner norm=0.87849698, Pg=0.87702899, wall=19.9s",
         "COMPLETE SI SPECTRUM /playpen1/shiqiu/laqphysics-data/probe_20260924/slurm_check/outputs/probe__slurmcheck__892cdfc12b/figures/probe__slurmcheck__892cdfc12b__p1w5F0p15N2z_p2w1p5F0p2N3spt3_p3w0p7F0p05N2smt21p72__SI.png"
       ],
       "stderr_tail": []
@@ -24,7 +24,7 @@
     "source__slurmcheck__787b253088": "complete"
   },
   "frozen_snapshots": [
-    "5689a74f08974f53"
+    "d18703afbb58c391"
   ],
   "index_has_probe_column": true,
   "environment": "LC_ALL=C, PYTHONUTF8=0 outside; spectrum_job.sh exports PYTHONUTF8=1",

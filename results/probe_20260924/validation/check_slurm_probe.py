@@ -2,10 +2,12 @@
 """Run the real Slurm body (spectra_cpu.slurm -> spectrum_job.sh -> frozen snapshot ->
 simulate_spectrum.py) on the three-pulse smoke plan. Only `srun` is mocked: it
 executes its command line. The outer environment is deliberately hostile to text
-encoding (LC_ALL=C, PYTHONUTF8=0), as on the node that produced the ASCII error."""
+encoding (LC_ALL=C, PYTHONUTF8=0), as on the node that produced the ASCII error.
+Usage: check_slurm_probe.py [WORK_DIR] [REPORT_JSON]; the report defaults to WORK_DIR,
+so running it inside a verified bundle never modifies a package member."""
 import json,os,subprocess,sys,tempfile
 from pathlib import Path
-repo=Path(__file__).resolve().parents[3];work=Path(sys.argv[1] if len(sys.argv)>1 else '/playpen1/shiqiu/laqphysics-data/probe_20260924/slurm_check')
+repo=Path(__file__).resolve().parents[3];work=Path(sys.argv[1] if len(sys.argv)>1 else repo/'local_runs/slurm_probe_check')
 work.mkdir(parents=True,exist_ok=True)
 with tempfile.TemporaryDirectory(prefix='mock_bin_',dir=work) as temp:
     binary=Path(temp);(binary/'srun').write_text('#!/usr/bin/env bash\n[[ "$1" == --cpu-bind=* ]] && shift\nexec "$@"\n');(binary/'srun').chmod(0o755)
@@ -24,5 +26,6 @@ index=(work/'outputs/INDEX.md').read_text(encoding='utf-8')
 report={'jobs':rows,'case_states':statuses,'frozen_snapshots':snapshots,'index_has_probe_column':'第三束探测' in index,
         'environment':'LC_ALL=C, PYTHONUTF8=0 outside; spectrum_job.sh exports PYTHONUTF8=1','srun':'mocked: executes its argument list',
         'passed':all(r['exit_code']==0 for r in rows) and set(statuses.values())=={'complete'} and len(statuses)==2}
-(Path(__file__).with_name('slurm_probe_check.json')).write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+report_path=Path(sys.argv[2]) if len(sys.argv)>2 else work/'slurm_probe_check.json'
+report_path.write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
 print(json.dumps(report,indent=2,ensure_ascii=False))
